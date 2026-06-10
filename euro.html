@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Eurocopa Histórica · 1960-2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0a0e1a;--bg-card:#0f1629;--bg-pitch:#0a1f14;
+  --text:#e6edf3;--text-muted:#8b949e;
+  --border:rgba(255,255,255,.08);
+  --gold:#f59e0b;--gold-dim:rgba(245,158,11,.15);
+  --blue:#3b82f6;--blue-dim:rgba(59,130,246,.12);
+  --green:#22c55e;--green-dim:rgba(34,197,94,.15);
+  --red:#ef4444;--red-dim:rgba(239,68,68,.12);
+  --pitch-line:rgba(255,255,255,.18);
+  --sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
+  --nav-h:52px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5}
+button{cursor:pointer;border:none;background:none;color:inherit;font:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+
+/* ── NAV ── */
+nav{position:fixed;inset:0 0 auto 0;z-index:200;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.5rem;background:var(--bg);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--cond);font-weight:900;font-size:1rem;
+  letter-spacing:.12em;color:var(--text);text-transform:uppercase;}
+.nav-logo span{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:.6rem}
+.nav-btn{font-family:var(--cond);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.3rem .8rem;border:1px solid var(--border);color:var(--text-muted);border-radius:4px;transition:all .2s;}
+.nav-btn:hover{border-color:rgba(255,255,255,.3);color:var(--text)}
+
+/* ── SCREENS ── */
+.screen{display:none;position:fixed;inset:var(--nav-h) 0 0 0;overflow:hidden;}
+.screen.active{display:flex;flex-direction:column}
+
+/* ══ START SCREEN ══ */
+#s-start{overflow-y:auto;align-items:center;gap:1.2rem;padding:2rem 1rem;}
+.start-title{font-family:var(--cond);font-weight:900;
+  font-size:clamp(2.4rem,7vw,5rem);text-transform:uppercase;
+  letter-spacing:.06em;line-height:.9;text-align:center;}
+.start-title em{color:var(--gold);font-style:normal}
+.start-sub{font-size:.88rem;color:var(--text-muted);text-align:center;max-width:380px}
+.start-sub span{color:var(--gold);font-weight:600}
+.btn-play{font-family:var(--cond);font-weight:900;font-size:1rem;letter-spacing:.2em;
+  text-transform:uppercase;padding:.85rem 3rem;background:var(--gold);color:#000;
+  border-radius:6px;transition:all .2s;box-shadow:0 0 24px rgba(245,158,11,.3);}
+.btn-play:hover{background:#fbbf24;box-shadow:0 0 36px rgba(245,158,11,.5);transform:translateY(-1px)}
+.seg-control{display:flex;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+.seg-btn{font-family:var(--cond);font-weight:700;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:.45rem 1.1rem;color:var(--text-muted);transition:all .15s;}
+.seg-btn.active{background:var(--gold);color:#000}
+.seg-btn:hover:not(.active){color:var(--text)}
+.start-ranking{width:100%;max-width:500px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.ranking-header{background:var(--bg-card);padding:.5rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.ranking-header span{font-family:var(--cond);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.ranking-rows{max-height:160px;overflow-y:auto}
+.ranking-row{display:grid;grid-template-columns:28px 1.2fr 1fr 80px;
+  align-items:center;padding:.38rem 1rem;font-size:.8rem;border-bottom:1px solid var(--border);transition:background .15s;}
+.ranking-row:last-child{border-bottom:none}
+.ranking-row:hover{background:rgba(255,255,255,.03)}
+.rk-pos{font-family:var(--cond);font-weight:700;font-size:.9rem;color:var(--gold)}
+.rk-flag{font-size:1rem}
+.rk-record{font-family:var(--cond);font-size:.78rem;font-weight:700;color:var(--gold)}
+.ranking-empty{padding:.9rem;text-align:center;color:var(--text-muted);font-size:.82rem}
+
+/* ══ DRAFT SCREEN — 3 COLUMNAS ══ */
+#s-draft{flex-direction:row;overflow:hidden}
+
+/* ── Columna izquierda ── */
+.draft-left{width:284px;flex-shrink:0;display:flex;flex-direction:column;
+  border-right:1px solid var(--border);overflow-y:auto;background:var(--bg-card);}
+
+/* Config panel (formación/estilo/modo) */
+.cfg-panel{display:flex;flex-direction:column;gap:0;flex:1}
+.cfg-section{padding:.8rem 1rem;border-bottom:1px solid var(--border)}
+.cfg-label{font-family:var(--cond);font-size:.6rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-muted);margin-bottom:.55rem}
+.form-btn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem}
+.form-btn{font-family:var(--cond);font-weight:700;font-size:.82rem;letter-spacing:.06em;
+  padding:.42rem .3rem;border:1px solid var(--border);border-radius:4px;
+  color:var(--text-muted);background:transparent;transition:all .15s;text-align:center;}
+.form-btn:hover{border-color:rgba(245,158,11,.4);color:var(--text)}
+.form-btn.active{background:var(--gold);color:#000;border-color:var(--gold)}
+.option-row{display:flex;gap:.35rem}
+.option-btn{flex:1;font-family:var(--cond);font-weight:700;font-size:.75rem;letter-spacing:.06em;
+  padding:.42rem .3rem;border:1px solid var(--border);border-radius:4px;
+  color:var(--text-muted);background:transparent;transition:all .15s;text-align:center;}
+.option-btn:hover{border-color:rgba(245,158,11,.4);color:var(--text)}
+.option-btn.active{background:var(--gold);color:#000;border-color:var(--gold)}
+
+/* Draw info box */
+.draw-info-box{margin:1rem;border:1px dashed rgba(255,255,255,.15);border-radius:6px;
+  padding:.9rem;min-height:80px;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;gap:.5rem;flex:1;}
+.dib-text{font-family:var(--cond);font-size:.82rem;font-weight:600;color:var(--text-muted);
+  letter-spacing:.04em;line-height:1.3}
+.dib-round{font-family:var(--cond);font-size:.64rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-muted)}
+.dib-pos{font-family:var(--cond);font-size:1.1rem;font-weight:900;text-transform:uppercase;color:var(--text)}
+.dib-pos span{color:var(--gold)}
+.draw-cards-h{display:flex;gap:.5rem;width:100%}
+.draw-card-h{flex:1;background:var(--bg);border-radius:5px;padding:.5rem .6rem;border:1px solid var(--border);}
+.dch-label{font-family:var(--cond);font-size:.52rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.15rem}
+.draw-card-h.nation .dch-label{color:var(--gold)}
+.draw-card-h.year .dch-label{color:var(--blue)}
+.dch-value{font-family:var(--cond);font-size:.86rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.03em;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.timer-row{display:flex;align-items:center;gap:.5rem;width:100%}
+.timer-bar-bg{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.timer-bar-fill{height:100%;border-radius:2px;background:var(--green);transition:width .1s linear}
+.timer-bar-fill.warn{background:#eab308}.timer-bar-fill.danger{background:var(--red)}
+.timer-num{font-family:var(--cond);font-size:.72rem;font-weight:700;color:var(--text-muted);min-width:18px;text-align:right}
+.player-cards{display:flex;flex-direction:column;gap:.35rem;width:100%}
+.player-card{display:flex;align-items:center;gap:.6rem;background:var(--bg);
+  border:1px solid var(--border);border-radius:5px;padding:.5rem .7rem;cursor:pointer;transition:all .16s;}
+.player-card:hover{border-color:var(--gold);background:var(--gold-dim);transform:translateX(2px)}
+.pc-pos{font-family:var(--cond);font-size:.6rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gold);width:24px;flex-shrink:0;}
+.pc-name{font-family:var(--cond);font-weight:700;font-size:.88rem;text-transform:uppercase;
+  letter-spacing:.03em;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pc-val{font-family:var(--cond);font-size:.82rem;font-weight:700;color:var(--text-muted)}
+.pc-arrow{color:var(--text-muted);font-size:.76rem;transition:all .15s}
+.player-card:hover .pc-arrow{color:var(--gold);transform:translateX(2px)}
+
+/* Botón TIRAR */
+.btn-tirar-wrap{padding:.8rem 1rem;border-top:1px solid var(--border);margin-top:auto}
+.btn-tirar{width:100%;font-family:var(--cond);font-weight:900;font-size:1.15rem;
+  letter-spacing:.18em;text-transform:uppercase;padding:.9rem 1rem;
+  background:var(--gold);color:#000;border-radius:5px;
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  transition:all .2s;box-shadow:0 4px 16px rgba(245,158,11,.25);}
+.btn-tirar:hover{background:#fbbf24;box-shadow:0 4px 24px rgba(245,158,11,.4);transform:translateY(-1px)}
+.btn-tirar-icon{font-size:1.3rem}
+
+/* ── Columna central (campo) ── */
+.draft-center{flex:1;display:flex;align-items:center;justify-content:center;
+  padding:1rem;background:var(--bg);overflow:hidden;}
+.pitch-container{width:100%;max-width:380px;aspect-ratio:2/3;position:relative;}
+.pitch-container svg{width:100%;height:100%}
+
+/* ── Columna derecha (box score) ── */
+.draft-right{width:220px;flex-shrink:0;display:flex;flex-direction:column;
+  border-left:1px solid var(--border);background:var(--bg-card);overflow-y:auto;}
+.bs-header{padding:.7rem 1rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;}
+.bs-title{font-family:var(--cond);font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)}
+.bs-count{font-family:var(--cond);font-size:.72rem;font-weight:700;color:var(--gold)}
+.bs-prog{height:2px;background:rgba(255,255,255,.06)}
+.bs-prog-fill{height:100%;background:var(--gold);transition:width .4s ease}
+.bs-stats{display:flex;padding:.6rem 1rem;gap:.8rem;border-bottom:1px solid var(--border)}
+.bs-stat{flex:1;display:flex;align-items:center;gap:.4rem}
+.bs-stat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.bs-stat-dot.atq{background:var(--gold)}
+.bs-stat-dot.def{background:var(--blue)}
+.bs-stat-label{font-family:var(--cond);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.bs-stat-val{font-family:var(--cond);font-size:.78rem;font-weight:700;margin-left:auto}
+.bs-positions{display:flex;flex-direction:column;padding:.4rem 0}
+.bs-pos-row{display:flex;align-items:center;gap:.5rem;padding:.32rem 1rem;transition:background .1s;}
+.bs-pos-row:hover{background:rgba(255,255,255,.03)}
+.bs-pos-row.active{background:rgba(245,158,11,.07);border-left:2px solid var(--gold);padding-left:calc(1rem - 2px)}
+.bsp-label{font-family:var(--cond);font-size:.6rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-muted);width:30px;flex-shrink:0;}
+.bsp-name{font-family:var(--cond);font-size:.76rem;font-weight:700;text-transform:uppercase;
+  flex:1;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bsp-name.filled{color:var(--text)}
+.bsp-val{font-family:var(--cond);font-size:.72rem;font-weight:700;color:var(--gold);min-width:20px;text-align:right}
+
+/* progress bar legacy (mantener para compatibilidad) */
+.prog-bg{height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .4s cubic-bezier(.22,1,.36,1)}
+
+/* ══ MATCH SCREEN ══ */
+#s-match{align-items:center;justify-content:center;gap:0;overflow-y:auto;}
+.match-wrap{width:100%;max-width:500px;padding:1.5rem 1rem;display:flex;flex-direction:column;gap:1.2rem}
+.match-round-label{font-family:var(--cond);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center}
+.match-board{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.match-board-header{padding:.6rem 1.2rem;background:var(--gold-dim);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;gap:.5rem;}
+.mb-title{font-family:var(--cond);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.match-teams{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.2rem .8rem;}
+.team-side{flex:1;text-align:center}
+.team-flag{font-size:2.2rem;display:block;margin-bottom:.3rem}
+.team-name{font-family:var(--cond);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+.team-side.my-side .team-name{color:var(--text)}
+.match-score-area{display:flex;align-items:center;justify-content:center;gap:.8rem;flex-shrink:0}
+.score-num{font-family:var(--cond);font-size:3.5rem;font-weight:900;line-height:1;color:var(--text);transition:all .3s}
+.score-sep{font-family:var(--cond);font-size:2rem;font-weight:900;color:var(--text-muted);margin-top:-.2rem}
+.match-result-badge{text-align:center;padding:.4rem .8rem .8rem}
+.mrb-text{font-family:var(--cond);font-size:1rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.mrb-text.win{color:var(--green)}.mrb-text.draw{color:#eab308}.mrb-text.loss{color:var(--red)}
+.match-events{padding:.6rem 1.2rem 1rem;border-top:1px solid var(--border);}
+.event-title{font-family:var(--cond);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+.event-item{display:flex;align-items:center;gap:.5rem;padding:.25rem 0;font-size:.82rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.event-item:last-child{border-bottom:none}
+.event-min{font-family:var(--cond);font-size:.7rem;font-weight:700;color:var(--gold);width:32px;flex-shrink:0}
+.event-icon{font-size:.9rem;flex-shrink:0}
+.event-name{flex:1;font-weight:600}
+.match-progress-strip{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:.8rem 1.2rem}
+.mps-label{font-family:var(--cond);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);display:flex;justify-content:space-between;margin-bottom:.5rem}
+.mps-dots{display:flex;gap:.4rem;justify-content:center}
+.mps-dot{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--cond);font-size:.7rem;font-weight:700;color:var(--text-muted);transition:all .3s;}
+.mps-dot.win{border-color:var(--green);background:var(--green-dim);color:var(--green)}
+.mps-dot.loss{border-color:var(--red);background:var(--red-dim);color:var(--red)}
+.mps-dot.draw{border-color:#eab308;background:rgba(234,179,8,.12);color:#eab308}
+.mps-dot.current{border-color:var(--gold);background:var(--gold-dim);color:var(--gold)}
+.match-actions{display:flex;gap:.7rem;justify-content:center}
+.btn-primary{font-family:var(--cond);font-weight:900;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;padding:.7rem 2rem;background:var(--gold);color:#000;border-radius:6px;transition:all .2s;}
+.btn-primary:hover{background:#fbbf24}
+.btn-secondary{font-family:var(--cond);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;padding:.7rem 1.4rem;border:1px solid var(--border);color:var(--text-muted);border-radius:6px;transition:all .2s;}
+.btn-secondary:hover{border-color:rgba(255,255,255,.3);color:var(--text)}
+
+/* ══ FINAL SCREEN ══ */
+#s-final{align-items:center;justify-content:center;gap:1.2rem;padding:2rem;overflow-y:auto;text-align:center}
+.final-icon{font-size:4rem;line-height:1}
+.final-title{font-family:var(--cond);font-weight:900;font-size:clamp(2rem,6vw,4rem);
+  text-transform:uppercase;letter-spacing:.06em;line-height:.9}
+.final-title.champion{color:var(--gold)}
+.final-title.eliminated{color:var(--red)}
+.final-sub{font-size:.9rem;color:var(--text-muted);max-width:360px}
+.final-record{display:flex;gap:.5rem;justify-content:center}
+.fr-dot{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--cond);font-size:.8rem;font-weight:700;color:var(--text-muted)}
+.fr-dot.win{border-color:var(--green);background:var(--green-dim);color:var(--green)}
+.fr-dot.loss{border-color:var(--red);background:var(--red-dim);color:var(--red)}
+.fr-dot.draw{border-color:#eab308;background:rgba(234,179,8,.12);color:#eab308}
+.fr-dot.empty{opacity:.3}
+.final-nation{display:flex;align-items:center;justify-content:center;gap:.6rem;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:.7rem 1.2rem}
+.fn-flag{font-size:1.4rem}
+.fn-name{font-family:var(--cond);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.fn-year{font-size:.8rem;color:var(--text-muted)}
+.champion-trophy{font-size:5rem;animation:trophyPop .5s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes trophyPop{from{transform:scale(0) rotate(-15deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+.final-actions{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+
+/* ── RESPONSIVE ── */
+@media(max-width:680px){
+  html,body{overflow:auto}
+  .screen{position:relative;inset:auto;height:auto;min-height:calc(100vh - var(--nav-h))}
+  #s-draft{flex-direction:column;overflow:auto}
+  .draft-left{width:100%;border-right:none;border-bottom:1px solid var(--border)}
+  .pitch-container{max-width:240px}
+  .nation-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .3s ease both}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">EUROCOPA <span>HISTÓRICA</span></span>
+  <div class="nav-right">
+    <span style="font-size:.7rem;color:var(--text-muted)">1960 – 2024</span>
+    <button class="nav-btn" id="theme-btn">☀</button>
+  </div>
+</nav>
+
+<!-- ══ START ══ -->
+<div id="s-start" class="screen active">
+  <h1 class="start-title">Conquista<br><em>Europa</em></h1>
+  <p class="start-sub">Cada posición sortea una selección histórica al azar. Elige tu jugador. Gana los <span>6 partidos</span> sin perder ninguno.</p>
+
+  <div class="seg-control" id="formation-seg" style="margin-bottom:1.5rem"></div>
+
+  <button class="btn-play" id="btn-play">JUGAR →</button>
+
+  <div class="start-ranking">
+    <div class="ranking-header">
+      <span>Mis mejores marcas</span>
+      <span id="rank-count">—</span>
+    </div>
+    <div id="ranking-body"><p class="ranking-empty">Aún sin partidas guardadas</p></div>
+  </div>
+</div>
+
+<!-- ══ FORMATION ══ -->
+<div id="s-formation" class="screen">
+  <div class="form-title">Elige formación</div>
+  <p class="form-sub">Pulsa para iniciar el draft</p>
+  <div class="form-grid" id="formation-grid"></div>
+</div>
+
+<!-- ══ DRAFT ══ -->
+<div id="s-draft" class="screen">
+
+  <!-- Columna izquierda -->
+  <div class="draft-left">
+    <!-- Config panel -->
+    <div class="cfg-panel" id="cfg-panel">
+      <div class="cfg-section">
+        <div class="cfg-label">Formación</div>
+        <div class="form-btn-grid" id="form-btn-grid"></div>
+      </div>
+      <div class="cfg-section">
+        <div class="cfg-label">Estilo</div>
+        <div class="option-row" id="style-row">
+          <button class="option-btn" data-val="def">Defensivo</button>
+          <button class="option-btn active" data-val="eq">Equilibrado</button>
+          <button class="option-btn" data-val="atq">Ofensivo</button>
+        </div>
+      </div>
+      <div class="cfg-section">
+        <div class="cfg-label">Modo · Dificultad</div>
+        <div class="option-row" id="mode-row">
+          <button class="option-btn active" data-val="clasico">Clásico</button>
+          <button class="option-btn" data-val="libre">Sin límite</button>
+        </div>
+      </div>
+    </div>
+    <!-- Caja info sorteo -->
+    <div class="draw-info-box" id="draw-info-box">
+      <div class="dib-text" id="dib-text">Tira para sortear<br>una selección y una Eurocopa</div>
+    </div>
+    <!-- Botón TIRAR -->
+    <div class="btn-tirar-wrap">
+      <button class="btn-tirar" id="btn-tirar">
+        <span>TIRAR</span><span class="btn-tirar-icon">🎲</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Columna central: campo -->
+  <div class="draft-center">
+    <div class="pitch-container">
+      <svg id="pitch-svg" viewBox="0 0 280 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="280" height="400" rx="8" fill="#0a1f14"/>
+        <rect x="0" y="0" width="280" height="40" fill="rgba(255,255,255,.018)"/>
+        <rect x="0" y="80" width="280" height="40" fill="rgba(255,255,255,.018)"/>
+        <rect x="0" y="160" width="280" height="40" fill="rgba(255,255,255,.018)"/>
+        <rect x="0" y="240" width="280" height="40" fill="rgba(255,255,255,.018)"/>
+        <rect x="0" y="320" width="280" height="40" fill="rgba(255,255,255,.018)"/>
+        <rect x="12" y="12" width="256" height="376" rx="4" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1.2"/>
+        <line x1="12" y1="200" x2="268" y2="200" stroke="rgba(255,255,255,.16)" stroke-width="1.2"/>
+        <circle cx="140" cy="200" r="36" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1.2"/>
+        <circle cx="140" cy="200" r="2" fill="rgba(255,255,255,.3)"/>
+        <rect x="70" y="12" width="140" height="52" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+        <rect x="105" y="12" width="70" height="24" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+        <rect x="70" y="336" width="140" height="52" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+        <rect x="105" y="364" width="70" height="24" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+        <path d="M108,64 A36,36 0 0,1 172,64" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+        <path d="M108,336 A36,36 0 0,0 172,336" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+        <circle cx="140" cy="52" r="2" fill="rgba(255,255,255,.25)"/>
+        <circle cx="140" cy="348" r="2" fill="rgba(255,255,255,.25)"/>
+        <rect x="112" y="6" width="56" height="10" rx="1" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.2"/>
+        <rect x="112" y="384" width="56" height="10" rx="1" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.2"/>
+        <g id="players-g"></g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Columna derecha: box score -->
+  <div class="draft-right">
+    <div class="bs-header">
+      <span class="bs-title">Box Score</span>
+      <span class="bs-count" id="bs-count">0 / 11</span>
+    </div>
+    <div class="bs-prog"><div class="bs-prog-fill" id="bs-prog-fill" style="width:0%"></div></div>
+    <div class="bs-stats">
+      <div class="bs-stat">
+        <div class="bs-stat-dot atq"></div>
+        <span class="bs-stat-label">Ataque</span>
+        <span class="bs-stat-val" id="bs-atq">—</span>
+      </div>
+      <div class="bs-stat">
+        <div class="bs-stat-dot def"></div>
+        <span class="bs-stat-label">Defensa</span>
+        <span class="bs-stat-val" id="bs-def">—</span>
+      </div>
+    </div>
+    <div class="bs-positions" id="bs-positions"></div>
+  </div>
+
+</div>
+
+<!-- ══ MATCH ══ -->
+<div id="s-match" class="screen">
+  <div class="match-wrap fade-in" id="match-wrap">
+    <div class="match-round-label" id="match-round-label">FASE DE GRUPOS · PARTIDO 1</div>
+
+    <div class="match-board">
+      <div class="match-board-header">
+        <span class="mb-title" id="match-stage-title">Grupo A</span>
+      </div>
+      <div class="match-teams">
+        <div class="team-side my-side">
+          <span class="team-flag" id="my-flag">🇪🇸</span>
+          <div class="team-name" id="my-name">España</div>
+        </div>
+        <div class="match-score-area">
+          <span class="score-num" id="score-my">—</span>
+          <span class="score-sep">:</span>
+          <span class="score-num" id="score-opp">—</span>
+        </div>
+        <div class="team-side">
+          <span class="team-flag" id="opp-flag">🇩🇪</span>
+          <div class="team-name" id="opp-name">Alemania</div>
+        </div>
+      </div>
+      <div class="match-result-badge" id="result-badge" style="display:none">
+        <span class="mrb-text" id="result-badge-text">VICTORIA</span>
+      </div>
+      <div class="match-events" id="match-events" style="display:none">
+        <div class="event-title">Goles</div>
+        <div id="events-list"></div>
+      </div>
+    </div>
+
+    <div class="match-progress-strip">
+      <div class="mps-label">
+        <span>Tu camino en la Eurocopa</span>
+        <span id="mps-record">0G · 0P</span>
+      </div>
+      <div class="mps-dots" id="mps-dots"></div>
+    </div>
+
+    <div class="match-actions" id="match-actions"></div>
+  </div>
+</div>
+
+<!-- ══ FINAL ══ -->
+<div id="s-final" class="screen">
+  <div id="final-trophy" style="display:none" class="champion-trophy">🏆</div>
+  <div id="final-icon-elim" style="display:none;font-size:3.5rem">❌</div>
+  <h2 class="final-title" id="final-title">—</h2>
+  <p class="final-sub" id="final-sub">—</p>
+  <div class="final-record" id="final-record"></div>
+  <div class="final-nation" id="final-nation"></div>
+  <div class="final-actions">
+    <button class="btn-primary" onclick="resetAll()">JUGAR DE NUEVO →</button>
+    <button class="btn-secondary" onclick="show('s-start')">← INICIO</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   EUROCOPA HISTÓRICA · Datos
+   Selecciones y planteles 1960-2024
+══════════════════════════════════════ */
+
+const SELECCIONES_EURO = [
+
+/* ── ESPAÑA ── */
+{ id:'spain', nombre:'España', flag:'🇪🇸', ediciones:[
+  { año:1964, jugadores:[
+    {n:'Iribar',       pos:'pt', v:85},{n:'Betancort',     pos:'pt', v:74},
+    {n:'Calleja',      pos:'def',sp:'lb',v:76},{n:'Olivella',     pos:'def',sp:'cb',v:77},
+    {n:'Zoco',         pos:'def',sp:'cb',v:78},{n:'Reija',         pos:'def',sp:'lb',v:74},
+    {n:'Fusté',        pos:'med',v:79},{n:'Suárez L.',     pos:'med',v:87},{n:'Adelardo',pos:'med',v:79},
+    {n:'Amancio',      pos:'del',sp:'ext',v:83},{n:'Gento',        pos:'del',sp:'ext',v:88},
+    {n:'Marcelino',    pos:'del',sp:'dc', v:80},{n:'Pereda',       pos:'del',sp:'ext',v:78},
+  ]},
+  { año:1984, jugadores:[
+    {n:'Arconada',     pos:'pt', v:88},{n:'Zubizarreta',   pos:'pt', v:84},
+    {n:'Camacho',      pos:'def',sp:'cb',v:84},{n:'Julio Alberto', pos:'def',sp:'lb',v:78},
+    {n:'Sanchís',      pos:'def',sp:'cb',v:80},{n:'Maceda',        pos:'def',sp:'cb',v:77},
+    {n:'Gallego',      pos:'med',v:76},{n:'Víctor',        pos:'med',v:79},{n:'González',pos:'med',v:75},
+    {n:'Carrasco',     pos:'del',sp:'ext',v:79},{n:'Santillana',    pos:'del',sp:'dc', v:83},
+    {n:'Salinas',      pos:'del',sp:'dc', v:81},{n:'Señor',         pos:'del',sp:'ext',v:77},
+  ]},
+  { año:2008, jugadores:[
+    {n:'Casillas',     pos:'pt', v:93},{n:'Reina',         pos:'pt', v:85},
+    {n:'Ramos',        pos:'def',sp:'cb',v:87},{n:'Marchena',      pos:'def',sp:'cb',v:81},
+    {n:'Capdevila',    pos:'def',sp:'lb',v:80},{n:'Puyol',         pos:'def',sp:'cb',v:88},
+    {n:'Senna',        pos:'med',v:82},{n:'Xavi',          pos:'med',v:94},{n:'Iniesta',pos:'med',v:93},{n:'Fàbregas',pos:'med',v:86},
+    {n:'Villa',        pos:'del',sp:'dc', v:90},{n:'Torres',       pos:'del',sp:'dc', v:89},
+    {n:'Silva D.',     pos:'del',sp:'ext',v:87},{n:'Güiza',        pos:'del',sp:'dc', v:81},
+  ]},
+  { año:2012, jugadores:[
+    {n:'Casillas',     pos:'pt', v:92},{n:'Valdés',        pos:'pt', v:86},
+    {n:'Ramos',        pos:'def',sp:'cb',v:89},{n:'Piqué',         pos:'def',sp:'cb',v:88},
+    {n:'Alba',         pos:'def',sp:'lb',v:85},{n:'Arbeloa',       pos:'def',sp:'lb',v:77},
+    {n:'Busquets',     pos:'med',v:89},{n:'Xavi',          pos:'med',v:92},{n:'Iniesta',pos:'med',v:94},
+    {n:'Silva D.',     pos:'del',sp:'ext',v:89},{n:'Torres',       pos:'del',sp:'dc', v:85},
+    {n:'Villa',        pos:'del',sp:'dc', v:87},{n:'Pedro',        pos:'del',sp:'ext',v:83},
+  ]},
+  { año:2016, jugadores:[
+    {n:'CASILLAS',     pos:'pt', v:82},{n:'DE GEA',         pos:'pt', v:88},
+    {n:'RAMOS',        pos:'def',sp:'cb',v:91},{n:'PIQUÉ',         pos:'def',sp:'cb',v:88},
+    {n:'ALBA',         pos:'def',sp:'lb',v:86},{n:'AZPILICUETA',   pos:'def',sp:'lb',v:82},
+    {n:'BUSQUETS',     pos:'med',v:89},{n:'INIESTA',        pos:'med',v:91},{n:'SILVA D.',pos:'med',v:90},
+    {n:'KOKE',         pos:'med',v:83},{n:'FABREGAS',       pos:'med',v:85},
+    {n:'PEDRO',        pos:'del',sp:'ext',v:83},{n:'MORATA',        pos:'del',sp:'dc', v:83},
+    {n:'NOLITO',       pos:'del',sp:'ext',v:81},{n:'ALCACER',       pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'SIMÓN U.',     pos:'pt', v:84},{n:'DE GEA',         pos:'pt', v:87},
+    {n:'LAPORTE',      pos:'def',sp:'cb',v:87},{n:'PAU TORRES',    pos:'def',sp:'cb',v:84},
+    {n:'ALBA',         pos:'def',sp:'lb',v:84},{n:'AZPILICUETA',   pos:'def',sp:'lb',v:82},
+    {n:'BUSQUETS',     pos:'med',v:86},{n:'KOKE',           pos:'med',v:84},{n:'PEDRI',   pos:'med',v:87},
+    {n:'DANI OLMO',    pos:'med',v:85},{n:'THIAGO',         pos:'med',v:84},
+    {n:'MORATA',       pos:'del',sp:'dc', v:84},{n:'MORENO G.',    pos:'del',sp:'dc', v:85},
+    {n:'OYARZABAL',    pos:'del',sp:'ext',v:83},{n:'F. TORRES',    pos:'del',sp:'ext',v:83},
+  ]},
+  { año:2024, jugadores:[
+    {n:'SIMÓN',        pos:'pt', v:88},{n:'RAYA',           pos:'pt', v:83},
+    {n:'CARVAJAL',     pos:'def',sp:'lb',v:83},{n:'LE NORMAND',    pos:'def',sp:'cb',v:82},
+    {n:'LAPORTE',      pos:'def',sp:'cb',v:84},{n:'CUCURELLA',     pos:'def',sp:'lb',v:79},
+    {n:'RODRI',        pos:'med',v:94},{n:'FABIÁN RUIZ',   pos:'med',v:86},{n:'PEDRI',   pos:'med',v:90},
+    {n:'WILLIAMS N.',  pos:'del',sp:'ext',v:87},{n:'MORATA',       pos:'del',sp:'dc', v:84},
+    {n:'LAMINE YAMAL', pos:'del',sp:'ext',v:91},{n:'OLMO',         pos:'del',sp:'ext',v:87},
+  ]},
+]},
+
+/* ── ALEMANIA / ALEMANIA OCCIDENTAL ── */
+{ id:'germany', nombre:'Alemania', flag:'🇩🇪', ediciones:[
+  { año:1972, jugadores:[
+    {n:'Maier',        pos:'pt', v:92},{n:'Wolter',        pos:'pt', v:74},
+    {n:'Höttges',      pos:'def',sp:'lb',v:76},{n:'Schwarzenbeck', pos:'def',sp:'cb',v:82},
+    {n:'Beckenbauer',  pos:'def',sp:'cb',v:97},{n:'Breitner',      pos:'def',sp:'lb',v:85},
+    {n:'Wimmer',       pos:'med',v:78},{n:'Netzer',        pos:'med',v:90},{n:'Hoeness',pos:'med',v:82},
+    {n:'Heynckes',     pos:'del',sp:'dc', v:83},{n:'Müller G.',    pos:'del',sp:'dc', v:97},
+    {n:'Kremers',      pos:'del',sp:'ext',v:79},{n:'Grabowski',    pos:'del',sp:'ext',v:81},
+  ]},
+  { año:1980, jugadores:[
+    {n:'Schumacher',   pos:'pt', v:87},{n:'Kargus',        pos:'pt', v:74},
+    {n:'Kaltz',        pos:'def',sp:'lb',v:81},{n:'Stielike',      pos:'def',sp:'cb',v:83},
+    {n:'Dietz',        pos:'def',sp:'cb',v:78},{n:'Briegel',       pos:'def',sp:'lb',v:79},
+    {n:'H. Müller',    pos:'med',v:80},{n:'Schuster',      pos:'med',v:85},{n:'Hrubesch',pos:'del',sp:'dc',v:83},
+    {n:'Allofs K.',    pos:'del',sp:'ext',v:83},{n:'Rummenigge',   pos:'del',sp:'ext',v:90},
+    {n:'Fischer K-H.', pos:'del',sp:'dc', v:82},{n:'Bernd Cullmann',pos:'med',v:77},
+  ]},
+  { año:1996, jugadores:[
+    {n:'Köpke',        pos:'pt', v:83},{n:'Kahn',          pos:'pt', v:88},
+    {n:'Helmer',       pos:'def',sp:'cb',v:82},{n:'Sammer',        pos:'def',sp:'cb',v:89},
+    {n:'Ziege',        pos:'def',sp:'lb',v:82},{n:'Reuter',        pos:'def',sp:'lb',v:79},
+    {n:'Eilts',        pos:'med',v:78},{n:'Strunz',        pos:'med',v:76},{n:'Scholl',  pos:'med',v:82},
+    {n:'Babbel',       pos:'def',sp:'lb',v:79},
+    {n:'Bierhoff',     pos:'del',sp:'dc', v:84},{n:'Klinsmann',    pos:'del',sp:'dc', v:88},
+    {n:'Kuntz',        pos:'del',sp:'dc', v:81},{n:'Bode',         pos:'del',sp:'ext',v:77},
+  ]},
+  { año:2008, jugadores:[
+    {n:'LEHMANN',      pos:'pt', v:84},{n:'ADLER',          pos:'pt', v:78},
+    {n:'FRIEDRICH',    pos:'def',sp:'cb',v:82},{n:'MERTESACKER',   pos:'def',sp:'cb',v:83},
+    {n:'LAHM',         pos:'def',sp:'lb',v:90},{n:'JANSEN',        pos:'def',sp:'lb',v:78},
+    {n:'FRINGS',       pos:'med',v:81},{n:'SCHWEINSTEIGER', pos:'med',v:88},{n:'BALLACK', pos:'med',v:88},
+    {n:'PODOLSKI',     pos:'del',sp:'ext',v:85},{n:'KLOSE',        pos:'del',sp:'dc', v:88},
+    {n:'GOMEZ',        pos:'del',sp:'dc', v:82},{n:'MÜLLER T.',    pos:'del',sp:'ext',v:86},
+  ]},
+  { año:2012, jugadores:[
+    {n:'NEUER',        pos:'pt', v:93},{n:'ADLER',          pos:'pt', v:79},
+    {n:'LAHM',         pos:'def',sp:'lb',v:89},{n:'HUMMELS',       pos:'def',sp:'cb',v:87},
+    {n:'BOATENG',      pos:'def',sp:'cb',v:86},{n:'BADSTUBER',     pos:'def',sp:'cb',v:81},
+    {n:'SCHWEINSTEIGER',pos:'med',v:89},{n:'KHEDIRA',       pos:'med',v:86},{n:'ÖZIL',    pos:'med',v:89},
+    {n:'KROOS',        pos:'med',v:87},{n:'MÜLLER T.',      pos:'del',sp:'ext',v:88},
+    {n:'KLOSE',        pos:'del',sp:'dc', v:86},{n:'GOMEZ',        pos:'del',sp:'dc', v:87},
+    {n:'PODOLSKI',     pos:'del',sp:'ext',v:83},{n:'REUS',         pos:'del',sp:'ext',v:87},
+  ]},
+  { año:2016, jugadores:[
+    {n:'NEUER',        pos:'pt', v:94},{n:'TER STEGEN',     pos:'pt', v:88},
+    {n:'LAHM',         pos:'def',sp:'lb',v:87},{n:'HUMMELS',       pos:'def',sp:'cb',v:90},
+    {n:'BOATENG',      pos:'def',sp:'cb',v:87},{n:'KIMMICH',       pos:'def',sp:'lb',v:85},
+    {n:'KROOS',        pos:'med',v:91},{n:'KHEDIRA',        pos:'med',v:85},{n:'ÖZIL',    pos:'med',v:89},
+    {n:'MÜLLER T.',    pos:'del',sp:'ext',v:88},{n:'REUS',         pos:'del',sp:'ext',v:86},
+    {n:'GOMEZ',        pos:'del',sp:'dc', v:83},{n:'DRAXLER',      pos:'del',sp:'ext',v:84},
+    {n:'GÖTZE',        pos:'med',v:85},{n:'SCHWEINSTEIGER', pos:'med',v:84},
+  ]},
+  { año:2021, jugadores:[
+    {n:'NEUER',        pos:'pt', v:91},{n:'FLEKKEN',        pos:'pt', v:79},
+    {n:'RÜDIGER',      pos:'def',sp:'cb',v:86},{n:'HUMMELS',       pos:'def',sp:'cb',v:85},
+    {n:'GOSENS',       pos:'def',sp:'lb',v:83},{n:'KIMMICH',       pos:'med',v:89},
+    {n:'GÜNDOĞAN',     pos:'med',v:88},{n:'KROOS',          pos:'med',v:90},{n:'MÜLLER T.',pos:'del',sp:'ext',v:86},
+    {n:'HAVERTZ',      pos:'del',sp:'dc', v:87},{n:'GNABRY',       pos:'del',sp:'ext',v:87},
+    {n:'SANÉ',         pos:'del',sp:'ext',v:88},{n:'WERNER',       pos:'del',sp:'dc', v:84},
+    {n:'GORETZKA',     pos:'med',v:86},{n:'GINTER',         pos:'def',sp:'cb',v:82},
+  ]},
+  { año:2024, jugadores:[
+    {n:'NEUER',        pos:'pt', v:88},{n:'TER STEGEN',     pos:'pt', v:87},
+    {n:'RÜDIGER',      pos:'def',sp:'cb',v:87},{n:'SCHLOTTERBECK', pos:'def',sp:'cb',v:84},
+    {n:'TAH',          pos:'def',sp:'cb',v:82},{n:'KIMMICH',       pos:'med',v:89},
+    {n:'KROOS',        pos:'med',v:90},{n:'GÜNDOĞAN',       pos:'med',v:87},{n:'MUSIALA',pos:'med',v:89},
+    {n:'WIRTZ',        pos:'med',v:90},{n:'HAVERTZ',        pos:'del',sp:'dc', v:87},
+    {n:'SANÉ',         pos:'del',sp:'ext',v:86},{n:'GNABRY',       pos:'del',sp:'ext',v:85},
+    {n:'FULLKRUG',     pos:'del',sp:'dc', v:84},{n:'MITTELSTÄDT',  pos:'def',sp:'lb',v:81},
+  ]},
+]},
+
+/* ── FRANCIA ── */
+{ id:'france', nombre:'Francia', flag:'🇫🇷', ediciones:[
+  { año:1984, jugadores:[
+    {n:'Bats',         pos:'pt', v:83},{n:'Rust',          pos:'pt', v:74},
+    {n:'Bossis',       pos:'def',sp:'cb',v:81},{n:'Boli',         pos:'def',sp:'cb',v:79},
+    {n:'Amoros',       pos:'def',sp:'lb',v:80},{n:'Domergue',     pos:'def',sp:'lb',v:77},
+    {n:'Tigana',       pos:'med',v:87},{n:'Giresse',       pos:'med',v:85},{n:'Fernandez',pos:'med',v:82},
+    {n:'Platini',      pos:'del',sp:'ext',v:97},{n:'Six',          pos:'del',sp:'ext',v:80},
+    {n:'Bellone',      pos:'del',sp:'dc', v:79},{n:'Lacombe',      pos:'del',sp:'dc', v:78},
+  ]},
+  { año:2000, jugadores:[
+    {n:'Barthez',      pos:'pt', v:90},{n:'Candela',       pos:'pt', v:74},
+    {n:'Thuram',       pos:'def',sp:'lb',v:88},{n:'Blanc',         pos:'def',sp:'cb',v:87},
+    {n:'Desailly',     pos:'def',sp:'cb',v:89},{n:'Lizarazu',      pos:'def',sp:'lb',v:84},
+    {n:'Vieira',       pos:'med',v:92},{n:'Deschamps',     pos:'med',v:85},{n:'Zidane',  pos:'med',v:97},
+    {n:'Djorkaeff',    pos:'del',sp:'ext',v:86},{n:'Henry',        pos:'del',sp:'ext',v:92},
+    {n:'Trezeguet',    pos:'del',sp:'dc', v:88},{n:'Pires',        pos:'del',sp:'ext',v:87},
+  ]},
+  { año:2008, jugadores:[
+    {n:'LLORIS',       pos:'pt', v:83},{n:'COUPET',         pos:'pt', v:79},
+    {n:'THURAM',       pos:'def',sp:'cb',v:85},{n:'GALLAS',        pos:'def',sp:'cb',v:84},
+    {n:'EVRA',         pos:'def',sp:'lb',v:83},{n:'ABIDAL',        pos:'def',sp:'lb',v:84},
+    {n:'VIEIRA',       pos:'med',v:84},{n:'MAKÉLÉLÉ',       pos:'med',v:83},{n:'RIBÉRY',  pos:'del',sp:'ext',v:88},
+    {n:'BENZEMA',      pos:'del',sp:'dc', v:86},{n:'HENRY',        pos:'del',sp:'ext',v:89},
+    {n:'ANELKA',       pos:'del',sp:'dc', v:83},{n:'NASRI',        pos:'med',v:84},
+    {n:'DIARRA',       pos:'med',v:80},{n:'SAGNOL',         pos:'def',sp:'lb',v:82},
+  ]},
+  { año:2012, jugadores:[
+    {n:'LLORIS',       pos:'pt', v:87},{n:'MANDANDA',       pos:'pt', v:82},
+    {n:'EVRA',         pos:'def',sp:'lb',v:84},{n:'CLICHY',        pos:'def',sp:'lb',v:82},
+    {n:'MEXES',        pos:'def',sp:'cb',v:82},{n:'RAMI',          pos:'def',sp:'cb',v:80},
+    {n:'MATUIDI',      pos:'med',v:84},{n:'CABAYE',         pos:'med',v:83},{n:'RIBÉRY',  pos:'del',sp:'ext',v:89},
+    {n:'BENZEMA',      pos:'del',sp:'dc', v:88},{n:'NASRI',        pos:'med',v:85},
+    {n:'GIROUD',       pos:'del',sp:'dc', v:84},{n:'MÉNEZ',        pos:'del',sp:'ext',v:80},
+    {n:'DIABY',        pos:'med',v:79},{n:"M'VILA",         pos:'med',v:79},
+  ]},
+  { año:2016, jugadores:[
+    {n:'LLORIS',       pos:'pt', v:88},{n:'MANDANDA',       pos:'pt', v:81},
+    {n:'KOSCIELNY',    pos:'def',sp:'cb',v:83},{n:'VARANE',        pos:'def',sp:'cb',v:88},
+    {n:'EVRA',         pos:'def',sp:'lb',v:80},{n:'SAGNA',         pos:'def',sp:'lb',v:78},
+    {n:'KANTÉ',        pos:'med',v:88},{n:'POGBA',          pos:'med',v:87},{n:'MATUIDI', pos:'med',v:83},
+    {n:'PAYET',        pos:'del',sp:'ext',v:87},{n:'GRIEZMANN',    pos:'del',sp:'ext',v:90},
+    {n:'GIROUD',       pos:'del',sp:'dc', v:82},{n:'MARTIAL',      pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2021, jugadores:[
+    {n:'LLORIS',       pos:'pt', v:87},{n:'MANDANDA',       pos:'pt', v:79},
+    {n:'PAVARD',       pos:'def',sp:'lb',v:82},{n:'VARANE',        pos:'def',sp:'cb',v:89},
+    {n:'KIMPEMBE',     pos:'def',sp:'cb',v:82},{n:'L. HERNÁNDEZ',  pos:'def',sp:'lb',v:80},
+    {n:'KANTÉ',        pos:'med',v:91},{n:'RABIOT',         pos:'med',v:80},{n:'POGBA',   pos:'med',v:85},
+    {n:'MBAPPÉ',       pos:'del',sp:'ext',v:93},{n:'BENZEMA',      pos:'del',sp:'dc', v:92},
+    {n:'GRIEZMANN',    pos:'del',sp:'ext',v:88},{n:'DEMBÉLÉ',      pos:'del',sp:'ext',v:84},
+  ]},
+]},
+
+/* ── ITALIA ── */
+{ id:'italy', nombre:'Italia', flag:'🇮🇹', ediciones:[
+  { año:1968, jugadores:[
+    {n:'Zoff',         pos:'pt', v:90},{n:'Albertosi',     pos:'pt', v:83},
+    {n:'Facchetti',    pos:'def',sp:'lb',v:86},{n:'Burgnich',      pos:'def',sp:'cb',v:83},
+    {n:'Guarneri',     pos:'def',sp:'cb',v:79},{n:'Rosato',        pos:'def',sp:'lb',v:77},
+    {n:'Lodetti',      pos:'med',v:77},{n:'Mazzola',       pos:'med',v:88},{n:'Rivera',  pos:'med',v:90},
+    {n:'Domenghini',   pos:'del',sp:'ext',v:82},{n:'Anastasi',     pos:'del',sp:'dc', v:83},
+    {n:'Riva',         pos:'del',sp:'dc', v:91},{n:'Prati',        pos:'del',sp:'dc', v:80},
+  ]},
+  { año:1988, jugadores:[
+    {n:'Zenga',        pos:'pt', v:88},{n:'Tacconi',       pos:'pt', v:82},
+    {n:'Maldini',      pos:'def',sp:'lb',v:91},{n:'Baresi',        pos:'def',sp:'cb',v:93},
+    {n:'Bergomi',      pos:'def',sp:'cb',v:88},{n:'De Agostini',   pos:'def',sp:'lb',v:78},
+    {n:'Donadoni',     pos:'med',v:83},{n:'Ancelotti',     pos:'med',v:86},{n:'Giannini',pos:'med',v:85},
+    {n:'Mancini',      pos:'del',sp:'ext',v:84},{n:'Vialli',       pos:'del',sp:'dc', v:88},
+    {n:'Serena',       pos:'del',sp:'dc', v:79},{n:'De Napoli',    pos:'med',v:78},
+  ]},
+  { año:2008, jugadores:[
+    {n:'BUFFON',       pos:'pt', v:91},{n:'PERUZZI',        pos:'pt', v:76},
+    {n:'ZAMBROTTA',    pos:'def',sp:'lb',v:84},{n:'CANNAVARO',     pos:'def',sp:'cb',v:88},
+    {n:'MATERAZZI',    pos:'def',sp:'cb',v:82},{n:'GROSSO',        pos:'def',sp:'lb',v:82},
+    {n:'PIRLO',        pos:'med',v:90},{n:'GATTUSO',        pos:'med',v:84},{n:'DE ROSSI',pos:'med',v:86},
+    {n:'CAMORANESI',   pos:'med',v:81},{n:'TONI',           pos:'del',sp:'dc', v:85},
+    {n:'TOTTI',        pos:'del',sp:'dc', v:85},{n:'QUAGLIARELLA', pos:'del',sp:'dc', v:80},
+    {n:'PERROTTA',     pos:'med',v:80},{n:'INZAGHI F.',     pos:'del',sp:'dc', v:81},
+  ]},
+  { año:2012, jugadores:[
+    {n:'BUFFON',       pos:'pt', v:89},{n:'MARCHETTI',      pos:'pt', v:80},
+    {n:'ABATE',        pos:'def',sp:'lb',v:82},{n:'CHIELLINI',     pos:'def',sp:'cb',v:88},
+    {n:'BONUCCI',      pos:'def',sp:'cb',v:87},{n:'BARZAGLI',      pos:'def',sp:'cb',v:85},
+    {n:'PIRLO',        pos:'med',v:90},{n:'DE ROSSI',       pos:'med',v:86},{n:'MONTOLIVO',pos:'med',v:82},
+    {n:'BALOTELLI',    pos:'del',sp:'dc', v:86},{n:'CASSANO',      pos:'del',sp:'ext',v:84},
+    {n:'GIOVINCO',     pos:'del',sp:'ext',v:82},{n:'DIAMANTI',     pos:'med',v:80},
+    {n:'NOCERINO',     pos:'med',v:80},{n:'AQUILANI',       pos:'med',v:81},
+  ]},
+  { año:2016, jugadores:[
+    {n:'BUFFON',       pos:'pt', v:88},{n:'SIRIGU',         pos:'pt', v:82},
+    {n:'DE SCIGLIO',   pos:'def',sp:'lb',v:80},{n:'CHIELLINI',     pos:'def',sp:'cb',v:88},
+    {n:'BONUCCI',      pos:'def',sp:'cb',v:89},{n:'BARZAGLI',      pos:'def',sp:'cb',v:84},
+    {n:'PIRLO',        pos:'med',v:88},{n:'DE ROSSI',       pos:'med',v:84},{n:'PAROLO',  pos:'med',v:80},
+    {n:'INSIGNE',      pos:'del',sp:'ext',v:85},{n:'PELLÉ',        pos:'del',sp:'dc', v:82},
+    {n:'EDER',         pos:'del',sp:'ext',v:80},{n:'EL SHAARAWY',  pos:'del',sp:'ext',v:82},
+    {n:'FLORENZI',     pos:'def',sp:'lb',v:82},{n:'CANDREVA',      pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2021, jugadores:[
+    {n:'DONNARUMMA',   pos:'pt', v:92},{n:'SIRIGU',         pos:'pt', v:79},
+    {n:'DI LORENZO',   pos:'def',sp:'lb',v:80},{n:'CHIELLINI',     pos:'def',sp:'cb',v:88},
+    {n:'BONUCCI',      pos:'def',sp:'cb',v:88},{n:'EMERSON',       pos:'def',sp:'lb',v:78},
+    {n:'JORGINHO',     pos:'med',v:86},{n:'VERRATTI',       pos:'med',v:88},{n:'BARELLA', pos:'med',v:87},
+    {n:'CHIESA',       pos:'del',sp:'ext',v:86},{n:'INSIGNE',      pos:'del',sp:'ext',v:86},
+    {n:'IMMOBILE',     pos:'del',sp:'dc', v:86},{n:'BERARDI',      pos:'del',sp:'ext',v:81},
+  ]},
+  { año:2024, jugadores:[
+    {n:'DONNARUMMA',   pos:'pt', v:90},{n:'MERET',          pos:'pt', v:82},
+    {n:'DI LORENZO',   pos:'def',sp:'lb',v:84},{n:'BASTONI',       pos:'def',sp:'cb',v:87},
+    {n:'CALAFIORI',    pos:'def',sp:'cb',v:83},{n:'DIMARCO',       pos:'def',sp:'lb',v:84},
+    {n:'BARELLA',      pos:'med',v:88},{n:'JORGINHO',       pos:'med',v:84},{n:'FRATTESI', pos:'med',v:83},
+    {n:'CHIESA',       pos:'del',sp:'ext',v:86},{n:'SCAMACCA',     pos:'del',sp:'dc', v:83},
+    {n:'PELLEGRINI',   pos:'med',v:84},{n:'RETEGUI',        pos:'del',sp:'dc', v:81},
+    {n:'ZACCAGNI',     pos:'del',sp:'ext',v:82},{n:'FAGIOLI',      pos:'med',v:80},
+  ]},
+]},
+
+/* ── PAÍSES BAJOS ── */
+{ id:'netherlands', nombre:'Países Bajos', flag:'🇳🇱', ediciones:[
+  { año:1976, jugadores:[
+    {n:'Schrijvers',   pos:'pt', v:82},{n:'Jongbloed',     pos:'pt', v:79},
+    {n:'Suurbier',     pos:'def',sp:'lb',v:80},{n:'Rijsbergen',    pos:'def',sp:'cb',v:79},
+    {n:'Krol',         pos:'def',sp:'cb',v:86},{n:'Poortvliet',    pos:'def',sp:'lb',v:76},
+    {n:'Neeskens',     pos:'med',v:89},{n:'W. Van Hanegem', pos:'med',v:87},{n:'Haan',   pos:'med',v:80},
+    {n:'Rensenbrink',  pos:'del',sp:'ext',v:87},{n:'Rep',           pos:'del',sp:'dc', v:82},
+    {n:'Cruyff',       pos:'del',sp:'ext',v:99},{n:'Van der Kerkhof',pos:'del',sp:'ext',v:81},
+  ]},
+  { año:1988, jugadores:[
+    {n:'Van Breukelen',pos:'pt', v:87},{n:'Menzo',         pos:'pt', v:76},
+    {n:'Van Aerle',    pos:'def',sp:'lb',v:78},{n:'Koeman R.',     pos:'def',sp:'cb',v:89},
+    {n:'Koeman E.',    pos:'def',sp:'cb',v:78},{n:'Van Tiggelen',  pos:'def',sp:'lb',v:79},
+    {n:'Rijkaard',     pos:'med',v:91},{n:'Wouters',       pos:'med',v:80},{n:'Muhren',  pos:'med',v:84},
+    {n:'Van Basten',   pos:'del',sp:'dc', v:97},{n:'Gullit',       pos:'del',sp:'ext',v:95},
+    {n:'Vanenburg',    pos:'del',sp:'ext',v:79},{n:'Winter',       pos:'med',v:77},
+  ]},
+  { año:2000, jugadores:[
+    {n:'Van der Sar',  pos:'pt', v:88},{n:'Westerveld',    pos:'pt', v:78},
+    {n:'Stam',         pos:'def',sp:'cb',v:90},{n:'Frank de Boer', pos:'def',sp:'cb',v:86},
+    {n:'Van Bronckhorst',pos:'def',sp:'lb',v:82},{n:'Reiziger',    pos:'def',sp:'lb',v:80},
+    {n:'Davids',       pos:'med',v:88},{n:'Seedorf',       pos:'med',v:87},{n:'Cocu',    pos:'med',v:82},
+    {n:'Bergkamp',     pos:'del',sp:'dc', v:93},{n:'Kluivert',     pos:'del',sp:'dc', v:87},
+    {n:'Overmars',     pos:'del',sp:'ext',v:88},{n:'Zenden',       pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2008, jugadores:[
+    {n:'VAN DER SAR',  pos:'pt', v:87},{n:'STEKELENBURG',   pos:'pt', v:81},
+    {n:'VAN BRONCKHORST',pos:'def',sp:'lb',v:84},{n:'OOIJER',     pos:'def',sp:'cb',v:79},
+    {n:'MATHIJSEN',    pos:'def',sp:'cb',v:80},{n:'BOULAHROUZ',    pos:'def',sp:'cb',v:79},
+    {n:'SNEIJDER',     pos:'med',v:90},{n:'VAN DER VAART',  pos:'med',v:86},{n:'DE JONG',  pos:'med',v:83},
+    {n:'ROBBEN',       pos:'del',sp:'ext',v:90},{n:'VAN PERSIE',  pos:'del',sp:'dc', v:87},
+    {n:'VAN NISTELROOY',pos:'del',sp:'dc', v:86},{n:'KUYT',       pos:'del',sp:'ext',v:83},
+    {n:'AFELLAY',      pos:'del',sp:'ext',v:80},{n:'ENGELAAR',    pos:'med',v:78},
+  ]},
+  { año:2012, jugadores:[
+    {n:'STEKELENBURG', pos:'pt', v:82},{n:'KRUL',           pos:'pt', v:79},
+    {n:'PIETERS',      pos:'def',sp:'lb',v:80},{n:'VLAAR',         pos:'def',sp:'cb',v:82},
+    {n:'HEITINGA',     pos:'def',sp:'cb',v:82},{n:'VAN BRONCKHORST',pos:'def',sp:'lb',v:77},
+    {n:'SNEIJDER',     pos:'med',v:89},{n:'DE JONG',        pos:'med',v:82},{n:'STROOTMAN',pos:'med',v:82},
+    {n:'ROBBEN',       pos:'del',sp:'ext',v:91},{n:'VAN PERSIE',  pos:'del',sp:'dc', v:91},
+    {n:'HUNTELAAR',    pos:'del',sp:'dc', v:85},{n:'KUYT',         pos:'del',sp:'ext',v:82},
+    {n:'VAN DER VAART',pos:'med',v:84},{n:'AFELLAY',        pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2021, jugadores:[
+    {n:'STEKELENBURG', pos:'pt', v:77},{n:'BIJLOW',         pos:'pt', v:81},
+    {n:'DUMFRIES',     pos:'def',sp:'lb',v:84},{n:'DE LIGT',       pos:'def',sp:'cb',v:87},
+    {n:'DE VRIJ',      pos:'def',sp:'cb',v:87},{n:'BLIND',         pos:'def',sp:'lb',v:82},
+    {n:'DE JONG F.',   pos:'med',v:89},{n:'WIJNALDUM',      pos:'med',v:88},{n:'DE ROON',  pos:'med',v:82},
+    {n:'DEPAY',        pos:'del',sp:'dc', v:88},{n:'WEGHORST',     pos:'del',sp:'dc', v:83},
+    {n:'BERGHUIS',     pos:'del',sp:'ext',v:83},{n:'MALEN',        pos:'del',sp:'ext',v:82},
+    {n:'PROMES',       pos:'del',sp:'ext',v:81},{n:'KLAASSEN',     pos:'med',v:81},
+  ]},
+  { año:2024, jugadores:[
+    {n:'FLEKKEN',      pos:'pt', v:80},{n:'BIJLOW',         pos:'pt', v:78},
+    {n:'DUMFRIES',     pos:'def',sp:'lb',v:82},{n:'DE LIGT',       pos:'def',sp:'cb',v:86},
+    {n:'VAN DIJK',     pos:'def',sp:'cb',v:90},{n:'BLIND',         pos:'def',sp:'lb',v:78},
+    {n:'DE JONG F.',   pos:'med',v:89},{n:'SIMONS',         pos:'med',v:83},{n:'SCHOUTEN', pos:'med',v:78},
+    {n:'GAKPO',        pos:'del',sp:'ext',v:86},{n:'DEPAY',        pos:'del',sp:'dc', v:86},
+    {n:'VEERMAN',      pos:'med',v:80},{n:'MAATSEN',        pos:'def',sp:'lb',v:79},
+  ]},
+]},
+
+/* ── INGLATERRA ── */
+{ id:'england', nombre:'Inglaterra', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', ediciones:[
+  { año:1968, jugadores:[
+    {n:'Banks',        pos:'pt', v:93},{n:'Stepney',       pos:'pt', v:78},
+    {n:'Cohen',        pos:'def',sp:'lb',v:80},{n:'Moore',         pos:'def',sp:'cb',v:93},
+    {n:'Charlton J.',  pos:'def',sp:'cb',v:82},{n:'Wilson R.',     pos:'def',sp:'lb',v:79},
+    {n:'Stiles',       pos:'med',v:80},{n:'Charlton B.',   pos:'med',v:92},{n:'Ball',    pos:'med',v:85},
+    {n:'Hurst',        pos:'del',sp:'dc', v:87},{n:'Peters',       pos:'del',sp:'ext',v:84},
+    {n:'Greaves',      pos:'del',sp:'dc', v:90},{n:'Osgood',       pos:'del',sp:'dc', v:79},
+  ]},
+  { año:1996, jugadores:[
+    {n:'Seaman',       pos:'pt', v:87},{n:'Walker I.',     pos:'pt', v:78},
+    {n:'Adams',        pos:'def',sp:'cb',v:86},{n:'Pearce',        pos:'def',sp:'lb',v:83},
+    {n:'Neville G.',   pos:'def',sp:'lb',v:80},{n:'Campbell',      pos:'def',sp:'cb',v:84},
+    {n:'Ince',         pos:'med',v:83},{n:'Gascoigne',     pos:'med',v:89},{n:'McManaman',pos:'med',v:83},
+    {n:'Shearer',      pos:'del',sp:'dc', v:92},{n:'Sheringham',   pos:'del',sp:'dc', v:85},
+    {n:'Anderton',     pos:'del',sp:'ext',v:79},{n:'Platt',        pos:'med',v:81},
+  ]},
+  { año:2004, jugadores:[
+    {n:'James D.',     pos:'pt', v:82},{n:'Robinson P.',   pos:'pt', v:79},
+    {n:'Neville G.',   pos:'def',sp:'lb',v:79},{n:'Terry',         pos:'def',sp:'cb',v:87},
+    {n:'Campbell',     pos:'def',sp:'cb',v:86},{n:'Ashley Cole',   pos:'def',sp:'lb',v:84},
+    {n:'Lampard',      pos:'med',v:88},{n:'Gerrard',       pos:'med',v:89},{n:'Beckham', pos:'med',v:86},
+    {n:'Owen',         pos:'del',sp:'dc', v:85},{n:'Rooney',       pos:'del',sp:'dc', v:87},
+    {n:'Scholes',      pos:'med',v:88},{n:'Heskey',        pos:'del',sp:'dc', v:78},
+  ]},
+  { año:2021, jugadores:[
+    {n:'Pickford',     pos:'pt', v:84},{n:'Henderson J.',  pos:'pt', v:76},
+    {n:'Walker K.',    pos:'def',sp:'lb',v:83},{n:'Stones',        pos:'def',sp:'cb',v:85},
+    {n:'Maguire',      pos:'def',sp:'cb',v:82},{n:'Trippier',      pos:'def',sp:'lb',v:82},
+    {n:'Bellingham',   pos:'med',v:88},{n:'Henderson J.',  pos:'med',v:82},{n:'Phillips',pos:'med',v:81},
+    {n:'STERLING',     pos:'del',sp:'ext',v:85},{n:'KANE',          pos:'del',sp:'dc', v:90},
+    {n:'SAKA',         pos:'del',sp:'ext',v:85},{n:'GREALISH',     pos:'del',sp:'ext',v:84},
+  ]},
+  { año:2012, jugadores:[
+    {n:'HART',         pos:'pt', v:86},{n:'GREEN',          pos:'pt', v:77},
+    {n:'COLE A.',      pos:'def',sp:'lb',v:84},{n:'JOHNSON G.',    pos:'def',sp:'lb',v:82},
+    {n:'TERRY',        pos:'def',sp:'cb',v:86},{n:'LESCOTT',       pos:'def',sp:'cb',v:82},
+    {n:'GERRARD',      pos:'med',v:87},{n:'LAMPARD',        pos:'med',v:87},{n:'PARKER',   pos:'med',v:82},
+    {n:'ROONEY',       pos:'del',sp:'dc', v:89},{n:'WELBECK',      pos:'del',sp:'dc', v:82},
+    {n:'WALCOTT',      pos:'del',sp:'ext',v:83},{n:'YOUNG A.',     pos:'del',sp:'ext',v:81},
+    {n:'HENDERSON',    pos:'med',v:81},{n:'MILNER',         pos:'med',v:82},
+  ]},
+  { año:2016, jugadores:[
+    {n:'HART',         pos:'pt', v:85},{n:'BUTLAND',        pos:'pt', v:80},
+    {n:'WALKER',       pos:'def',sp:'lb',v:83},{n:'CAHILL',        pos:'def',sp:'cb',v:84},
+    {n:'SMALLING',     pos:'def',sp:'cb',v:83},{n:'ROSE',          pos:'def',sp:'lb',v:82},
+    {n:'ROONEY',       pos:'med',v:86},{n:'ALLI',           pos:'med',v:85},{n:'HENDERSON',pos:'med',v:83},
+    {n:'VARDY',        pos:'del',sp:'dc', v:85},{n:'KANE',         pos:'del',sp:'dc', v:85},
+    {n:'STERLING',     pos:'del',sp:'ext',v:84},{n:'RASHFORD',     pos:'del',sp:'ext',v:82},
+    {n:'DIER',         pos:'med',v:82},{n:'WILSHERE',       pos:'med',v:81},
+  ]},
+  { año:2024, jugadores:[
+    {n:'PICKFORD',     pos:'pt', v:85},{n:'HENDERSON D.',   pos:'pt', v:79},
+    {n:'WALKER',       pos:'def',sp:'lb',v:83},{n:'TRIPPIER',      pos:'def',sp:'lb',v:83},
+    {n:'STONES',       pos:'def',sp:'cb',v:85},{n:'GUEHI',         pos:'def',sp:'cb',v:83},
+    {n:'RICE',         pos:'med',v:88},{n:'BELLINGHAM',     pos:'med',v:90},{n:'A-ARNOLD',  pos:'med',v:87},
+    {n:'SAKA',         pos:'del',sp:'ext',v:88},{n:'FODEN',        pos:'del',sp:'ext',v:88},
+    {n:'KANE',         pos:'del',sp:'dc', v:90},{n:'WATKINS',      pos:'del',sp:'dc', v:84},
+    {n:'PALMER',       pos:'med',v:86},{n:'MAINOO',         pos:'med',v:82},
+  ]},
+]},
+
+/* ── PORTUGAL ── */
+{ id:'portugal', nombre:'Portugal', flag:'🇵🇹', ediciones:[
+  { año:1984, jugadores:[
+    {n:'Bento',        pos:'pt', v:82},{n:'Vítor Damas',   pos:'pt', v:76},
+    {n:'Álvaro',       pos:'def',sp:'lb',v:76},{n:'Eurico',        pos:'def',sp:'cb',v:78},
+    {n:'Inácio',       pos:'def',sp:'cb',v:80},{n:'Dito',          pos:'def',sp:'lb',v:74},
+    {n:'Sousa J.',     pos:'med',v:80},{n:'Chalana',       pos:'med',v:85},{n:'Diamantino',pos:'del',sp:'ext',v:81},
+    {n:'Nené',         pos:'med',v:82},{n:'Rui Jordão',    pos:'del',sp:'dc', v:82},
+    {n:'Gomes',        pos:'del',sp:'dc', v:77},{n:'Pacheco',      pos:'del',sp:'ext',v:75},
+  ]},
+  { año:2004, jugadores:[
+    {n:'Ricardo P.',   pos:'pt', v:83},{n:'Quim',          pos:'pt', v:76},
+    {n:'Miguel',       pos:'def',sp:'lb',v:78},{n:'Fernando Couto',pos:'def',sp:'cb',v:83},
+    {n:'Carvalho R.',  pos:'def',sp:'cb',v:85},{n:'Nuno Valente',  pos:'def',sp:'lb',v:79},
+    {n:'Costinha',     pos:'med',v:79},{n:'Deco',          pos:'med',v:89},{n:'Maniche',  pos:'med',v:83},
+    {n:'Figo',         pos:'del',sp:'ext',v:91},{n:'Ronaldo',      pos:'del',sp:'ext',v:89},
+    {n:'Pauleta',      pos:'del',sp:'dc', v:84},{n:'Simão',        pos:'del',sp:'ext',v:81},
+  ]},
+  { año:2008, jugadores:[
+    {n:'RICARDO P.',   pos:'pt', v:82},{n:'QUIM',           pos:'pt', v:77},
+    {n:'BOSINGWA',     pos:'def',sp:'lb',v:81},{n:'FERREIRA P.',   pos:'def',sp:'lb',v:80},
+    {n:'CARVALHO R.',  pos:'def',sp:'cb',v:87},{n:'PEPE',          pos:'def',sp:'cb',v:86},
+    {n:'DECO',         pos:'med',v:87},{n:'TIAGO',          pos:'med',v:83},{n:'MOUTINHO',pos:'med',v:83},
+    {n:'SIMÃO',        pos:'del',sp:'ext',v:84},{n:'RONALDO',      pos:'del',sp:'ext',v:95},
+    {n:'NANI',         pos:'del',sp:'ext',v:83},{n:'HUGO ALMEIDA', pos:'del',sp:'dc', v:82},
+    {n:'POSTIGA',      pos:'del',sp:'dc', v:79},{n:'PETIT',        pos:'med',v:79},
+  ]},
+  { año:2012, jugadores:[
+    {n:'RUI PATRÍCIO', pos:'pt', v:84},{n:'EDUARDO',        pos:'pt', v:78},
+    {n:'COENTRAO',     pos:'def',sp:'lb',v:84},{n:'JOAO PEREIRA',  pos:'def',sp:'lb',v:79},
+    {n:'PEPE',         pos:'def',sp:'cb',v:87},{n:'BRUNO ALVES',   pos:'def',sp:'cb',v:82},
+    {n:'MOUTINHO',     pos:'med',v:85},{n:'VELOSO',         pos:'med',v:80},{n:'RONALDO',  pos:'del',sp:'ext',v:96},
+    {n:'NANI',         pos:'del',sp:'ext',v:85},{n:'HUGO ALMEIDA', pos:'del',sp:'dc', v:82},
+    {n:'POSTIGA',      pos:'del',sp:'dc', v:79},{n:'VARELA',       pos:'del',sp:'ext',v:79},
+    {n:'CUSTODIO',     pos:'med',v:78},{n:'WILLIAM',        pos:'med',v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'RUI PATRÍCIO', pos:'pt', v:86},{n:'ANTHONY LOPES',  pos:'pt', v:83},
+    {n:'SEMEDO',       pos:'def',sp:'lb',v:83},{n:'GUERREIRO',     pos:'def',sp:'lb',v:85},
+    {n:'PEPE',         pos:'def',sp:'cb',v:83},{n:'DIAS',          pos:'def',sp:'cb',v:88},
+    {n:'B. FERNANDES', pos:'med',v:90},{n:'SANCHES R.',     pos:'med',v:83},{n:'PALHINHA',pos:'med',v:83},
+    {n:'RONALDO',      pos:'del',sp:'dc', v:93},{n:'JOTA D.',      pos:'del',sp:'ext',v:86},
+    {n:'JOAO FELIX',   pos:'del',sp:'ext',v:87},{n:'ANDRE SILVA',  pos:'del',sp:'dc', v:83},
+    {n:'JOAO CANCELO', pos:'def',sp:'lb',v:86},{n:'CARVALHO R2.',  pos:'med',v:82},
+  ]},
+  { año:2016, jugadores:[
+    {n:'RUI PATRÍCIO', pos:'pt', v:85},{n:'BETO',           pos:'pt', v:75},
+    {n:'Vieirinha',    pos:'def',sp:'lb',v:79},{n:'Fonte',         pos:'def',sp:'cb',v:82},
+    {n:'Pepe',         pos:'def',sp:'cb',v:85},{n:'Guerreiro',     pos:'def',sp:'lb',v:81},
+    {n:'W. Carvalho',  pos:'med',v:82},{n:'Moutinho',      pos:'med',v:84},{n:'R. Sanches',pos:'med',v:82},
+    {n:'Quaresma',     pos:'del',sp:'ext',v:82},{n:'Ronaldo',      pos:'del',sp:'dc', v:96},
+    {n:'Nani',         pos:'del',sp:'ext',v:82},{n:'Éder',         pos:'del',sp:'dc', v:77},
+  ]},
+  { año:2024, jugadores:[
+    {n:'Costa D.',     pos:'pt', v:84},{n:'Rui Patrício',  pos:'pt', v:79},
+    {n:'Dalot',        pos:'def',sp:'lb',v:81},{n:'Rúben Dias',    pos:'def',sp:'cb',v:90},
+    {n:'Nuno Mendes',  pos:'def',sp:'lb',v:83},{n:'Cancelo',       pos:'def',sp:'lb',v:84},
+    {n:'Vitinha',      pos:'med',v:85},{n:'Bruno Fernandes',pos:'med',v:88},{n:'Palhinha',pos:'med',v:83},
+    {n:'Ronaldo',      pos:'del',sp:'dc', v:89},{n:'Leão',         pos:'del',sp:'ext',v:88},
+    {n:'Félix',        pos:'del',sp:'ext',v:84},{n:'G. Ramos',     pos:'del',sp:'dc', v:84},
+  ]},
+]},
+
+/* ── UNIÓN SOVIÉTICA ── */
+{ id:'ussr', nombre:'Unión Soviética', flag:'🇷🇺', ediciones:[
+  { año:1960, jugadores:[
+    {n:'Yashin',       pos:'pt', v:99},{n:'Belyaev',       pos:'pt', v:78},
+    {n:'Voinov',       pos:'def',sp:'cb',v:79},{n:'Maslenkin',     pos:'def',sp:'cb',v:78},
+    {n:'Krutikov',     pos:'def',sp:'lb',v:75},{n:'Tsarev',        pos:'def',sp:'lb',v:74},
+    {n:'Netto',        pos:'med',v:84},{n:'Voronin',       pos:'med',v:82},{n:'Meshki',  pos:'med',v:77},
+    {n:'Ivanov',       pos:'del',sp:'ext',v:82},{n:'Ponedelnik',   pos:'del',sp:'dc', v:80},
+    {n:'Bubukin',      pos:'del',sp:'dc', v:78},{n:'Metreveli',    pos:'del',sp:'ext',v:80},
+  ]},
+  { año:1988, jugadores:[
+    {n:'Dasayev',      pos:'pt', v:87},{n:'Cherchesov',    pos:'pt', v:78},
+    {n:'Demianenko',   pos:'def',sp:'lb',v:80},{n:'Rats',          pos:'def',sp:'lb',v:79},
+    {n:'Khidiatulin',  pos:'def',sp:'cb',v:79},{n:'Baltacha',      pos:'def',sp:'cb',v:77},
+    {n:'Litovchenko',  pos:'med',v:82},{n:'Mikhailichenko', pos:'med',v:84},{n:'Zavarov', pos:'med',v:83},
+    {n:'Belanov',      pos:'del',sp:'ext',v:87},{n:'Protasov',     pos:'del',sp:'dc', v:84},
+    {n:'Borodyuk',     pos:'del',sp:'dc', v:78},{n:'Dobrovolsky',  pos:'med',v:81},
+  ]},
+]},
+
+/* ── CHECOSLOVAQUIA / REP. CHECA ── */
+{ id:'czech', nombre:'Checoslovaquia', flag:'🇨🇿', ediciones:[
+  { año:1960, jugadores:[
+    {n:'Schrojf',      pos:'pt', v:84},{n:'Dolejsi',       pos:'pt', v:73},
+    {n:'Lala',         pos:'def',sp:'lb',v:76},{n:'Pluskal',       pos:'def',sp:'cb',v:78},
+    {n:'Popluhar',     pos:'def',sp:'cb',v:79},{n:'Novak',         pos:'def',sp:'lb',v:74},
+    {n:'Masopust',     pos:'med',v:88},{n:'Bubník',        pos:'med',v:80},{n:'Kvasnak',pos:'med',v:77},
+    {n:'Kvašňák',      pos:'del',sp:'dc', v:79},{n:'Kraus',        pos:'del',sp:'dc', v:77},
+    {n:'Šťastný',      pos:'del',sp:'ext',v:78},{n:'Jelínek',      pos:'del',sp:'ext',v:76},
+  ]},
+  { año:1976, jugadores:[
+    {n:'Viktor',       pos:'pt', v:87},{n:'Hruška',        pos:'pt', v:74},
+    {n:'Dobiaš',       pos:'def',sp:'cb',v:78},{n:'Ončrus',        pos:'def',sp:'cb',v:80},
+    {n:'Pivarník',     pos:'def',sp:'lb',v:78},{n:'Bíčovský',      pos:'def',sp:'lb',v:76},
+    {n:'Švehlík',      pos:'med',v:79},{n:'Moder',         pos:'med',v:77},{n:'Panenka', pos:'med',v:86},
+    {n:'Masný',        pos:'del',sp:'ext',v:82},{n:'Nèhoda',       pos:'del',sp:'dc', v:84},
+    {n:'Petráš',       pos:'del',sp:'ext',v:79},{n:'Čapkovič',     pos:'del',sp:'dc', v:81},
+  ]},
+  { año:1996, jugadores:[
+    {n:'KOUBA',        pos:'pt', v:81},{n:'SRNIČEK',        pos:'pt', v:78},
+    {n:'KADLEC',       pos:'def',sp:'cb',v:80},{n:'HORNAK',        pos:'def',sp:'cb',v:78},
+    {n:'SUCHOPÁREK',   pos:'def',sp:'lb',v:76},{n:'NOVÁK H.',      pos:'def',sp:'lb',v:74},
+    {n:'BEJBL',        pos:'med',v:79},{n:'NEDVĚD',         pos:'med',v:87},{n:'BERGER',  pos:'med',v:83},
+    {n:'POBORSKÝ',     pos:'del',sp:'ext',v:82},{n:'ŠMICER',       pos:'del',sp:'ext',v:80},
+    {n:'KUKA',         pos:'del',sp:'dc', v:81},{n:'FRÝDEK',       pos:'med',v:76},
+  ]},
+  { año:2008, jugadores:[
+    {n:'ČECH',         pos:'pt', v:90},{n:'BLAŽEK',         pos:'pt', v:77},
+    {n:'UJFALUŠI',     pos:'def',sp:'cb',v:82},{n:'ROZEHNAL',      pos:'def',sp:'cb',v:80},
+    {n:'GRYGERA',      pos:'def',sp:'lb',v:79},{n:'JANKULOVSKI',   pos:'def',sp:'lb',v:82},
+    {n:'GALÁSEK',      pos:'med',v:79},{n:'ROSICKÝ',        pos:'del',sp:'ext',v:85},{n:'PLAŠIL', pos:'med',v:82},
+    {n:'BAROŠ',        pos:'del',sp:'dc', v:83},{n:'KOLLER',       pos:'del',sp:'dc', v:80},
+    {n:'SIONKO',       pos:'del',sp:'ext',v:78},{n:'POLÁK',        pos:'med',v:79},
+    {n:'FENIN',        pos:'del',sp:'dc', v:78},{n:'MATĚJOVSKÝ',   pos:'med',v:77},
+  ]},
+  { año:2012, jugadores:[
+    {n:'ČECH',         pos:'pt', v:91},{n:'VACLÍK',         pos:'pt', v:78},
+    {n:'GEBRE SELASSIE',pos:'def',sp:'lb',v:79},{n:'SIVOK',        pos:'def',sp:'cb',v:80},
+    {n:'KADLEC M.',    pos:'def',sp:'lb',v:80},{n:'LIMBERSKÝ',     pos:'def',sp:'lb',v:79},
+    {n:'ROSICKÝ',      pos:'del',sp:'ext',v:84},{n:'PLAŠIL',       pos:'med',v:81},{n:'JIRÁČEK',pos:'med',v:82},
+    {n:'BAROŠ',        pos:'del',sp:'dc', v:81},{n:'NEČID',        pos:'del',sp:'dc', v:80},
+    {n:'REZEK',        pos:'del',sp:'ext',v:78},{n:'DARIDA',       pos:'med',v:80},
+    {n:'HUBSCHMAN',    pos:'med',v:79},{n:'PILAR',          pos:'del',sp:'ext',v:81},
+  ]},
+  { año:2016, jugadores:[
+    {n:'ČECH',         pos:'pt', v:89},{n:'VACLÍK',         pos:'pt', v:82},
+    {n:'KADEŘÁBEK',    pos:'def',sp:'lb',v:81},{n:'SIVOK',         pos:'def',sp:'cb',v:79},
+    {n:'SUCHÝ',        pos:'def',sp:'cb',v:80},{n:'LIMBERSKÝ',     pos:'def',sp:'lb',v:79},
+    {n:'DARIDA',       pos:'med',v:82},{n:'ROSICKÝ',        pos:'del',sp:'ext',v:83},{n:'DOČKAL', pos:'med',v:82},
+    {n:'NEČID',        pos:'del',sp:'dc', v:80},{n:'VYDRA',        pos:'del',sp:'dc', v:80},
+    {n:'SOUČEK',       pos:'med',v:80},{n:'PILAR',          pos:'del',sp:'ext',v:80},
+    {n:'KADLEC M.',    pos:'def',sp:'lb',v:79},{n:'KRMENCÍK',      pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'VACLÍK',       pos:'pt', v:84},{n:'KOVÁŘ',          pos:'pt', v:78},
+    {n:'COUFAL',       pos:'def',sp:'lb',v:83},{n:'BOŘIL',         pos:'def',sp:'lb',v:80},
+    {n:'ČELŮSTKA',     pos:'def',sp:'cb',v:80},{n:'KALÁS',         pos:'def',sp:'cb',v:80},
+    {n:'SOUČEK',       pos:'med',v:87},{n:'DARIDA',         pos:'med',v:82},{n:'BARÁK',   pos:'med',v:83},
+    {n:'SCHICK',       pos:'del',sp:'dc', v:85},{n:'KRMENCÍK',     pos:'del',sp:'dc', v:80},
+    {n:'JANKTO',       pos:'del',sp:'ext',v:80},{n:'MASOPUST',     pos:'del',sp:'ext',v:79},
+    {n:'VYDRA',        pos:'del',sp:'dc', v:80},{n:'SADÍLEK',      pos:'med',v:78},
+  ]},
+  { año:2024, jugadores:[
+    {n:'STANĚK',       pos:'pt', v:82},{n:'KOVÁŘ',          pos:'pt', v:79},
+    {n:'COUFAL',       pos:'def',sp:'lb',v:83},{n:'BOŘIL',         pos:'def',sp:'lb',v:80},
+    {n:'BRABEC',       pos:'def',sp:'cb',v:79},{n:'HOLES',         pos:'med',v:83},
+    {n:'SOUČEK',       pos:'med',v:87},{n:'BARÁK',          pos:'med',v:82},{n:'PROVOD',  pos:'del',sp:'ext',v:81},
+    {n:'SCHICK',       pos:'del',sp:'dc', v:85},{n:'CHYTIL',       pos:'del',sp:'dc', v:81},
+    {n:'LINGR',        pos:'del',sp:'ext',v:79},{n:'ČERNÝ',        pos:'del',sp:'ext',v:80},
+    {n:'OGBU',         pos:'del',sp:'ext',v:78},{n:'SADÍLEK',      pos:'med',v:78},
+  ]},
+]},
+
+/* ── DINAMARCA ── */
+{ id:'denmark', nombre:'Dinamarca', flag:'🇩🇰', ediciones:[
+  { año:1984, jugadores:[
+    {n:'Qvist',        pos:'pt', v:78},{n:'Busk',          pos:'pt', v:73},
+    {n:'Lerby',        pos:'def',sp:'cb',v:82},{n:'Busk S.',       pos:'def',sp:'cb',v:78},
+    {n:'Olsen M.',     pos:'def',sp:'lb',v:80},{n:'Sivebæk',       pos:'def',sp:'lb',v:77},
+    {n:'Bertelsen',    pos:'med',v:77},{n:'Arnesen',       pos:'med',v:82},{n:'Elkjær',  pos:'del',sp:'ext',v:87},
+    {n:'Laudrup M.',   pos:'del',sp:'ext',v:88},{n:'Nielsen S.E.', pos:'del',sp:'dc', v:79},
+    {n:'Hansen J.',    pos:'del',sp:'dc', v:77},{n:'Mølby',        pos:'med',v:83},
+  ]},
+  { año:1992, jugadores:[
+    {n:'Schmeichel',   pos:'pt', v:93},{n:'Krogh',         pos:'pt', v:74},
+    {n:'Sivebæk',      pos:'def',sp:'lb',v:77},{n:'Olsen M.',      pos:'def',sp:'cb',v:82},
+    {n:'Christofte',   pos:'def',sp:'cb',v:79},{n:'Piechnik',      pos:'def',sp:'lb',v:75},
+    {n:'Jensen J.',    pos:'med',v:78},{n:'Povlsen',       pos:'med',v:79},{n:'Vilfort',  pos:'med',v:82},
+    {n:'Laudrup B.',   pos:'del',sp:'ext',v:85},{n:'Laudrup M.',   pos:'del',sp:'ext',v:91},
+    {n:'Jensen B.',    pos:'del',sp:'dc', v:82},{n:'Elstrup',      pos:'del',sp:'dc', v:76},
+  ]},
+  { año:2012, jugadores:[
+    {n:'SØRENSEN',     pos:'pt', v:81},{n:'ANDERSEN K.',    pos:'pt', v:76},
+    {n:'AGGER',        pos:'def',sp:'cb',v:85},{n:'KJÆR',          pos:'def',sp:'cb',v:84},
+    {n:'BOILESEN',     pos:'def',sp:'lb',v:78},{n:'JACOBSEN L.',   pos:'def',sp:'lb',v:79},
+    {n:'KVIST',        pos:'med',v:80},{n:'ROMMEDAHL',      pos:'del',sp:'ext',v:82},{n:'ERIKSEN',pos:'med',v:87},
+    {n:'KROHN-DEHLI',  pos:'med',v:81},{n:'BENDTNER',      pos:'del',sp:'dc', v:82},
+    {n:'POULSEN',      pos:'del',sp:'ext',v:80},{n:'CHRISTIAN P.', pos:'def',sp:'cb',v:79},
+    {n:'SILBERBAUER',  pos:'med',v:77},{n:'SCHÖNE',         pos:'med',v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'SCHMEICHEL K.',pos:'pt', v:83},{n:'RØNNOW',         pos:'pt', v:75},
+    {n:'WASS',         pos:'def',sp:'lb',v:78},{n:'KJÆR',          pos:'def',sp:'cb',v:83},
+    {n:'CHRISTENSEN A.',pos:'def',sp:'cb',v:84},{n:'MÆHLE',        pos:'def',sp:'lb',v:80},
+    {n:'DELANEY',      pos:'med',v:81},{n:'HØJBJERG',       pos:'med',v:84},{n:'ERIKSEN',  pos:'med',v:88},
+    {n:'BRAITHWAITE',  pos:'del',sp:'dc', v:79},{n:'DOLBERG',      pos:'del',sp:'dc', v:80},
+    {n:'DAMSGAARD',    pos:'del',sp:'ext',v:80},{n:'WIND',         pos:'del',sp:'dc', v:77},
+  ]},
+  { año:2024, jugadores:[
+    {n:'SCHMEICHEL K.',pos:'pt', v:83},{n:'FLEKKEN',        pos:'pt', v:79},
+    {n:'ANDERSEN J.',  pos:'def',sp:'cb',v:87},{n:'CHRISTENSEN A.',pos:'def',sp:'cb',v:87},
+    {n:'VESTERGAARD',  pos:'def',sp:'cb',v:83},{n:'MÆHLE',         pos:'def',sp:'lb',v:83},
+    {n:'HØJBJERG',     pos:'med',v:86},{n:'ERIKSEN',        pos:'med',v:88},{n:'HJULMAND',pos:'med',v:83},
+    {n:'BRAITHWAITE',  pos:'del',sp:'dc', v:82},{n:'HØJLUND',      pos:'del',sp:'dc', v:85},
+    {n:'WIND',         pos:'del',sp:'dc', v:80},{n:'BAH',          pos:'def',sp:'lb',v:80},
+    {n:'DELANEY',      pos:'med',v:80},{n:'OLSEN',          pos:'del',sp:'ext',v:81},
+  ]},
+]},
+
+/* ── BÉLGICA ── */
+{ id:'belgium', nombre:'Bélgica', flag:'🇧🇪', ediciones:[
+  { año:1980, jugadores:[
+    {n:'Pfaff',        pos:'pt', v:89},{n:'Custers',       pos:'pt', v:74},
+    {n:'Millecamps',   pos:'def',sp:'lb',v:76},{n:'Meeuws',        pos:'def',sp:'cb',v:77},
+    {n:'Renquin',      pos:'def',sp:'lb',v:75},{n:'Gerets',        pos:'def',sp:'lb',v:79},
+    {n:'Van Moer',     pos:'med',v:80},{n:'François VdE',  pos:'med',v:78},{n:'Cools',   pos:'med',v:76},
+    {n:'Ceulemans',    pos:'del',sp:'dc', v:86},{n:'Van der Elst L.',pos:'del',sp:'ext',v:83},
+    {n:'Vandenbergh',  pos:'del',sp:'dc', v:80},{n:'Voordeckers',  pos:'del',sp:'ext',v:76},
+  ]},
+  { año:2000, jugadores:[
+    {n:'De Wolf',      pos:'pt', v:78},{n:'Peeters G.',    pos:'pt', v:74},
+    {n:'Deflandre',    pos:'def',sp:'lb',v:77},{n:'Van Meir',      pos:'def',sp:'cb',v:76},
+    {n:'Staelens',     pos:'def',sp:'cb',v:78},{n:'Peeters B.',    pos:'def',sp:'lb',v:75},
+    {n:'Goor',         pos:'med',v:79},{n:'Nilis',         pos:'del',sp:'dc', v:84},{n:'Wilmots',pos:'del',sp:'dc',v:82},
+    {n:'Mpenza E.',    pos:'del',sp:'ext',v:80},{n:'Van der Elst',  pos:'med',v:77},
+    {n:'Strupar',      pos:'del',sp:'dc', v:79},{n:'Peeters T.',   pos:'med',v:75},
+  ]},
+  { año:2016, jugadores:[
+    {n:'COURTOIS',     pos:'pt', v:91},{n:'MIGNOLET',       pos:'pt', v:83},
+    {n:'ALDERWEIRELD', pos:'def',sp:'cb',v:87},{n:'VERTONGHEN',    pos:'def',sp:'cb',v:87},
+    {n:'CIMAN',        pos:'def',sp:'lb',v:80},{n:'MEUNIER',       pos:'def',sp:'lb',v:80},
+    {n:'DE BRUYNE',    pos:'med',v:91},{n:'WITSEL',         pos:'med',v:85},{n:'NAINGGOLAN',pos:'med',v:85},
+    {n:'HAZARD E.',    pos:'del',sp:'ext',v:91},{n:'LUKAKU',       pos:'del',sp:'dc', v:89},
+    {n:'MERTENS',      pos:'del',sp:'ext',v:87},{n:'CARRASCO',     pos:'del',sp:'ext',v:83},
+    {n:'FELLAINI',     pos:'med',v:83},{n:'CHADLI',         pos:'del',sp:'ext',v:83},
+  ]},
+  { año:2021, jugadores:[
+    {n:'COURTOIS',     pos:'pt', v:93},{n:'MIGNOLET',       pos:'pt', v:81},
+    {n:'ALDERWEIRELD', pos:'def',sp:'cb',v:86},{n:'VERTONGHEN',    pos:'def',sp:'cb',v:84},
+    {n:'CASTAGNE',     pos:'def',sp:'lb',v:83},{n:'MEUNIER',       pos:'def',sp:'lb',v:80},
+    {n:'DE BRUYNE',    pos:'med',v:94},{n:'WITSEL',         pos:'med',v:84},{n:'TIELEMANS', pos:'med',v:83},
+    {n:'HAZARD E.',    pos:'del',sp:'ext',v:88},{n:'LUKAKU',       pos:'del',sp:'dc', v:90},
+    {n:'MERTENS',      pos:'del',sp:'ext',v:84},{n:'CARRASCO',     pos:'del',sp:'ext',v:82},
+  ]},
+  { año:2024, jugadores:[
+    {n:'CASTEELS',     pos:'pt', v:84},{n:'MIGNOLET',       pos:'pt', v:83},
+    {n:'CASTAGNE',     pos:'def',sp:'lb',v:83},{n:'FAES',          pos:'def',sp:'cb',v:81},
+    {n:'VERTONGHEN',   pos:'def',sp:'cb',v:82},{n:'THEATE',        pos:'def',sp:'cb',v:82},
+    {n:'DE BRUYNE',    pos:'med',v:89},{n:'ONANA',          pos:'med',v:83},{n:'TIELEMANS', pos:'med',v:85},
+    {n:'DOKU',         pos:'del',sp:'ext',v:86},{n:'LUKAKU',       pos:'del',sp:'dc', v:88},
+    {n:'OPENDA',       pos:'del',sp:'dc', v:85},{n:'CARRASCO',     pos:'del',sp:'ext',v:82},
+    {n:'DE BRUYNE K.', pos:'med',v:88},{n:'VANAKEN',        pos:'med',v:82},
+  ]},
+]},
+
+/* ── YUGOSLAVIA ── */
+{ id:'yugoslavia', nombre:'Yugoslavia', flag:'🇷🇸', ediciones:[
+  { año:1960, jugadores:[
+    {n:'Vidić B.',     pos:'pt', v:82},{n:'Beara',         pos:'pt', v:84},
+    {n:'Durkovic',     pos:'def',sp:'lb',v:75},{n:'Zeković',       pos:'def',sp:'cb',v:77},
+    {n:'Jusufi',       pos:'def',sp:'cb',v:76},{n:'Matus',         pos:'def',sp:'lb',v:74},
+    {n:'Perušić',      pos:'med',v:78},{n:'Šekularac',     pos:'med',v:83},{n:'Petaković',pos:'med',v:76},
+    {n:'Kostić',       pos:'del',sp:'ext',v:85},{n:'Galić',        pos:'del',sp:'dc', v:82},
+    {n:'Jovanović',    pos:'del',sp:'dc', v:79},{n:'Zaneti',       pos:'del',sp:'ext',v:77},
+  ]},
+  { año:1968, jugadores:[
+    {n:'Pantelic',     pos:'pt', v:83},{n:'Ćurković',      pos:'pt', v:80},
+    {n:'Fazlagic',     pos:'def',sp:'lb',v:76},{n:'Paunović',      pos:'def',sp:'cb',v:79},
+    {n:'Holcer',       pos:'def',sp:'cb',v:77},{n:'Djordjević',    pos:'def',sp:'lb',v:75},
+    {n:'Trivić',       pos:'med',v:80},{n:'Acimovic',      pos:'med',v:79},{n:'Petkovic', pos:'med',v:77},
+    {n:'Džajić',       pos:'del',sp:'ext',v:88},{n:'Musemić',      pos:'del',sp:'dc', v:81},
+    {n:'Ostojić',      pos:'del',sp:'dc', v:78},{n:'Nikolić',      pos:'del',sp:'ext',v:76},
+  ]},
+  { año:1976, jugadores:[
+    {n:'Maric',        pos:'pt', v:80},{n:'Katalinski',    pos:'pt', v:74},
+    {n:'Buljan',       pos:'def',sp:'lb',v:78},{n:'Katalinski V.', pos:'def',sp:'cb',v:80},
+    {n:'Bogicevic',    pos:'def',sp:'cb',v:79},{n:'Petrović',      pos:'def',sp:'lb',v:76},
+    {n:'Oblak',        pos:'med',v:80},{n:'Acimovic',      pos:'med',v:79},{n:'Surjak',  pos:'med',v:81},
+    {n:'Džajić',       pos:'del',sp:'ext',v:86},{n:'Popivoda',     pos:'del',sp:'dc', v:79},
+    {n:'Katalinski I.',pos:'del',sp:'dc', v:77},{n:'Petrović B.',  pos:'del',sp:'ext',v:77},
+  ]},
+]},
+
+/* ── HUNGRÍA ── */
+{ id:'hungary', nombre:'Hungría', flag:'🇭🇺', ediciones:[
+  { año:1964, jugadores:[
+    {n:'Szentmihályi', pos:'pt', v:83},{n:'Géczi',         pos:'pt', v:74},
+    {n:'Mátrai',       pos:'def',sp:'cb',v:79},{n:'Sarosi',        pos:'def',sp:'lb',v:75},
+    {n:'Sipos',        pos:'def',sp:'cb',v:76},{n:'Ihász',         pos:'def',sp:'lb',v:74},
+    {n:'Solymosi',     pos:'med',v:78},{n:'Göröcs',        pos:'med',v:82},{n:'Farkas',  pos:'med',v:79},
+    {n:'Bene',         pos:'del',sp:'ext',v:85},{n:'Albert',       pos:'del',sp:'dc', v:87},
+    {n:'Tichy',        pos:'del',sp:'dc', v:82},{n:'Rákosi',       pos:'del',sp:'ext',v:78},
+  ]},
+  { año:1972, jugadores:[
+    {n:'Géczi',        pos:'pt', v:78},{n:'Faragó',        pos:'pt', v:74},
+    {n:'Pásztó',       pos:'def',sp:'lb',v:76},{n:'Balint',        pos:'def',sp:'cb',v:78},
+    {n:'Juhász',       pos:'def',sp:'cb',v:77},{n:'Szücs',         pos:'def',sp:'lb',v:74},
+    {n:'Szőke',        pos:'med',v:79},{n:'Kocsis',        pos:'med',v:76},{n:'Zámbó',   pos:'med',v:77},
+    {n:'Bene',         pos:'del',sp:'ext',v:83},{n:'Albert',       pos:'del',sp:'dc', v:85},
+    {n:'Branikovits',  pos:'del',sp:'dc', v:78},{n:'Kű',           pos:'del',sp:'ext',v:76},
+  ]},
+  { año:2016, jugadores:[
+    {n:'KIRÁLY',       pos:'pt', v:82},{n:'GULÁCSI',        pos:'pt', v:83},
+    {n:'LANG',         pos:'def',sp:'cb',v:81},{n:'JUHÁSZ',        pos:'def',sp:'cb',v:80},
+    {n:'FIOLA',        pos:'def',sp:'lb',v:79},{n:'KORHUT',        pos:'def',sp:'lb',v:78},
+    {n:'KLEINHEISLER', pos:'med',v:82},{n:'GERA',           pos:'med',v:82},{n:'DZSUDZSÁK',pos:'del',sp:'ext',v:84},
+    {n:'SZALAI A.',    pos:'del',sp:'dc', v:83},{n:'PRISKIN',      pos:'del',sp:'dc', v:79},
+    {n:'STIEBER',      pos:'del',sp:'ext',v:80},{n:'PINTÉR',       pos:'med',v:78},
+    {n:'KALMÁR',       pos:'med',v:80},{n:'NIKOLIĆ',        pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'GULÁCSI',      pos:'pt', v:84},{n:'BOGDÁN',         pos:'pt', v:76},
+    {n:'FIOLA',        pos:'def',sp:'lb',v:80},{n:'LANG',          pos:'def',sp:'cb',v:82},
+    {n:'ORBÁN W.',     pos:'def',sp:'cb',v:83},{n:'NEGO',          pos:'def',sp:'lb',v:79},
+    {n:'KLEINHEISLER', pos:'med',v:81},{n:'SZOBOSZLAI',     pos:'med',v:87},{n:'GAZDAG',  pos:'med',v:82},
+    {n:'SALLAI',       pos:'del',sp:'ext',v:83},{n:'SZALAI A.',    pos:'del',sp:'dc', v:80},
+    {n:'DZSUDZSÁK',    pos:'del',sp:'ext',v:81},{n:'VARGA R.',     pos:'del',sp:'dc', v:82},
+    {n:'KALMÁR',       pos:'med',v:79},{n:'FERENCZI',       pos:'del',sp:'ext',v:78},
+  ]},
+  { año:2024, jugadores:[
+    {n:'GULÁCSI',      pos:'pt', v:84},{n:'DIBUSZ',         pos:'pt', v:80},
+    {n:'KERKEZ',       pos:'def',sp:'lb',v:82},{n:'ORBÁN W.',      pos:'def',sp:'cb',v:83},
+    {n:'LANG',         pos:'def',sp:'cb',v:83},{n:'FIOLA',         pos:'def',sp:'lb',v:79},
+    {n:'SZOBOSZLAI',   pos:'med',v:89},{n:'NAGY A.',        pos:'med',v:81},{n:'SCHÄFER',  pos:'med',v:80},
+    {n:'SALLAI',       pos:'del',sp:'ext',v:84},{n:'VARGA R.',     pos:'del',sp:'dc', v:83},
+    {n:'GAZDAG',       pos:'med',v:82},{n:'CSOBOTH',        pos:'del',sp:'ext',v:79},
+    {n:'STYLES',       pos:'med',v:80},{n:'NEGO',           pos:'def',sp:'lb',v:80},
+  ]},
+]},
+
+/* ── GRECIA ── */
+{ id:'greece', nombre:'Grecia', flag:'🇬🇷', ediciones:[
+  { año:2004, jugadores:[
+    {n:'Nikopolidis',  pos:'pt', v:84},{n:'Chalkias',      pos:'pt', v:76},
+    {n:'Seitaridis',   pos:'def',sp:'lb',v:80},{n:'Dellas',        pos:'def',sp:'cb',v:80},
+    {n:'Papadopoulos', pos:'def',sp:'cb',v:79},{n:'Kapsis',        pos:'def',sp:'lb',v:78},
+    {n:'Basinas',      pos:'med',v:79},{n:'Kafes',         pos:'med',v:77},{n:'Zagorakis',pos:'med',v:81},
+    {n:'Giannakopoulos',pos:'del',sp:'ext',v:79},{n:'Charisteas',  pos:'del',sp:'dc', v:80},
+    {n:'VRYZAS',       pos:'del',sp:'dc', v:77},{n:'KARAGOUNIS',   pos:'med',v:82},
+  ]},
+  { año:2008, jugadores:[
+    {n:'NIKOPOLIDIS',  pos:'pt', v:81},{n:'TZORVAS',        pos:'pt', v:80},
+    {n:'TOROSIDIS',    pos:'def',sp:'lb',v:82},{n:'KYRGIAKOS',     pos:'def',sp:'cb',v:83},
+    {n:'DELLAS',       pos:'def',sp:'cb',v:80},{n:'PAPADOPOULOS',  pos:'def',sp:'cb',v:79},
+    {n:'KARAGOUNIS',   pos:'med',v:84},{n:'KATSOURANIS',    pos:'med',v:82},{n:'BASINAS',  pos:'med',v:81},
+    {n:'CHARISTEAS',   pos:'del',sp:'dc', v:83},{n:'SALPIGIDIS',   pos:'del',sp:'ext',v:80},
+    {n:'GEKAS',        pos:'del',sp:'dc', v:83},{n:'SAMARAS',      pos:'del',sp:'dc', v:81},
+    {n:'TZIOLIS',      pos:'med',v:80},{n:'LIBEROPOULOS',   pos:'del',sp:'dc', v:80},
+  ]},
+  { año:2012, jugadores:[
+    {n:'KARNEZIS',     pos:'pt', v:78},{n:'TZORVAS',        pos:'pt', v:80},
+    {n:'TOROSIDIS',    pos:'def',sp:'lb',v:82},{n:'HOLEBAS',       pos:'def',sp:'lb',v:80},
+    {n:'PAPASTATHOPOULOS',pos:'def',sp:'cb',v:82},{n:'MANOLAS',    pos:'def',sp:'cb',v:79},
+    {n:'KARAGOUNIS',   pos:'med',v:83},{n:'KATSOURANIS',    pos:'med',v:81},{n:'TZIOLIS',  pos:'med',v:79},
+    {n:'MITROGLOU',    pos:'del',sp:'dc', v:81},{n:'GEKAS',        pos:'del',sp:'dc', v:82},
+    {n:'SAMARAS',      pos:'del',sp:'dc', v:82},{n:'SALPIGIDIS',   pos:'del',sp:'ext',v:79},
+    {n:'NINIS',        pos:'del',sp:'ext',v:78},{n:'FETFATZIDIS',  pos:'del',sp:'ext',v:79},
+  ]},
+]},
+
+/* ── CROACIA ── */
+{ id:'croatia', nombre:'Croacia', flag:'🇭🇷', ediciones:[
+  { año:1996, jugadores:[
+    {n:'Ladić',        pos:'pt', v:83},{n:'Butina',        pos:'pt', v:74},
+    {n:'Bilić',        pos:'def',sp:'cb',v:82},{n:'Šimić',         pos:'def',sp:'cb',v:80},
+    {n:'Jarni',        pos:'def',sp:'lb',v:81},{n:'Štimac',        pos:'def',sp:'lb',v:79},
+    {n:'Jurčić',       pos:'med',v:78},{n:'Boban',         pos:'med',v:88},{n:'Prosinečki',pos:'med',v:86},
+    {n:'Asanović',     pos:'med',v:82},{n:'Šuker',         pos:'del',sp:'dc', v:88},
+    {n:'Vlaović',      pos:'del',sp:'dc', v:79},{n:'Jurić',        pos:'del',sp:'ext',v:77},
+  ]},
+  { año:2008, jugadores:[
+    {n:'PLETIKOSA',    pos:'pt', v:82},{n:'RUNJE',          pos:'pt', v:76},
+    {n:'ŠIMUNIĆ',      pos:'def',sp:'cb',v:83},{n:'ĆORLUKA',       pos:'def',sp:'cb',v:82},
+    {n:'SRNA',         pos:'def',sp:'lb',v:86},{n:'PRANJIĆ',       pos:'def',sp:'lb',v:80},
+    {n:'RAKITIĆ',      pos:'med',v:82},{n:'MODRIĆ',         pos:'med',v:85},{n:'KRANJČAR', pos:'med',v:83},
+    {n:'OLIĆ',         pos:'del',sp:'dc', v:84},{n:'EDUARDO',      pos:'del',sp:'dc', v:85},
+    {n:'PETRIĆ',       pos:'del',sp:'dc', v:82},{n:'KOVAČ N.',     pos:'med',v:78},
+    {n:'LEKO',         pos:'med',v:78},{n:'CLASS',          pos:'del',sp:'ext',v:78},
+  ]},
+  { año:2012, jugadores:[
+    {n:'PLETIKOSA',    pos:'pt', v:81},{n:'RUNJE',          pos:'pt', v:74},
+    {n:'ŠIMUNIĆ',      pos:'def',sp:'cb',v:82},{n:'ĆORLUKA',       pos:'def',sp:'cb',v:83},
+    {n:'SRNA',         pos:'def',sp:'lb',v:85},{n:'PRANJIĆ',       pos:'def',sp:'lb',v:80},
+    {n:'MODRIĆ',       pos:'med',v:89},{n:'RAKITIĆ',        pos:'med',v:85},{n:'KRANJČAR', pos:'med',v:81},
+    {n:'MANDŽUKIĆ',    pos:'del',sp:'dc', v:86},{n:'JELAVIĆ',      pos:'del',sp:'dc', v:83},
+    {n:'EDUARDO',      pos:'del',sp:'dc', v:83},{n:'KOVAČIĆ',      pos:'med',v:80},
+    {n:'OLIĆ',         pos:'del',sp:'dc', v:80},{n:'PETRIĆ',       pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2016, jugadores:[
+    {n:'SUBAŠIĆ',      pos:'pt', v:83},{n:'ĆORLUKA',        pos:'pt', v:74},
+    {n:'Srna',         pos:'def',sp:'lb',v:83},{n:'Vida',          pos:'def',sp:'cb',v:81},
+    {n:'Lovren',       pos:'def',sp:'cb',v:82},{n:'Strinić',       pos:'def',sp:'lb',v:78},
+    {n:'Rakitić',      pos:'med',v:88},{n:'Brozović',      pos:'med',v:84},{n:'Modrić',  pos:'med',v:93},
+    {n:'Perišić',      pos:'del',sp:'ext',v:84},{n:'Mandžukić',    pos:'del',sp:'dc', v:84},
+    {n:'Rebić',        pos:'del',sp:'ext',v:80},{n:'Kramarić',     pos:'del',sp:'dc', v:82},
+  ]},
+  { año:2021, jugadores:[
+    {n:'LIVAKOVIĆ',    pos:'pt', v:84},{n:'GRBIĆ',          pos:'pt', v:77},
+    {n:'VIDA',         pos:'def',sp:'cb',v:82},{n:'LOVREN',        pos:'def',sp:'cb',v:83},
+    {n:'JURANOVIĆ',    pos:'def',sp:'lb',v:81},{n:'JEDVAJ',        pos:'def',sp:'lb',v:79},
+    {n:'MODRIĆ',       pos:'med',v:90},{n:'BROZOVIĆ',       pos:'med',v:88},{n:'KOVAČIĆ', pos:'med',v:87},
+    {n:'KRAMARIĆ',     pos:'del',sp:'dc', v:86},{n:'PERIŠIĆ',      pos:'del',sp:'ext',v:87},
+    {n:'REBIĆ',        pos:'del',sp:'ext',v:83},{n:'PAŠALIĆ',      pos:'med',v:83},
+    {n:'VLAŠIĆ',       pos:'del',sp:'ext',v:83},{n:'BUDIMIR',      pos:'del',sp:'dc', v:80},
+  ]},
+  { año:2024, jugadores:[
+    {n:'GRBIĆ',        pos:'pt', v:80},{n:'IVUŠIĆ',         pos:'pt', v:75},
+    {n:'Juranović',    pos:'def',sp:'lb',v:78},{n:'Gvardiol',      pos:'def',sp:'cb',v:88},
+    {n:'Erlić',        pos:'def',sp:'cb',v:80},{n:'Sosa',          pos:'def',sp:'lb',v:78},
+    {n:'Kovačić',      pos:'med',v:86},{n:'Brozović',      pos:'med',v:83},{n:'Modrić',  pos:'med',v:89},
+    {n:'Perišić',      pos:'del',sp:'ext',v:82},{n:'Kramarić',     pos:'del',sp:'dc', v:83},
+    {n:'Pašalić',      pos:'med',v:81},{n:'Budimir',       pos:'del',sp:'dc', v:78},
+  ]},
+]},
+
+/* ── TURQUÍA ── */
+{ id:'turkey', nombre:'Turquía', flag:'🇹🇷', ediciones:[
+  { año:2000, jugadores:[
+    {n:'Rüştü',        pos:'pt', v:84},{n:'Yıldırım',      pos:'pt', v:74},
+    {n:'Alpay',        pos:'def',sp:'cb',v:80},{n:'Bülent K.',     pos:'def',sp:'cb',v:79},
+    {n:'Okan',         pos:'def',sp:'lb',v:77},{n:'Ergün',         pos:'def',sp:'lb',v:74},
+    {n:'Tugay',        pos:'med',v:83},{n:'Emre B.',       pos:'med',v:82},{n:'Oğuz',    pos:'med',v:78},
+    {n:'Nihat K.',     pos:'del',sp:'dc', v:82},{n:'Hakan Şükür',  pos:'del',sp:'dc', v:86},
+    {n:'Hasan Şaş',    pos:'del',sp:'ext',v:80},{n:'Arif',         pos:'del',sp:'ext',v:76},
+  ]},
+  { año:2008, jugadores:[
+    {n:'VOLKAN D.',    pos:'pt', v:81},{n:'RECBER',         pos:'pt', v:74},
+    {n:'Gökhan G.',    pos:'def',sp:'lb',v:80},{n:'Servet',        pos:'def',sp:'cb',v:79},
+    {n:'Hakan B.',     pos:'def',sp:'lb',v:77},{n:'Civril',        pos:'def',sp:'cb',v:74},
+    {n:'Hamit A.',     pos:'med',v:82},{n:'Emre B.',       pos:'med',v:80},{n:'Aurelio M.',pos:'med',v:79},
+    {n:'KAZIM-RICHARDS',pos:'del',sp:'ext',v:78},{n:'SEMIH',       pos:'del',sp:'dc', v:80},
+    {n:'TÜMER',        pos:'del',sp:'dc', v:79},{n:'HALIL A.',     pos:'del',sp:'ext',v:82},
+  ]},
+  { año:2016, jugadores:[
+    {n:'BABACAN',      pos:'pt', v:81},{n:'KIVRAK',         pos:'pt', v:76},
+    {n:'GÖNÜL',        pos:'def',sp:'lb',v:81},{n:'TOPAL',         pos:'def',sp:'cb',v:82},
+    {n:'BALTA',        pos:'def',sp:'cb',v:80},{n:'ERKIN',         pos:'def',sp:'lb',v:79},
+    {n:'İNAN',         pos:'med',v:82},{n:'ÇALHANOĞLU',     pos:'del',sp:'ext',v:84},{n:'TUFAN',   pos:'med',v:81},
+    {n:'TOSUN',        pos:'del',sp:'dc', v:81},{n:'MOR',          pos:'del',sp:'ext',v:82},
+    {n:'NURI ŞAHİN',   pos:'med',v:83},{n:'BULUT',          pos:'del',sp:'dc', v:80},
+    {n:'ŞAHAN',        pos:'med',v:78},{n:'AYHAN',          pos:'def',sp:'cb',v:79},
+  ]},
+  { año:2024, jugadores:[
+    {n:'GÜNOĞLU',      pos:'pt', v:82},{n:'BAYINDIR',       pos:'pt', v:79},
+    {n:'MÜLDÜR',       pos:'def',sp:'lb',v:81},{n:'AYHAN',         pos:'def',sp:'cb',v:82},
+    {n:'BARDAKÇI',     pos:'def',sp:'cb',v:81},{n:'KADIOGLU',      pos:'def',sp:'lb',v:83},
+    {n:'ÇALHANOĞLU',   pos:'med',v:87},{n:'ÖZCAN',          pos:'med',v:82},{n:'YILDIZ',  pos:'del',sp:'ext',v:84},
+    {n:'AKTURKOGLU',   pos:'del',sp:'ext',v:83},{n:'GÜLER',        pos:'del',sp:'ext',v:85},
+    {n:'TOSUN',        pos:'del',sp:'dc', v:79},{n:'TUFAN',        pos:'med',v:81},
+    {n:'DEMIRAL',      pos:'def',sp:'cb',v:83},{n:'KOKCÚ',         pos:'med',v:81},
+  ]},
+]},
+
+/* ── SUECIA ── */
+{ id:'sweden', nombre:'Suecia', flag:'🇸🇪', ediciones:[
+  { año:1992, jugadores:[
+    {n:'Ravelli',      pos:'pt', v:85},{n:'Hedman',        pos:'pt', v:76},
+    {n:'Nilsson R.',   pos:'def',sp:'lb',v:79},{n:'Björklund',     pos:'def',sp:'cb',v:80},
+    {n:'Andersson P.', pos:'def',sp:'cb',v:78},{n:'Augustsson',    pos:'def',sp:'lb',v:75},
+    {n:'Schwarz',      pos:'med',v:80},{n:'Ingesson',      pos:'med',v:82},{n:'Thern',   pos:'med',v:81},
+    {n:'Limpar',       pos:'del',sp:'ext',v:83},{n:'Brolin',       pos:'del',sp:'dc', v:85},
+    {n:'Dahlin',       pos:'del',sp:'dc', v:84},{n:'Ekström',      pos:'del',sp:'dc', v:80},
+  ]},
+  { año:2000, jugadores:[
+    {n:'HEDMAN',       pos:'pt', v:80},{n:'ISAKSSON',       pos:'pt', v:74},
+    {n:'MELLBERG',     pos:'def',sp:'cb',v:78},{n:'LUCIC',         pos:'def',sp:'cb',v:77},
+    {n:'ALEXANDERSSON',pos:'def',sp:'lb',v:79},{n:'EDMAN',         pos:'def',sp:'lb',v:76},
+    {n:'LINDEROTH',    pos:'med',v:78},{n:'MJÄLLBY',        pos:'med',v:79},{n:'SVENSSON A.',pos:'med',v:77},
+    {n:'LARSSON H.',   pos:'del',sp:'ext',v:89},{n:'ALLBÄCK',      pos:'del',sp:'dc', v:80},
+    {n:'WILHELMSSON',  pos:'del',sp:'ext',v:78},{n:'JONSON',       pos:'del',sp:'dc', v:77},
+  ]},
+  { año:2008, jugadores:[
+    {n:'ISAKSSON',     pos:'pt', v:80},{n:'HANSSON',        pos:'pt', v:76},
+    {n:'MELLBERG',     pos:'def',sp:'cb',v:80},{n:'LUCIC',         pos:'def',sp:'cb',v:78},
+    {n:'ALEXANDERSSON',pos:'def',sp:'lb',v:78},{n:'EDMAN',         pos:'def',sp:'lb',v:78},
+    {n:'KÄLLSTRÖM',    pos:'med',v:83},{n:'LINDEROTH',      pos:'med',v:79},{n:'WILHELMSSON',pos:'del',sp:'ext',v:80},
+    {n:'LJUNGBERG',    pos:'del',sp:'ext',v:83},{n:'ELMANDER',     pos:'del',sp:'dc', v:82},
+    {n:'ROSENBERG',    pos:'del',sp:'dc', v:80},{n:'ALLBÄCK',      pos:'del',sp:'dc', v:78},
+    {n:'GRANQVIST',    pos:'def',sp:'cb',v:79},{n:'SVENSSON',      pos:'med',v:78},
+  ]},
+  { año:2012, jugadores:[
+    {n:'ISAKSSON',     pos:'pt', v:80},{n:'LINDEGAARD',     pos:'pt', v:77},
+    {n:'GRANQVIST',    pos:'def',sp:'cb',v:82},{n:'MELLBERG',      pos:'def',sp:'cb',v:79},
+    {n:'LUSTIG',       pos:'def',sp:'lb',v:81},{n:'OLSSON M.',     pos:'def',sp:'lb',v:80},
+    {n:'KÄLLSTRÖM',    pos:'med',v:83},{n:'SVENSSON',       pos:'med',v:78},{n:'IBRAHIMOVIĆ', pos:'del',sp:'dc',v:91},
+    {n:'ELMANDER',     pos:'del',sp:'dc', v:81},{n:'TOIVONEN',     pos:'del',sp:'dc', v:81},
+    {n:'WILHELMSSON',  pos:'del',sp:'ext',v:79},{n:'WERNBLOOM',    pos:'med',v:79},
+    {n:'LARSSON',      pos:'med',v:79},{n:'HAMREN',         pos:'def',sp:'cb',v:77},
+  ]},
+  { año:2016, jugadores:[
+    {n:'OLSEN R.',     pos:'pt', v:81},{n:'ISAKSSON',       pos:'pt', v:77},
+    {n:'GRANQVIST',    pos:'def',sp:'cb',v:84},{n:'LINDELÖF',      pos:'def',sp:'cb',v:83},
+    {n:'LUSTIG',       pos:'def',sp:'lb',v:82},{n:'OLSSON M.',     pos:'def',sp:'lb',v:80},
+    {n:'KÄLLSTRÖM',    pos:'med',v:82},{n:'FORSBERG',       pos:'del',sp:'ext',v:86},{n:'EKDAL',   pos:'med',v:80},
+    {n:'IBRAHIMOVIĆ',  pos:'del',sp:'dc', v:92},{n:'BERG',         pos:'del',sp:'dc', v:80},
+    {n:'GUIDETTI',     pos:'del',sp:'dc', v:79},{n:'LARSSON',      pos:'del',sp:'ext',v:78},
+    {n:'JOHANSSON',    pos:'def',sp:'cb',v:78},{n:'HILJEMARK',     pos:'med',v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'OLSEN R.',     pos:'pt', v:82},{n:'JOHNSSON',       pos:'pt', v:80},
+    {n:'AUGUSTINSSON', pos:'def',sp:'lb',v:82},{n:'LUSTIG',        pos:'def',sp:'lb',v:81},
+    {n:'GRANQVIST',    pos:'def',sp:'cb',v:83},{n:'LINDELÖF',      pos:'def',sp:'cb',v:85},
+    {n:'EKDAL',        pos:'med',v:81},{n:'LARSSON',        pos:'del',sp:'ext',v:85},{n:'FORSBERG',pos:'del',sp:'ext',v:87},
+    {n:'ISAK',         pos:'del',sp:'dc', v:83},{n:'BERG',         pos:'del',sp:'dc', v:81},
+    {n:'QUAISON',      pos:'del',sp:'ext',v:79},{n:'CLAESSON',     pos:'del',sp:'ext',v:79},
+    {n:'DANIELSON',    pos:'def',sp:'cb',v:80},{n:'SVANBERG',      pos:'med',v:79},
+  ]},
+]},
+
+/* ── RUMANÍA ── */
+{ id:'romania', nombre:'Rumanía', flag:'🇷🇴', ediciones:[
+  { año:1984, jugadores:[
+    {n:'Moraru',       pos:'pt', v:79},{n:'Lung',          pos:'pt', v:76},
+    {n:'Sames',        pos:'def',sp:'cb',v:76},{n:'Iordănescu',    pos:'def',sp:'cb',v:77},
+    {n:'Klein',        pos:'def',sp:'lb',v:74},{n:'Coras',         pos:'def',sp:'lb',v:73},
+    {n:'Balaci',       pos:'med',v:80},{n:'Bölöni',        pos:'med',v:82},{n:'Camataru', pos:'del',sp:'dc',v:80},
+    {n:'Hagi',         pos:'med',v:88},{n:'Mateuț',        pos:'del',sp:'ext',v:79},
+    {n:'Balaci L.',    pos:'del',sp:'dc', v:78},{n:'Rădulescu',    pos:'del',sp:'ext',v:76},
+  ]},
+  { año:2000, jugadores:[
+    {n:'STELEA',       pos:'pt', v:81},{n:'BOGDAN',         pos:'pt', v:74},
+    {n:'PETRESCU',     pos:'def',sp:'lb',v:82},{n:'FILIPESCU',     pos:'def',sp:'cb',v:79},
+    {n:'CHIVU',        pos:'def',sp:'cb',v:82},{n:'CONTRA',        pos:'def',sp:'lb',v:80},
+    {n:'MUNTEANU',     pos:'med',v:82},{n:'POPESCU',        pos:'med',v:83},{n:'MOLDOVAN', pos:'del',sp:'dc',v:81},
+    {n:'HAGI',         pos:'med',v:86},{n:'MUTU',           pos:'del',sp:'ext',v:84},
+    {n:'GANEA',        pos:'del',sp:'dc', v:79},{n:'ILIE',         pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2008, jugadores:[
+    {n:'LOBONȚ',       pos:'pt', v:79},{n:'LUNG JR.',       pos:'pt', v:75},
+    {n:'CONTRA',       pos:'def',sp:'lb',v:80},{n:'RAT',           pos:'def',sp:'lb',v:81},
+    {n:'CHIVU',        pos:'def',sp:'cb',v:84},{n:'TAMAȘ',         pos:'def',sp:'cb',v:79},
+    {n:'RĂDOI',        pos:'med',v:81},{n:'CODREA',         pos:'med',v:78},{n:'MUTU',    pos:'del',sp:'ext',v:86},
+    {n:'MARICA',       pos:'del',sp:'dc', v:82},{n:'DICĂ',         pos:'del',sp:'ext',v:80},
+    {n:'GHIOANE',      pos:'med',v:78},{n:'PETRE',          pos:'med',v:77},
+    {n:'CERNAT',       pos:'del',sp:'ext',v:78},{n:'NICULAE',      pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2016, jugadores:[
+    {n:'TĂTĂRUȘANU',   pos:'pt', v:82},{n:'LOBONȚ',         pos:'pt', v:76},
+    {n:'SĂPUNARU',     pos:'def',sp:'lb',v:78},{n:'RAT',           pos:'def',sp:'lb',v:79},
+    {n:'CHIRICHEȘ',    pos:'def',sp:'cb',v:83},{n:'GRIGORE',       pos:'def',sp:'cb',v:79},
+    {n:'PINTILII',     pos:'med',v:78},{n:'BUDESCU',        pos:'med',v:81},{n:'STANCU',  pos:'del',sp:'dc', v:81},
+    {n:'MAXIM',        pos:'del',sp:'ext',v:79},{n:'ALIBEC',       pos:'del',sp:'dc', v:78},
+    {n:'SÂNMARTEAN',   pos:'med',v:79},{n:'ANDONE',         pos:'del',sp:'dc', v:78},
+    {n:'HOBAN',        pos:'med',v:78},{n:'POPA',           pos:'med',v:77},
+  ]},
+  { año:2024, jugadores:[
+    {n:'NIȚĂ',         pos:'pt', v:81},{n:'RADU H.',        pos:'pt', v:78},
+    {n:'RAȚIU',        pos:'def',sp:'lb',v:81},{n:'BANCU',         pos:'def',sp:'lb',v:79},
+    {n:'DRĂGUȘIN',     pos:'def',sp:'cb',v:83},{n:'BURCĂ',         pos:'def',sp:'cb',v:79},
+    {n:'MARIN',        pos:'med',v:83},{n:'STANCIU',        pos:'med',v:82},{n:'OLARU',   pos:'med',v:82},
+    {n:'HAGI I.',      pos:'del',sp:'ext',v:85},{n:'MAN',          pos:'del',sp:'ext',v:83},
+    {n:'ALIBEC',       pos:'del',sp:'dc', v:80},{n:'PUȘCAȘ',       pos:'del',sp:'dc', v:79},
+    {n:'MIHAILĂ',      pos:'med',v:79},{n:'RUS',            pos:'def',sp:'cb',v:79},
+  ]},
+]},
+
+/* ── SUIZA ── */
+{ id:'switzerland', nombre:'Suiza', flag:'🇨🇭', ediciones:[
+  { año:2008, jugadores:[
+    {n:'BENAGLIO',     pos:'pt', v:82},{n:'ZUBERBÜHLER',    pos:'pt', v:76},
+    {n:'MAGNIN',       pos:'def',sp:'lb',v:80},{n:'SENDEROS',      pos:'def',sp:'cb',v:82},
+    {n:'DJOUROU',      pos:'def',sp:'cb',v:80},{n:'BARNETTA',      pos:'del',sp:'ext',v:81},
+    {n:'BEHRAMI',      pos:'med',v:83},{n:'INLER',          pos:'med',v:82},{n:'WICKY',    pos:'med',v:78},
+    {n:'FREI A.',      pos:'del',sp:'dc', v:84},{n:'STRELLER',     pos:'del',sp:'dc', v:80},
+    {n:'NKUFO',        pos:'del',sp:'dc', v:79},{n:'CABANAS',      pos:'del',sp:'ext',v:78},
+    {n:'GRICHTING',    pos:'def',sp:'cb',v:78},{n:'G. FERNANDES',  pos:'med',v:79},
+  ]},
+  { año:2016, jugadores:[
+    {n:'SOMMER',       pos:'pt', v:84},{n:'BÜRKI',          pos:'pt', v:80},
+    {n:'LICHTSTEINER', pos:'def',sp:'lb',v:83},{n:'RODRIGUEZ R.',  pos:'def',sp:'lb',v:84},
+    {n:'SCHÄR',        pos:'def',sp:'cb',v:83},{n:'DJOUROU',       pos:'def',sp:'cb',v:80},
+    {n:'BEHRAMI',      pos:'med',v:82},{n:'INLER',          pos:'med',v:83},{n:'XHAKA',    pos:'med',v:85},
+    {n:'SHAQIRI',      pos:'del',sp:'ext',v:86},{n:'SEFEROVIC',    pos:'del',sp:'dc', v:81},
+    {n:'EMBOLO',       pos:'del',sp:'dc', v:82},{n:'MEHMEDI',      pos:'del',sp:'ext',v:80},
+    {n:'DZEMAILI',     pos:'med',v:80},{n:'DERDIYOK',       pos:'del',sp:'dc', v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'SOMMER',       pos:'pt', v:84},{n:'MVOGO',          pos:'pt', v:76},
+    {n:'WIDMER',       pos:'def',sp:'lb',v:79},{n:'SCHÄR',         pos:'def',sp:'cb',v:83},
+    {n:'AKANJI',       pos:'def',sp:'cb',v:84},{n:'RODRIGUEZ R.',  pos:'def',sp:'lb',v:80},
+    {n:'FREULER',      pos:'med',v:82},{n:'XHAKA',          pos:'med',v:84},{n:'ZAKARIA',  pos:'med',v:81},
+    {n:'SHAQIRI',      pos:'del',sp:'ext',v:84},{n:'SEFEROVIC',    pos:'del',sp:'dc', v:79},
+    {n:'EMBOLO',       pos:'del',sp:'dc', v:81},{n:'VARGAS R.',    pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2024, jugadores:[
+    {n:'SOMMER',       pos:'pt', v:87},{n:'MVOGO',          pos:'pt', v:79},
+    {n:'WIDMER',       pos:'def',sp:'lb',v:82},{n:'RODRIGUEZ R.',  pos:'def',sp:'lb',v:83},
+    {n:'AKANJI',       pos:'def',sp:'cb',v:85},{n:'ELVEDI',        pos:'def',sp:'cb',v:83},
+    {n:'FREULER',      pos:'med',v:84},{n:'XHAKA',          pos:'med',v:87},{n:'SHAQIRI',  pos:'del',sp:'ext',v:84},
+    {n:'EMBOLO',       pos:'del',sp:'dc', v:83},{n:'VARGAS R.',    pos:'del',sp:'ext',v:84},
+    {n:'ZUBER',        pos:'del',sp:'ext',v:81},{n:'NDOYE',        pos:'del',sp:'ext',v:82},
+    {n:'SCHAR',        pos:'def',sp:'cb',v:85},{n:'RIEDER',        pos:'med',v:80},
+  ]},
+]},
+
+/* ── GALES ── */
+{ id:'wales', nombre:'Gales', flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', ediciones:[
+  { año:2016, jugadores:[
+    {n:'Hennessey',    pos:'pt', v:80},{n:'Davies B.',     pos:'pt', v:74},
+    {n:'Chester',      pos:'def',sp:'cb',v:78},{n:'Williams A.',   pos:'def',sp:'cb',v:80},
+    {n:'Collins',      pos:'def',sp:'cb',v:79},{n:'Taylor N.',     pos:'def',sp:'lb',v:76},
+    {n:'Gunter',       pos:'def',sp:'lb',v:75},{n:'Allen',         pos:'med',v:80},
+    {n:'Ledley',       pos:'med',v:78},{n:'Ramsey',        pos:'med',v:84},
+    {n:'BALE',         pos:'del',sp:'ext',v:89},{n:'ROBSON-KANU',  pos:'del',sp:'dc', v:76},
+    {n:'VOKES',        pos:'del',sp:'dc', v:75},
+  ]},
+  { año:2021, jugadores:[
+    {n:'WARD',         pos:'pt', v:80},{n:'HENNESSEY',      pos:'pt', v:78},
+    {n:'DAVIES B.',    pos:'def',sp:'lb',v:83},{n:'GUNTER',        pos:'def',sp:'lb',v:79},
+    {n:'RODON',        pos:'def',sp:'cb',v:83},{n:'LAWRENCE',      pos:'def',sp:'cb',v:80},
+    {n:'ALLEN',        pos:'med',v:82},{n:'AMPADU',         pos:'med',v:82},{n:'BALE',    pos:'del',sp:'ext',v:88},
+    {n:'RAMSEY',       pos:'med',v:85},{n:'JAMES D.',       pos:'del',sp:'ext',v:83},
+    {n:'WILSON H.',    pos:'del',sp:'dc', v:82},{n:'MOORE K.',     pos:'del',sp:'dc', v:80},
+    {n:'NORRINGTON-DAVIES',pos:'def',sp:'lb',v:79},{n:'ROBERTS C.',pos:'del',sp:'ext',v:79},
+  ]},
+]},
+
+/* ── AUSTRIA ── */
+{ id:'austria', nombre:'Austria', flag:'🇦🇹', ediciones:[
+  { año:2008, jugadores:[
+    {n:'PAYER',        pos:'pt', v:78},{n:'MANDL',          pos:'pt', v:74},
+    {n:'STRANZL',      pos:'def',sp:'cb',v:80},{n:'POGATETZ',      pos:'def',sp:'cb',v:79},
+    {n:'FUCHS',        pos:'def',sp:'lb',v:81},{n:'GARICS',        pos:'def',sp:'lb',v:78},
+    {n:'IVANSCHITZ',   pos:'med',v:80},{n:'AUFHAUSER',      pos:'med',v:78},{n:'SICK',    pos:'med',v:77},
+    {n:'VASTIC',       pos:'del',sp:'dc', v:78},{n:'KIENAST',      pos:'del',sp:'dc', v:77},
+    {n:'LINZ',         pos:'del',sp:'dc', v:77},{n:'SCHIEMER',     pos:'def',sp:'cb',v:78},
+    {n:'STANDFEST',    pos:'def',sp:'lb',v:77},{n:'BAUMGARTLINGER',pos:'med',v:77},
+  ]},
+  { año:2016, jugadores:[
+    {n:'ALMER',        pos:'pt', v:80},{n:'LINDNER',        pos:'pt', v:77},
+    {n:'ALABA',        pos:'def',sp:'lb',v:87},{n:'KLEIN',         pos:'def',sp:'lb',v:81},
+    {n:'PRÖDL',        pos:'def',sp:'cb',v:82},{n:'HINTEREGGER',   pos:'def',sp:'cb',v:83},
+    {n:'BAUMGARTLINGER',pos:'med',v:83},{n:'JUNUZOVIĆ',     pos:'med',v:82},{n:'SABITZER', pos:'del',sp:'ext',v:84},
+    {n:'HARNIK',       pos:'del',sp:'ext',v:81},{n:'JANTSCHER',    pos:'del',sp:'ext',v:79},
+    {n:'ARNAUTOVIĆ',   pos:'del',sp:'dc', v:83},{n:'DRAGOVIĆ',     pos:'def',sp:'cb',v:82},
+    {n:'WIMMER',       pos:'def',sp:'cb',v:79},{n:'OKOTIE',        pos:'del',sp:'dc', v:78},
+  ]},
+  { año:2021, jugadores:[
+    {n:'BACHMANN',     pos:'pt', v:81},{n:'PENTZ',          pos:'pt', v:78},
+    {n:'ALABA',        pos:'def',sp:'cb',v:88},{n:'HINTEREGGER',   pos:'def',sp:'cb',v:85},
+    {n:'LAINER',       pos:'def',sp:'lb',v:82},{n:'ULMER',         pos:'def',sp:'lb',v:79},
+    {n:'LAIMER',       pos:'med',v:83},{n:'GRILLITSCH',     pos:'med',v:82},{n:'SABITZER',pos:'del',sp:'ext',v:85},
+    {n:'ARNAUTOVIĆ',   pos:'del',sp:'dc', v:85},{n:'GREGORITSCH',  pos:'del',sp:'dc', v:81},
+    {n:'ONISIWO',      pos:'del',sp:'ext',v:79},{n:'KALAJDZIC',    pos:'del',sp:'dc', v:82},
+    {n:'SCHLAGER X.',  pos:'med',v:82},{n:'BAUMGARTLINGER', pos:'med',v:81},
+  ]},
+  { año:2024, jugadores:[
+    {n:'PENTZ',        pos:'pt', v:79},{n:'SCHLAGER A.',    pos:'pt', v:74},
+    {n:'Trimmel',      pos:'def',sp:'lb',v:77},{n:'Posch',         pos:'def',sp:'lb',v:79},
+    {n:'Lienhart',     pos:'def',sp:'cb',v:79},{n:'Trauner',       pos:'def',sp:'cb',v:78},
+    {n:'Laimer',       pos:'med',v:83},{n:'Schlager X.',   pos:'med',v:82},{n:'Grillitsch',pos:'med',v:78},
+    {n:'Sabitzer',     pos:'del',sp:'ext',v:83},{n:'Arnautovic',   pos:'del',sp:'dc', v:82},
+    {n:'Gregoritsch',  pos:'del',sp:'dc', v:79},{n:'Baumgartner',  pos:'del',sp:'ext',v:80},
+  ]},
+]},
+
+/* ── ESCOCIA ── */
+{ id:'scotland', nombre:'Escocia', flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', ediciones:[
+  { año:1996, jugadores:[
+    {n:'Leighton',     pos:'pt', v:80},{n:'Goram',         pos:'pt', v:82},
+    {n:'McKimmie',     pos:'def',sp:'lb',v:76},{n:'McPherson',     pos:'def',sp:'cb',v:78},
+    {n:'Calderwood',   pos:'def',sp:'cb',v:77},{n:'Boyd T.',       pos:'def',sp:'lb',v:75},
+    {n:'McStay',       pos:'med',v:82},{n:'McCall',        pos:'med',v:79},{n:'Collins J.',pos:'med',v:80},
+    {n:'Durie',        pos:'del',sp:'dc', v:78},{n:'McCoist',      pos:'del',sp:'dc', v:83},
+    {n:'McAllister',   pos:'med',v:81},{n:'Spencer',       pos:'del',sp:'ext',v:76},
+  ]},
+  { año:2021, jugadores:[
+    {n:'MARSHALL',     pos:'pt', v:82},{n:'McLAUGHLIN',    pos:'pt', v:77},
+    {n:"O'DONNELL",    pos:'def',sp:'lb',v:79},{n:'ROBERTSON',     pos:'def',sp:'lb',v:87},
+    {n:'HENDRY',       pos:'def',sp:'cb',v:81},{n:'MCTOMINAY',     pos:'med',v:83},
+    {n:'ARMSTRONG',    pos:'med',v:81},{n:'McGINN',         pos:'med',v:83},{n:'CHRISTIE',pos:'del',sp:'ext',v:83},
+    {n:'ADAMS',        pos:'del',sp:'dc', v:83},{n:'FRASER',       pos:'del',sp:'ext',v:80},
+    {n:'FORREST',      pos:'del',sp:'ext',v:80},{n:'NISBET',       pos:'del',sp:'dc', v:79},
+    {n:'TAYLOR G.',    pos:'def',sp:'lb',v:79},{n:'TURNBULL',      pos:'med',v:79},
+  ]},
+  { año:2024, jugadores:[
+    {n:'GUNN',         pos:'pt', v:82},{n:'GORDON',         pos:'pt', v:79},
+    {n:'ALEXANDER',    pos:'def',sp:'lb',v:82},{n:'ROBERTSON',     pos:'def',sp:'lb',v:87},
+    {n:'HENDRY',       pos:'def',sp:'cb',v:82},{n:'MCTOMINAY',     pos:'med',v:84},
+    {n:'GILMOUR',      pos:'med',v:83},{n:'McGINN',         pos:'med',v:84},{n:'CHRISTIE',pos:'del',sp:'ext',v:82},
+    {n:'ADAMS',        pos:'del',sp:'dc', v:84},{n:'TIERNEY',      pos:'def',sp:'lb',v:83},
+    {n:'McGREGOR C.',  pos:'med',v:82},{n:'RALSTON',        pos:'def',sp:'lb',v:80},
+    {n:'SHANKLAND',    pos:'del',sp:'dc', v:81},{n:'FERGUSON',     pos:'del',sp:'ext',v:80},
+  ]},
+]},
+
+/* ── POLONIA ── */
+{ id:'poland', nombre:'Polonia', flag:'🇵🇱', ediciones:[
+  { año:2008, jugadores:[
+    {n:'BORUC',        pos:'pt', v:84},{n:'FABIAŃSKI',      pos:'pt', v:80},
+    {n:'WASILEWSKI',   pos:'def',sp:'cb',v:80},{n:'JELEŃ',         pos:'def',sp:'cb',v:78},
+    {n:'BOENISCH',     pos:'def',sp:'lb',v:78},{n:'ŻEWŁAKOW',      pos:'def',sp:'lb',v:77},
+    {n:'KRZYNÓWEK',    pos:'med',v:81},{n:'GUERREIRO R.',   pos:'med',v:79},{n:'MURAWSKI',pos:'med',v:78},
+    {n:'SMOLAREK',     pos:'del',sp:'ext',v:81},{n:'SAGANOWSKI',   pos:'del',sp:'dc', v:79},
+    {n:'RASIAK',       pos:'del',sp:'dc', v:79},{n:'BROZ',         pos:'med',v:78},
+    {n:'SOBOLEWSKI',   pos:'med',v:77},{n:'LOBODZINSKI',    pos:'med',v:77},
+  ]},
+  { año:2012, jugadores:[
+    {n:'SZCZĘSNY',     pos:'pt', v:85},{n:'BORUC',          pos:'pt', v:83},
+    {n:'PISZCZEK',     pos:'def',sp:'lb',v:84},{n:'WAWRZYNIAK',    pos:'def',sp:'lb',v:80},
+    {n:'WASILEWSKI',   pos:'def',sp:'cb',v:80},{n:'PERQUIS',       pos:'def',sp:'cb',v:79},
+    {n:'BŁASZCZYKOWSKI',pos:'del',sp:'ext',v:84},{n:'OBRANIAK',    pos:'med',v:82},{n:'MURAWSKI',pos:'med',v:79},
+    {n:'LEWANDOWSKI',  pos:'del',sp:'dc', v:87},{n:'POLAŃSKI',     pos:'med',v:79},
+    {n:'RYBUS',        pos:'def',sp:'lb',v:78},{n:'DUDKA',         pos:'med',v:78},
+    {n:'SOBOTA',       pos:'del',sp:'ext',v:78},{n:'TYTON',        pos:'pt', v:78},
+  ]},
+  { año:2016, jugadores:[
+    {n:'SZCZĘSNY',     pos:'pt', v:85},{n:'FABIAŃSKI',      pos:'pt', v:82},
+    {n:'PISZCZEK',     pos:'def',sp:'lb',v:84},{n:'GLIK',          pos:'def',sp:'cb',v:85},
+    {n:'PAZDAN',       pos:'def',sp:'cb',v:81},{n:'JĘDRZEJCZYK',   pos:'def',sp:'lb',v:81},
+    {n:'KRYCHOWIAK',   pos:'med',v:87},{n:'BŁASZCZYKOWSKI', pos:'del',sp:'ext',v:83},{n:'ZIELIŃSKI',pos:'med',v:85},
+    {n:'MILIK',        pos:'del',sp:'dc', v:83},{n:'LEWANDOWSKI',  pos:'del',sp:'dc', v:93},
+    {n:'GROSICKI',     pos:'del',sp:'ext',v:82},{n:'KAPUSTKA',     pos:'med',v:80},
+    {n:'TEODORCZYK',   pos:'del',sp:'dc', v:79},{n:'MILIKOWSKI',   pos:'del',sp:'ext',v:78},
+  ]},
+  { año:2021, jugadores:[
+    {n:'SZCZĘSNY',     pos:'pt', v:88},{n:'FABIAŃSKI',      pos:'pt', v:81},
+    {n:'BERESZYŃSKI',  pos:'def',sp:'lb',v:82},{n:'RYBUS',         pos:'def',sp:'lb',v:80},
+    {n:'GLIK',         pos:'def',sp:'cb',v:84},{n:'BEDNAREK',      pos:'def',sp:'cb',v:84},
+    {n:'KRYCHOWIAK',   pos:'med',v:86},{n:'ZIELIŃSKI',      pos:'med',v:86},{n:'MODER',   pos:'med',v:82},
+    {n:'LEWANDOWSKI',  pos:'del',sp:'dc', v:94},{n:'MILIK',        pos:'del',sp:'dc', v:84},
+    {n:'GROSICKI',     pos:'del',sp:'ext',v:81},{n:'ŚWIDERSKI',    pos:'del',sp:'dc', v:80},
+    {n:'KLICH',        pos:'med',v:81},{n:'HELIK',          pos:'def',sp:'cb',v:79},
+  ]},
+  { año:2024, jugadores:[
+    {n:'SZCZĘSNY',     pos:'pt', v:88},{n:'BUŁKA',          pos:'pt', v:80},
+    {n:'CASH',         pos:'def',sp:'lb',v:83},{n:'BEDNAREK',      pos:'def',sp:'cb',v:84},
+    {n:'KIWIOR',       pos:'def',sp:'cb',v:82},{n:'FRANKOWSKI',    pos:'def',sp:'lb',v:82},
+    {n:'ZIELIŃSKI',    pos:'med',v:86},{n:'KRYCHOWIAK',     pos:'med',v:85},{n:'SZYMAŃSKI',pos:'med',v:83},
+    {n:'LEWANDOWSKI',  pos:'del',sp:'dc', v:93},{n:'BUKSA',        pos:'del',sp:'dc', v:80},
+    {n:'ŚWIDERSKI',    pos:'del',sp:'dc', v:81},{n:'GROSICKI',     pos:'del',sp:'ext',v:79},
+    {n:'KAMIŃSKI',     pos:'med',v:81},{n:'PUCHACZ',        pos:'def',sp:'lb',v:79},
+  ]},
+]},
+
+/* ── RUSIA ── */
+{ id:'russia', nombre:'Rusia', flag:'🇷🇺', ediciones:[
+  { año:2008, jugadores:[
+    {n:'AKINFEEV',     pos:'pt', v:87},{n:'MALAFEEV',       pos:'pt', v:81},
+    {n:'ZHIRKOV',      pos:'def',sp:'lb',v:84},{n:'IGNASHEVICH',   pos:'def',sp:'cb',v:85},
+    {n:'BEREZUTSKY V.',pos:'def',sp:'cb',v:81},{n:'ANYUKOV',       pos:'def',sp:'lb',v:82},
+    {n:'SEMAK',        pos:'med',v:82},{n:'ZYRYANOV',       pos:'med',v:82},{n:'ARSHAVIN', pos:'del',sp:'ext',v:88},
+    {n:'PAVLYUCHENKO', pos:'del',sp:'dc', v:83},{n:'POGREBNYAK',   pos:'del',sp:'dc', v:81},
+    {n:'BILYALETDINOV',pos:'del',sp:'ext',v:82},{n:'SEMSHOV',      pos:'med',v:80},
+    {n:'SYCHEV',       pos:'del',sp:'dc', v:80},{n:'KOLODIN',      pos:'def',sp:'cb',v:80},
+  ]},
+  { año:2012, jugadores:[
+    {n:'AKINFEEV',     pos:'pt', v:87},{n:'MALAFEEV',       pos:'pt', v:80},
+    {n:'ZHIRKOV',      pos:'def',sp:'lb',v:83},{n:'IGNASHEVICH',   pos:'def',sp:'cb',v:84},
+    {n:'BEREZUTSKY V.',pos:'def',sp:'cb',v:82},{n:'ANYUKOV',       pos:'def',sp:'lb',v:81},
+    {n:'SHIROKOV',     pos:'med',v:83},{n:'DENISOV',        pos:'med',v:82},{n:'ARSHAVIN', pos:'del',sp:'ext',v:86},
+    {n:'PAVLYUCHENKO', pos:'del',sp:'dc', v:82},{n:'KERZHAKOV',    pos:'del',sp:'dc', v:82},
+    {n:'DZAGOEV',      pos:'med',v:83},{n:'GLUSHAKOV',      pos:'med',v:80},
+    {n:'KOKORIN',      pos:'del',sp:'dc', v:80},{n:'BILYALETDINOV',pos:'del',sp:'ext',v:81},
+  ]},
+  { año:2016, jugadores:[
+    {n:'AKINFEEV',     pos:'pt', v:84},{n:'GUILHERME',      pos:'pt', v:79},
+    {n:'ZHIRKOV',      pos:'def',sp:'lb',v:81},{n:'IGNASHEVICH',   pos:'def',sp:'cb',v:82},
+    {n:'BEREZUTSKY',   pos:'def',sp:'cb',v:80},{n:'KOMBAROV',      pos:'def',sp:'lb',v:80},
+    {n:'GLUSHAKOV',    pos:'med',v:81},{n:'DENISOV',        pos:'med',v:81},{n:'CHERYSHEV',pos:'del',sp:'ext',v:82},
+    {n:'KOKORIN',      pos:'del',sp:'dc', v:81},{n:'DZAGOEV',      pos:'med',v:82},
+    {n:'SHATOV',       pos:'del',sp:'ext',v:80},{n:'SHIROKOV',     pos:'med',v:81},
+    {n:'OZDOEV',       pos:'med',v:78},{n:'SMOLNIKOV',      pos:'def',sp:'lb',v:80},
+  ]},
+  { año:2021, jugadores:[
+    {n:'SHUNIN',       pos:'pt', v:80},{n:'SAFONOV',        pos:'pt', v:79},
+    {n:'MARIO FERNANDES',pos:'def',sp:'lb',v:82},{n:'DZHIKIYA',   pos:'def',sp:'cb',v:82},
+    {n:'SEMENOV',      pos:'def',sp:'cb',v:79},{n:'KARAVAEV',      pos:'def',sp:'lb',v:79},
+    {n:'ZOBNIN',       pos:'med',v:83},{n:'GOLOVIN',        pos:'med',v:86},{n:'KUZYAEV', pos:'med',v:82},
+    {n:'MIRANCHUK',    pos:'del',sp:'ext',v:83},{n:'CHERYSHEV',    pos:'del',sp:'ext',v:83},
+    {n:'DZYUBA',       pos:'del',sp:'dc', v:83},{n:'ZHIRKOV',      pos:'def',sp:'lb',v:78},
+    {n:'OZDOEV',       pos:'med',v:80},{n:'IONOV',          pos:'del',sp:'ext',v:78},
+  ]},
+]},
+
+/* ── UCRANIA ── */
+{ id:'ukraine', nombre:'Ucrania', flag:'🇺🇦', ediciones:[
+  { año:2012, jugadores:[
+    {n:'PYATOV',       pos:'pt', v:84},{n:'KOVAL',          pos:'pt', v:79},
+    {n:'KHACHERIDI',   pos:'def',sp:'cb',v:82},{n:'KUCHER',        pos:'def',sp:'cb',v:82},
+    {n:'RAKYTSKYI',    pos:'def',sp:'cb',v:84},{n:'SELIN',         pos:'def',sp:'lb',v:79},
+    {n:'TYMOSCHUK',    pos:'med',v:84},{n:'YARMOLENKO',     pos:'del',sp:'ext',v:86},{n:'KONOPLYANKA',pos:'del',sp:'ext',v:85},
+    {n:'VORONIN',      pos:'del',sp:'dc', v:82},{n:'SHEVCHENKO',   pos:'del',sp:'dc', v:87},
+    {n:'MILEVSKIY',    pos:'del',sp:'dc', v:80},{n:'GUSEV',        pos:'del',sp:'ext',v:80},
+    {n:'NAZARENKO',    pos:'med',v:79},{n:'ALIEV',          pos:'med',v:80},
+  ]},
+  { año:2016, jugadores:[
+    {n:'PYATOV',       pos:'pt', v:84},{n:'BOYKO',          pos:'pt', v:79},
+    {n:'BUTKO',        pos:'def',sp:'lb',v:80},{n:'KHACHERIDI',    pos:'def',sp:'cb',v:82},
+    {n:'RAKYTSKYI',    pos:'def',sp:'cb',v:84},{n:'SHAKHOV',       pos:'def',sp:'lb',v:79},
+    {n:'SYDORCHUK',    pos:'med',v:81},{n:'STEPANENKO',     pos:'med',v:82},{n:'YARMOLENKO',pos:'del',sp:'ext',v:88},
+    {n:'KONOPLYANKA',  pos:'del',sp:'ext',v:86},{n:'SELEZNYOV',    pos:'del',sp:'dc', v:82},
+    {n:'ZINCHENKO',    pos:'del',sp:'ext',v:81},{n:'MARLOS',       pos:'del',sp:'ext',v:81},
+    {n:'KRAVETS',      pos:'del',sp:'dc', v:80},{n:'ROTAN',        pos:'med',v:80},
+  ]},
+  { año:2021, jugadores:[
+    {n:'BUSHCHAN',     pos:'pt', v:83},{n:'PYATOV',         pos:'pt', v:82},
+    {n:'KARAVAEV',     pos:'def',sp:'lb',v:79},{n:'ZABARNYI',      pos:'def',sp:'cb',v:81},
+    {n:'MATVIYENKO',   pos:'def',sp:'cb',v:83},{n:'MYKOLENKO',     pos:'def',sp:'lb',v:82},
+    {n:'SYDORCHUK',    pos:'med',v:82},{n:'ZINCHENKO',      pos:'del',sp:'ext',v:85},{n:'MALINOVSKYI',pos:'med',v:85},
+    {n:'YARMOLENKO',   pos:'del',sp:'ext',v:86},{n:'YAREMCHUK',    pos:'del',sp:'dc', v:84},
+    {n:'DOVBYK',       pos:'del',sp:'dc', v:82},{n:'TSYGANKOV',    pos:'del',sp:'ext',v:81},
+    {n:'SHAPARENKO',   pos:'med',v:81},{n:'STEPANENKO',     pos:'med',v:82},
+  ]},
+  { año:2024, jugadores:[
+    {n:'TRUBIN',       pos:'pt', v:83},{n:'BUSHCHAN',       pos:'pt', v:82},
+    {n:'KARAVAEV',     pos:'def',sp:'lb',v:79},{n:'ZABARNYI',      pos:'def',sp:'cb',v:84},
+    {n:'MATVIYENKO',   pos:'def',sp:'cb',v:84},{n:'MYKOLENKO',     pos:'def',sp:'lb',v:84},
+    {n:'SUDAKOV',      pos:'med',v:85},{n:'ZINCHENKO',      pos:'med',v:84},{n:'MALINOVSKYI',pos:'med',v:84},
+    {n:'YARMOLENKO',   pos:'del',sp:'ext',v:83},{n:'YAREMCHUK',    pos:'del',sp:'dc', v:85},
+    {n:'DOVBYK',       pos:'del',sp:'dc', v:85},{n:'TSYGANKOV',    pos:'del',sp:'ext',v:82},
+    {n:'SHAPARENKO',   pos:'med',v:83},{n:'MUDRYK',         pos:'del',sp:'ext',v:84},
+  ]},
+]},
+
+/* ── ESLOVAQUIA ── */
+{ id:'slovakia', nombre:'Eslovaquia', flag:'🇸🇰', ediciones:[
+  { año:2016, jugadores:[
+    {n:'KOZÁČIK',      pos:'pt', v:81},{n:'DÚBRAVKA',       pos:'pt', v:78},
+    {n:'PEKARÍK',      pos:'def',sp:'lb',v:80},{n:'ĎURICA',        pos:'def',sp:'cb',v:81},
+    {n:'ŠKRTEL',       pos:'def',sp:'cb',v:86},{n:'HUBOČAN',       pos:'def',sp:'lb',v:80},
+    {n:'KUCKA',        pos:'med',v:83},{n:'HAMŠÍK',         pos:'med',v:90},{n:'WEISS',    pos:'del',sp:'ext',v:82},
+    {n:'DUda',         pos:'del',sp:'ext',v:82},{n:'MÁK',          pos:'del',sp:'ext',v:80},
+    {n:'NEMEC',        pos:'del',sp:'dc', v:79},{n:'ŠESTÀK',       pos:'del',sp:'dc', v:80},
+    {n:'STOCH',        pos:'del',sp:'ext',v:81},{n:'PEČOVSKÝ',     pos:'med',v:79},
+  ]},
+  { año:2021, jugadores:[
+    {n:'DÚBRAVKA',     pos:'pt', v:83},{n:'RODÁK',          pos:'pt', v:79},
+    {n:'PEKARÍK',      pos:'def',sp:'lb',v:80},{n:'GYÖMBÉR',       pos:'def',sp:'cb',v:81},
+    {n:'ŠKRTEL',       pos:'def',sp:'cb',v:84},{n:'GREGUŠ',        pos:'def',sp:'lb',v:80},
+    {n:'KUCKA',        pos:'med',v:84},{n:'HAMŠÍK',         pos:'med',v:88},{n:'LOBOTKA',  pos:'med',v:85},
+    {n:'DUDA',         pos:'del',sp:'ext',v:81},{n:'BOŽENÍK',      pos:'del',sp:'dc', v:80},
+    {n:'MÁK',          pos:'del',sp:'ext',v:80},{n:'HARASLÍN',     pos:'del',sp:'ext',v:79},
+    {n:'STRELEC',      pos:'del',sp:'dc', v:78},{n:'WEISS',        pos:'del',sp:'ext',v:80},
+  ]},
+  { año:2024, jugadores:[
+    {n:'DÚBRAVKA',     pos:'pt', v:83},{n:'RODÁK',          pos:'pt', v:79},
+    {n:'PEKARÍK',      pos:'def',sp:'lb',v:80},{n:'GYÖMBÉR',       pos:'def',sp:'cb',v:81},
+    {n:'VAVRO',        pos:'def',sp:'cb',v:81},{n:'HANCKO',        pos:'def',sp:'lb',v:82},
+    {n:'LOBOTKA',      pos:'med',v:87},{n:'KUCKA',          pos:'med',v:83},{n:'BÉNES',    pos:'med',v:80},
+    {n:'DUDA',         pos:'del',sp:'ext',v:82},{n:'SCHRANZ',      pos:'del',sp:'ext',v:83},
+    {n:'BOŽENÍK',      pos:'del',sp:'dc', v:81},{n:'SUSLOV',       pos:'del',sp:'ext',v:80},
+    {n:'HARASLÍN',     pos:'del',sp:'ext',v:79},{n:'GREGOR',       pos:'def',sp:'cb',v:79},
+  ]},
+]},
+
+/* ── ALBANIA ── */
+{ id:'albania', nombre:'Albania', flag:'🇦🇱', ediciones:[
+  { año:2016, jugadores:[
+    {n:'BERISHA E.',   pos:'pt', v:82},{n:'STRAKOSHA',      pos:'pt', v:78},
+    {n:'MAVRAJ',       pos:'def',sp:'cb',v:82},{n:'AGOLLI',        pos:'def',sp:'lb',v:83},
+    {n:'HYSAJ',        pos:'def',sp:'lb',v:83},{n:'XHAKA G.',      pos:'def',sp:'lb',v:82},
+    {n:'CANA',         pos:'med',v:83},{n:'ABRASHI',        pos:'med',v:79},{n:'LENJANI',  pos:'del',sp:'ext',v:79},
+    {n:'SADIKU',       pos:'del',sp:'dc', v:82},{n:'BALAJ',        pos:'del',sp:'dc', v:79},
+    {n:'GASHI',        pos:'del',sp:'ext',v:79},{n:'ROSHI',        pos:'del',sp:'ext',v:78},
+    {n:'MEMUSHAJ',     pos:'med',v:79},{n:'BULKU',          pos:'def',sp:'cb',v:78},
+  ]},
+  { año:2024, jugadores:[
+    {n:'STRAKOSHA',    pos:'pt', v:80},{n:'BERISHA E.',     pos:'pt', v:83},
+    {n:'HYSAJ',        pos:'def',sp:'lb',v:82},{n:'DJIMSITI',      pos:'def',sp:'cb',v:83},
+    {n:'ISMAJLI',      pos:'def',sp:'cb',v:82},{n:'MITAJ',         pos:'def',sp:'lb',v:79},
+    {n:'ASLLANI',      pos:'med',v:82},{n:'RAMADANI',       pos:'med',v:82},{n:'GJASULA',  pos:'med',v:80},
+    {n:'BAJRAMI',      pos:'del',sp:'ext',v:83},{n:'BROJA',        pos:'del',sp:'dc', v:83},
+    {n:'MANAJ',        pos:'del',sp:'dc', v:81},{n:'LACI',         pos:'med',v:80},
+    {n:'SEFERI',       pos:'del',sp:'dc', v:78},{n:'CIKALLESHI',   pos:'del',sp:'dc', v:79},
+  ]},
+]},
+
+/* ── IRLANDA ── */
+{ id:'ireland', nombre:'Irlanda', flag:'🇮🇪', ediciones:[
+  { año:2012, jugadores:[
+    {n:'GIVEN',        pos:'pt', v:83},{n:'WESTWOOD',       pos:'pt', v:78},
+    {n:'O\'SHEA',      pos:'def',sp:'cb',v:82},{n:'McSHANE',       pos:'def',sp:'cb',v:79},
+    {n:'WARD S.',      pos:'def',sp:'lb',v:78},{n:'KELLY S.',      pos:'def',sp:'lb',v:79},
+    {n:'WHELAN G.',    pos:'med',v:81},{n:'ANDREWS',        pos:'med',v:80},{n:'McGEADY',  pos:'del',sp:'ext',v:82},
+    {n:'KEANE R.',     pos:'del',sp:'dc', v:83},{n:'DOYLE K.',     pos:'del',sp:'dc', v:81},
+    {n:'COX',          pos:'del',sp:'ext',v:79},{n:'LONG',         pos:'del',sp:'dc', v:80},
+    {n:'O\'BRIEN A.',  pos:'def',sp:'cb',v:78},{n:'HUNT',          pos:'del',sp:'ext',v:78},
+  ]},
+  { año:2016, jugadores:[
+    {n:'RANDOLPH',     pos:'pt', v:81},{n:'GIVEN',          pos:'pt', v:79},
+    {n:'COLEMAN',      pos:'def',sp:'lb',v:85},{n:'BRADY R.',      pos:'def',sp:'lb',v:83},
+    {n:'O\'SHEA',      pos:'def',sp:'cb',v:80},{n:'DUFFY',         pos:'def',sp:'cb',v:82},
+    {n:'WHELAN G.',    pos:'med',v:80},{n:'HOOLAHAN',       pos:'med',v:83},{n:'HENDRICK', pos:'med',v:82},
+    {n:'LONG',         pos:'del',sp:'dc', v:82},{n:'BRADY R2.',    pos:'del',sp:'ext',v:84},
+    {n:'WALTERS',      pos:'del',sp:'dc', v:81},{n:'McGEADY',      pos:'del',sp:'ext',v:80},
+    {n:'McCARTHY J.',  pos:'med',v:80},{n:'MURPHY',         pos:'del',sp:'dc', v:78},
+  ]},
+]},
+
+/* ── ISLANDIA ── */
+{ id:'iceland', nombre:'Islandia', flag:'🇮🇸', ediciones:[
+  { año:2016, jugadores:[
+    {n:'HALLDÓRSSON',  pos:'pt', v:79},{n:'KRISTINSSON',    pos:'pt', v:76},
+    {n:'ÁRNASON',      pos:'def',sp:'cb',v:82},{n:'INGASON',       pos:'def',sp:'cb',v:80},
+    {n:'SÆVARSSON',    pos:'def',sp:'lb',v:80},{n:'SKÚLASON',      pos:'def',sp:'lb',v:79},
+    {n:'GUNNARSSON',   pos:'med',v:82},{n:'SIGURDSSON G.',  pos:'med',v:87},{n:'BJARNASON',pos:'med',v:82},
+    {n:'FINNBOGASON',  pos:'del',sp:'dc', v:83},{n:'SIGTHÓRSSON',  pos:'del',sp:'dc', v:82},
+    {n:'GUDMUNDSSON',  pos:'del',sp:'ext',v:84},{n:'TRAUSTASON',   pos:'del',sp:'ext',v:79},
+    {n:'BÖDVARSSON',   pos:'del',sp:'dc', v:79},{n:'SIGURDSSON B.',pos:'med',v:79},
+  ]},
+]},
+
+/* ── IRLANDA DEL NORTE ── */
+{ id:'northernireland', nombre:'Irlanda del Norte', flag:'🇬🇧', ediciones:[
+  { año:2016, jugadores:[
+    {n:'McGOVERN',     pos:'pt', v:79},{n:'CARROLL R.',     pos:'pt', v:77},
+    {n:'HUGHES A.',    pos:'def',sp:'lb',v:78},{n:'CATHCART',      pos:'def',sp:'cb',v:81},
+    {n:'McAULEY',      pos:'def',sp:'cb',v:82},{n:'DALLAS',        pos:'def',sp:'lb',v:81},
+    {n:'EVANS J.',     pos:'def',sp:'cb',v:83},{n:'DAVIS S.',      pos:'med',v:83},{n:'NORWOOD',pos:'med',v:80},
+    {n:'WARD J.',      pos:'del',sp:'ext',v:80},{n:'LAFFERTY K.',  pos:'del',sp:'dc', v:82},
+    {n:'WASHINGTON',   pos:'del',sp:'dc', v:79},{n:'GRIGG',        pos:'del',sp:'dc', v:80},
+    {n:'McGINN N.',    pos:'del',sp:'ext',v:79},{n:'BRUNT',        pos:'def',sp:'lb',v:79},
+  ]},
+]},
+
+/* ── FINLANDIA ── */
+{ id:'finland', nombre:'Finlandia', flag:'🇫🇮', ediciones:[
+  { año:2021, jugadores:[
+    {n:'HRADECKY',     pos:'pt', v:83},{n:'JORONEN',        pos:'pt', v:78},
+    {n:'ARAJUURI',     pos:'def',sp:'cb',v:80},{n:'OJALA',         pos:'def',sp:'cb',v:79},
+    {n:'TOIVIO',       pos:'def',sp:'cb',v:79},{n:'URONEN',        pos:'def',sp:'lb',v:80},
+    {n:'RAITALA',      pos:'def',sp:'lb',v:78},{n:'SPARV',         pos:'med',v:81},{n:'KAMARA G.',pos:'med',v:83},
+    {n:'LOD',          pos:'del',sp:'ext',v:80},{n:'PUKKI',        pos:'del',sp:'dc', v:85},
+    {n:'POHJANPALO',   pos:'del',sp:'dc', v:82},{n:'JENSEN F.',    pos:'del',sp:'ext',v:80},
+    {n:'FORSS',        pos:'del',sp:'dc', v:78},{n:'SCHÜLLER',     pos:'def',sp:'cb',v:78},
+  ]},
+]},
+
+/* ── MACEDONIA DEL NORTE ── */
+{ id:'northmacedonia', nombre:'Macedonia del Norte', flag:'🇲🇰', ediciones:[
+  { año:2021, jugadores:[
+    {n:'DIMITRIEVSKI',  pos:'pt', v:79},{n:'GACEVSKI',      pos:'pt', v:74},
+    {n:'MUSLIU',        pos:'def',sp:'cb',v:79},{n:'RISTOVSKI',    pos:'def',sp:'lb',v:79},
+    {n:'ALIOSKI',       pos:'def',sp:'lb',v:81},{n:'BEJTULAI',     pos:'def',sp:'cb',v:77},
+    {n:'ADEMI',         pos:'med',v:80},{n:'BARDHI',        pos:'med',v:79},{n:'ELMAS',    pos:'med',v:83},
+    {n:'TRICKOVSKI',    pos:'del',sp:'ext',v:80},{n:'NESTOROVSKI', pos:'del',sp:'dc', v:81},
+    {n:'PANDEV',        pos:'del',sp:'ext',v:84},{n:'TRAJKOVSKI',  pos:'del',sp:'ext',v:80},
+    {n:'HASANI',        pos:'del',sp:'ext',v:79},{n:'CHURLINOV',   pos:'del',sp:'ext',v:79},
+  ]},
+]},
+
+/* ── ESLOVENIA ── */
+{ id:'slovenia', nombre:'Eslovenia', flag:'🇸🇮', ediciones:[
+  { año:2024, jugadores:[
+    {n:'OBLAK',        pos:'pt', v:91},{n:'VIDMAR',         pos:'pt', v:78},
+    {n:'STOJANOVIĆ',   pos:'def',sp:'lb',v:81},{n:'BIJOL',         pos:'def',sp:'cb',v:83},
+    {n:'BLAŽIČ',       pos:'def',sp:'cb',v:79},{n:'KARNIČNIK',     pos:'def',sp:'lb',v:80},
+    {n:'ELŠNIK',       pos:'med',v:80},{n:'CERIN',          pos:'med',v:81},{n:'LOVRIĆ',   pos:'med',v:83},
+    {n:'MLAKAR',       pos:'del',sp:'ext',v:79},{n:'ŠPORAR',       pos:'del',sp:'dc', v:80},
+    {n:'ŠEŠKO',        pos:'del',sp:'dc', v:84},{n:'VERBIČ',       pos:'del',sp:'ext',v:80},
+    {n:'VIPOTNIK',     pos:'del',sp:'dc', v:78},{n:'JANZA',        pos:'def',sp:'lb',v:79},
+  ]},
+]},
+
+/* ── SERBIA ── */
+{ id:'serbia', nombre:'Serbia', flag:'🇷🇸', ediciones:[
+  { año:2024, jugadores:[
+    {n:'RAJKOVIĆ',     pos:'pt', v:82},{n:'DMITROVIĆ',      pos:'pt', v:80},
+    {n:'MILENKOVIĆ',   pos:'def',sp:'cb',v:84},{n:'PAVLOVIĆ',      pos:'def',sp:'cb',v:81},
+    {n:'SPAJIĆ',       pos:'def',sp:'cb',v:81},{n:'ŽIVKOVIĆ A.',   pos:'def',sp:'lb',v:81},
+    {n:'LUKIĆ',        pos:'med',v:82},{n:'GUDELJ',         pos:'med',v:80},{n:'SAMARDZIĆ',pos:'med',v:82},
+    {n:'TADIĆ',        pos:'del',sp:'ext',v:87},{n:'MITROVIĆ',     pos:'del',sp:'dc', v:87},
+    {n:'VLAHOVIĆ',     pos:'del',sp:'dc', v:87},{n:'JOVIĆ L.',     pos:'del',sp:'dc', v:82},
+    {n:'LAZOVIĆ',      pos:'def',sp:'lb',v:80},{n:'MAKSIMOVIĆ',    pos:'med',v:81},
+  ]},
+]},
+
+/* ── GEORGIA ── */
+{ id:'georgia', nombre:'Georgia', flag:'🇬🇪', ediciones:[
+  { año:2024, jugadores:[
+    {n:'MAMARDASHVILI', pos:'pt', v:85},{n:'LORIA',         pos:'pt', v:77},
+    {n:'KAKABADZE',    pos:'def',sp:'lb',v:80},{n:'DVALI',         pos:'def',sp:'cb',v:81},
+    {n:'KVERKVELIA',   pos:'def',sp:'cb',v:79},{n:'LOCHOSHVILI',   pos:'def',sp:'cb',v:80},
+    {n:'KOCHORASHVILI',pos:'med',v:82},{n:'CHAKVETADZE',    pos:'del',sp:'ext',v:83},{n:'GVELESIANI',pos:'def',sp:'lb',v:79},
+    {n:'KVILITAIA',    pos:'del',sp:'dc', v:80},{n:'MIKAUTADZE',   pos:'del',sp:'dc', v:85},
+    {n:'ZIVZIVADZE',   pos:'del',sp:'dc', v:79},{n:'DAVITASHVILI', pos:'del',sp:'ext',v:81},
+    {n:'LOBJANIDZE',   pos:'del',sp:'ext',v:80},{n:'TSITAISHVILI', pos:'del',sp:'ext',v:79},
+  ]},
+]},
+
+];
+
+/* ══════════════════════════════════════
+   RIVALES PARA GENERACIÓN DE PARTIDOS
+══════════════════════════════════════ */
+const RIVALES_EURO = [
+  // Tier 1 — élite
+  {nombre:'Alemania',     fuerza:89, flag:'🇩🇪', tier:1},
+  {nombre:'Francia',      fuerza:89, flag:'🇫🇷', tier:1},
+  {nombre:'España',       fuerza:90, flag:'🇪🇸', tier:1},
+  {nombre:'Italia',       fuerza:87, flag:'🇮🇹', tier:1},
+  {nombre:'Países Bajos', fuerza:88, flag:'🇳🇱', tier:1},
+  {nombre:'Inglaterra',   fuerza:86, flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', tier:1},
+  {nombre:'Portugal',     fuerza:87, flag:'🇵🇹', tier:1},
+  {nombre:'Bélgica',      fuerza:85, flag:'🇧🇪', tier:1},
+  // Tier 2 — sólidas
+  {nombre:'Croacia',      fuerza:83, flag:'🇭🇷', tier:2},
+  {nombre:'Rep. Checa',   fuerza:81, flag:'🇨🇿', tier:2},
+  {nombre:'URSS',         fuerza:83, flag:'🇷🇺', tier:2},
+  {nombre:'Dinamarca',    fuerza:82, flag:'🇩🇰', tier:2},
+  {nombre:'Yugoslavia',   fuerza:82, flag:'🇷🇸', tier:2},
+  {nombre:'Turquía',      fuerza:80, flag:'🇹🇷', tier:2},
+  {nombre:'Suecia',       fuerza:80, flag:'🇸🇪', tier:2},
+  {nombre:'Rumanía',      fuerza:80, flag:'🇷🇴', tier:2},
+  {nombre:'Grecia',       fuerza:79, flag:'🇬🇷', tier:2},
+  {nombre:'Hungría',      fuerza:80, flag:'🇭🇺', tier:2},
+  // Tier 3 — resto
+  {nombre:'Suiza',        fuerza:78, flag:'🇨🇭', tier:3},
+  {nombre:'Gales',        fuerza:77, flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', tier:3},
+  {nombre:'Austria',      fuerza:77, flag:'🇦🇹', tier:3},
+  {nombre:'Escocia',      fuerza:76, flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', tier:3},
+  {nombre:'Polonia',      fuerza:77, flag:'🇵🇱', tier:3},
+  {nombre:'Serbia',       fuerza:76, flag:'🇷🇸', tier:3},
+  {nombre:'Ucrania',      fuerza:77, flag:'🇺🇦', tier:3},
+  {nombre:'Rep. Irlanda', fuerza:75, flag:'🇮🇪', tier:3},
+  {nombre:'Albania',      fuerza:72, flag:'🇦🇱', tier:3},
+  {nombre:'Eslovaquia',   fuerza:74, flag:'🇸🇰', tier:3},
+  {nombre:'Eslovenia',    fuerza:73, flag:'🇸🇮', tier:3},
+  {nombre:'Islandia',     fuerza:74, flag:'🇮🇸', tier:3},
+  {nombre:'Bulgaria',          fuerza:75, flag:'🇧🇬', tier:3},
+  {nombre:'Finlandia',         fuerza:72, flag:'🇫🇮', tier:3},
+  {nombre:'Georgia',           fuerza:74, flag:'🇬🇪', tier:3},
+  {nombre:'Macedonia del Norte',fuerza:71, flag:'🇲🇰', tier:3},
+  {nombre:'Irlanda del Norte', fuerza:72, flag:'🇬🇧', tier:3},
+  {nombre:'Irlanda',           fuerza:75, flag:'🇮🇪', tier:3},
+  {nombre:'Rusia',             fuerza:80, flag:'🇷🇺', tier:2},
+  {nombre:'Polonia',           fuerza:79, flag:'🇵🇱', tier:2},
+  {nombre:'Ucrania',           fuerza:78, flag:'🇺🇦', tier:2},
+];
+</script>
+<script>
+/* ══ TEMA ══ */
+const themeBtn=document.getElementById('theme-btn');
+themeBtn.addEventListener('click',()=>{
+  const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('euro-t',t);
+  themeBtn.textContent=t==='light'?'☾':'☀';
+});
+const savedT=localStorage.getItem('euro-t');
+if(savedT){document.documentElement.setAttribute('data-theme',savedT);themeBtn.textContent=savedT==='light'?'☾':'☀';}
+
+/* ══ FORMACIONES ══ */
+const FORMATIONS={
+  '4-3-3':{label:'4-3-3',desc:'3 delanteros',slots:[
+    {id:'pt', pos:'pt', sp:null, label:'PT', sx:140,sy:360},
+    {id:'ld', pos:'def',sp:'lb', label:'LD', sx:220,sy:300},
+    {id:'cd1',pos:'def',sp:'cb', label:'CD', sx:175,sy:290},
+    {id:'cd2',pos:'def',sp:'cb', label:'CD', sx:105,sy:290},
+    {id:'li', pos:'def',sp:'lb', label:'LI', sx:60, sy:300},
+    {id:'mc1',pos:'med',sp:null, label:'MC', sx:208,sy:218},
+    {id:'mc2',pos:'med',sp:null, label:'MC', sx:140,sy:208},
+    {id:'mc3',pos:'med',sp:null, label:'MC', sx:72, sy:218},
+    {id:'ed', pos:'del',sp:'ext',label:'ED', sx:220,sy:110},
+    {id:'dc', pos:'del',sp:'dc', label:'DC', sx:140,sy:88},
+    {id:'ei', pos:'del',sp:'ext',label:'EI', sx:60, sy:110},
+  ]},
+  '4-4-2':{label:'4-4-2',desc:'2 delanteros',slots:[
+    {id:'pt', pos:'pt', sp:null, label:'PT', sx:140,sy:360},
+    {id:'ld', pos:'def',sp:'lb', label:'LD', sx:225,sy:300},
+    {id:'cd1',pos:'def',sp:'cb', label:'CD', sx:175,sy:290},
+    {id:'cd2',pos:'def',sp:'cb', label:'CD', sx:105,sy:290},
+    {id:'li', pos:'def',sp:'lb', label:'LI', sx:55, sy:300},
+    {id:'md', pos:'med',sp:null, label:'MD', sx:220,sy:218},
+    {id:'mc1',pos:'med',sp:null, label:'MC', sx:165,sy:210},
+    {id:'mc2',pos:'med',sp:null, label:'MC', sx:115,sy:210},
+    {id:'mi', pos:'med',sp:null, label:'MI', sx:60, sy:218},
+    {id:'dc1',pos:'del',sp:'dc', label:'DC', sx:185,sy:95},
+    {id:'dc2',pos:'del',sp:'dc', label:'DC', sx:95, sy:95},
+  ]},
+  '4-2-3-1':{label:'4-2-3-1',desc:'1 delantero',slots:[
+    {id:'pt',  pos:'pt', sp:null,label:'PT', sx:140,sy:360},
+    {id:'ld',  pos:'def',sp:'lb',label:'LD', sx:220,sy:305},
+    {id:'cd1', pos:'def',sp:'cb',label:'CD', sx:172,sy:296},
+    {id:'cd2', pos:'def',sp:'cb',label:'CD', sx:108,sy:296},
+    {id:'li',  pos:'def',sp:'lb',label:'LI', sx:60, sy:305},
+    {id:'mcd1',pos:'med',sp:null,label:'MC', sx:178,sy:244},
+    {id:'mcd2',pos:'med',sp:null,label:'MC', sx:102,sy:244},
+    {id:'med', pos:'med',sp:null,label:'ME', sx:215,sy:174},
+    {id:'mac', pos:'med',sp:null,label:'MC', sx:140,sy:167},
+    {id:'mei', pos:'med',sp:null,label:'MI', sx:65, sy:174},
+    {id:'dc',  pos:'del',sp:'dc',label:'DC', sx:140,sy:88},
+  ]},
+  '5-3-2':{label:'5-3-2',desc:'5 defensas',slots:[
+    {id:'pt',  pos:'pt', sp:null,label:'PT', sx:140,sy:360},
+    {id:'rb',  pos:'def',sp:'lb',label:'LD', sx:245,sy:298},
+    {id:'cd1', pos:'def',sp:'cb',label:'CD', sx:196,sy:290},
+    {id:'cd2', pos:'def',sp:'cb',label:'CD', sx:140,sy:284},
+    {id:'cd3', pos:'def',sp:'cb',label:'CD', sx:84, sy:290},
+    {id:'lb',  pos:'def',sp:'lb',label:'LI', sx:35, sy:298},
+    {id:'mc1', pos:'med',sp:null,label:'MC', sx:205,sy:212},
+    {id:'mc2', pos:'med',sp:null,label:'MC', sx:140,sy:205},
+    {id:'mc3', pos:'med',sp:null,label:'MC', sx:75, sy:212},
+    {id:'dc1', pos:'del',sp:'dc',label:'DC', sx:186,sy:95},
+    {id:'dc2', pos:'del',sp:'dc',label:'DC', sx:94, sy:95},
+  ]},
+  '3-5-2':{label:'3-5-2',desc:'5 centrocampistas',slots:[
+    {id:'pt',  pos:'pt', sp:null,label:'PT', sx:140,sy:360},
+    {id:'cd1', pos:'def',sp:'cb',label:'CD', sx:200,sy:295},
+    {id:'cd2', pos:'def',sp:'cb',label:'CD', sx:140,sy:288},
+    {id:'cd3', pos:'def',sp:'cb',label:'CD', sx:80, sy:295},
+    {id:'md',  pos:'med',sp:null,label:'MD', sx:240,sy:218},
+    {id:'mc1', pos:'med',sp:null,label:'MC', sx:190,sy:210},
+    {id:'mc2', pos:'med',sp:null,label:'MC', sx:140,sy:205},
+    {id:'mc3', pos:'med',sp:null,label:'MC', sx:90, sy:210},
+    {id:'mi',  pos:'med',sp:null,label:'MI', sx:40, sy:218},
+    {id:'dc1', pos:'del',sp:'dc',label:'DC', sx:185,sy:95},
+    {id:'dc2', pos:'del',sp:'dc',label:'DC', sx:95, sy:95},
+  ]},
+};
+const POS_NAMES={pt:'Portero',def:'Defensa',med:'Centrocampista',del:'Delantero'};
+
+/* ══ ESTADO ══ */
+let selectedFormKey='4-3-3';
+let selectedStyle='eq';
+let selectedMode='clasico';
+let SLOTS=FORMATIONS['4-3-3'].slots;
+let round=0, myXI=[], currentEdicion=null;
+let timerInterval=null, timerLeft=12;
+let matchIndex=0, matchResults=[];
+let opponents=[];
+let draftStarted=false;
+let waitingForTirar=true;
+
+/* ══ SHOW ══ */
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+/* ══ BUILD START + DRAFT UI ══ */
+(function buildUI(){
+  /* -- Start screen: formation seg -- */
+  const seg=document.getElementById('formation-seg');
+  Object.keys(FORMATIONS).forEach(k=>{
+    const b=document.createElement('button');
+    b.className='seg-btn'+(k===selectedFormKey?' active':'');
+    b.textContent=k; b.dataset.key=k;
+    b.addEventListener('click',()=>{
+      selectedFormKey=k;
+      seg.querySelectorAll('.seg-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      syncDraftGrid();
+    });
+    seg.appendChild(b);
+  });
+
+  /* -- Draft screen: formation grid -- */
+  const grid=document.getElementById('form-btn-grid');
+  Object.keys(FORMATIONS).forEach(k=>{
+    const b=document.createElement('button');
+    b.className='form-btn'+(k===selectedFormKey?' active':'');
+    b.textContent=k; b.dataset.key=k;
+    b.addEventListener('click',()=>{
+      if(draftStarted)return;
+      selectedFormKey=k;
+      SLOTS=[...FORMATIONS[selectedFormKey].slots];
+      grid.querySelectorAll('.form-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      seg.querySelectorAll('.seg-btn').forEach(x=>x.classList.toggle('active',x.dataset.key===k));
+      renderDraftPitch(); renderBoxScore();
+    });
+    grid.appendChild(b);
+  });
+
+  function syncDraftGrid(){
+    document.querySelectorAll('#form-btn-grid .form-btn').forEach(b=>{
+      b.classList.toggle('active',b.dataset.key===selectedFormKey);
+    });
+  }
+
+  /* -- Estilo -- */
+  document.getElementById('style-row').addEventListener('click',e=>{
+    const btn=e.target.closest('.option-btn'); if(!btn||draftStarted)return;
+    selectedStyle=btn.dataset.val;
+    document.querySelectorAll('#style-row .option-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  });
+
+  /* -- Modo -- */
+  document.getElementById('mode-row').addEventListener('click',e=>{
+    const btn=e.target.closest('.option-btn'); if(!btn||draftStarted)return;
+    selectedMode=btn.dataset.val;
+    document.querySelectorAll('#mode-row .option-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  });
+
+  /* -- TIRAR -- */
+  document.getElementById('btn-tirar').addEventListener('click',()=>{
+    if(!waitingForTirar)return;
+    waitingForTirar=false;
+    draftStarted=true;
+    // Lock cfg buttons visually
+    document.querySelectorAll('#cfg-panel button').forEach(b=>b.style.opacity=b.classList.contains('active')?'1':'0.4');
+    drawRound();
+  });
+
+  /* -- JUGAR -- */
+  document.getElementById('btn-play').addEventListener('click',()=>{
+    try{ SLOTS=[...FORMATIONS[selectedFormKey].slots]; startGame(); }
+    catch(e){ alert('ERROR: '+e.message); }
+  });
+
+  renderRanking();
+  renderBoxScore();
+})();
+
+/* ══ RANKING ══ */
+function getRanking(){
+  try{return JSON.parse(localStorage.getItem('euro-ranking')||'[]');}catch(e){return[];}
+}
+function saveRanking(entry){
+  const r=getRanking();
+  r.push(entry);
+  r.sort((a,b)=>b.wins-a.wins||(a.goals_against-b.goals_against));
+  localStorage.setItem('euro-ranking',JSON.stringify(r.slice(0,10)));
+}
+function renderRanking(){
+  const r=getRanking();
+  const body=document.getElementById('ranking-body');
+  document.getElementById('rank-count').textContent=r.length?r.length+' partidas':'—';
+  if(!r.length){body.innerHTML='<p class="ranking-empty">Aún sin partidas guardadas</p>';return;}
+  body.innerHTML='';
+  r.slice(0,6).forEach((e,i)=>{
+    const row=document.createElement('div');
+    row.className='ranking-row';
+    row.innerHTML=`<span class="rk-pos">${i+1}</span><span class="rk-flag">${e.flag}</span>
+      <span style="font-size:.8rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.nombre}</span>
+      <span class="rk-record">${e.wins}-${e.losses} · ${e.gf}G</span>`;
+    body.appendChild(row);
+  });
+}
+
+/* ══ START GAME ══ */
+function startGame(){
+  round=0; myXI=[]; draftStarted=false; waitingForTirar=true;
+  SLOTS=[...FORMATIONS[selectedFormKey].slots];
+  matchIndex=0; matchResults=[];
+  opponents=generateOpponents();
+  // Reset cfg panel opacity
+  document.querySelectorAll('#cfg-panel button').forEach(b=>b.style.opacity='');
+  // Reset draw-info-box
+  const dib=document.getElementById('draw-info-box');
+  dib.innerHTML=`<div class="dib-text" id="dib-text">Tira para sortear<br>una selección y una Eurocopa</div>`;
+  renderBoxScore();
+  renderDraftPitch();
+  show('s-draft');
+}
+
+/* ══ DRAFT ══ */
+function drawRound(){
+  stopTimer();
+  const slot=SLOTS[round];
+  const posType=slot.pos;
+  const used=new Set(myXI.map(x=>x.jugador.n));
+
+  // Pool global: todas las ediciones de todas las selecciones
+  const pool=[];
+  SELECCIONES_EURO.forEach(nation=>{
+    nation.ediciones.forEach(ed=>{
+      const avail=ed.jugadores.filter(j=>j.pos===posType&&!used.has(j.n));
+      if(avail.length>=1) pool.push({nation,ed,avail});
+    });
+  });
+
+  let entry=null;
+  if(pool.length){
+    entry=pool[Math.floor(Math.random()*pool.length)];
+  } else {
+    // Fallback sin filtro de posición
+    const anyPool=[];
+    SELECCIONES_EURO.forEach(nation=>{
+      nation.ediciones.forEach(ed=>{
+        const avail=ed.jugadores.filter(j=>!used.has(j.n));
+        if(avail.length) anyPool.push({nation,ed,avail});
+      });
+    });
+    entry=anyPool[Math.floor(Math.random()*anyPool.length)]||null;
+  }
+  if(!entry) return;
+  currentEdicion=entry.ed;
+
+  // Rellenar draw-info-box
+  const dib=document.getElementById('draw-info-box');
+  const euroLabel=entry.ed.año===2021?'Euro 2020':'Euro '+entry.ed.año;
+  dib.innerHTML=`
+    <div class="dib-round">Ronda ${round+1} / ${SLOTS.length} · ${POS_NAMES[posType]}</div>
+    <div class="draw-cards-h">
+      <div class="draw-card-h nation">
+        <div class="dch-label">Selección</div>
+        <div class="dch-value">${entry.nation.flag} ${entry.nation.nombre}</div>
+      </div>
+      <div class="draw-card-h year">
+        <div class="dch-label">Edición</div>
+        <div class="dch-value">${euroLabel}</div>
+      </div>
+    </div>
+    <div class="player-cards" id="player-cards"></div>
+    <div class="timer-row" id="timer-row" style="display:none">
+      <div class="timer-bar-bg"><div class="timer-bar-fill" id="timer-fill" style="width:100%"></div></div>
+      <span class="timer-num" id="timer-text">12</span>
+    </div>`;
+
+  const container=document.getElementById('player-cards');
+  entry.avail.slice(0,4).forEach(j=>renderPlayerCard(j,slot,container));
+
+  renderDraftPitch();
+
+  if(selectedMode==='clasico'){
+    document.getElementById('timer-row').style.display='flex';
+    startTimer(()=>{
+      const cards=container.querySelectorAll('.player-card');
+      if(cards.length) cards[0].click();
+    });
+  }
+}
+
+function renderPlayerCard(j,slot,container){
+  const card=document.createElement('div');
+  card.className='player-card';
+  card.innerHTML=`<span class="pc-pos">${slot.label}</span>
+    <span class="pc-name">${j.n}</span>
+    <span class="pc-val">${j.v}</span>
+    <span class="pc-arrow">→</span>`;
+  card.addEventListener('click',()=>{stopTimer();pickPlayer(j);});
+  container.appendChild(card);
+}
+
+function pickPlayer(jugador){
+  myXI.push({slot:SLOTS[round],jugador,edicion:currentEdicion});
+  round++;
+  renderBoxScore();
+  if(round>=SLOTS.length){
+    renderDraftPitch();
+    // Show completion in dib
+    const dib=document.getElementById('draw-info-box');
+    dib.innerHTML=`<div class="dib-text">¡XI completado!<br>Iniciando torneo…</div>`;
+    setTimeout(startTournament,600);
+    return;
+  }
+  // Reset to waiting state
+  waitingForTirar=true;
+  const dib=document.getElementById('draw-info-box');
+  const nextSlot=SLOTS[round];
+  dib.innerHTML=`<div class="dib-text">Tira para sortear<br>tu <strong style="color:var(--gold)">${POS_NAMES[nextSlot.pos]}</strong><br><span style="font-size:.7rem;opacity:.6">Ronda ${round+1} / ${SLOTS.length}</span></div>`;
+  renderDraftPitch();
+}
+
+/* ══ PITCH DRAFT ══ */
+function renderDraftPitch(){
+  const g=document.getElementById('players-g');
+  if(!g)return;
+  g.innerHTML='';
+  const W=64,H=26,RX=5;
+  SLOTS.forEach((s,i)=>{
+    const filled=myXI[i], isActive=i===round;
+    const cx=s.sx,cy=s.sy,x=cx-W/2,y=cy-H/2;
+    const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    rect.setAttribute('x',x);rect.setAttribute('y',y);
+    rect.setAttribute('width',W);rect.setAttribute('height',H);rect.setAttribute('rx',RX);
+    if(filled){
+      rect.setAttribute('fill','rgba(245,158,11,.18)');
+      rect.setAttribute('stroke','#f59e0b');rect.setAttribute('stroke-width','1.5');
+    } else if(isActive){
+      rect.setAttribute('fill','rgba(245,158,11,.08)');
+      rect.setAttribute('stroke','#f59e0b');rect.setAttribute('stroke-width','1.5');
+      rect.setAttribute('stroke-dasharray','4,3');
+      const a=document.createElementNS('http://www.w3.org/2000/svg','animate');
+      a.setAttribute('attributeName','opacity');a.setAttribute('values','0.5;1;0.5');
+      a.setAttribute('dur','1.4s');a.setAttribute('repeatCount','indefinite');
+      rect.appendChild(a);
+    } else {
+      rect.setAttribute('fill','rgba(255,255,255,.04)');
+      rect.setAttribute('stroke','rgba(255,255,255,.18)');rect.setAttribute('stroke-width','1');
+      rect.setAttribute('stroke-dasharray','4,3');
+    }
+    g.appendChild(rect);
+    const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x',cx);t.setAttribute('y',cy);
+    t.setAttribute('text-anchor','middle');t.setAttribute('dominant-baseline','central');
+    t.setAttribute('font-family','Barlow Condensed,sans-serif');t.setAttribute('font-weight','700');t.setAttribute('letter-spacing','.06em');
+    if(filled){
+      const p=filled.jugador.n.toUpperCase().split(' ');
+      t.textContent=p[p.length-1].slice(0,9);
+      t.setAttribute('font-size','8');t.setAttribute('fill','#f59e0b');
+    } else {
+      t.textContent=s.label;
+      t.setAttribute('font-size','8.5');
+      t.setAttribute('fill',isActive?'rgba(245,158,11,.9)':'rgba(255,255,255,.32)');
+    }
+    g.appendChild(t);
+  });
+}
+
+/* ══ TIMER ══ */
+function startTimer(onExpire){
+  clearInterval(timerInterval);timerLeft=12;
+  const fill=document.getElementById('timer-fill');
+  const txt=document.getElementById('timer-text');
+  fill.style.width='100%';fill.className='timer-bar-fill';txt.textContent='12';
+  timerInterval=setInterval(()=>{
+    timerLeft-=.1;
+    const pct=Math.max(0,(timerLeft/12)*100);
+    fill.style.width=pct+'%';
+    fill.className='timer-bar-fill'+(timerLeft<=4?' danger':timerLeft<=8?' warn':'');
+    txt.textContent=Math.ceil(timerLeft);
+    if(timerLeft<=0){clearInterval(timerInterval);onExpire();}
+  },100);
+}
+function stopTimer(){clearInterval(timerInterval);}
+
+/* ══ BOX SCORE ══ */
+function renderBoxScore(){
+  const total=SLOTS.length;
+  const done=myXI.length;
+  document.getElementById('bs-count').textContent=`${done} / ${total}`;
+  document.getElementById('bs-prog-fill').style.width=`${(done/total)*100}%`;
+
+  // ATQ / DEF stats
+  const dels=myXI.filter(x=>x.slot.pos==='del');
+  const meds=myXI.filter(x=>x.slot.pos==='med');
+  const defs=myXI.filter(x=>x.slot.pos==='def');
+  const avg=arr=>arr.length?Math.round(arr.reduce((s,x)=>s+x.jugador.v,0)/arr.length):null;
+  const atqV=avg([...dels,...meds.slice(0,Math.ceil(meds.length/2))]);
+  const defV=avg([...defs,...meds.slice(Math.floor(meds.length/2))]);
+  document.getElementById('bs-atq').textContent=atqV!=null?atqV:'—';
+  document.getElementById('bs-def').textContent=defV!=null?defV:'—';
+
+  // Position list
+  const pos=document.getElementById('bs-positions');
+  pos.innerHTML='';
+  SLOTS.forEach((s,i)=>{
+    const picked=myXI[i];
+    const row=document.createElement('div');
+    row.className='bs-pos-row'+(i===round&&!picked?' active':'');
+    row.innerHTML=`<span class="bsp-label">${s.label}</span>
+      <span class="bsp-name${picked?' filled':''}">${picked?picked.jugador.n:'—'}</span>
+      <span class="bsp-val">${picked?picked.jugador.v:''}</span>`;
+    pos.appendChild(row);
+  });
+}
+
+/* ══ TEAM STRENGTH ══ */
+function calcStrength(){
+  function adjV(x){
+    let v=x.jugador.v;
+    if(x.slot.sp&&x.jugador.sp&&x.jugador.sp!==x.slot.sp)v-=8;
+    return Math.max(50,v);
+  }
+  const pt=myXI.find(x=>x.slot.pos==='pt');
+  const defs=myXI.filter(x=>x.slot.pos==='def');
+  const meds=myXI.filter(x=>x.slot.pos==='med');
+  const dels=myXI.filter(x=>x.slot.pos==='del');
+  const avg=arr=>arr.length?arr.reduce((s,x)=>s+adjV(x),0)/arr.length:70;
+  let str=0.14*(pt?pt.jugador.v:68)+0.30*avg(defs)+0.28*avg(meds)+0.28*avg(dels);
+  // Estilo modifier
+  if(selectedStyle==='atq') str+=3;
+  else if(selectedStyle==='def') str-=2;
+  return str;
+}
+
+/* ══ OPPONENT GENERATION ══ */
+const ROUND_NAMES=['FASE DE GRUPOS · JORNADA 1','FASE DE GRUPOS · JORNADA 2','FASE DE GRUPOS · JORNADA 3','CUARTOS DE FINAL','SEMIFINAL','GRAN FINAL'];
+const STAGE_TITLES=['Grupo A · J1','Grupo A · J2','Grupo A · J3','Cuartos de Final','Semifinal','Final'];
+
+function generateOpponents(){
+  const tier3=[...RIVALES_EURO.filter(r=>r.tier===3)];
+  const tier2=[...RIVALES_EURO.filter(r=>r.tier===2)];
+  const tier1=[...RIVALES_EURO.filter(r=>r.tier===1)];
+  function pick(pool){
+    const idx=Math.floor(Math.random()*pool.length);
+    return pool.splice(idx,1)[0];
+  }
+  return [
+    pick(tier3),                  // Group 1: easiest
+    pick(tier2),                  // Group 2: medium
+    Math.random()<.5?pick(tier1):pick(tier2), // Group 3: harder
+    pick(tier1),                  // QF: tier 1
+    pick(tier1),                  // SF: tier 1
+    pick(tier1),                  // Final: tier 1, strongest
+  ];
+}
+
+/* ══ MATCH SIMULATION ══ */
+function simulateMatch(myStr, oppStr){
+  const diff=myStr-oppStr;
+  const winP=1/(1+Math.exp(-diff/9));
+  const r=Math.random();
+  let myG,oppG,result;
+  if(r<winP*0.85){
+    // Win
+    myG=1+Math.floor(Math.random()*4);
+    oppG=Math.max(0,myG-1-Math.floor(Math.random()*2));
+    if(oppG>=myG)oppG=myG-1;
+    result='W';
+  } else if(r<winP*0.85+0.13){
+    // Draw
+    myG=Math.floor(Math.random()*3);
+    oppG=myG;
+    result='D';
+  } else {
+    // Loss
+    oppG=1+Math.floor(Math.random()*3);
+    myG=Math.max(0,oppG-1-Math.floor(Math.random()*2));
+    if(myG>=oppG)myG=oppG-1;
+    result='L';
+  }
+  const events=generateEvents(myG,oppG);
+  return{result,myG,oppG,events};
+}
+
+function generateEvents(myG,oppG){
+  const events=[];
+  const dels=myXI.filter(x=>x.slot.pos==='del');
+  const meds=myXI.filter(x=>x.slot.pos==='med');
+  const scorers=[...dels,...meds];
+  const used=[];
+  // My goals
+  for(let i=0;i<myG;i++){
+    const min=5+Math.floor(Math.random()*85);
+    let scorer=scorers[Math.floor(Math.random()*scorers.length)];
+    if(!scorer)scorer=myXI[Math.floor(Math.random()*myXI.length)];
+    events.push({min,name:scorer.jugador.n,own:false});
+  }
+  // Opp goals
+  for(let i=0;i<oppG;i++){
+    const min=5+Math.floor(Math.random()*85);
+    events.push({min,name:'Rival',own:true});
+  }
+  events.sort((a,b)=>a.min-b.min);
+  return events;
+}
+
+/* ══ START TOURNAMENT ══ */
+function startTournament(){
+  matchIndex=0;
+  matchResults=[];
+  showMatch();
+}
+
+/* ══ SHOW MATCH ══ */
+function showMatch(){
+  show('s-match');
+  const opp=opponents[matchIndex];
+  const myStr=calcStrength();
+
+  // Update header
+  document.getElementById('match-round-label').textContent=ROUND_NAMES[matchIndex];
+  document.getElementById('match-stage-title').textContent=STAGE_TITLES[matchIndex];
+  document.getElementById('my-flag').textContent='⚽';
+  document.getElementById('my-name').textContent='MI XI '+selectedFormKey;
+  document.getElementById('opp-flag').textContent=opp.flag;
+  document.getElementById('opp-name').textContent=opp.nombre;
+  document.getElementById('score-my').textContent='—';
+  document.getElementById('score-opp').textContent='—';
+  document.getElementById('result-badge').style.display='none';
+  document.getElementById('match-events').style.display='none';
+  document.getElementById('match-actions').innerHTML='';
+  document.getElementById('events-list').innerHTML='';
+
+  // Dots
+  renderDots(null);
+
+  // Animate: after short delay, reveal score
+  setTimeout(()=>{
+    const sim=simulateMatch(myStr, opp.fuerza);
+    matchResults.push({...sim, opp});
+    revealScore(sim, opp);
+  }, 800);
+}
+
+function revealScore(sim, opp){
+  // Count up animation
+  let countMy=0, countOpp=0;
+  const steps=Math.max(sim.myG,sim.oppG,1);
+  const delay=180;
+
+  function step(i){
+    if(countMy<sim.myG){countMy++;}
+    else if(countOpp<sim.oppG){countOpp++;}
+    document.getElementById('score-my').textContent=countMy;
+    document.getElementById('score-opp').textContent=countOpp;
+    if(countMy<sim.myG||countOpp<sim.oppG){
+      setTimeout(()=>step(i+1),delay);
+    } else {
+      // Final
+      document.getElementById('score-my').textContent=sim.myG;
+      document.getElementById('score-opp').textContent=sim.oppG;
+      showMatchResult(sim, opp);
+    }
+  }
+
+  setTimeout(()=>{
+    document.getElementById('score-my').textContent=0;
+    document.getElementById('score-opp').textContent=0;
+    step(0);
+  }, 200);
+}
+
+function groupPoints(){
+  return matchResults.slice(0,3).reduce((s,r)=>s+(r.result==='W'?3:r.result==='D'?1:0),0);
+}
+
+function showMatchResult(sim, opp){
+  // Badge
+  const badge=document.getElementById('result-badge');
+  const badgeText=document.getElementById('result-badge-text');
+  badge.style.display='block';
+  if(sim.result==='W'){badgeText.textContent='VICTORIA';badgeText.className='mrb-text win';}
+  else if(sim.result==='D'){badgeText.textContent='EMPATE';badgeText.className='mrb-text draw';}
+  else{badgeText.textContent='DERROTA';badgeText.className='mrb-text loss';}
+
+  // Events
+  if(sim.events.length){
+    const evEl=document.getElementById('match-events');
+    const list=document.getElementById('events-list');
+    evEl.style.display='block';
+    list.innerHTML='';
+    sim.events.forEach(e=>{
+      const div=document.createElement('div');
+      div.className='event-item';
+      div.innerHTML=`<span class="event-min">${e.min}'</span>
+        <span class="event-icon">${e.own?'⚽':'⚽'}</span>
+        <span class="event-name" style="${e.own?'color:var(--red)':''}">${e.name}</span>`;
+      list.appendChild(div);
+    });
+  }
+
+  renderDots(sim.result);
+
+  const actions=document.getElementById('match-actions');
+  actions.innerHTML='';
+
+  /* ── FASE DE GRUPOS (partidos 0,1,2) ── */
+  if(matchIndex <= 2){
+    if(matchIndex < 2){
+      // No es el último partido — siempre continuar
+      const btn=document.createElement('button');
+      btn.className='btn-primary';
+      btn.textContent=matchIndex===0?'PARTIDO 2 →':'PARTIDO 3 →';
+      btn.addEventListener('click',()=>{matchIndex++;showMatch();});
+      actions.appendChild(btn);
+    } else {
+      // Último partido de grupo — calcular clasificación
+      const pts=groupPoints();
+      const gf=matchResults.slice(0,3).reduce((s,r)=>s+r.myG,0);
+      const ga=matchResults.slice(0,3).reduce((s,r)=>s+r.oppG,0);
+      const qualified=pts>=4;
+
+      // Mostrar resumen del grupo en la caja de eventos
+      const evEl=document.getElementById('match-events');
+      evEl.style.display='block';
+      const list=document.getElementById('events-list');
+      const summary=document.createElement('div');
+      summary.style.cssText='margin-top:.7rem;padding:.65rem .8rem;background:rgba(255,255,255,.05);border-radius:6px;text-align:center';
+      summary.innerHTML=`
+        <div style="font-family:var(--cond);font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.4rem">Fase de Grupos · Final</div>
+        <div style="font-family:var(--cond);font-size:1.3rem;font-weight:900;color:${qualified?'var(--green)':'var(--red)'}">
+          ${qualified?'✅ CLASIFICADO':'❌ ELIMINADO'}
+        </div>
+        <div style="font-family:var(--cond);font-size:.82rem;font-weight:700;color:var(--text-muted);margin-top:.2rem">
+          ${pts} pts &nbsp;·&nbsp; ${gf} GF &nbsp;·&nbsp; ${ga} GC
+        </div>`;
+      list.appendChild(summary);
+
+      const btn=document.createElement('button');
+      btn.className='btn-primary';
+      if(qualified){
+        btn.textContent='CUARTOS DE FINAL →';
+        btn.addEventListener('click',()=>{matchIndex++;showMatch();});
+      } else {
+        btn.style.background='var(--red)'; btn.style.color='#fff';
+        btn.textContent='VER RESULTADO';
+        btn.addEventListener('click',()=>showFinal(false));
+      }
+      actions.appendChild(btn);
+    }
+
+  /* ── ELIMINATORIAS (partidos 3,4,5) ── */
+  } else {
+    if(sim.result==='W'){
+      if(matchIndex===5){
+        const btn=document.createElement('button');
+        btn.className='btn-primary';
+        btn.textContent='🏆 ¡CAMPEÓN!';
+        btn.addEventListener('click',()=>showFinal(true));
+        actions.appendChild(btn);
+      } else {
+        const btn=document.createElement('button');
+        btn.className='btn-primary';
+        btn.textContent=matchIndex===3?'SEMIFINAL →':'GRAN FINAL →';
+        btn.addEventListener('click',()=>{matchIndex++;showMatch();});
+        actions.appendChild(btn);
+      }
+    } else if(sim.result==='D'){
+      // Empate en eliminatoria → penaltis (50%)
+      const penWin=Math.random()<0.5;
+      const penDiv=document.createElement('div');
+      penDiv.style.cssText='text-align:center;font-family:var(--cond);font-weight:700;font-size:.88rem;margin-bottom:.5rem;color:'+(penWin?'var(--green)':'var(--red)');
+      penDiv.textContent=penWin?'⚽ Penaltis: AVANZAS':'⚽ Penaltis: ELIMINADO';
+      actions.appendChild(penDiv);
+      const btn=document.createElement('button');
+      btn.className='btn-primary';
+      if(penWin){
+        if(matchIndex===5){btn.textContent='🏆 ¡CAMPEÓN!';btn.addEventListener('click',()=>showFinal(true));}
+        else{btn.textContent=matchIndex===3?'SEMIFINAL →':'GRAN FINAL →';btn.addEventListener('click',()=>{matchIndex++;showMatch();});}
+      } else {
+        btn.style.background='var(--red)';btn.style.color='#fff';
+        btn.textContent='VER RESULTADO';
+        btn.addEventListener('click',()=>showFinal(false));
+      }
+      actions.appendChild(btn);
+    } else {
+      // Derrota en eliminatoria
+      const btn=document.createElement('button');
+      btn.className='btn-primary';
+      btn.style.background='var(--red)';btn.style.color='#fff';
+      btn.textContent='VER RESULTADO';
+      btn.addEventListener('click',()=>showFinal(false));
+      actions.appendChild(btn);
+    }
+  }
+}
+
+function renderDots(latestResult){
+  const container=document.getElementById('mps-dots');
+  container.innerHTML='';
+  const labels=['G1','G2','G3','CF','SF','F'];
+  for(let i=0;i<=5;i++){
+    const dot=document.createElement('div');
+    if(i<matchIndex){
+      const r=matchResults[i]?.result;
+      dot.className='mps-dot '+(r==='W'?'win':r==='D'?'draw':'loss');
+      dot.textContent=matchResults[i]?`${matchResults[i].myG}:${matchResults[i].oppG}`:'?';
+    } else if(i===matchIndex){
+      const r=latestResult;
+      dot.className='mps-dot '+(r===null?'current':r==='W'?'win':r==='D'?'draw':'loss');
+      if(latestResult&&matchResults[i]){
+        dot.textContent=`${matchResults[i].myG}:${matchResults[i].oppG}`;
+      } else {
+        dot.textContent=labels[i];
+      }
+    } else {
+      dot.className='mps-dot empty';
+      dot.textContent=labels[i];
+    }
+    container.appendChild(dot);
+  }
+
+  // Record
+  const wins=matchResults.filter(r=>r.result==='W').length;
+  const losses=matchResults.filter(r=>r.result==='L').length;
+  const gf=matchResults.reduce((s,r)=>s+r.myG,0);
+  document.getElementById('mps-record').textContent=`${wins}G · ${losses}D · ${gf} goles`;
+}
+
+/* ══ FINAL SCREEN ══ */
+function showFinal(isChampion){
+  show('s-final');
+  const wins=matchResults.filter(r=>r.result==='W').length;
+  const losses=matchResults.filter(r=>r.result==='L').length;
+  const draws=matchResults.filter(r=>r.result==='D').length;
+  const gf=matchResults.reduce((s,r)=>s+r.myG,0);
+  const ga=matchResults.reduce((s,r)=>s+r.oppG,0);
+
+  document.getElementById('final-trophy').style.display=isChampion?'block':'none';
+  document.getElementById('final-icon-elim').style.display=isChampion?'none':'block';
+
+  const title=document.getElementById('final-title');
+  const sub=document.getElementById('final-sub');
+  if(isChampion){
+    title.textContent='¡CAMPEÓN DE EUROPA!';
+    title.className='final-title champion';
+    sub.textContent=`¡Increíble! Tu XI histórico conquistó Europa. ${wins} victorias en el torneo.`;
+  } else if(matchResults.length<=3 && groupPoints()<4){
+    const pts=groupPoints();
+    title.textContent='ELIMINADO EN GRUPOS';
+    title.className='final-title eliminated';
+    sub.textContent=`No superaste la fase de grupos con ${pts} punto${pts!==1?'s':''}. Necesitabas 4 para clasificar. Récord: ${wins}V ${draws}E ${losses}D.`;
+  } else {
+    const stageNames={3:'los Cuartos de Final',4:'las Semifinales',5:'la Final'};
+    title.textContent='ELIMINADO';
+    title.className='final-title eliminated';
+    sub.textContent=`Caíste en ${stageNames[matchIndex]||'la eliminatoria'}. Récord: ${wins}V ${draws}E ${losses}D · ${gf} goles a favor.`;
+  }
+
+  // Record dots
+  const rec=document.getElementById('final-record');
+  rec.innerHTML='';
+  for(let i=0;i<6;i++){
+    const dot=document.createElement('div');
+    if(i<matchResults.length){
+      const r=matchResults[i].result;
+      dot.className='fr-dot '+(r==='W'?'win':r==='D'?'draw':'loss');
+      dot.textContent=`${matchResults[i].myG}:${matchResults[i].oppG}`;
+    } else {
+      dot.className='fr-dot empty';
+      dot.textContent='—';
+    }
+    rec.appendChild(dot);
+  }
+
+  // Nation info
+  document.getElementById('final-nation').innerHTML=
+    `<span class="fn-flag">${isChampion?'🏆':'⚽'}</span>
+     <div><div class="fn-name">Formación ${selectedFormKey}</div>
+     <div class="fn-year">${gf} goles marcados · ${ga} encajados</div></div>`;
+
+  // Save ranking
+  saveRanking({
+    flag: isChampion?'🏆':'⚽', nombre: selectedFormKey,
+    wins, draws, losses, gf, ga: ga, goals_against: ga, champion:isChampion,
+    date:new Date().toLocaleDateString('es-ES')
+  });
+  renderRanking();
+}
+
+/* ══ RESET ══ */
+function resetAll(){
+  round=0;myXI=[];matchIndex=0;matchResults=[];
+  draftStarted=false;waitingForTirar=true;
+  show('s-start');
+}
+</script>
+</body>
+</html>

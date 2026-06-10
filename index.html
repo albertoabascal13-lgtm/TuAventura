@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leyendas de Zamora</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="main-nav">
+    <button class="nav-brand" data-page="inicio">LEYENDAS · DE · ZAMORA</button>
+    <ul class="nav-links">
+      <li><a href="#" data-page="inicio">INICIO</a></li>
+      <li><a href="#" data-page="quiz">QUIZ</a></li>
+      <li><a href="#" data-page="calendario">ROMERÍAS</a></li>
+      <li><a href="#" data-page="mascaradas">MASCARADAS</a></li>
+      <li><a href="#" data-page="extras">EXTRAS</a></li>
+      <li><a href="#" data-page="buzon">BUZÓN</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Modo claro" title="Cambiar tema">☀</button>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#" data-page="inicio">INICIO</a></li>
+      <li><a href="#" data-page="quiz">QUIZ</a></li>
+      <li><a href="#" data-page="calendario">ROMERÍAS</a></li>
+      <li><a href="#" data-page="mascaradas">MASCARADAS</a></li>
+      <li><a href="#" data-page="extras">EXTRAS</a></li>
+      <li><a href="#" data-page="buzon">BUZÓN</a></li>
+    </ul>
+  </div>
+
+  <!-- ─── PAGES ─── -->
+  <main id="app">
+
+    <!-- ══════════════ INICIO ══════════════ -->
+    <section id="page-inicio" class="page active">
+      <div class="comarca-wrap">
+
+        <header class="comarca-header">
+          <span class="eyebrow">PROVINCIA DE ZAMORA · DOCE COMARCAS</span>
+          <p class="comarca-hint">Selecciona una comarca para explorarla</p>
+        </header>
+
+        <div class="comarca-map-container">
+          <!--
+            Disposición geográfica real de las 12 comarcas de Zamora
+            Eje X: 0=Portugal (W) → 580=Castilla (E)
+            Eje Y: 0=Norte → 480=Sur
+          -->
+          <svg id="comarca-svg" viewBox="0 0 580 480" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- === FORMAS DE COMARCAS === -->
+            <!--
+              Nueva división geográfica correcta (12 comarcas reales):
+              X: 0=Portugal(W) → 580=Castilla(E)   divs: 162, 290, 450
+              Y: 0=Norte       → 480=Sur            divs: 200, 280, 340
+            -->
+            <g id="comarcas-g">
+
+              <!-- ── NORTE (y 0→200) ── -->
+              <!-- 01 Sanabria: NW, montañas, lago glaciar -->
+              <polygon class="c-shape" data-id="sanabria"
+                points="0,0 186,0 186,200 0,200"/>
+
+              <!-- 02 La Carballeda: N central, robledales -->
+              <polygon class="c-shape" data-id="carballeda"
+                points="186,0 290,0 290,200 186,200"/>
+
+              <!-- 03 Benavente y Los Valles: NE, valles del Tera y Órbigo -->
+              <polygon class="c-shape" data-id="benavente"
+                points="290,0 450,0 450,200 290,200"/>
+
+              <!-- 04 Tierra de Campos: extremo NE, frontera Valladolid/León -->
+              <polygon class="c-shape" data-id="tierra-campos"
+                points="450,0 580,0 580,200 450,200"/>
+
+              <!-- ── CENTRO (y 200→340) ── -->
+              <!-- 05 Aliste: W central, granito, frontera Portugal -->
+              <polygon class="c-shape" data-id="aliste"
+                points="0,200 162,200 162,340 0,340"/>
+
+              <!-- 06 Tierra de Tábara: centro, embalse de Ricobayo -->
+              <polygon class="c-shape" data-id="tabara"
+                points="162,200 290,200 290,280 162,280"/>
+
+              <!-- 07 Tierra de Alba: pequeña, entre Aliste y Tábara -->
+              <polygon class="c-shape" data-id="alba"
+                points="162,280 290,280 290,340 162,340"/>
+
+              <!-- 08 Tierra del Pan: centro-E, cereal, Duero norte -->
+              <polygon class="c-shape" data-id="tierra-pan"
+                points="290,200 450,200 450,340 290,340"/>
+
+              <!-- 09 Alfoz de Toro: E, viñedos del Duero, Toro -->
+              <polygon class="c-shape" data-id="toro"
+                points="450,200 580,200 580,340 450,340"/>
+
+              <!-- ── SUR (y 340→480) ── -->
+              <!-- 10 Sayago: SW, arribes del Duero, Portugal -->
+              <polygon class="c-shape" data-id="sayago"
+                points="0,340 162,340 162,480 0,480"/>
+
+              <!-- 11 Tierra del Vino: S central, entre Zamora y Salamanca -->
+              <polygon class="c-shape" data-id="tierra-vino"
+                points="162,340 450,340 450,480 162,480"/>
+
+              <!-- 12 La Guareña: SE, río Guareña -->
+              <polygon class="c-shape" data-id="guarena"
+                points="450,340 580,340 580,480 450,480"/>
+
+            </g>
+
+            <!-- === NÚMEROS === -->
+            <g id="numbers-g" pointer-events="none">
+              <!-- fila norte -->
+              <text class="c-num" x="8"   y="16">01</text>
+              <text class="c-num" x="194" y="16">02</text>
+              <text class="c-num" x="298" y="16">03</text>
+              <text class="c-num" x="458" y="16">04</text>
+              <!-- fila centro -->
+              <text class="c-num" x="8"   y="216">05</text>
+              <text class="c-num" x="170" y="216">06</text>
+              <text class="c-num" x="170" y="296">07</text>
+              <text class="c-num" x="298" y="216">08</text>
+              <text class="c-num" x="458" y="216">09</text>
+              <!-- fila sur -->
+              <text class="c-num" x="8"   y="356">10</text>
+              <text class="c-num" x="170" y="356">11</text>
+              <text class="c-num" x="458" y="356">12</text>
+            </g>
+
+            <!-- === ETIQUETAS (text-anchor: middle → x = centro horizontal) === -->
+            <g id="labels-g" pointer-events="none">
+
+              <!-- NORTE -->
+              <text class="c-label" data-id="sanabria"      x="93"  y="97">SANABRIA</text>
+
+              <text class="c-label" data-id="carballeda"    x="238" y="90">LA</text>
+              <text class="c-label" data-id="carballeda"    x="238" y="108">CARBALLEDA</text>
+
+              <text class="c-label" data-id="benavente"     x="370" y="88">BENAVENTE</text>
+              <text class="c-label" data-id="benavente"     x="370" y="106">Y LOS VALLES</text>
+
+              <text class="c-label" data-id="tierra-campos" x="515" y="88">TIERRA DE</text>
+              <text class="c-label" data-id="tierra-campos" x="515" y="106">CAMPOS</text>
+
+              <!-- CENTRO -->
+              <text class="c-label" data-id="aliste"        x="81"  y="272">ALISTE</text>
+
+              <text class="c-label" data-id="tabara"        x="226" y="232">TIERRA DE</text>
+              <text class="c-label" data-id="tabara"        x="226" y="250">TÁBARA</text>
+
+              <text class="c-label" data-id="alba"          x="226" y="312">T. DE ALBA</text>
+
+              <text class="c-label" data-id="tierra-pan"    x="370" y="262">TIERRA DEL</text>
+              <text class="c-label" data-id="tierra-pan"    x="370" y="280">PAN</text>
+
+              <text class="c-label" data-id="toro"          x="515" y="262">ALFOZ</text>
+              <text class="c-label" data-id="toro"          x="515" y="280">DE TORO</text>
+
+              <!-- SUR -->
+              <text class="c-label" data-id="sayago"        x="81"  y="410">SAYAGO</text>
+
+              <text class="c-label" data-id="tierra-vino"   x="306" y="402">TIERRA DEL VINO</text>
+
+              <text class="c-label" data-id="guarena"       x="515" y="402">LA</text>
+              <text class="c-label" data-id="guarena"       x="515" y="420">GUAREÑA</text>
+
+            </g>
+
+          </svg>
+        </div>
+
+        <!-- Panel de comarca seleccionada -->
+        <div id="comarca-panel" class="comarca-panel">
+          <div class="comarca-panel-inner">
+            <button class="panel-close" id="panel-close">×</button>
+            <div class="panel-grid">
+              <div class="panel-col-left">
+                <span class="panel-num" id="panel-num">—</span>
+                <h2 class="panel-title" id="panel-title"></h2>
+                <span class="panel-cap" id="panel-cap"></span>
+              </div>
+              <div class="panel-col-right">
+                <span class="panel-leyendas-label">LEYENDAS</span>
+                <ul class="panel-leyendas-list" id="panel-leyendas-list"></ul>
+                <p class="panel-empty" id="panel-empty">Próximamente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ══════════════ QUIZ ══════════════ -->
+    <section id="page-quiz" class="page">
+      <div class="page-header">
+        <span class="eyebrow">PON A PRUEBA TU CONOCIMIENTO</span>
+        <h2>El quiz</h2>
+        <p class="page-desc">¿Cuánto sabes de las leyendas de Zamora?</p>
+      </div>
+      <div class="quiz-container">
+
+        <!-- Start screen -->
+        <div id="quiz-start" class="quiz-screen active">
+          <div class="quiz-card quiz-start-card">
+            <p class="quiz-intro">Cinco preguntas. Una sola oportunidad. Las piedras escuchan.</p>
+            <button class="btn-outline" id="btn-start-quiz">COMENZAR →</button>
+          </div>
+        </div>
+
+        <!-- Question screen -->
+        <div id="quiz-question" class="quiz-screen">
+          <div class="quiz-card">
+            <div class="quiz-progress">
+              <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+            </div>
+            <span class="quiz-counter" id="quiz-counter">1 / 5</span>
+            <p class="quiz-q" id="quiz-q"></p>
+            <ul class="quiz-options" id="quiz-options"></ul>
+          </div>
+        </div>
+
+        <!-- Result screen -->
+        <div id="quiz-result" class="quiz-screen">
+          <div class="quiz-card quiz-result-card">
+            <span class="result-icon" id="result-icon">⚫</span>
+            <h3 class="result-title" id="result-title"></h3>
+            <p class="result-score" id="result-score"></p>
+            <p class="result-msg" id="result-msg"></p>
+            <button class="btn-outline" id="btn-retry">INTENTAR DE NUEVO →</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ CALENDARIO ══════════════ -->
+    <section id="page-calendario" class="page">
+      <div class="page-header">
+        <span class="eyebrow">ROMERÍAS · ZAMORA 2026</span>
+        <h2>Calendario</h2>
+        <p class="page-desc">Todas las romerías de la provincia. Datos extraídos de
+          <a href="https://ociozamora.com/romerias-zamora/" target="_blank" rel="noopener" class="source-link">ociozamora.com</a>.
+        </p>
+      </div>
+
+      <!-- Filtro por mes -->
+      <div class="month-filter" id="month-filter">
+        <button class="month-btn active" data-month="all">TODAS</button>
+        <button class="month-btn" data-month="2">FEB</button>
+        <button class="month-btn" data-month="3">MAR</button>
+        <button class="month-btn" data-month="4">ABR</button>
+        <button class="month-btn" data-month="5">MAY</button>
+        <button class="month-btn" data-month="6">JUN</button>
+        <button class="month-btn" data-month="7">JUL</button>
+        <button class="month-btn" data-month="8">AGO</button>
+        <button class="month-btn" data-month="9">SEP</button>
+        <button class="month-btn" data-month="10">OCT</button>
+      </div>
+
+      <div class="calendar-list" id="calendar-list"></div>
+
+      <p class="cal-total" id="cal-total"></p>
+    </section>
+
+    <!-- ══════════════ MASCARADAS ══════════════ -->
+    <section id="page-mascaradas" class="page">
+      <div class="page-header">
+        <span class="eyebrow">TRADICIÓN ANCESTRAL · PROVINCIA DE ZAMORA</span>
+        <h2>Mascaradas</h2>
+        <p class="page-desc">Diablos, zamarrones, carochos y cencerrones recorren los pueblos de Zamora. Bien de Interés Cultural y candidatas a Patrimonio de la Humanidad por la UNESCO. Datos extraídos de
+          <a href="https://turismoenzamora.es/patrimonio-popular/mascaradas-de-invierno/" target="_blank" rel="noopener" class="source-link">turismoenzamora.es</a>.
+        </p>
+      </div>
+
+      <div class="month-filter" id="mask-filter">
+        <button class="month-btn active" data-month="all">TODAS</button>
+        <button class="month-btn" data-month="12">DIC</button>
+        <button class="month-btn" data-month="1">ENE</button>
+        <button class="month-btn" data-month="2">FEB</button>
+        <button class="month-btn" data-month="8">AGO</button>
+      </div>
+
+      <div class="calendar-list" id="mask-list"></div>
+      <p class="cal-total" id="mask-total"></p>
+    </section>
+
+    <!-- ══════════════ EXTRAS (hub) ══════════════ -->
+    <section id="page-extras" class="page">
+      <div class="page-header">
+        <span class="eyebrow">MÁS ALLÁ DE LAS LEYENDAS</span>
+        <h2>Extras</h2>
+        <p class="page-desc">Contenido adicional. Escritura, documentos y otras piezas del proyecto.</p>
+      </div>
+      <div class="extras-grid">
+
+        <button class="extras-card" data-page="escritos">
+          <span class="extras-card-icon">✒</span>
+          <span class="extras-card-title">Escritos</span>
+          <span class="extras-card-desc">Relatos y textos propios nacidos de las leyendas de Zamora.</span>
+          <span class="extras-card-arrow">→</span>
+        </button>
+
+        <button class="extras-card" data-page="folklore">
+          <span class="extras-card-icon">📜</span>
+          <span class="extras-card-title">Folklore y Leyendas</span>
+          <span class="extras-card-desc">Guiones usados en los vídeos.</span>
+          <span class="extras-card-arrow">→</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ ESCRITOS ══════════════ -->
+    <section id="page-escritos" class="page">
+      <div class="escritos-nav">
+        <button class="escritos-back" data-page="extras">← EXTRAS</button>
+        <span class="escritos-breadcrumb">EXTRAS · ESCRITOS</span>
+      </div>
+      <div class="escritos-wrap">
+
+        <!-- ─── RELATO 1 ─── -->
+        <article class="relato">
+          <header class="relato-header">
+            <span class="relato-eyebrow">RELATO · TIERRA DEL PAN</span>
+            <h1 class="relato-title">Zamora la Vieja</h1>
+            <p class="relato-meta">Por Alberto Hernández</p>
+          </header>
+          <div class="relato-body">
+            <p>No pretendo que me creáis, pero quiero dejar constancia de lo sucedido, es difícil escribir sobre ello pero he de hacerlo, paso a relatar a continuación lo que vivimos mi hermano y yo en este misterioso lugar.</p>
+
+            <p>Era un día tan normal como cualquier otro, salvo con la excepción de que Jose y yo aprovecharíamos la mañana para visitar Castrotorafe, un lugar levantado allá por el Siglo XI y que Alfonso VII vio en su emplazamiento un lugar muy importante a nivel estratégico, debido a ello concedió al pueblo poder sobre varias localidades de los alrededores y más adelante pasó a manos de la Orden de caballería de Santiago, todo indica que en el año 1176.</p>
+
+            <p>No me perderé con más datos, salvo un par de apuntes que son vitales en esta historia: el lugar fue quedando progresivamente despoblado debido a epidemias de peste y en el Siglo XVII ya se encontraba totalmente vacío. El segundo dato importante: la ermita mantuvo su esplendor hasta que en el Siglo XIX las tropas de Napoleón decidieron que sería una buena idea llevarse todo lo que pudieran de ella.</p>
+
+            <p>Como en otras aventuras preparamos una mochila con todo lo indispensable: botellas de agua, barritas energéticas, linternas pequeñas, trípode para los teléfonos móviles y una hoja de ruta.</p>
+
+            <p>Llegar hasta allí no fue complicado a pesar de que para llegar a la vieja Zamora haya que desviarse de la carretera y girar hacia un camino que por suerte se encuentra señalizado.</p>
+
+            <p>Dejamos el coche en el margen derecho, por si alguien más quería visitar las ruinas de lo que antaño fue una ciudad fortificada con un puente que permitía la entrada de diversas mercancías, un puente que quedó sumergido en el embalse.</p>
+
+            <p>Comenzamos a caminar y subimos una pequeña cuesta. Es difícil en la actualidad hacerse una idea de cómo pudo haber sido hace diez siglos: piedras por uno y otro lado, y una pared en pie. Eso que ahora es completamente vulgar había sido la vieja ermita alguna vez.</p>
+
+            <p>Nos asomamos al embalse de Ricobayo y desde la lejanía pudimos contemplar la felicidad de la gente que iba allí a pasar el día. Eran ajenos a todo lo que estaba por llegar, a tan solo unos cientos de metros de allí.</p>
+
+            <p>Seguimos nuestra expedición. El castillo se conserva relativamente bien, el tiempo le ha jugado una mala pasada pero han conseguido poner freno de momento a su caída. No nos lo pensamos dos veces cuando comprobamos que a pesar de la valla de seguridad se podía entrar; un gran agujero invita a todo aquel que quiera verlo desde cerca.</p>
+
+            <p>Entramos y recorrimos cada rincón visitable, siempre con cuidado: una construcción con tantos siglos a sus espaldas puede jugar una mala pasada, cada paso fue calculado. Decidimos que sería una buena idea volver por la noche; estos lugares tan especiales engañan según a la hora que vayas.</p>
+
+            <p>Llegó la oscuridad. La luna llena iluminaba desde lo alto y las estrellas asomaban. Qué placer estar lejos de la civilización para contemplar algo así.</p>
+
+            <p>Cuando entramos en el terreno de la antigua ciudad notamos algo diferente. Se levantó aire frío cuando hacía tan solo unos segundos todo estaba en calma, las hojas comenzaron a mecerse y los ruidos de la noche fueron apareciendo poco a poco.</p>
+
+            <p>Seguimos caminando con nuestras linternas encendidas, apuntando a cada rincón. Sentíamos que en cualquier momento un animal podría cruzarse ante nosotros o, quién sabe, quizás allí había otras personas visitando las ruinas. Aumentamos la precaución; nos comunicábamos prácticamente con susurros. Jose apuntaba hacia el frente y a la izquierda, mientras que yo lo hacía a la derecha, girándome también por si alguien nos seguía, y es que parecía que mil ojos nos acechaban.</p>
+
+            <p>En más de una ocasión estuvimos a punto de irnos, pero nos convencíamos diciendo que todo eso era producto de la sugestión. Y así, entre dudas, llegamos hasta el castillo.</p>
+
+            <p>Voces. Sí, voces. Débiles, apenas audibles, pero al fin y al cabo, voces. Procedían del interior. ¿Nos habrían adelantado durante el trayecto? En el camino no había más coches aparcados y tampoco los habíamos visto durante nuestra travesía.</p>
+
+            <p>Algo se movió detrás de nosotros. Las pisadas fueron audibles: un correteo rápido, su sonido se perdió entre la maleza. Miré a mi hermano y nos entendimos; era peor desandar lo andado que entrar por el agujero del vallado. En el peor de los casos serían un grupo de amigos haciendo botellón.</p>
+
+            <p>Dejamos una sola linterna encendida. La luna llena ofrecía algo de luz para no errar nuestros pasos; nos acercamos con sigilo y entramos en la edificación. Allí no había absolutamente nadie, pero se seguían escuchando voces que aumentaban su intensidad como si estuviéramos llegando al epicentro.</p>
+
+            <p>Eran tantas que era complicado distinguir alguna palabra: se entremezclaban, venían del frente, de atrás, de la derecha, de la izquierda. Pero no había nadie. Y otra vez las pisadas; ahora no solo eran de una persona que correteaba, eran muchas más. Pasos cortos, pasos largos, lentos, agonizantes, veloces, estresantes…</p>
+
+            <p>Y algo nos heló la sangre: suspiros y lamentos a nuestra espalda, tan cerca que eran ensordecedores. Incluso sentíamos cómo el aliento de aquello que estuviese ahí nos pegaba en el cuello.</p>
+
+            <p>Echamos a correr. Una huida hacia adelante; la linterna se cayó al suelo y cada vez estábamos más cerca de llegar hasta el final del castillo, hasta su última pared. Nos detuvimos pensando cuál sería nuestro siguiente movimiento, mientras que ahora sí, voces en castellano antiguo y en francés se cernían sobre nosotros. Aquello era invisible, pero estaba ahí.</p>
+
+            <p>Cerramos los ojos unos segundos y al abrirlos estábamos dentro del coche: Jose en el asiento del copiloto con la mochila sobre sus piernas y yo en el asiento del piloto. Nos miramos y sin decir ni una sola palabra emprendimos el camino de vuelta.</p>
+
+            <p>A pesar de que han pasado unos meses, ha sido complicado escribir todo esto. Cuando llegamos a casa comprobamos que faltaba la linterna que se nos había caído y que la mochila había sido rasgada: un corte de arriba hasta abajo, profundo.</p>
+
+            <p>Por más que hemos repasado en frío todo lo que vivimos aquella noche nos ha sido imposible encontrar una explicación. Para nosotros fue algo real, por muy increíble que pueda parecer; no encontramos sentido a lo ocurrido.</p>
+
+            <p>Lo hemos mantenido en secreto hasta ahora. No podemos seguir así porque nos come por dentro. Sabemos que vamos a ser tomados por locos y que la única solución que aparece en el horizonte es volver a Zamora la Vieja.</p>
+
+            <p>Nos inquieta, pero debemos regresar. Algo nos llama durante la noche, nos invita a volver…</p>
+          </div>
+        </article>
+
+        <!-- ─── RELATO 2 ─── -->
+        <article class="relato relato-ninos">
+          <header class="relato-header">
+            <span class="relato-eyebrow">LEYENDA PARA NIÑOS · ALFOZ DE TORO</span>
+            <span class="relato-badge">✦ Versión para niños de «El Cristo de las Batallas»</span>
+            <h1 class="relato-title">El Cristo de las Batallas</h1>
+            <p class="relato-meta">Por Alberto Hernández</p>
+          </header>
+          <div class="relato-body">
+            <p>Hace mucho tiempo, en el año 1476, las tierras de Toro estaban en guerra. Cerca del río Duero se iba a decidir el futuro de los reyes. Don Pedro, que era un guerrero valiente y muy fiel a su ciudad, estaba desesperado por unirse a sus compañeros en la batalla. Montó en su caballo, ajustó su armadura y salió galopando, pero al llegar a la orilla del río comprobó que bajaba tan bravo y tan lleno de agua que era imposible cruzarlo.</p>
+
+            <p>Desde la distancia, Don Pedro veía el polvo de la batalla y escuchaba el chocar de las espadas. Se sentía fatal. Pensaba: «Mis amigos se están esforzando y yo estoy aquí parado por culpa de la corriente». Desesperado, se bajó del caballo, hincó las rodillas en el suelo y rezó con todas sus fuerzas al Cristo de las Batallas, el patrón de los toresanos.</p>
+
+            <p>Pasó el tiempo y la batalla terminó. A la mañana siguiente, Don Pedro, sintiéndose un poco avergonzado por no haber podido pelear, fue a la ermita.</p>
+
+            <p>Estaba solo, triste y confundido. De pronto, ocurrió algo increíble: la iglesia se llenó de una luz cegadora y una voz potente, pero muy tranquila, que le habló directamente:</p>
+
+            <p>«Don Pedro, no estés triste. Vi que querías ayudar con todo tu corazón, así que yo mismo ocupé tu lugar. Tomé tu armadura, monté en tu caballo y luché por ti para que nadie pudiera decir que faltaste a tu deber.»</p>
+
+            <p>Don Pedro se quedó de piedra. ¡El mismísimo Cristo le había sustituido para ayudarle porque su intención era noble! Al salir de la ermita, todavía estaba tan impresionado que caminaba dando tumbos, ¡casi no podía ni hablar del asombro!</p>
+
+            <p>Desde aquel día, Don Pedro cambió su vida. Decidió que, si había recibido semejante milagro, dedicaría todo su esfuerzo a ayudar a los demás y a seguir a la reina Isabel. Y así lo hizo hasta el final de sus días, siempre acompañado por sus valientes compañeros de Toro.</p>
+
+            <p>Y por eso, si alguna vez visitáis la ermita en Toro, recordad que allí se cuenta la historia de un caballero que, aunque no pudo cruzar el río, estuvo presente en la batalla gracias a un milagro que hoy, cientos de años después, seguimos recordando.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ FOLKLORE Y LEYENDAS ══════════════ -->
+    <section id="page-folklore" class="page">
+      <div class="escritos-nav">
+        <button class="escritos-back" data-page="extras">← EXTRAS</button>
+        <span class="escritos-breadcrumb">EXTRAS · FOLKLORE Y LEYENDAS</span>
+      </div>
+      <div class="escritos-wrap">
+        <div class="folklore-intro">
+          <span class="eyebrow">GUIONES · VÍDEOS DE INSTAGRAM</span>
+          <h2 class="folklore-title">Folklore y Leyendas</h2>
+          <p class="folklore-desc">Los textos que dan vida a cada vídeo. La investigación detrás de las leyendas.</p>
+        </div>
+        <p class="folklore-soon">Los guiones irán apareciendo aquí próximamente.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ BUZÓN ══════════════ -->
+    <section id="page-buzon" class="page">
+      <div class="page-header">
+        <span class="eyebrow">ESCRÍBENOS</span>
+        <h2>El buzón</h2>
+        <p class="page-desc">¿Conoces una leyenda que no hemos recogido? Cuéntanosla.</p>
+      </div>
+      <div class="buzon-wrap">
+        <form class="buzon-form" id="buzon-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-nombre">NOMBRE</label>
+              <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">CORREO</label>
+              <input type="email" id="f-email" name="email" placeholder="tu@correo.es" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-lugar">LUGAR DE LA LEYENDA</label>
+            <input type="text" id="f-lugar" name="lugar" placeholder="¿Dónde ocurre?" />
+          </div>
+          <div class="form-group">
+            <label for="f-mensaje">LA LEYENDA</label>
+            <textarea id="f-mensaje" name="mensaje" rows="6" placeholder="Cuéntanosla como la escuchaste…" required></textarea>
+          </div>
+          <button type="submit" class="btn-outline">ENVIAR →</button>
+          <p class="form-success" id="form-success">Recibido. Las piedras ya susurran tu historia.</p>
+          <p class="form-error"   id="form-error">Algo falló. Inténtalo de nuevo o escríbenos directamente.</p>
+        </form>
+        <aside class="buzon-aside">
+          <blockquote class="buzon-quote">
+            <p>«Todos los pueblos, aunque sean pequeños, tienen su magia.»</p>
+            <cite>— Alberto Hernández</cite>
+          </blockquote>
+          <div class="buzon-stats">
+            <div class="stat">
+              <span class="stat-num" id="stat-leyendas">—</span>
+              <span class="stat-label">LEYENDAS<br>RECOGIDAS</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" id="stat-costumbres">—</span>
+              <span class="stat-label">COSTUMBRES<br>DOCUMENTADAS</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
