@@ -1,13 +1,13 @@
 {
   "id": "el-faro",
-  "title": "El Faro de Aguasmuerta",
-  "description": "El pueblo de Aguasmuerta lleva tres semanas sin señal del guardián del faro. Te envían a investigar. Los vecinos no te miran a los ojos. El mar huele diferente aquí.",
+  "title": "El Faro de Aguasmuertass",
+  "description": "El pueblo de Aguasmuertas lleva tres semanas sin señal del guardián del faro. Te envían a investigar. Los vecinos no te miran a los ojos. El mar huele diferente aquí.",
   "estimatedLength": "25–40 min",
   "startNode": "inicio",
   "nodes": {
     "inicio": {
-      "title": "Aguasmuerta",
-      "text": "El autobús te deja en la cuneta a las afueras del pueblo. El conductor no ha dicho una sola palabra en dos horas de viaje, y ahora te mira por el retrovisor mientras arranca de nuevo, acelerando como si huyera.\n\nAguasmuerta. Cuarenta y tres habitantes según el censo. Un pueblo de pescadores encajado entre acantilados negros y un mar de color extraño, entre gris y verde, que nunca parece quieto aunque no haya viento.\n\nLas casas son bajas, de piedra húmeda, con las ventanas casi siempre cerradas. Hay redes de pesca colgadas entre los balcones, pero llevan tanto tiempo allí que parecen telarañas. En la plaza hay una fuente seca con una estatua de piedra erosionada: un hombre señalando al mar. Le faltan los dedos.\n\nA lo lejos, en la punta del cabo, el faro. Apagado. Lleva apagado veintiún días.",
+      "title": "Aguasmuertas",
+      "text": "El autobús te deja en la cuneta a las afueras del pueblo. El conductor no ha dicho una sola palabra en dos horas de viaje, y ahora te mira por el retrovisor mientras arranca de nuevo, acelerando como si huyera.\n\nAguasmuertas. Cuarenta y tres habitantes según el censo. Un pueblo de pescadores encajado entre acantilados negros y un mar de color extraño, entre gris y verde, que nunca parece quieto aunque no haya viento.\n\nLas casas son bajas, de piedra húmeda, con las ventanas casi siempre cerradas. Hay redes de pesca colgadas entre los balcones, pero llevan tanto tiempo allí que parecen telarañas. En la plaza hay una fuente seca con una estatua de piedra erosionada: un hombre señalando al mar. Le faltan los dedos.\n\nA lo lejos, en la punta del cabo, el faro. Apagado. Lleva apagado veintiún días.",
       "choices": [
         { "text": "Ir directamente al faro", "next": "camino_faro" },
         { "text": "Preguntar en el bar del pueblo antes de ir", "next": "bar" },
@@ -254,7 +254,7 @@
       "title": "Demasiado Tarde",
       "isEnding": true,
       "endingType": "bad",
-      "text": "Llegas a él justo cuando su mano toca el cristal. Lo agarras del brazo. Por un momento hay resistencia, y en ese momento ves en sus ojos la última chispa de Ramos, real y aterrorizada y agradecida.\n\nLuego el cristal se rompe hacia fuera.\n\nCaéis los dos. Ramos al mar. Tú hacia atrás, contra el suelo de la linterna, con los brazos llenos de cortes del cristal.\n\nEl ser —ya sin cuerpo— no se ha ido. Está en el aire de la sala. Y la voz que empieza a hablar ahora usa el tono exacto de Ramos, la voz que tenía antes, la del hombre de la foto con su hija.\n\n— Quedas tú — dice. — Y tienes que quedarte en algún sitio mientras espero al siguiente.\n\nLa luz azul se hace más densa. Más fría.\n\nEres el nuevo guardián del faro de Aguasmuerta.\n\nEl faro nunca se apagará.",
+      "text": "Llegas a él justo cuando su mano toca el cristal. Lo agarras del brazo. Por un momento hay resistencia, y en ese momento ves en sus ojos la última chispa de Ramos, real y aterrorizada y agradecida.\n\nLuego el cristal se rompe hacia fuera.\n\nCaéis los dos. Ramos al mar. Tú hacia atrás, contra el suelo de la linterna, con los brazos llenos de cortes del cristal.\n\nEl ser —ya sin cuerpo— no se ha ido. Está en el aire de la sala. Y la voz que empieza a hablar ahora usa el tono exacto de Ramos, la voz que tenía antes, la del hombre de la foto con su hija.\n\n— Quedas tú — dice. — Y tienes que quedarte en algún sitio mientras espero al siguiente.\n\nLa luz azul se hace más densa. Más fría.\n\nEres el nuevo guardián del faro de Aguasmuertas.\n\nEl faro nunca se apagará.",
       "choices": []
     },
     "final_malo_oferta": {
