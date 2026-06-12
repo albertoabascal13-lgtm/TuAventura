@@ -7,9 +7,13 @@ import styles from './StoryEngine.module.css'
 
 // Story registry — add new stories here
 import laMansion from '../stories/la-mansion.json'
+import elFaro from '../stories/el-faro.json'
+import castrotorafe from '../stories/castrotorafe.json'
 
 const STORY_REGISTRY = {
   'la-mansion': laMansion,
+  'el-faro': elFaro,
+  'castrotorafe': castrotorafe,
 }
 
 function loadProgress(storyId) {
