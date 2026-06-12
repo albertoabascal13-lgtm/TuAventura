@@ -1,0 +1,283 @@
+{
+  "id": "happyville",
+  "title": "HappyVille",
+  "description": "El pueblo perfecto. Casas blancas, jardines impecables, vecinos encantadores. Tú y Sara habéis venido a pasar unos días de vacaciones. Qué bonito es HappyVille. Qué raro que nunca hayas oído hablar de él.",
+  "estimatedLength": "8–13 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "Bienvenidos a HappyVille",
+      "text": "El cartel de madera pintada en azul y blanco aparece al doblar la última curva de la carretera estatal:\n\n*HAPPYVILLE — Population: 1.247 — The Happiest Little Town in America!*\n\nSara se incorpora en el asiento del copiloto y se quita las gafas de sol.\n\n— Dios mío, es exactamente como en las fotos — dice. — Es precioso.\n\nTiene razón. Las casas son blancas con contraventanas de colores pastel. Los jardines delanteros tienen el césped cortado con una precisión casi quirúrgica. Hay maceteros en todos los porches, banderas americanas en casi todos los buzones, y las aceras están tan limpias que podrías comer en ellas.\n\nEncontraste HappyVille en un blog de viajes hace tres semanas. El artículo decía que era 'el secreto mejor guardado de la América profunda'. Que los turistas que lo visitaban nunca querían irse.\n\nAhora, al entrar en el pueblo, tres vecinos que trabajan en sus jardines se detienen, os miran, y levantan la mano para saludar. Todos a la vez. Con la misma sonrisa.",
+      "choices": [
+        { "text": "Saludar y buscar el bed & breakfast donde habéis reservado", "next": "calle_principal" },
+        { "text": "Parar el coche y preguntar por el pueblo antes de nada", "next": "parar_preguntar" }
+      ]
+    },
+    "parar_preguntar": {
+      "title": "Los Vecinos",
+      "text": "Bajas la ventanilla. El hombre del jardín más cercano — unos cincuenta años, camisa de cuadros, sonrisa de anuncio de dentífrico — se acerca al coche.\n\n— ¡Bienvenidos a HappyVille! — dice, con una calidez que parece completamente genuina. — Primera vez por aquí, ¿verdad?\n\n— Sí — dices. — ¿Se nota tanto?\n\n— Los reconocemos siempre — dice, y ríe. — Los nuevos siempre llegan con esa cara de 'no me puedo creer que este sitio exista'. Es normal. ¿Cuánto tiempo se quedan?\n\n— Cuatro días.\n\nAsiente. La sonrisa no varía ni un milímetro.\n\n— Cuatro días es un buen comienzo. Aunque la mayoría acaba quedándose más.\n\n— ¿Más?\n\n— Una vez que HappyVille te entra por los ojos... — hace un gesto vago con la mano, como si el resto de la frase fuera obvia. — ¿Saben dónde está el Coleman's Inn?\n\n— Tenemos la dirección en el GPS.\n\n— Perfecto. Si necesitan cualquier cosa, aquí estamos. Aquí siempre estamos.\n\nSube la ventanilla. Sara te mira.\n\n— Qué majo — dice.\n\n— Sí — dices. Aunque algo en la frase *aquí siempre estamos* te ha dejado un poso raro que no sabes definir.",
+      "choices": [
+        { "text": "Ir al Coleman's Inn a dejar el equipaje", "next": "calle_principal" }
+      ]
+    },
+    "calle_principal": {
+      "title": "Main Street",
+      "text": "La calle principal de HappyVille podría ser el set de una película de los años cincuenta: una farmacia con el rótulo en neón apagado de día, una heladería con mesas en la acera, una peluquería, una ferretería, y el Marta's Diner con un letrero de neón rojo que anuncia *OPEN* aunque sean las once de la mañana de un martes.\n\nCada persona con la que cruzáis la mirada sonríe. No la sonrisa rápida y educada de quien saluda a un desconocido. Una sonrisa larga, cálida, de alguien que lleva mucho tiempo esperando verte.\n\nEl Coleman's Inn está al final de la calle: una casa victoriana blanca de tres plantas con una veranda corrida y maceteros con geranios rojos. En el porche, una mujer de unos sesenta años os espera con los brazos abiertos antes de que hayáis llegado al buzón.\n\n— ¡Aquí están! — exclama. — ¡Los esperábamos!\n\nSara me aprieta el brazo con entusiasmo. A mí algo en la frase *los esperábamos* me resulta extraña. La reserva la hice hace tres semanas. Es normal que nos esperaran.\n\n¿No?",
+      "choices": [
+        { "text": "Entrar al inn y subir a la habitación", "next": "habitacion" },
+        { "text": "Explorar Main Street antes de hacer el check-in", "next": "main_street_explorar" }
+      ]
+    },
+    "main_street_explorar": {
+      "title": "Detalles",
+      "text": "Dejáis el coche aparcado y dais una vuelta por la calle principal antes de entrar al inn.\n\nLa heladería huele a vainilla y a algo más dulce que no identificas. El chico detrás del mostrador — diecinueve o veinte años, pelo rubio, mandíbula cuadrada — os sonríe con una perfección que parece estudiada.\n\n— Primera vez en HappyVille, ¿a que sí?\n\n— ¿Cómo lo sabes?\n\n— Lo notamos siempre.\n\nEs la segunda vez que alguien os dice exactamente eso.\n\nEn el escaparate de la farmacia hay un tablón de corcho con fotos del pueblo. Eventos, barbacoas comunitarias, el 4 de julio. Sonrisas en todas. Os acercáis a mirarlo.\n\nHay algo raro en las fotos, pero tardas unos segundos en encontrarlo: todas son recientes — los coches que aparecen al fondo son de los últimos cinco años — pero en ninguna hay caras que no sean de HappyVille. Ningún turista. Ningún visitante. Solo los mismos vecinos una y otra vez.",
+      "choices": [
+        { "text": "Entrar a la farmacia a preguntar sobre las fotos", "next": "farmacia" },
+        { "text": "Ir al Coleman's Inn", "next": "habitacion" },
+        { "text": "Entrar al Marta's Diner", "next": "diner" }
+      ]
+    },
+    "farmacia": {
+      "title": "La Farmacia",
+      "text": "La campanilla de la puerta suena al entrar. Detrás del mostrador hay un hombre mayor con gafas de montura metálica que levanta la vista y sonríe de inmediato.\n\n— ¡Bienvenidos! ¿En qué puedo ayudarles?\n\n— Las fotos del tablón de afuera — dices. — ¿No vienen turistas por aquí normalmente?\n\nUna pausa muy breve. Tan breve que casi no existe.\n\n— Claro que vienen — dice. — Pero las fotos del tablón son solo de eventos del pueblo. ¿Por qué lo pregunta?\n\n— Curiosidad.\n\n— HappyVille es un pueblo muy unido — dice. Y la sonrisa vuelve, un poco más ancha que antes. — Nos encanta recibir visitas. ¿Cuánto tiempo se quedan?\n\nEs la tercera vez que alguien os hace esa pregunta.\n\nDetrás del hombre, en la pared del fondo de la farmacia, hay un cuadro al óleo. Una escena campestre, cielo azul, prado verde. Y en el centro del prado, una figura oscura de espaldas que mira hacia el horizonte. No encaja con el resto del cuadro. La pintura en esa figura es más gruesa, más reciente. Como si alguien la hubiera añadido después.",
+      "choices": [
+        { "text": "Preguntar por el cuadro", "next": "cuadro_farmacia" },
+        { "text": "Dar las gracias y salir", "next": "habitacion" }
+      ]
+    },
+    "cuadro_farmacia": {
+      "title": "La Figura del Cuadro",
+      "text": "— Ese cuadro del fondo — dices. — ¿Quién es la figura?\n\nEl farmacéutico ni se gira a mirarlo. Como si supiera exactamente de cuál hablas sin necesidad de comprobarlo.\n\n— Decoración — dice simplemente. — Lo compré en una subasta hace años.\n\n— La figura parece pintada después que el resto.\n\nAhora sí se gira. Mira el cuadro un momento. Luego os mira a vosotros.\n\n— Tiene buen ojo — dice. La sonrisa esta vez es diferente. Más estrecha. — Antes era un paisaje. Le pedí a un artista local que añadiera una figura. Me parecía que le faltaba... presencia.\n\nHay algo en cómo dice la palabra 'presencia' que te queda resonando.\n\nSara te tira del brazo hacia la salida.\n\n— Vamos, que tenemos que hacer el check-in — susurra.\n\nAl salir, por el espejo del mostrador, ves que el farmacéutico os sigue con los ojos hasta que la puerta se cierra.",
+      "choices": [
+        { "text": "Ir al Coleman's Inn", "next": "habitacion" },
+        { "text": "Contarle a Sara lo del cuadro y proponer irse del pueblo hoy mismo", "next": "proponer_irse_pronto" }
+      ]
+    },
+    "proponer_irse_pronto": {
+      "title": "Sara No Quiere",
+      "text": "— Sara, hay algo raro en este pueblo.\n\nElla te mira con paciencia.\n\n— Es un pueblo pequeño con gente un poco rara. Todos los pueblos pequeños son así.\n\n— El farmacéutico ni parpadeó cuando le pregunté por el cuadro.\n\n— Porque es su tienda y puede tener los cuadros que quiera.\n\n— Nadie tiene fotos de turistas en ningún sitio.\n\n— Porque igual no hacen fotos de los turistas. ¿Por qué habrían de hacerlo?\n\nTiene respuesta para todo. Y tienes razón en que cualquiera de esas cosas, por separado, es completamente normal.\n\n— Dame hasta mañana — dice Sara. — Si mañana sigues con la misma sensación, nos vamos. ¿Vale?\n\nMañana.\n\nLa pregunta es si mañana será demasiado tarde.",
+      "choices": [
+        { "text": "Aceptar y ir al inn a observar más antes de actuar", "next": "habitacion" },
+        { "text": "Insistir y buscar la salida del pueblo ahora mismo", "next": "salida_temprana" }
+      ]
+    },
+    "salida_temprana": {
+      "title": "La Carretera",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "— No. Nos vamos ahora.\n\nSara te mira sorprendida, luego algo en tu expresión la convence de que hablas en serio.\n\n— Muy bien — dice despacio. — Nos vamos.\n\nVolvéis al coche. Arrancas. La calle principal de HappyVille desfila por las ventanillas una última vez: el heladero en la puerta, el farmacéutico que ha salido al porche, la señora Coleman que os ve pasar desde la veranda del inn con la misma sonrisa que cuando llegasteis.\n\nNadie os detiene. Nadie os llama. Solo os siguen con los ojos mientras el coche abandona Main Street y toma la carretera de salida.\n\nEl cartel de *HAPPYVILLE — The Happiest Little Town in America!* aparece por el retrovisor y se hace pequeño.\n\nSara no dice nada durante diez minutos. Luego:\n\n— ¿Qué viste exactamente?\n\nLe cuentas lo del cuadro. Las fotos sin turistas. El modo en que todos os hacían la misma pregunta.\n\nElla está en silencio otros cinco minutos.\n\n— Bien hecho — dice por fin. Solo eso.\n\nEsa noche, en un motel de carretera a noventa kilómetros de HappyVille, buscas el blog donde encontraste el pueblo. El artículo sigue ahí.\n\nPero los comentarios han desaparecido. Los veintidós comentarios de personas que decían que iban a visitarlo.\n\nTodos borrados. Como si nunca hubieran existido.",
+      "choices": []
+    },
+    "habitacion": {
+      "title": "El Coleman's Inn",
+      "text": "La señora Coleman — 'llamadme Betty, por favor' — os lleva a la habitación 3 del segundo piso. Madera clara, colcha de patchwork, una ventana con vistas al jardín trasero perfectamente podado.\n\nEn la pared de la habitación hay tres cuadros: un paisaje de montaña, un bodegón con manzanas, y una fotografía enmarcada en blanco y negro de lo que parece ser HappyVille hace setenta años. Las casas son las mismas. La disposición de las calles es la misma. Pero la foto está tomada desde un ángulo elevado, como desde un tejado, y en la parte inferior izquierda hay algo que no encaja: una puerta de madera en el suelo, de las que llevan a un sótano, abierta de par en par y con algo oscuro dentro.\n\nBetty os explica los horarios del desayuno, las normas de la casa, los restaurantes que recomienda.\n\n— Y si necesitan cualquier cosa por la noche — añade, ya en la puerta —, lo que sea, a cualquier hora, llamad a la puerta del fondo del pasillo. Siempre hay alguien.\n\nCierra la puerta.\n\nSara ya está deshaciendo la maleta. Tú sigues mirando la fotografía.",
+      "choices": [
+        { "text": "Examinar bien la fotografía enmarcada", "next": "foto_inn" },
+        { "text": "Bajar a explorar el pueblo mientras Sara descansa", "next": "diner" },
+        { "text": "Bajar a explorar el inn mientras Sara descansa", "next": "explorar_inn" }
+      ]
+    },
+    "foto_inn": {
+      "title": "La Fotografía",
+      "text": "La acercas a la luz de la ventana.\n\nEs una foto antigua, en papel duro, con ese tono sepia que tienen las fotografías de mediados del siglo XX. HappyVille tal como es ahora, pero sin los coches, sin los carteles de neón. Las mismas casas. Las mismas calles.\n\nY la puerta de sótano abierta en primer plano.\n\nPero hay más. En la acera, justo al lado de la puerta abierta, hay cuatro personas de pie mirando a la cámara. Sus caras son demasiado pequeñas para distinguirlas bien, pero sus posturas tienen algo rígido, algo que no es exactamente naturalidad.\n\nY detrás de ellos, emergiendo a medias de la oscuridad del sótano, lo que parece ser una mano agarrando el borde de la puerta desde dentro.\n\nDejas la foto en su sitio.\n\nLa fecha en el margen inferior de la fotografía, escrita a mano con tinta: *HappyVille, August 1953. Welcome Day.*",
+      "choices": [
+        { "text": "Contárselo a Sara", "next": "contarle_sara" },
+        { "text": "Bajar a ver si hay un sótano en el inn", "next": "explorar_inn" },
+        { "text": "Ir al Marta's Diner a preguntar sobre la historia del pueblo", "next": "diner" }
+      ]
+    },
+    "contarle_sara": {
+      "title": "Sara Lo Ve",
+      "text": "— Mira esto.\n\nSara se acerca a la foto. La estudia un momento.\n\n— Una mano — dice.\n\n— O una sombra.\n\n— Es una mano.\n\nOs miráis.\n\n— Welcome Day — lee Sara en voz alta. — ¿Qué es el Welcome Day?\n\nNo lo sabes. Pero el nombre te suena a algo que debería ser inocente y no lo es.\n\n— Pregunto en recepción — dice Sara, ya moviéndose hacia la puerta.\n\n— Espera. No preguntes directamente por la foto. Pregunta por la historia del pueblo. A ver qué cuentan.",
+      "choices": [
+        { "text": "Bajar los dos juntos a investigar", "next": "explorar_inn" },
+        { "text": "Que Sara distraiga a Betty mientras tú buscas el sótano", "next": "sotano_buscar" }
+      ]
+    },
+    "explorar_inn": {
+      "title": "El Pasillo",
+      "text": "El inn tiene dos plantas y un pasillo largo en la planta baja. Las puertas de las otras habitaciones están cerradas. No se oye nada detrás de ellas, aunque según Betty hay otros huéspedes.\n\nAl fondo del pasillo hay una puerta diferente: más antigua, de madera oscura, sin número. Es la que Betty mencionó: 'si necesitan algo por la noche, llamad a esa puerta'.\n\nA la derecha de esa puerta, semioculta por un paragüero victoriano, hay otra puerta. Más pequeña. Con una argolla de hierro en lugar de pomo.\n\nY del otro lado de esa puerta, muy levemente, llega un olor. Tierra húmeda. Herrumbre. Algo orgánico que no quieres identificar.",
+      "choices": [
+        { "text": "Abrir la puerta pequeña", "next": "sotano_entrada" },
+        { "text": "Llamar a la puerta oscura del fondo", "next": "puerta_fondo" },
+        { "text": "Volver a la habitación a buscar a Sara antes de continuar", "next": "contarle_sara" }
+      ]
+    },
+    "puerta_fondo": {
+      "title": "La Habitación del Fondo",
+      "text": "Llamas.\n\nSilencio durante cinco segundos. Luego pasos. Lentos, regulares.\n\nLa puerta se abre.\n\nEl hombre que abre tiene unos setenta años, pelo completamente blanco, ojos claros. Lleva un delantal de cocina manchado de algo marrón oscuro que esperas que sea chocolate o café.\n\nTe mira sin decir nada durante un momento. Luego sonríe. La misma sonrisa de todos.\n\n— Un huésped nuevo — dice. — Bienvenido.\n\n— Perdone, yo solo quería...\n\n— Pase — dice, haciéndose a un lado. — Siempre es bueno conocer a los que llegan.\n\nDetrás de él hay una cocina grande y anticuada. Y en la cocina, colgadas de la pared con una meticulosidad inquietante, hay decenas de fotografías. Todas de parejas. Todas sonriendo. Todas en HappyVille.",
+      "choices": [
+        { "text": "Entrar y mirar las fotografías", "next": "fotos_cocina" },
+        { "text": "Disculparse y no entrar", "next": "sotano_buscar" }
+      ]
+    },
+    "fotos_cocina": {
+      "title": "Las Parejas",
+      "text": "Entras.\n\nEl hombre cierra la puerta detrás de ti. No echa el pestillo. Al menos eso.\n\nLas fotos están organizadas con marcos iguales, colocadas en filas perfectas. Cada una muestra a una pareja: distintas edades, distintas épocas a juzgar por la ropa. Todos sonriendo. Todos en distintos puntos de HappyVille que ya reconoces: la heladería, Main Street, el jardín del inn.\n\nPero hay algo que todas tienen en común: en ninguna hay una foto de la pareja sola. En todas aparece al menos un habitante del pueblo junto a ellos. Siempre en el borde del encuadre. Siempre mirando a la cámara aunque la pareja mire hacia otro lado.\n\nBuscas fechas. Las encuentras escritas a lápiz en la parte de atrás de los marcos que puedes ver. La más reciente: ocho meses. La más antigua: 1961.\n\nHay cuarenta y siete fotos en la pared.\n\n— Guardamos recuerdo de cada visita — dice el hombre detrás de ti. — Es nuestra manera de no olvidar.\n\n— ¿Y las parejas? ¿Vuelven a veces?\n\nUna pausa.\n\n— No suelen marcharse — dice.",
+      "choices": [
+        { "text": "Preguntar qué significa eso", "next": "pregunta_critica" },
+        { "text": "Salir con calma y buscar a Sara inmediatamente", "next": "buscar_sara_urgente" }
+      ]
+    },
+    "pregunta_critica": {
+      "title": "No Suelen Marcharse",
+      "text": "— ¿Qué quiere decir con que no suelen marcharse?\n\nEl anciano te mira con esa expresión de calma absoluta que tienen todos en HappyVille.\n\n— Que el pueblo les gusta mucho — dice. — Que encuentran aquí algo que no tenían. Comunidad. Pertenencia. Raíces.\n\n— ¿Y los que sí se marchan?\n\nAhora la pausa es más larga.\n\n— Esos no entendieron HappyVille — dice. Y algo en el tono cambia de forma muy sutil. — Lástima.\n\nEl olor a herrumbre que venía del pasillo llega ahora más fuerte aquí dentro. Y la mancha marrón del delantal, vista de cerca, tiene una textura que no es café ni chocolate.\n\nTe mueves hacia la puerta.\n\n— Ha sido un placer — dices.\n\n— El placer es nuestro — responde. — Siempre.",
+      "choices": [
+        { "text": "Salir y buscar a Sara", "next": "buscar_sara_urgente" }
+      ]
+    },
+    "buscar_sara_urgente": {
+      "title": "Sara",
+      "text": "Subes las escaleras de dos en dos.\n\nLa habitación está vacía. La maleta de Sara sigue abierta sobre la cama. Su teléfono está en la mesilla.\n\nBajas de nuevo. Preguntas a Betty en recepción.\n\n— Su chica ha salido a dar una vuelta — dice Betty con la misma sonrisa de siempre. — Qué encantadora es. Hemos tenido una conversación maravillosa.\n\n— ¿Adónde fue?\n\n— Creo que al Marta's Diner. Le recomendé el pastel de manzana.",
+      "choices": [
+        { "text": "Ir al Marta's Diner a buscarla", "next": "diner_urgente" },
+        { "text": "Coger las llaves del coche y buscarla por el pueblo", "next": "buscar_coche" }
+      ]
+    },
+    "diner": {
+      "title": "Marta's Diner",
+      "text": "El diner huele a café recién hecho y a tarta de manzana. Los taburetes de la barra son rojos, la máquina de discos brilla en el rincón, y detrás de la barra una mujer robusta con un delantal también rojo te saluda antes de que hayas cruzado la puerta.\n\n— ¡Bienvenido, cariño! Primera vez en HappyVille, ¿a que sí?\n\n— Sí.\n\n— Lo notamos siempre. Siéntate donde quieras.\n\nLas paredes del diner están cubiertas de fotografías enmarcadas. A primera vista parecen fotos del pueblo, de eventos, de gente comiendo. Pero mientras esperas el café que has pedido, las miras con más atención.\n\nHay algo sistemático en su disposición: están ordenadas por fecha. Las más antiguas en la pared del fondo, las más recientes cerca de la puerta. Y en cada foto, entre los habituales del diner, aparece al menos una cara nueva. Alguien que no es de aquí. Alguien que sonríe con la expresión del que está de vacaciones.\n\nContas trece caras distintas de turistas en las fotos de los últimos tres años. Trece. Y todas las fotos muestran el momento de llegada: la primera comida, el primer café. No hay fotos de despedidas.",
+      "choices": [
+        { "text": "Preguntar a Marta por las fotografías", "next": "preguntar_fotos_diner" },
+        { "text": "Buscar la foto más reciente y fijarte bien en ella", "next": "foto_reciente_diner" },
+        { "text": "Terminar el café e irte sin llamar la atención", "next": "sotano_buscar" }
+      ]
+    },
+    "diner_urgente": {
+      "title": "Sara en el Diner",
+      "text": "Empujas la puerta del diner.\n\nSara está en la barra con una taza de café y un plato con pastel de manzana a medias. A su lado hay una mujer de unos cuarenta años que no habías visto antes: pelo oscuro, sonrisa perfecta, que interrumpe su conversación cuando entras.\n\n— ¡Aquí está! — dice Sara. — Te presentó a Linda. Es encantadora, llevamos media hora hablando.\n\nLinda te mira. La sonrisa de HappyVille.\n\n— Qué pareja más guapa — dice. — Va a encantarles el pueblo. Se lo aseguro.\n\nSara parece completamente relajada. Feliz, incluso. Y algo en eso, en lo rápido que ha bajado la guardia, te alarma más que cualquier otra cosa que hayas visto hoy.",
+      "choices": [
+        { "text": "Sentarte con ellas y aparentar normalidad mientras buscas una salida", "next": "aparentar_normalidad" },
+        { "text": "Decirle a Sara que tenéis que iros ahora mismo", "next": "decirle_sara_ahora" }
+      ]
+    },
+    "decirle_sara_ahora": {
+      "title": "La Discusión",
+      "text": "— Sara, nos vamos.\n\nElla te mira. Linda también.\n\n— ¿Qué? Pero si acabamos de llegar...\n\n— Ahora.\n\nSara te conoce lo suficiente para saber cuándo hablas en serio. Se levanta despacio, con el gesto de quien no quiere hacer una escena.\n\n— Perdona, Linda — dice. — Parece que hay algo urgente.\n\nLinda no dice nada. Solo os sigue con los ojos mientras salís. Y cuando lleváis tres pasos fuera del diner, su voz llega desde dentro, suave, sin elevar el tono:\n\n— No llegáis muy lejos, cariño.\n\nNi Sara ni tú os giráis.",
+      "choices": [
+        { "text": "Correr al coche y salir del pueblo", "next": "escape_coche" }
+      ]
+    },
+    "escape_coche": {
+      "title": "La Salida",
+      "text": "El coche está donde lo dejasteis. Arrancas. Sara no pregunta nada todavía.\n\nMain Street desfila a los lados. Los vecinos que estaban en sus jardines cuando llegasteis siguen ahí. Y cuando el coche pasa, todos se detienen y os miran. Sin moverse. Sin la sonrisa esta vez.\n\nLa carretera de salida está a doscientos metros.\n\nCien metros.\n\nCincuenta.\n\nHay un camión de reparto aparcado atravesado en la carretera, bloqueando el paso. El conductor no está a la vista. No sabes si es un accidente o algo deliberado.\n\nTienes que decidir en dos segundos.",
+      "choices": [
+        { "text": "Tocar el claxon y esperar a que alguien mueva el camión", "next": "esperar_camion" },
+        { "text": "Dar marcha atrás y buscar otra salida del pueblo", "next": "otra_salida" }
+      ]
+    },
+    "esperar_camion": {
+      "title": "La Espera",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Tocas el claxon. Una vez. Dos.\n\nNadie aparece.\n\nEn el retrovisor ves que tres vecinos se acercan al coche desde Main Street. Caminando despacio. Con calma. Como si tuvieran todo el tiempo del mundo.\n\nSara ve lo mismo que tú.\n\n— Arranca hacia atrás — dice.\n\nPero el motor no responde. Arranca, pero algo en la transmisión no funciona. El coche no se mueve.\n\nLos tres vecinos llegan al coche. Se colocan uno a cada lado y uno delante. Siguen sonriendo.\n\nEl del lado del conductor golpea el cristal con los nudillos, suave, casi amistoso.\n\n— Vamos — dice. — Betty tiene el desayuno preparado.\n\nDos semanas después, en la pared de la cocina del fondo del inn, hay dos marcos nuevos.\n\nDos caras que sonríen.\n\nDos caras nuevas que ya no van a marcharse de HappyVille.",
+      "choices": []
+    },
+    "otra_salida": {
+      "title": "El Camino de Tierra",
+      "text": "Metes marcha atrás. Giras por la primera calle perpendicular a Main Street.\n\nDetrás del pueblo, al final de una calle residencial, hay un camino de tierra sin señalizar que sube por una pequeña colina. No lo tenías en el GPS. Pero apunta en la dirección correcta.\n\n— ¿Ese camino? — pregunta Sara.\n\n— Ese camino.\n\nArrancas por él. El coche bota sobre los baches. Los árboles a ambos lados son cada vez más densos.\n\nY entonces ves, al borde del camino, a una persona. Sola. Un chico de unos veinticinco años con ropa que no encaja con HappyVille: sudadera gris, zapatillas desgastadas, cara demacrada y ojos que no sonríen.\n\nTe hace señas para que pares.",
+      "choices": [
+        { "text": "Parar y ver qué quiere", "next": "chico_camino" },
+        { "text": "No parar y seguir por el camino", "next": "escape_final_bueno" }
+      ]
+    },
+    "chico_camino": {
+      "title": "El Disidente",
+      "text": "Paras. El chico se acerca a la ventanilla con movimientos rápidos y nerviosos, mirando hacia atrás cada pocos segundos.\n\n— ¿Están intentando salir? — dice sin saludar.\n\n— Sí.\n\n— Este camino llega a una valla. Hay cámaras. — Habla rápido, en voz baja. — Venid conmigo. Conozco el único punto sin vigilancia. Lo llevo estudiando seis meses.\n\n— ¿Quién eres?\n\n— Me llamo Ryan. Vine con mi novia hace siete meses. — Una pausa. — Ella ya no quiere irse.\n\nSara y tú intercambiáis una mirada.\n\n— ¿Por qué nos ayudas?\n\n— Porque si vosotros salís, podéis contar lo que pasa aquí. — Traga saliva. — Y porque ya no aguanto más.",
+      "choices": [
+        { "text": "Confiar en Ryan y seguirle", "next": "escape_con_ryan" },
+        { "text": "No confiar en él y seguir solos por el camino", "next": "escape_final_bueno" }
+      ]
+    },
+    "escape_con_ryan": {
+      "title": "La Valla",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "Seguís a Ryan a pie por el bosque durante veinte minutos. Os lleva a un punto de la valla perimetral donde hay una abertura forzada, oculta detrás de unos arbustos.\n\nAl otro lado: un campo abierto. Y al fondo, la carretera estatal.\n\n— Fuera del pueblo no os pueden hacer nada — dice Ryan. — Necesitan que entréis voluntariamente. Es parte de sus reglas.\n\n— ¿Y tú?\n\nNiega con la cabeza.\n\n— Yo tengo que volver. Si me echan en falta antes de que salgáis, cierran el punto. Pero vosotros ya sabéis dónde está.\n\nLe miráis.\n\n— Cuando llegues a la carretera, llama a la policía del condado. No a la local. La local es de aquí.\n\nOs dais la mano. Ryan vuelve al bosque sin mirar atrás.\n\nCruzáis la valla.\n\nDos horas después, en una comisaría del condado a setenta kilómetros, intentáis explicar lo que habéis visto. El agente que os atiende os escucha con una expresión que va de la incredulidad a algo más serio cuando sacáis las fotos que hicisteis de las paredes del diner y de la cocina del inn.\n\n— HappyVille — repite, mirando las fotos. — No es la primera vez que me llega algo de ese pueblo.\n\nEsa noche, en las noticias, aparece por primera vez el nombre de HappyVille en un titular.\n\nRyan aparece en la puerta de la comisaría dos días después. Solo.",
+      "choices": []
+    },
+    "escape_final_bueno": {
+      "title": "La Carretera Abierta",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "El camino de tierra llega, tal como dijo Ryan, a una valla metálica. Pero hay una cámara apuntando a la entrada principal.\n\nDejáis el coche y bordeáis la valla por el lado derecho, donde la vegetación es más densa. Después de diez minutos encontráis una sección donde los postes están más separados. Con esfuerzo, los dos pasáis al otro lado.\n\nCamináis por campo abierto hasta la carretera estatal. Un camionero que va hacia el norte para sin que se lo pidáis demasiado.\n\n— ¿Todo bien? — dice, mirando vuestras caras.\n\n— Sí — dice Sara. Y luego, después de un segundo: — No.\n\nDesde la ventanilla del camión, mientras os alejáis, HappyVille se ve al fondo: blanco, perfecto, quieto bajo el sol de la tarde.\n\nNadie ha salido a buscaros.\n\nEso es lo más inquietante de todo. No necesitan buscarte cuando saben que nadie va a creerte.",
+      "choices": []
+    },
+    "preguntar_fotos_diner": {
+      "title": "Marta Responde",
+      "text": "— Me llama la atención las fotos — dices cuando Marta vuelve con el café. — ¿Son de clientes habituales?\n\n— De todos — dice ella. — Locales y visitantes. Nos gusta guardar memoria.\n\n— ¿Y estos de aquí? — señalas una de las fotos con turistas. — ¿Siguen viniendo?\n\nMarta mira la foto. Sonríe.\n\n— HappyVille tiene ese efecto — dice. — La gente que lo visita se queda con nosotros en el corazón. Para siempre.\n\n'Para siempre' con esa sonrisa y esa entonación tiene un peso extraño.\n\n— ¿Y vosotros cuánto tiempo os quedáis? — pregunta, y saca su libreta como para anotar el pedido aunque ya tienes el café.\n\nEs la quinta vez que alguien os hace esa pregunta desde que llegasteis.",
+      "choices": [
+        { "text": "Inventar una respuesta vaga y mirar las fotos más de cerca", "next": "foto_reciente_diner" },
+        { "text": "Pagar el café y salir a buscar a Sara", "next": "sotano_buscar" }
+      ]
+    },
+    "foto_reciente_diner": {
+      "title": "La Foto Más Reciente",
+      "text": "La foto más reciente está junto a la caja registradora. Dos personas — una pareja — sentadas exactamente donde tú estás ahora, en los mismos taburetes rojos, con los mismos cafés.\n\nSonríen. La mujer tiene la mano de él sobre la mesa. Están relajados. De vacaciones.\n\nLa fecha en el margen: hace ocho meses.\n\nLos miras bien. Son jóvenes, veintipocos. Ella lleva una camiseta de un grupo de música. Él tiene una cicatriz pequeña visible sobre la ceja.\n\nY entonces lo ves.\n\nDetrás de la pareja, al fondo de la foto, hay una puerta entreabierta. Y en la rendija, una mano. Solo una mano, agarrando el borde de la puerta desde dentro. Los dedos están en una posición que no es la de alguien que empuja para salir o para entrar.\n\nEs la posición de alguien a quien están reteniendo.\n\nDejas el café sin terminar.",
+      "choices": [
+        { "text": "Buscar el sótano del inn antes de que anochezca", "next": "sotano_buscar" },
+        { "text": "Ir a buscar a Sara y salir del pueblo", "next": "buscar_sara_urgente" }
+      ]
+    },
+    "sotano_buscar": {
+      "title": "La Puerta de la Argolla",
+      "text": "Vuelves al inn. Betty no está en recepción. El pasillo está silencioso.\n\nLa puerta con la argolla de hierro sigue donde estaba, medio oculta por el paragüero. El olor de antes es más intenso ahora, o quizás es que sabes lo que es y por eso lo percibes mejor.\n\nLa argolla gira sin resistencia. La puerta se abre.\n\nEscalones de madera. Oscuridad. Y el olor que sube ahora sin obstáculo: tierra húmeda, aceite, algo metálico.",
+      "choices": [
+        { "text": "Bajar al sótano", "next": "sotano" },
+        { "text": "No bajar y buscar a Sara primero", "next": "buscar_sara_urgente" }
+      ]
+    },
+    "sotano": {
+      "title": "El Sótano",
+      "text": "Usas la linterna del teléfono.\n\nEl sótano es amplio, de techo bajo, con estantes de madera a lo largo de las paredes. En los estantes hay tarros de conservas, herramientas, cajas de cartón etiquetadas con letras que no puedes leer desde aquí.\n\nPero lo primero en lo que te fijas no es en los estantes.\n\nEs en la mesa de trabajo del centro.\n\nEn la superficie de madera hay marcas oscuras que el tiempo ha vuelto casi negras. Y sobre la mesa, colgadas de unos ganchos fijados a la viga del techo, hay herramientas. Sierras. Cuchillos de diferentes tamaños. Tijeras de podar. Todo con la misma pátina oscura, todo con manchas que no son de herrumbre.",
+      "choices": [
+        { "text": "Mirar las cajas etiquetadas", "next": "cajas_sotano" },
+        { "text": "Salir del sótano ahora mismo y buscar la salida del pueblo", "next": "salida_urgente" }
+      ]
+    },
+    "cajas_sotano": {
+      "title": "Las Cajas",
+      "text": "Las etiquetas están escritas a mano con rotulador negro. Nombres. Solo nombres.\n\nMichael & Donna. Sept. 2019.\nTheo & Priya. Feb. 2021.\nCarlos & Ana. Junio 2022.\nJamie. Nov. 2022.\n\nAbres la caja de arriba. Dentro hay objetos: una llave con un llavero de plástico rojo, unas gafas de sol, un libro de bolsillo con el marcapáginas todavía dentro, en la página 147.\n\nSon objetos de alguien que estaba en mitad de algo y no llegó al final.\n\nOyes pasos en la planta de arriba. Alguien camina hacia la puerta del sótano.",
+      "choices": [
+        { "text": "Apagar la linterna y esconderte", "next": "esconderse_sotano" },
+        { "text": "Subir rápido antes de que lleguen", "next": "salida_urgente" }
+      ]
+    },
+    "esconderse_sotano": {
+      "title": "Detrás de los Estantes",
+      "text": "Te metes detrás del estante más grande y apagas la linterna.\n\nOscuridad total.\n\nLa puerta del sótano se abre. Dos pares de pasos bajan la escalera. Una luz más potente que la tuya ilumina el espacio.\n\n— El nuevo anduvo por aquí — dice una voz. La de Betty. — Le vi mirar la puerta.\n\n— ¿Le contó algo la chica? — dice otra voz. Un hombre.\n\n— No. La chica está bien encaminada. Es él el problema.\n\nSilencio.\n\n— Esta noche en la cena — dice Betty. — Como siempre.\n\nLos pasos suben de vuelta. La puerta se cierra.\n\nEsperas tres minutos en la oscuridad antes de moverte.",
+      "choices": [
+        { "text": "Subir, coger a Sara y escapar ahora mismo", "next": "salida_urgente" }
+      ]
+    },
+    "salida_urgente": {
+      "title": "Antes de la Cena",
+      "text": "Subes. Coges a Sara de la habitación sin darle tiempo a preguntar.\n\n— Nos vamos. Ahora. Sin maletas.\n\nElla te mira dos segundos y algo en tu cara le dice todo lo que necesita saber.\n\n— ¿Las llaves del coche?\n\n— Las tengo.\n\nBajáis. Betty está en recepción y os ve pasar.\n\n— ¿Adónde van, cariños? La cena es a las siete.\n\n— A dar una vuelta — dices sin parar.\n\nFuera. El coche. Arrancas.",
+      "choices": [
+        { "text": "Ir directo a la salida del pueblo", "next": "escape_coche" }
+      ]
+    },
+    "aparentar_normalidad": {
+      "title": "Actuando",
+      "text": "Te sientas. Pides un café. Le haces un gesto discreto a Sara con los ojos: sigue normal.\n\nElla capta el mensaje mejor de lo que esperabas. Continúa la conversación con Linda como si nada.\n\nMientras Linda y Sara hablan, tú miras el diner con otros ojos. La puerta trasera. Las ventanas. El camión aparcado fuera. Hay dos hombres apoyados en él que no están haciendo nada específico. Solo están.\n\nLinda es encantadora. Pregunta por vuestra relación, por de dónde sois, por cuánto tiempo os quedáis. Hace preguntas perfectas, las preguntas que haría cualquier persona amable.\n\nPero nunca os pregunta adónde vais a ir después. Como si el después no existiera.",
+      "choices": [
+        { "text": "Susurrarle a Sara que hay que irse cuando Linda se levante un momento", "next": "decirle_sara_ahora" },
+        { "text": "Pedirle a Linda que os enseñe el pueblo mientras buscas una ruta de escape", "next": "final_trampa" }
+      ]
+    },
+    "final_trampa": {
+      "title": "El Tour",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Linda os lleva por HappyVille con la misma energía de alguien que hace esto constantemente. La ferretería, el parque, la escuela, la iglesia.\n\nSara está completamente relajada. Ríe de los comentarios de Linda. Tú vas buscando con los ojos una salida, una carretera, un hueco en la valla.\n\nNo encuentras ninguno.\n\nCuando el sol empieza a bajar, Linda os lleva de vuelta al inn.\n\n— La cena es lo mejor — dice. — Betty cocina de maravilla.\n\nEn la mesa del comedor hay seis personas que no habíais visto. Todas sonríen. Todas os hacen sitio. Todas dicen que es estupendo teneros aquí, que HappyVille necesita gente nueva, sangre nueva.\n\nSara sirve el vino y te pasa la copa con una sonrisa que ya no es del todo la suya.\n\nEl vino tiene un color perfectamente normal.\n\nNo te lo bebas.\n\nPero lo bebes.",
+      "choices": []
+    },
+    "aparentar_normalidad_final": {
+      "title": "La Mañana",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "A la mañana siguiente te despiertas en la habitación del inn.\n\nTodo está bien. El sol entra por la ventana, el jardín está perfectamente cortado, y desde abajo sube el olor a café recién hecho y a tortitas.\n\nSara está sentada en la cama mirando por la ventana con una expresión tranquila, casi beatífica.\n\n— ¿A que es precioso? — dice.\n\n— Sí — escuchas decir a tu propia voz.\n\nBajáis al desayuno. Betty os tiene las sillas reservadas. Todos los vecinos que se van cruzando por Main Street os saludan.\n\nY tú les devuelves el saludo.\n\nY sonríes.\n\nY no recuerdas exactamente por qué hace unas horas querías irte.\n\nUnas semanas después, en la pared del diner, Marta cuelga una foto nueva. Una pareja que sonríe en los taburetes rojos de la barra.\n\nSois vosotros.\n\nFecha: hoy.\n\nNo hay foto de despedida.",
+      "choices": []
+    }
+  }
+}
