@@ -28,7 +28,7 @@ export default function HomeScreen() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.ornament}>✦</div>
-        <h1 className={styles.title}>Leyendas</h1>
+        <h1 className={styles.title}>TU AVENTURA</h1>
         <p className={styles.subtitle}>Elige tu Destino</p>
         <div className={styles.ornament}>✦</div>
       </header>
