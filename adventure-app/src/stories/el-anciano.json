@@ -2,201 +2,322 @@
   "id": "el-anciano",
   "title": "El Anciano de la Curva",
   "description": "Villabuena del Puente, noche cerrada. Alguien espera en el arcén, junto a la curva del cementerio. Llevas varios años sin pasar por este pueblo. Ojalá hubieras seguido así.",
-  "estimatedLength": "5–9 min",
+  "estimatedLength": "10–16 min",
   "startNode": "inicio",
   "nodes": {
     "inicio": {
       "title": "La Carretera",
-      "text": "Son las once y cuarto de la noche cuando decides tomar el atajo.\n\nHay dos rutas para llegar a casa desde donde estás. La autovía: treinta minutos más larga pero bien iluminada, con gasolineras y coches a cualquier hora. Y la comarcal: recta, vacía, y con ese tramo que pasa por Villabuena del Puente.\n\nLlevas años evitando ese tramo. No porque seas supersticioso. Sino porque tu hermano Jorge te contó algo cuando eras adolescente, algo que escuchó de un compañero del instituto, que a su vez lo oyó de un amigo de ese pueblo.\n\nPero esta noche estás cansado. Y la comarcal es veinte minutos más corta.\n\nEl desvío está justo ahí.\n\nEl cuentakilómetros marca 97 por hora.",
+      "text": "Son las once y cuarto de la noche cuando decides tomar el atajo.\n\nHay dos rutas. La autovía: treinta minutos más, bien iluminada, gasolineras abiertas, coches a cualquier hora. Y la comarcal: estrecha, sin tráfico, y con ese tramo que atraviesa Villabuena del Puente.\n\nLlevas años evitando ese tramo. No porque seas supersticioso. Sino porque tu hermano Jorge te contó algo cuando eras adolescente, algo que escuchó de un compañero del instituto, que a su vez lo oyó de un amigo de ese pueblo. La historia del anciano que lleva muerto años y sigue esperando en la curva del cementerio para avisar a los conductores.\n\nUna de esas historias que le pasan siempre a un amigo de un amigo. Nunca al protagonista directo.\n\nPero esta noche estás cansado, tienes sueño, y la comarcal es veinte minutos más corta.\n\nEl desvío está justo ahí. Una señal verde, discreta, apuntando a la oscuridad.\n\nEl cuentakilómetros marca 97.",
       "choices": [
-        { "text": "Tomar el desvío por la comarcal", "next": "comarcal" },
-        { "text": "Seguir por la autovía", "next": "autovia" }
+        { "text": "Girar hacia la comarcal", "next": "comarcal_inicio" },
+        { "text": "Seguir recto por la autovía", "next": "autovia" }
       ]
     },
     "autovia": {
       "title": "La Autovía",
-      "text": "Sigues recto. La autovía se extiende ante ti, bien señalizada, con la luz anaranjada de las farolas cada cien metros.\n\nA los veinte minutos tu teléfono vibra. Un mensaje de tu hermano Jorge, sin venir a cuento, a las once y media de la noche:\n\n*¿Estás bien? Soñé con Villabuena.*\n\nTe quedas mirando el mensaje en el siguiente semáforo.\n\nLe respondes que estás bien, que ibas a pasar por allí pero que has cogido la autovía.\n\nTarda tres minutos en responderte. Más de lo normal para Jorge.\n\n*Bien hecho.*\n\nDos palabras. Sin más explicación.\n\nLlegas a casa sin incidentes. Pero esa noche tardas en dormirte, y cuando lo haces sueñas con una carretera oscura y una figura en el arcén que te hace señas para que pares.",
+      "text": "Sigues recto. La autovía se abre ante ti, bien señalizada, las farolas naranjas cada cien metros creando un ritmo que casi adormece.\n\nA los veinte minutos el teléfono vibra en el soporte. Un mensaje de Jorge. Son casi las doce de la noche, Jorge nunca escribe a estas horas.\n\n*¿Estás conduciendo? ¿Por dónde vas?*\n\nEsperas al siguiente semáforo para responder. Le dices que sí, que vuelves a casa por la autovía.\n\nLos tres puntos de que está escribiendo aparecen. Desaparecen. Vuelven. Como si estuviera reescribiendo lo que iba a decir.\n\nFinalmente llega la respuesta:\n\n*Bien. No cojas la comarcal esta noche. No sé por qué te lo digo pero no la cojas.*\n\nTe quedas mirando el mensaje.\n\n*¿Por qué?*, escribes.\n\nNo responde en diez minutos. Llegas a casa sin su respuesta.\n\nEsa noche tardas en dormirte. Cuando lo consigues, sueñas con una carretera sin farolas y una figura inmóvil en el arcén que te sigue con los ojos sin moverse.",
       "choices": [
-        { "text": "Llamar a Jorge para preguntarle qué quiso decir", "next": "llamar_jorge_final" }
+        { "text": "Llamar a Jorge a la mañana siguiente", "next": "jorge_manana" }
       ]
     },
-    "llamar_jorge_final": {
-      "title": "La Llamada",
+    "jorge_manana": {
+      "title": "La Llamada de la Mañana",
       "isEnding": true,
       "endingType": "good",
-      "text": "Al día siguiente llamas a Jorge.\n\n— ¿Qué soñaste exactamente?\n\nHay una pausa larga.\n\n— Soñé que ibas por la comarcal y que en la curva del cementerio de Villabuena había alguien esperando. Un hombre mayor. Muy mayor.\n\n— ¿Y?\n\n— Y que cuando parabas el coche para recogerle, al girarme a mirarle en el asiento de atrás... tenía tu cara.\n\nNo vuelves a tomar la comarcal.\n\nPero cada vez que pasas por la autovía y ves el cartel de Villabuena del Puente iluminado en la oscuridad, reduces la velocidad sin saber muy bien por qué.\n\nComo si alguien, en algún lugar, te lo estuviera agradeciendo.",
+      "text": "Jorge tarda dos tonos en coger.\n\n— ¿Por qué me dijiste eso anoche? — preguntas sin preámbulos.\n\nSilencio.\n\n— Soñé contigo — dice por fin. — Ibas por la comarcal y en la curva del cementerio de Villabuena había alguien esperando. Un hombre mayor. Pelo blanco, abrigo oscuro.\n\n— ¿Y?\n\n— Y yo iba contigo en el sueño. Y cuando el hombre se subía al coche y me giraba a mirarle... — Para. — Tenía tu cara. El hombre del arcén tenía tu cara exacta.\n\nNo dices nada durante un momento.\n\n— Es que fue tan real — dice Jorge. — Sé que es una tontería.\n\n— No es ninguna tontería.\n\nAcuerdas con él quedar ese fin de semana. Cuando cuelgas, te quedas mirando el teléfono.\n\nLuego abres el navegador y buscas: *accidentes curva cementerio Villabuena del Puente.*\n\nHay cuatro resultados. Cuatro noticias en los últimos quince años. El más reciente, hace tres semanas.\n\nCierras el navegador.\n\nEsa tarde cambias la ruta habitual en el GPS. La comarcal de Villabuena ya no aparece como opción.",
       "choices": []
     },
-    "comarcal": {
-      "title": "La Comarcal",
-      "text": "Giras.\n\nLa carretera comarcal es exactamente como la recuerdas: estrecha, sin arcén digno, con curvas que la GPS no siempre anticipa bien. Los campos de cereal a ambos lados son una pared negra bajo el cielo sin luna.\n\nLlevas diez minutos conduciendo cuando ves el cartel.\n\n*VILLABUENA DEL PUENTE — 3 km.*\n\nEl pueblo donde, según le contaron a tu hermano Jorge en el instituto, un chico vio a su abuelo muerto esperando en el arcén de la curva del cementerio. Esperando para avisarle.\n\nRecuerdas que siempre pensaste que era una de esas historias: amigo de un amigo, nunca el protagonista directo. Leyenda urbana de toda la vida.\n\nDelante de ti, la carretera recta durante dos kilómetros más.\n\nReduces ligeramente la velocidad.",
+    "comarcal_inicio": {
+      "title": "El Primer Kilómetro",
+      "text": "Giras.\n\nLa comarcal empieza con un firme razonable que en el segundo kilómetro se convierte en asfalto más estrecho, remendado, sin línea continua en el centro. Las farolas desaparecen. Los faros del coche son lo único que existe entre la oscuridad y tú.\n\nLos campos de cereal a ambos lados son paredes negras. No hay viento. Las espigas no se mueven. El cielo está cubierto y no hay luna.\n\nA los cinco minutos la radio empieza a fallar. Interferencias. El dial salta solo a una frecuencia de onda corta donde alguien habla en un idioma que no reconoces. Lo apagas.\n\nEl silencio del coche sin música es diferente al silencio con música apagada. Es más denso. Más presente.\n\nEn el GPS, el recorrido que debería mostrarse en azul parpадea. La señal va y viene. Durante diez segundos, la pantalla muestra solo un punto —tú— en un mapa completamente en blanco, sin carreteras, sin nombres, sin nada.",
       "choices": [
-        { "text": "Mantener la velocidad y pasar de largo", "next": "pasar_rapido" },
-        { "text": "Reducir bien la velocidad al entrar en el término de Villabuena", "next": "reducir" }
+        { "text": "Seguir adelante", "next": "comarcal_km3" },
+        { "text": "Dar media vuelta y coger la autovía", "next": "vuelta_autovia" }
       ]
     },
-    "pasar_rapido": {
-      "title": "El Arcén",
-      "text": "Decides que cuanto antes pases, mejor. Mantienes la velocidad.\n\nEl pueblo aparece a la derecha: cuatro calles, luz amarilla en las farolas, completamente silencioso a esta hora. Lo normal.\n\nLuego viene la curva.\n\nLa curva del cementerio está señalizada con un panel de peligro y la velocidad máxima marcada en 40. Lo ves con suficiente antelación pero vas a 80.\n\nFrenas.\n\nY entonces lo ves.\n\nEn el arcén, antes de la curva, hay una figura. Un hombre. Mayor, muy mayor, con ropa oscura y las manos metidas en los bolsillos del abrigo. Te mira directamente desde el arcén mientras te aproximas.\n\nNo hace señas. No se mueve. Solo te mira.",
-      "choices": [
-        { "text": "Parar el coche", "next": "parar" },
-        { "text": "No parar y tomar la curva", "next": "curva_sin_parar" }
-      ]
-    },
-    "reducir": {
-      "title": "La Figura",
-      "text": "Vas a 45 cuando llegas a la entrada del pueblo. Las farolas proyectan sombras largas entre las casas de piedra. No hay nadie en la calle a esta hora.\n\nLa curva del cementerio aparece señalizada. La conoces de oídas aunque no la hayas tomado nunca de noche.\n\nY allí, en el arcén justo antes de la curva, hay alguien.\n\nUn hombre mayor. Setenta y muchos años, quizás más. Abrigo oscuro, pelo blanco, las manos cruzadas delante. De pie en el arcén como si llevara ahí toda la vida esperando.\n\nNo hace autostop. No levanta el pulgar ni agita los brazos. Solo está. Y te mira mientras te aproximas despacio con el coche.",
-      "choices": [
-        { "text": "Parar y bajar la ventanilla", "next": "parar" },
-        { "text": "Pasar de largo sin parar", "next": "curva_sin_parar_lento" }
-      ]
-    },
-    "parar": {
-      "title": "La Ventanilla",
-      "text": "Paras el coche junto a él. Bajas la ventanilla.\n\nDe cerca es aún más desconcertante. La ropa es de otra época, no de manera obvia, sino en los detalles: el corte del abrigo, los botones, el cuello de la camisa que asoma. Como ropa de hace cuarenta años sacada de un armario que ha estado cerrado mucho tiempo.\n\nTe mira sin decir nada durante un segundo que se hace muy largo.\n\n— Buenas noches — dices finalmente.\n\n— Buenas — responde. La voz es grave, tranquila. Sin urgencia.\n\nHay algo en su cara que no puedes definir. No es amenazante. Es más bien la expresión de alguien que lleva mucho tiempo esperando algo y por fin ha llegado.\n\n— ¿Está bien? ¿Necesita que le lleve a algún sitio?\n\nAsiente muy despacio.\n\n— A casa — dice. — Si no es molestia.",
-      "choices": [
-        { "text": "Invitarle a subir al coche", "next": "sube" },
-        { "text": "Preguntarle qué hace solo aquí a estas horas antes de decidir", "next": "preguntar_anciano" }
-      ]
-    },
-    "preguntar_anciano": {
-      "title": "La Historia Larga",
-      "text": "— ¿Qué hace usted aquí solo a estas horas?\n\nUna leve sonrisa. Como si la pregunta fuera predecible.\n\n— Es una historia muy larga — dice.\n\nLa frase te golpea de una forma extraña. Es exactamente lo que dice la chica en la leyenda. Lo que le contaron a Jorge en el instituto. Lo que has escuchado cien veces como parte de una historia que siempre le pasaba a un amigo de un amigo.\n\nY ahora ese hombre está delante de ti y lo está diciendo.\n\n— ¿Vive en el pueblo? — preguntas, con la voz algo menos firme.\n\n— Viví — dice. Y el tiempo verbal lo deja caer con toda la tranquilidad del mundo.\n\nEl silencio que sigue dura demasiado.\n\n— Suba — escuchas decir a tu propia voz, sin haberlo decidido del todo.",
-      "choices": [
-        { "text": "Dejarle subir", "next": "sube" },
-        { "text": "Arrancar y marcharte", "next": "huir_antes_de_subir" }
-      ]
-    },
-    "huir_antes_de_subir": {
-      "title": "La Advertencia",
-      "text": "Subes la ventanilla y metes primera.\n\nEl anciano no se mueve. No protesta. No cambia la expresión. Solo te sigue con los ojos mientras el coche empieza a moverse.\n\nCuando llevas tres metros avanzados escuchas algo. Un golpe suave en la carrocería, como si alguien hubiera apoyado la mano en el maletero al pasar.\n\nMiras por el retrovisor.\n\nEl arcén está vacío. No hay nadie.\n\nTomas la curva del cementerio a veinte por hora, con las manos agarradas al volante con más fuerza de lo necesario.\n\nEn el otro lado de la curva, en la recta que sale del pueblo, el coche recupera velocidad.\n\nNo miras el retrovisor hasta que el cartel de Villabuena desaparece detrás de una loma.",
-      "choices": [
-        { "text": "Mirar el asiento de atrás por el retrovisor", "next": "retrovisor_vacio" }
-      ]
-    },
-    "retrovisor_vacio": {
-      "title": "El Asiento Vacío",
+    "vuelta_autovia": {
+      "title": "El Instinto",
       "isEnding": true,
       "endingType": "good",
-      "text": "El asiento de atrás está vacío.\n\nClaro que está vacío. Nadie subió.\n\nLlegas a casa veinte minutos después. Todo normal.\n\nPero a la mañana siguiente, cuando sacas el coche para ir al trabajo, ves algo en el maletero. Una marca. La silueta de una mano apoyada en la pintura, como si alguien hubiera ejercido presión con la palma.\n\nEn el sitio exacto donde escuchaste el golpe.\n\nLa marca desaparece cuando pasan unos días y la lluvia lava el coche.\n\nPero tú no la olvidas.\n\nY cada vez que pasas por la comarcal de Villabuena del Puente, reduces la velocidad antes de llegar a la curva del cementerio. Por si acaso. Por respeto.\n\nAlguien intentó avisarte de algo aquella noche. Nunca sabrás de qué.\n\nEso es lo que más te inquieta.",
+      "text": "Reduces, buscas un sitio donde girar, y das media vuelta.\n\nNo hay nada concreto que justifique la decisión. La radio falla en todas las carreteras a veces. El GPS pierde señal en zonas rurales. No pasa nada.\n\nPero das media vuelta de todas formas.\n\nEn la autovía, veinte minutos más tarde, el teléfono vibra. Jorge.\n\n*¿Estás bien?*\n\nLe dices que sí, que has cambiado de ruta.\n\n*¿Por la autovía?*\n\n*Sí.*\n\nTarda más de lo normal en responder.\n\n*Bien hecho.*\n\nNo te explica por qué. Tú no le preguntas.\n\nAlgunas cosas funcionan mejor así: sin explicación, sin necesidad de entender qué es lo que ibas a encontrar en esa carretera si hubieras seguido.\n\nEsa noche duermes bien. Sin sueños. Con la certeza tranquila de alguien que tomó la decisión correcta sin saber exactamente por qué.",
       "choices": []
     },
-    "curva_sin_parar": {
-      "title": "La Curva",
-      "text": "No paras.\n\nPasas junto a la figura a 70 por hora. Por un instante, en el segundo en que estás a su altura, el hombre levanta una mano. No para hacer autostop. Para señalar la curva.\n\nTomas la curva.\n\nEl asfalto está más cerrado de lo que esperabas. Frenas tarde. Las ruedas chirrían. El coche se va ligeramente hacia el arcén contrario antes de que recuperes el control.\n\nSalvas la curva.\n\nCon el pulso disparado, aceleras en la recta de salida del pueblo y no miras el retrovisor hasta que llevas un kilómetro fuera.\n\nEl arcén donde estaba el anciano, desde aquí, parece vacío.",
+    "comarcal_km3": {
+      "title": "El Kilómetro Tres",
+      "text": "En el kilómetro tres, un animal cruza la carretera.\n\nFrenas. El animal —un zorro, probablemente, aunque era grande para ser un zorro— desaparece en el campo de la derecha. Esperas unos segundos con el pie en el freno.\n\nEn el silencio, con el coche parado, te das cuenta de que el termómetro de temperatura exterior ha bajado cuatro grados en los últimos dos kilómetros. Está a 6°C. Hace diez minutos marcaba 10°C y la noche es templada.\n\nArrancan de nuevo. A los dos kilómetros, en el arcén, hay una cruz de metal pintada de blanco con flores de plástico descoloridas. La ilumina el haz de los faros durante un segundo y pasa.\n\nLuego otra. A doscientos metros de la primera.\n\nLuego el cartel:\n\n*VILLABUENA DEL PUENTE — 1 km.*",
       "choices": [
-        { "text": "Volver a comprobar quién era ese hombre", "next": "volver_pueblo" },
-        { "text": "Seguir conduciendo y no mirar atrás", "next": "seguir_sin_mirar" }
+        { "text": "Continuar hacia el pueblo", "next": "entrada_pueblo" },
+        { "text": "Llamar a Jorge antes de entrar", "next": "llamar_jorge_camino" }
       ]
     },
-    "curva_sin_parar_lento": {
+    "llamar_jorge_camino": {
+      "title": "Jorge No Contesta",
+      "text": "Marcas el número de Jorge mientras sigues conduciendo.\n\nTono. Tono. Tono.\n\nBuzón de voz.\n\nJorge nunca tiene el teléfono apagado. Deja un mensaje que suena más tranquilo de lo que te sientes: que estás en la comarcal, que vas a pasar por Villabuena, que te llame cuando pueda.\n\nCuelgas.\n\nEl GPS recupera señal en ese momento y el mapa vuelve a aparecer. La ruta marcada en azul. El punto de Villabuena del Puente a novecientos metros.\n\nY junto al punto del pueblo, en el mapa del GPS, hay algo que no debería estar ahí: un icono pequeño que el programa usa para marcar 'punto de interés'. No lo pusiste tú. No recuerdas haberlo visto antes.\n\nEl icono es una cruz.",
+      "choices": [
+        { "text": "Ignorarlo y continuar", "next": "entrada_pueblo" },
+        { "text": "Parar el coche y examinar el GPS", "next": "examinar_gps" }
+      ]
+    },
+    "examinar_gps": {
+      "title": "El Icono",
+      "text": "Paras en el arcén y coges el GPS.\n\nEl icono de la cruz está marcado sobre la carretera, justo en la salida del pueblo. Si pulsas sobre él debería aparecer información: nombre del punto de interés, quién lo marcó, cuándo.\n\nPulsas.\n\nLa pantalla se congela un segundo. Luego aparece el nombre del punto:\n\n*SIN NOMBRE.*\n\nY la fecha de creación: 14 de marzo de 1987.\n\nEl aparato tiene dos años. Ese modelo no existía en 1987.",
+      "choices": [
+        { "text": "Arrancar y entrar al pueblo", "next": "entrada_pueblo" },
+        { "text": "Dar media vuelta ahora", "next": "vuelta_autovia" }
+      ]
+    },
+    "entrada_pueblo": {
+      "title": "Villabuena del Puente",
+      "text": "Villabuena del Puente son cuatro calles y un cruce. Las casas son de piedra gris, la mayoría con las persianas bajadas. Alguna farola parpadea con esa luz de sodio amarillenta que convierte las sombras en algo más espeso de lo que son.\n\nNo hay nadie en la calle.\n\nA la derecha del pueblo, detrás de una verja de hierro, está el cementerio. Lo ves al pasar: lápidas blancas en la oscuridad, cipreses que se recortan contra el cielo nublado. La verja está cerrada con cadena.\n\nY justo al salir del núcleo urbano, donde la calle del pueblo se convierte de nuevo en carretera comarcal, está la curva.\n\nEstá señalizada: panel amarillo de curva peligrosa, velocidad máxima 40. Más señalización de la que esperabas para un pueblo tan pequeño.\n\nEl asfalto en la parte interior de la curva tiene una mancha oscura larga, desgastada, que podría ser aceite acumulado durante años o podría ser la marca de frenadas urgentes.\n\nY antes de la curva, en el arcén de tierra, hay alguien.",
+      "choices": [
+        { "text": "Reducir y acercarte despacio", "next": "ver_figura" },
+        { "text": "Mantener la velocidad y pasar de largo", "next": "pasar_directo" }
+      ]
+    },
+    "pasar_directo": {
+      "title": "A 70",
+      "text": "Mantienes la velocidad. Vas a 70 cuando llegas a la altura de la figura.\n\nEs un hombre. Viejo. Pelo blanco, abrigo oscuro, de pie en el arcén con las manos a los lados. No hace señas. No se mueve. Solo te mira mientras pasas.\n\nEn el segundo exacto en que estás a su altura, levanta una mano. No para parar el coche. Para señalar la curva que tienes delante.\n\nTomas la curva.\n\nEl asfalto cierra más de lo que el panel indicaba. Frenas, pero llevas demasiada velocidad para la superficie mojada de rocío. Las ruedas pierden agarre en la parte interior. El coche se va hacia el arcén contrario.\n\nRecuperas el control. Por poco. El corazón a 140.\n\nEn el retrovisor, la figura en el arcén sigue de pie. Inmóvil. Y aunque llevas ya cincuenta metros de distancia, tienes la certeza extraña, sin poder explicarla, de que te está mirando a ti específicamente.",
+      "choices": [
+        { "text": "Parar el coche y calmarte antes de continuar", "next": "parar_tras_curva" },
+        { "text": "Acelerar y alejarte de ahí", "next": "acelerar_huida" }
+      ]
+    },
+    "parar_tras_curva": {
+      "title": "En el Arcén",
+      "text": "Paras en el arcén de la recta, cien metros después de la curva. Las manos te tiemblan ligeramente sobre el volante.\n\nMiras por el retrovisor. La curva está ahí, el panel amarillo visible, pero la figura ha desaparecido. El arcén antes de la curva está vacío.\n\nRespiras.\n\nEnciendes el teléfono. Tres llamadas perdidas de Jorge. Todas en los últimos ocho minutos, mientras conducias.\n\nLe devuelves la llamada.",
+      "choices": [
+        { "text": "Hablar con Jorge", "next": "jorge_llamada_post" }
+      ]
+    },
+    "jorge_llamada_post": {
+      "title": "Jorge Sabe",
+      "text": "Jorge coge al primer tono.\n\n— ¿Estás bien? ¿Dónde estás?\n\n— En la comarcal. Acabo de pasar por Villabuena. Jorge, había alguien en el arcén antes de la curva. Un hombre mayor.\n\nSilencio.\n\n— ¿Paraste?\n\n— No. Pasé de largo. Casi me salgo de la curva.\n\nOtro silencio. Más largo.\n\n— Escúchame — dice Jorge, y su voz tiene algo que no le habías oído antes, algo que está entre la urgencia y el miedo. — ¿La curva la has tomado bien?\n\n— Sí. Por los pelos, pero sí.\n\n— Vuelve atrás. Para en el pueblo. Llama a la puerta de cualquier casa con luz encendida y pregunta por el anciano de la curva. Por favor.\n\n— ¿Por qué?\n\n— Porque si no paras y no preguntas — una pausa — podría seguirte.\n\nCuelga antes de que puedas responder.",
+      "choices": [
+        { "text": "Dar media vuelta y volver al pueblo", "next": "volver_pueblo_noche" },
+        { "text": "Ignorar lo que ha dicho Jorge y seguir hacia casa", "next": "ignorar_jorge" }
+      ]
+    },
+    "ignorar_jorge": {
+      "title": "Nada Pasa",
+      "text": "Arrancas. La comarcal se abre delante de ti, recta durante kilómetros. Enciendes la radio, encuentras una emisora, subes el volumen.\n\nLlegas a casa en veinte minutos. Todo normal.\n\nTodo normal durante tres días.\n\nEl cuarto día, aparcas el coche en el garaje y al bajarte ves algo en el asiento de atrás. Un olor primero: tierra fría, humedad, algo viejo. Luego la imagen: la tapicería del asiento trasero tiene marcas. La forma de una persona sentada, como si el vinilo se hubiera deformado lentamente bajo un peso mantenido durante mucho tiempo.\n\nEl asiento trasero lleva meses sin que nadie se siente en él.\n\nLlamas a Jorge esa noche.\n\n— ¿Qué significa que podría seguirme? — preguntas.\n\nJorge tarda mucho en responder.\n\n— Que Aurelio avisa a los que pasan. Pero si no le escuchas — dice —, a veces espera. A veces se sube solo.",
+      "choices": [
+        { "text": "Intentar entender qué hacer ahora", "next": "final_malo_seguido" }
+      ]
+    },
+    "final_malo_seguido": {
+      "title": "El Pasajero",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Pasas las siguientes semanas revisando el coche antes de entrar. Primero miras por el cristal trasero desde fuera, luego abres la puerta y compruebas el asiento.\n\nSiempre vacío.\n\nHasta una noche, tres semanas después, en que paras en un semáforo en rojo y en el cristal de un escaparate ves el reflejo del coche. El tuyo. El asiento del conductor. Y detrás de ti, en el asiento trasero, una silueta.\n\nEl semáforo se pone en verde.\n\nEl coche de detrás toca el claxon.\n\nNo te mueves.\n\nEl escaparate no miente: hay alguien en el asiento trasero de tu coche. Alguien con pelo blanco y abrigo oscuro que mira al frente, hacia la carretera, con la expresión paciente de quien ha esperado mucho tiempo y puede esperar algo más.\n\nEl claxon del coche de atrás suena de nuevo.\n\nNo miras el espejo retrovisor.\n\nNo lo vuelves a mirar nunca.",
+      "choices": []
+    },
+    "acelerar_huida": {
+      "title": "La Recta",
+      "text": "Aceleras. 80, 90, 100. La comarcal se convierte en una fuga hacia adelante.\n\nDos kilómetros después, el teléfono suena. Número desconocido.\n\nNo lo coges.\n\nVuelve a sonar. El mismo número.\n\nLo silencias.\n\nA los cinco kilómetros el teléfono suena por tercera vez. Esta vez es Jorge.\n\nLo coges con el manos libres.\n\n— ¿Estás en la comarcal?\n\n— Sí, ya he pasado Villabuena.\n\n— ¿Viste algo?\n\nHay algo en su voz. No es miedo exactamente. Es la voz de alguien que ya sabe la respuesta y espera confirmación.\n\n— Un hombre en el arcén. Antes de la curva.\n\nSilencio largo.\n\n— ¿Paraste?\n\n— No.\n\n— ¿Tomaste la curva bien?\n\n— Sí.\n\n— Mira el retrovisor — dice Jorge. Y cuelga.",
+      "choices": [
+        { "text": "Mirar el retrovisor", "next": "retrovisor_jorge" },
+        { "text": "No mirar el retrovisor", "next": "no_mirar_retro" }
+      ]
+    },
+    "no_mirar_retro": {
+      "title": "Sin Mirar",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "No miras.\n\nLlegas a casa. Apareas. Sales del coche sin mirar atrás. Entras en casa. Echas el cerrojo.\n\nEsa noche no puedes dormir. No por miedo exactamente, sino por la pregunta que no te has respondido. Por lo que podría haber habido en el retrovisor.\n\nA la semana siguiente empiezan los sueños. La carretera, la curva, la figura en el arcén que levanta la mano.\n\nY en los sueños, cuando pasas de largo, escuchas cómo la puerta trasera del coche se abre y se cierra.\n\nY el peso en el asiento de atrás.\n\nY la voz, grave y tranquila:\n\n*Cuidado con esa curva. Es muy peligrosa. Ha habido varios accidentes.*\n\nSiempre la misma frase. Cada noche. Hasta que ya no distingues los sueños de los momentos en que estás despierto y conduces y empiezas a escuchar la voz también entonces.\n\nNunca vuelves a mirar el retrovisor mientras conduces.\n\nPor si acaso.",
+      "choices": []
+    },
+    "retrovisor_jorge": {
+      "title": "El Espejo",
+      "text": "Miras el retrovisor.\n\nEl asiento de atrás está vacío.\n\nPero el espejo retrovisor tiene algo. En el cristal, donde debería verse solo el interior oscuro del coche, hay una marca. La huella de una mano apoyada en el espejo desde dentro. Los cinco dedos perfectamente definidos, como si alguien hubiera presionado la palma contra el cristal.\n\nDesde fuera.\n\nLa huella desaparece mientras la miras. Se evapora despacio, de los bordes hacia el centro, como el vaho en un cristal frío.\n\nSigues conduciendo. Las manos no te tiemblan. El corazón sí.",
+      "choices": [
+        { "text": "Llamar a Jorge para contarle lo que has visto", "next": "jorge_post_retro" },
+        { "text": "No llamar a nadie y llegar a casa lo antes posible", "next": "final_regular_huida" }
+      ]
+    },
+    "jorge_post_retro": {
+      "title": "Lo Que Sabe Jorge",
+      "text": "Jorge coge al momento.\n\n— Una huella en el espejo — le dices. — En el retrovisor. Desde dentro.\n\nUna pausa.\n\n— ¿Ya ha desaparecido?\n\n— Sí.\n\n— Entonces estás bien — dice. — Si desaparece, es que ya se fue.\n\n— ¿Qué se fue? ¿Qué era?\n\n— Aurelio — dice Jorge. Como si fuera un nombre que conoce de antes. — El abuelo de Marcos. Un chico del pueblo. Aurelio murió en esa curva hace años. La gente dice que se queda cerca, que avisa.\n\n— ¿Cómo sabes tú eso?\n\nSilencio.\n\n— Porque Marcos me lo contó. En el instituto. Hace quince años. Y porque yo también pasé una vez por esa carretera sin parar. Y también vi la huella en el espejo.\n\nNunca te había contado que él también había pasado por ahí.",
+      "choices": [
+        { "text": "Preguntarle por qué nunca te lo dijo", "next": "jorge_secreto" },
+        { "text": "Volver al pueblo a preguntar por Aurelio", "next": "volver_pueblo_noche" }
+      ]
+    },
+    "jorge_secreto": {
+      "title": "El Secreto de Jorge",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "— ¿Por qué no me lo dijiste nunca?\n\nJorge tarda en responder.\n\n— Porque no sé cómo contarlo sin que suene a que estoy loco. Porque pasé dieciséis años intentando convencerme de que fue una alucinación por el cansancio. Porque la única manera de vivir con algo así es decidir que no pasó.\n\nHace una pausa.\n\n— Pero pasó. A mí también.\n\nEsa noche, cuando llegas a casa, buscas en internet. El nombre Aurelio, Villabuena del Puente, accidente. Encuentras una noticia de 2009 en el archivo digital de un periódico de Zamora: un hombre de setenta y dos años fallecido en la curva del cementerio en condiciones de hielo. El nombre: Aurelio Fernández Velasco.\n\nBuscas más. Encuentras su esquela. Y en la esquela, entre los familiares que le sobreviven, el nombre de su nieto: Marcos.\n\nLo buscas en redes sociales. Lo encuentras. Vive en Zamora.\n\nNo le escribes esa noche. Pero guardas el perfil.\n\nA veces, meses después, en las noches en que vas a coger el coche cansado y la comarcal te parece una buena idea, piensas en Aurelio en el arcén. En la huella en el espejo.\n\nY coges la autovía.",
+      "choices": []
+    },
+    "final_regular_huida": {
+      "title": "La Llegada",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Llegas a casa sin llamar a nadie.\n\nTe acuestas. Duermes, aunque tardas más de lo habitual en conseguirlo.\n\nA la mañana siguiente todo parece razonable a la luz del día. Una figura en el arcén que podría ser cualquier persona mayor que salió a caminar tarde. Una marca en el espejo que podría ser vaho condensado con la forma que el cerebro quiso darle.\n\nDecides no pensar más en ello.\n\nFunciona durante tres semanas.\n\nLuego, una noche, volviendo a casa por cualquier carretera oscura, ves a alguien en el arcén. No es la comarcal de Villabuena. Es una carretera que no tiene nada que ver con esa historia.\n\nPero la figura tiene el mismo abrigo oscuro. El mismo pelo blanco.\n\nY antes de que puedas decidir si parar o no, la figura levanta la mano.\n\nNo para hacerte señas.\n\nPara señalar la curva que tienes delante.\n\nFrenas. Tomas la curva a veinte por hora.\n\nAl otro lado, en el asfalto, hay restos de un accidente reciente: cristales, marcas de frenada, una señal derribada.\n\nSi hubieras ido a tu velocidad habitual habrías entrado en ello sin verlo.\n\nMiras el retrovisor.\n\nEl arcén está vacío.\n\nSiempre lo está, cuando ya ha hecho lo que tenía que hacer.",
+      "choices": []
+    },
+    "ver_figura": {
+      "title": "El Hombre del Arcén",
+      "text": "Reduces a 30.\n\nLas farolas del pueblo han quedado atrás. Los faros del coche son lo único que ilumina la carretera y el arcén. Y en ese cono de luz, a unos veinte metros de la curva, hay un hombre.\n\nViejo. Setenta y muchos años, puede que más. Pelo blanco peinado hacia atrás. Un abrigo de paño oscuro con los botones abrochados hasta el cuello a pesar de que la noche no es tan fría. Las manos a los lados, no en los bolsillos, no cruzadas. Solo colgando.\n\nTe mira mientras te acercas. No levanta el pulgar. No hace ningún gesto universal de autostop. Solo te mira con la atención específica de alguien que llevaba esperando exactamente esto.\n\nEl cuentakilómetros marca 28. Los faros lo iluminan de lleno.\n\nLa ropa, lo ves ahora que estás cerca, es de otra época. No de forma obvia. Es en los detalles: el corte del abrigo, los botones de hueso, el cuello de la camisa visible. Ropa de hace cuarenta años. De alguien que se vistió para salir y no volvió a desvestirse.",
+      "choices": [
+        { "text": "Parar el coche junto a él", "next": "parar_figura" },
+        { "text": "Pasar sin parar pero despacio, mirándole", "next": "pasar_lento" }
+      ]
+    },
+    "pasar_lento": {
       "title": "Al Pasar",
-      "text": "Pasas a su lado despacio.\n\nEl anciano te mira. Cuando estás exactamente a su altura, dice algo. La ventanilla está subida pero puedes leer los labios.\n\nDos palabras.\n\n*La curva.*\n\nTomas la curva a 30. No pasa nada. La recta del otro lado se abre limpia ante ti.\n\nMiras el retrovisor.\n\nEl arcén está vacío.\n\nNo había nadie allí cuando saliste del pueblo. Y sin embargo lo viste. Ibas despacio. No fue ninguna sombra ni un poste de señalización. Fue un hombre.\n\nLas manos te tiemblan ligeramente sobre el volante.",
+      "text": "Pasas a su lado a 25 por hora.\n\nCuando estás exactamente a su altura, el hombre dice algo. La ventanilla está subida, no puedes oírle. Pero puedes leer los labios.\n\nDos palabras. Quizás tres. La última es claramente *curva.*\n\nTomas la curva. Bien. La recta del otro lado se abre sin incidentes.\n\nMiras el retrovisor.\n\nEl arcén está vacío.\n\nNo había nadie ahí cuando saliste del campo de visión de los faros. No había nadie y sin embargo lo viste. Ibas despacio, con los ojos abiertos, no era un truco de la luz.\n\nEl termómetro del coche marca ahora 4°C. Hace diez minutos marcaba 9°C.",
       "choices": [
-        { "text": "Volver al pueblo a preguntar quién es ese anciano", "next": "volver_pueblo" },
-        { "text": "Seguir adelante y no volver nunca a esta carretera", "next": "final_regular" }
+        { "text": "Dar media vuelta y volver al pueblo", "next": "volver_pueblo_noche" },
+        { "text": "Seguir hacia casa", "next": "seguir_tras_pasar" }
       ]
+    },
+    "seguir_tras_pasar": {
+      "title": "La Comarcal Vacía",
+      "text": "Sigues.\n\nLa comarcal se extiende recta durante kilómetros. Enciendes la radio pero las interferencias han vuelto. La apagas.\n\nA los tres kilómetros de Villabuena, sin razón específica, pones la mano en el asiento trasero.\n\nEstá frío. Mucho más frío que el asiento delantero. Mucho más frío de lo que debería estar en un coche con la calefacción puesta.\n\nComo si alguien hubiera estado sentado ahí hasta hace muy poco. Como si alguien hubiera estado sentado ahí todo el tiempo.",
+      "choices": [
+        { "text": "Mirar el asiento trasero", "next": "asiento_frio" },
+        { "text": "No mirar y llegar a casa lo antes posible", "next": "final_regular_huida" }
+      ]
+    },
+    "asiento_frio": {
+      "title": "El Asiento Trasero",
+      "text": "Giras la cabeza.\n\nEl asiento está vacío. La tapicería oscura, sin nada.\n\nPero en el apoyabrazos central —ese que tienes abatido desde hace meses porque nunca llevas pasajeros— hay una marca. Una huella de mano en el polvo fino que se acumula en el cuero. Cinco dedos. Una palma.\n\nLa huella está orientada hacia adelante. Hacia donde tú vas.\n\nComo alguien que iba sentado mirando al frente.",
+      "choices": [
+        { "text": "Dar media vuelta al pueblo", "next": "volver_pueblo_noche" },
+        { "text": "Llamar a Jorge y contárselo", "next": "jorge_post_retro" }
+      ]
+    },
+    "parar_figura": {
+      "title": "La Ventanilla",
+      "text": "Paras el coche. El motor en marcha, el pie en el freno. Bajas la ventanilla.\n\nDe cerca, el hombre es más desconcertante que desde la distancia. La ropa confirmada: de otra época, no de manera ridícula o de disfraz, sino de manera sutil y completamente real, como si llevara puesto lo que llevaba el día en que dejó de necesitar ropa.\n\nTe mira sin decir nada. Sus ojos son de un marrón muy oscuro, casi negro, y tienen algo que tarda un momento en identificar: no parpadean. O no lo hacen al ritmo normal. Como alguien que ha olvidado el automatismo.\n\nEl olor que entra por la ventanilla abierta no es el de la noche rural. Es tierra húmeda. Tierra removida.\n\n— Buenas noches — dices, porque alguien tiene que decir algo.\n\n— Buenas — responde. Voz grave, sin urgencia, sin la inflexión de alguien que acaba de encontrar ayuda en una situación difícil.\n\n— ¿Está bien? ¿Necesita ayuda?\n\nAsiente. Muy despacio.\n\n— A casa — dice. — Si no le es molestia.",
+      "choices": [
+        { "text": "Decirle que suba", "next": "sube" },
+        { "text": "Preguntarle qué hace aquí antes de decidir", "next": "preguntar_antes" }
+      ]
+    },
+    "preguntar_antes": {
+      "title": "La Historia Larga",
+      "text": "— ¿Qué hace usted aquí a estas horas?\n\nUna leve sonrisa. No de quien escucha una pregunta inesperada. De quien la esperaba exactamente.\n\n— Es una historia muy larga — dice.\n\nLa frase te golpea de una forma que no esperabas. Es exactamente la frase de la leyenda. Lo que dice la chica de la curva en todas las versiones que has escuchado. Lo que le contaron a Jorge en el instituto.\n\n— ¿Vive en el pueblo? — preguntas. La voz te sale algo menos firme.\n\n— Viví — dice. Y el tiempo verbal, el pretérito indefinido, lo deja caer con toda la tranquilidad del mundo. Sin dramatismo. Como un dato.\n\nHay un silencio que dura demasiado.\n\nMiras sus manos. Las tiene a los lados, como cuando estaba en el arcén. Los nudillos son prominentes, los dedos largos. En el dedo anular de la mano derecha hay una alianza de oro oscurecida por el tiempo.\n\n— ¿Y adónde quiere ir? — escuchas decir a tu propia voz, sin haberlo decidido del todo.",
+      "choices": [
+        { "text": "Dejarle subir al coche", "next": "sube" },
+        { "text": "Decirle que no puedes llevarle y marcharte", "next": "marcharte_sin_el" }
+      ]
+    },
+    "marcharte_sin_el": {
+      "title": "La Mano en el Maletero",
+      "text": "— Lo siento — dices. — No puedo llevarle.\n\nEl anciano te mira. No cambia la expresión. No protesta. No te pide que reconsideres.\n\nSolo dice:\n\n— Cuidado con la curva.\n\nSubes la ventanilla. Arrancas.\n\nCuando llevas tres metros recorridos escuchas un golpe suave en la carrocería trasera. Como una mano apoyada en el maletero al pasar.\n\nMiras el retrovisor.\n\nEl arcén está vacío.\n\nTomas la curva a 20. La manos en el volante más fuerte de lo necesario. La curva está bien, la tomas bien, la recta del otro lado se abre limpia.\n\nNo miras el retrovisor hasta dos kilómetros después.\n\nEl asiento de atrás está vacío.",
+      "choices": [
+        { "text": "Seguir hacia casa", "next": "casa_marca_mano" }
+      ]
+    },
+    "casa_marca_mano": {
+      "title": "La Marca",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "Llegas a casa. Aparcas. La noche es tranquila.\n\nA la mañana siguiente, antes de irte al trabajo, inspeccionas el coche. No sabes exactamente por qué. Lo haces.\n\nEn el maletero, en la pintura negra, hay una marca. La silueta de una mano completa: palma, cinco dedos, la presión diferente en las yemas que en el resto. Como si alguien hubiera apoyado la mano con fuerza.\n\nEn el sitio exacto donde escuchaste el golpe.\n\nLa fotografías. Luego te quedas mirándola durante un rato.\n\nLos siguientes días llueve. La marca se va con la lluvia.\n\nPero la foto sigue en el teléfono.\n\nLa miras a veces, cuando vuelves tarde a casa por carretera oscura y el arcén aparece a los lados de los faros y por un segundo piensas que hay alguien. Que podría haber alguien.\n\nLa miras y reduces la velocidad.\n\nSolo por si acaso.\n\nSolo por respeto a lo que fuera que esa noche no le hizo daño a nadie aunque podría haberlo hecho.",
+      "choices": []
     },
     "sube": {
       "title": "En el Asiento de Atrás",
-      "text": "El anciano abre la puerta trasera y se sienta. Lo hace despacio, con los movimientos cuidadosos de alguien que lleva mucho tiempo sin moverse rápido.\n\nCierra la puerta.\n\nEl coche huele diferente de repente. No a nada concreto. A algo antiguo, como una habitación que se abre después de años cerrada.\n\n— ¿Dónde vive? — preguntas, arrancando.\n\n— Todo recto — dice. — Hasta el final del pueblo. La última casa a la izquierda.\n\nConduce despacio. Hay silencio en el coche. No es un silencio incómodo. Es algo más extraño: el silencio de alguien que tiene todo el tiempo del mundo.\n\nLuego, cuando te aproximas a la curva del cementerio, su voz llega desde atrás.\n\n— Cuidado con esa curva. Es muy peligrosa. Ha habido varios accidentes.",
+      "text": "El anciano abre la puerta trasera.\n\nLo hace despacio. Con los movimientos medidos de alguien que lleva mucho tiempo sin moverse rápido. Se sienta. Cierra la puerta. Y el interior del coche cambia de inmediato de una manera que no es visible pero sí perceptible: el olor, primero. Tierra fría, algo orgánico, algo que no tiene nombre exacto pero que el instinto reconoce como antiguo. Y la temperatura: tres grados menos en cinco segundos.\n\nEl termómetro del coche lo confirma.\n\n— ¿Adónde vamos? — preguntas, arrancando.\n\n— Todo recto — dice. — Hasta el final del pueblo. La última casa a la izquierda.\n\nArrancas. El pueblo pasa por las ventanillas: las cuatro casas de piedra, la farola rota, el cementerio a la derecha con la verja de hierro. Cuando pasas junto a la verja, el anciano mira hacia allá. Durante dos segundos exactos. Luego vuelve a mirar al frente.\n\nLuego viene la curva.",
       "choices": [
-        { "text": "Reducir la velocidad y tomar la curva con cuidado", "next": "curva_cuidado" },
-        { "text": "Preguntarle cómo sabe eso de la curva", "next": "preguntar_curva" }
+        { "text": "Mirarlo por el espejo retrovisor antes de llegar a la curva", "next": "mirar_espejo_coche" },
+        { "text": "Concentrarte en la carretera y no mirar el espejo", "next": "no_mirar_espejo" }
       ]
     },
-    "preguntar_curva": {
-      "title": "El Que Sabe",
-      "text": "— ¿Cómo sabe que es peligrosa?\n\nUna pausa.\n\n— Porque llevo mucho tiempo aquí — dice simplemente.\n\nTomas la curva despacio, con atención. El asfalto en la parte interior de la curva tiene una mancha oscura que podría ser aceite viejo o podría ser otra cosa. No quieres pensar en qué.\n\nAl otro lado de la curva, el pueblo continúa. Cuatro casas más. Una farola rota. Y al fondo, efectivamente, una casa con la fachada de piedra gris y una puerta de madera pintada de verde oscuro.\n\n— Aquí — dice el anciano.\n\nParas el coche.\n\nTe giras para decirle que ya hemos llegado.",
+    "mirar_espejo_coche": {
+      "title": "El Retrovisor",
+      "text": "Echas un vistazo al espejo retrovisor.\n\nEl anciano está sentado en el centro del asiento trasero. Tiene las manos sobre las rodillas y mira al frente, hacia la carretera. Su cara en el espejo es exactamente la misma que de frente: el pelo blanco, la mandíbula cuadrada, los ojos oscuros que no parpadean al ritmo normal.\n\nPero hay algo en el espejo que tarda un momento en registrarse.\n\nEl cristal del retrovisor debería mostrar, detrás del anciano, la luna trasera del coche y a través de ella la carretera que quedó atrás. Y lo muestra.\n\nPero no muestra al anciano.\n\nEl asiento trasero en el espejo está vacío. Tú estás, el volante está, la luna trasera está.\n\nEl anciano no está en el espejo.\n\nTe giras a mirar el asiento de atrás directamente.",
       "choices": [
-        { "text": "Girarse", "next": "asiento_vacio" }
+        { "text": "Girarte", "next": "giro_directo" }
       ]
     },
-    "curva_cuidado": {
-      "title": "La Curva con Cuidado",
-      "text": "Reduces. Tomas la curva a 25 por hora, bien pegado al centro de la calzada.\n\nEl anciano no dice nada más durante el resto del trayecto. Cuatro casas, una farola fundida, y al final del pueblo una casa con fachada de piedra gris y puerta verde oscuro.\n\n— Aquí — dice.\n\nParas. Apagas las luces largas.\n\n— Ya hemos llegado — dices, girándote hacia el asiento de atrás.",
+    "giro_directo": {
+      "title": "Lo Que Está Ahí",
+      "text": "Te giras.\n\nEl anciano está ahí. Sentado, quieto, con las manos en las rodillas. Te devuelve la mirada sin inmutarse, como si esperara este momento exactamente.\n\n— La curva — dice. — Esté atento.\n\nVuelves la vista al frente. La curva está a diez metros.\n\nFrenas. La tomas a 20. El asfalto manchado pasa bajo las ruedas. El guardarraíl del lado contrario, oxidado, está doblado en un punto. Como si algo hubiera chocado contra él con fuerza, hace mucho tiempo, y nunca lo hubieran reparado del todo.\n\nAl otro lado de la curva, la recta. El pueblo continúa: dos casas más y al fondo, efectivamente, una casa de piedra gris con una puerta pintada de verde oscuro. Una luz en la planta de arriba.\n\n— Aquí — dice el anciano.",
       "choices": [
-        { "text": "Girarse hacia el asiento trasero", "next": "asiento_vacio" }
+        { "text": "Parar y girarte hacia él", "next": "asiento_vacio_completo" }
       ]
     },
-    "asiento_vacio": {
+    "no_mirar_espejo": {
+      "title": "La Advertencia",
+      "text": "Mantienes los ojos en la carretera.\n\nCuando te acercas a la curva, su voz llega desde el asiento de atrás:\n\n— Cuidado con esa curva. Es muy peligrosa. Ha habido varios accidentes.\n\nLa voz es tranquila. Sin urgencia. Como de alguien que ha dicho esta misma frase muchas veces.\n\n— ¿Cómo lo sabe? — preguntas mientras reduces.\n\nUna pausa larga.\n\n— Porque llevo mucho tiempo aquí — dice.\n\nTomas la curva a 25. El asfalto en la parte interior tiene la mancha oscura que viste al entrar al pueblo. Y en el guardarraíl del lado contrario hay una zona abollada, doblada, que nunca repararon del todo. La pintura blanca del guardarraíl lleva años cubriendo el metal doblado sin disimularlo del todo.\n\nAl otro lado, la recta. Cuatro casas. Una farola fundida. Y al fondo, una casa de piedra gris con la puerta verde oscuro y una luz encendida arriba.\n\n— Aquí — dice el anciano.",
+      "choices": [
+        { "text": "Parar y girarte hacia él", "next": "asiento_vacio_completo" }
+      ]
+    },
+    "asiento_vacio_completo": {
       "title": "Nadie",
-      "text": "El asiento de atrás está vacío.\n\nLa puerta está cerrada. No has parado en ningún momento desde que subió. No ha habido ninguna parada, ningún frenazo, nada que justifique que alguien pueda haber salido del coche en marcha.\n\nEl asiento está vacío.\n\nTe quedas mirándolo durante un tiempo que no puedes medir. Luego miras la casa de la fachada gris. La puerta verde oscuro.\n\nHay una luz encendida en la planta de arriba.",
+      "text": "Paras el coche. Apatas el motor.\n\nTe giras hacia el asiento de atrás.\n\nEstá vacío.\n\nLa puerta está cerrada. No has parado en ningún momento desde que subió, no ha habido ningún frenazo, ninguna pausa que justifique que alguien pueda haber salido en marcha. La puerta está cerrada desde dentro con el seguro puesto, el mismo que tú activaste al arrancar.\n\nEl asiento de atrás está vacío. Y frío. Mucho más frío que el delantero.\n\nEn el apoyabrazos central, en el polvo fino del cuero, hay la marca de una mano. Cinco dedos. Orientada hacia adelante.\n\nMiras la casa. La de la puerta verde. La luz sigue encendida en la planta de arriba.",
       "choices": [
-        { "text": "Llamar a la puerta de la casa", "next": "llamar_puerta" },
-        { "text": "Arrancar el coche y marcharte sin mirar atrás", "next": "marcharse" }
+        { "text": "Bajar del coche y llamar a la puerta", "next": "llamar_puerta" },
+        { "text": "Arrancar y marcharte sin mirar atrás", "next": "marcharse_rapido" }
       ]
+    },
+    "marcharse_rapido": {
+      "title": "La Silla",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Arrancas.\n\nNo miras la casa. No miras el retrovisor. Sales del pueblo por la recta y en dos minutos Villabuena queda atrás.\n\nLlegas a casa. Te acuestas. No puedes dormir, pero finalmente lo consigues.\n\nA las tres de la mañana te despiertas porque hay algo.\n\nNo un sonido. No un movimiento. Solo la certeza de que hay algo en la cocina que no debería estar ahí. Esa certeza que te despierta antes de que sepas qué es lo que la produce.\n\nEnciendes la luz.\n\nEn la silla del rincón, la que siempre está junto a la ventana, hay un abrigo. Doblado con cuidado sobre el respaldo. Un abrigo de paño oscuro, de corte antiguo, con los botones de hueso.\n\nNo es tuyo. No es de nadie que conozcas.\n\nNo estaba ahí cuando te fuiste.\n\nPasan los días. No sabes qué hacer con él. Cada vez que decides tirarlo, algo te detiene. Una sensación vaga. Como si tirarlo fuera una descortesía.\n\nCada noche, cuando apagas la luz de la cocina, la silla queda en la oscuridad.\n\nY cada mañana, cuando la enciendes, tienes el reflejo de mirar la silla antes de mirar cualquier otra cosa.\n\nComo si esperaras encontrar algo más que el abrigo.\n\nComo si un día fueras a encontrarlo.",
+      "choices": []
     },
     "llamar_puerta": {
       "title": "La Última Casa",
-      "text": "Bajas del coche.\n\nEl silencio del pueblo a esta hora es absoluto. Ni grillos, ni perros, nada. Solo tus pasos en el empedrado.\n\nLlamas a la puerta.\n\nEsperas. La luz de arriba sigue encendida.\n\nLa puerta se abre.\n\nUna mujer de unos cincuenta años te mira desde el umbral. Lleva bata. Ha estado durmiendo o estaba a punto de hacerlo. Te mira con la expresión cansada de alguien que ya sabe que vas a decirle algo raro.\n\n— Perdone que moleste a estas horas — empiezas. — He recogido a un señor mayor en la carretera, me ha pedido que le trajera aquí y...\n\nLa mujer cierra los ojos un momento. Solo un momento.",
+      "text": "Bajas del coche.\n\nEl silencio del pueblo a esta hora no es el silencio tranquilo del campo. Es el silencio de algo que contiene la respiración. No hay grillos. No hay perros. Tus pasos en el empedrado son el único sonido en un radio de quién sabe cuánto.\n\nEl cementerio está a cien metros a tu izquierda. La verja de hierro. Los cipreses. Una de las lápidas, la más cercana a la verja, tiene flores recientes: blancas, de esas que duran días, no las de plástico descoloridas que viste antes.\n\nLlamas a la puerta de la casa. Tres veces.\n\nEsperas. La luz de arriba sigue encendida.\n\nLa puerta se abre. Una mujer de unos cincuenta años. Bata de franela. El pelo suelto. La cara de alguien que no estaba durmiendo aunque lo parezca. Te mira con una expresión que no es sorpresa.\n\nEs reconocimiento.\n\n— Sabía que vendría alguien esta noche — dice, antes de que abras la boca.",
       "choices": [
-        { "text": "Esperar a que hable", "next": "mujer_habla" }
+        { "text": "Contarle lo que pasó", "next": "contar_mujer" }
       ]
     },
-    "mujer_habla": {
-      "title": "Lo Que Dice La Mujer",
-      "text": "— ¿Pelo blanco? — dice la mujer. — ¿Abrigo oscuro?\n\n— Sí.\n\n— ¿Le dijo que tuviese cuidado con la curva?\n\nEl estómago se te cae.\n\n— Sí.\n\nAsiente despacio. Se apoya en el marco de la puerta como si de repente necesitara sujetarse.\n\n— Es mi padre — dice. — Murió hace once años. Cada cierto tiempo alguien viene a llamar a esta puerta.\n\nNo dice nada más durante un momento.\n\n— ¿Ha pasado la curva bien?\n\n— Sí.\n\n— Entonces ha cumplido su misión — dice. Y empieza a cerrar la puerta despacio. — Buenas noches. Conduzca con cuidado.",
+    "contar_mujer": {
+      "title": "Lo Que Ella Ya Sabe",
+      "text": "Le cuentas. El hombre en el arcén, el pelo blanco, el abrigo. Que le llevaste hasta aquí. Que cuando te giraste el asiento estaba vacío.\n\nElla escucha sin interrumpirte. Sin cambiar de expresión.\n\nCuando terminas, asiente.\n\n— ¿Pelo completamente blanco? ¿Abrigo de paño oscuro con los botones de hueso?\n\n— Sí.\n\n— ¿Le dijo que tuviese cuidado con la curva?\n\nEl estómago.\n\n— Sí.\n\nSe apoya en el marco de la puerta. El gesto de alguien que lleva mucho tiempo sosteniendo algo pesado y por un momento no puede más.\n\n— Es mi padre — dice. — Murió hace once años. En esa curva. En invierno, el asfalto helado. Conocía esa carretera de toda la vida.\n\n— ¿Y sigue apareciendo?\n\n— Cada cierto tiempo alguien llama a esta puerta. — Mira hacia el cementerio, que desde aquí es visible al fondo de la calle. — Antes me asustaba. Ahora... — Hace una pausa. — Ahora me parece bien que esté ahí.",
       "choices": [
-        { "text": "Preguntarle por qué aparece su padre", "next": "final_bueno" },
-        { "text": "Dar las gracias y volver al coche", "next": "final_regular" }
+        { "text": "Preguntarle por qué murió su padre en la curva", "next": "final_bueno_completo" },
+        { "text": "Darle las gracias y volver al coche", "next": "final_regular_despedida" }
       ]
     },
-    "final_bueno": {
+    "final_bueno_completo": {
       "title": "El Motivo",
       "isEnding": true,
       "endingType": "good",
-      "text": "— ¿Por qué aparece?\n\nLa mujer te mira un momento como si estuviera decidiendo cuánto contarte.\n\n— Murió en esa curva — dice finalmente. — Hace once años. Fue en invierno, el asfalto estaba helado. Él conocía la curva de toda la vida y aun así...\n\nHace una pausa.\n\n— Creo que no puede irse del todo hasta que se sienta seguro de que nadie más muere allí por su culpa. Porque él fue el que convenció al ayuntamiento de no poner más señalización. Decía que quien vivía aquí ya sabía de sobra lo que había.\n\nCierra la puerta con suavidad.\n\nVuelves al coche. Arrancas. Pasas por delante del cementerio del pueblo, que está justo al lado de la curva, y ves que la verja tiene una placa pequeña con flores secas.\n\nNo te detienes a leerla.\n\nPero esa noche, cuando llegas a casa, buscas en internet la curva del cementerio de Villabuena del Puente. Hay tres noticias de accidentes en los últimos veinte años. El primero, hace once años. En invierno.\n\nEl conductor era un hombre de setenta y dos años que vivía en la última casa a la izquierda del pueblo.",
+      "text": "— ¿Por qué murió ahí? ¿Qué pasó exactamente?\n\nLa mujer te mira un momento. Decide.\n\n— Iba demasiado deprisa. Siempre iba demasiado deprisa por esa curva. Llevaba cuarenta años haciéndolo y nunca le pasó nada, así que nunca creyó que le pudiera pasar. Esa noche el asfalto estaba helado y él no lo sabía o no le importó.\n\nPausa.\n\n— Pero hay más. Él fue quien le dijo al ayuntamiento que no hacía falta más señalización. Que quien vivía aquí ya sabía lo que había. Que los de fuera que no sabían conducir no eran problema suyo. — Cierra los ojos un momento. — Tres meses después de que quitaran las señales, murió él. En la misma curva que había defendido.\n\nCierra los ojos un momento.\n\n— Creo que no puede irse mientras siga habiendo riesgo. Creo que se quedó en esa curva como penitencia. O como promesa. No sé cuál de las dos.\n\nCierra la puerta despacio.\n\nVuelves al coche. Antes de arrancar miras el cementerio al fondo de la calle. La verja, los cipreses, y en la lápida más cercana, las flores blancas que alguien puso recientemente.\n\nNo te acercas a leer el nombre. No hace falta.\n\nEsa noche, cuando llegas a casa, buscas en internet: *accidente curva cementerio Villabuena del Puente 2012.*\n\nHay una noticia. Un hombre de setenta y dos años. Invierno. Hielo. La curva que él mismo defendió.\n\nDebajo de la noticia, en los comentarios, alguien escribió hace tres años: *Cuidado con esa curva. Mi abuelo me avisó.*\n\nEl nombre de usuario es Marcos_VBP.\n\nNo le respondes. Pero no cierras la página.",
       "choices": []
     },
-    "marcharse": {
-      "title": "La Huida",
+    "final_regular_despedida": {
+      "title": "Sin Preguntar",
       "isEnding": true,
       "endingType": "bad",
-      "text": "Arrancas.\n\nNo miras la casa. No miras el retrovisor. Aceleras por la recta de salida del pueblo y en dos minutos Villabuena del Puente ha quedado atrás.\n\nLlegas a casa sin problemas. Te acuestas.\n\nNo puedes dormir.\n\nA las tres de la mañana te levantas y vas a la cocina a beber agua. Enciendes la luz.\n\nEn la silla del rincón hay un abrigo oscuro doblado con cuidado. Un abrigo de hombre mayor, de corte antiguo, con los botones de hueso.\n\nNo es tuyo. No es de nadie que conozcas.\n\nNo estaba ahí cuando te fuiste.\n\nNo vuelves a coger la comarcal de Villabuena.\n\nEl abrigo sigue en la silla. No sabes qué hacer con él. Cada vez que intentas tirarlo, algo te detiene.\n\nCada noche, cuando apagas la luz de la cocina, tienes la sensación de que en la silla ya no hay solo un abrigo.\n\nSino alguien dentro de él.",
+      "text": "— Gracias — dices. — Por explicármelo.\n\nElla asiente. La puerta se cierra suavemente.\n\nVuelves al coche. Arrancas.\n\nAl pasar junto al cementerio, por un instante, entre la verja y los primeros cipreses, ves algo. Una figura de pie. Inmóvil. Pelo blanco, abrigo oscuro.\n\nFrenas.\n\nCuando vuelves a mirar, no hay nadie.\n\nLlegas a casa. Te acuestas.\n\nNo lo cuentas a nadie. Decides que fue un momento extraño en una noche extraña, que estas cosas ocurren y no significan nada, que la explicación racional existe aunque no la hayas encontrado.\n\nFunciona durante un tiempo.\n\nPero hay noches, cuando vuelves tarde y la carretera está oscura y vacía, en que miras el arcén.\n\nY hay una noche, meses después, en que hay alguien en el arcén de una curva que no es la de Villabuena. En una carretera que no tiene nada que ver con todo esto.\n\nUn hombre mayor. Pelo blanco. Abrigo oscuro.\n\nY antes de que puedas decidir, escuchas su voz en el interior del coche, aunque las ventanillas están subidas y no hay nadie en el asiento de atrás:\n\n*Cuidado con esa curva.*\n\nFrenas.\n\nY la curva, esa noche, salva tu vida.",
       "choices": []
     },
-    "volver_pueblo": {
-      "title": "De Vuelta",
-      "text": "Das media vuelta.\n\nVuelves al pueblo despacio. El arcén donde estaba la figura está vacío cuando llegas. Solo asfalto, hierba seca, y la señal de la curva peligrosa.\n\nEn el pueblo no hay nadie en la calle. Llamas al timbre de la primera casa con luz encendida. Tarda en abrir un hombre de mediana edad en pijama, claramente molesto.\n\n— Perdone — dices. — Acabo de pasar por la curva del cementerio y había un señor mayor en el arcén, quería asegurarme de que...\n\nEl hombre cambia de expresión.\n\n— ¿Un anciano? ¿Pelo blanco, abrigo oscuro?\n\n— Sí.\n\nHay un silencio.\n\n— Entre — dice. Y ya no parece molesto.",
+    "volver_pueblo_noche": {
+      "title": "Dar la Vuelta",
+      "text": "Das media vuelta.\n\nVuelves al pueblo despacio. El arcén donde estaba la figura está vacío cuando llegas. Hierba seca, tierra, la señal de la curva.\n\nEn el pueblo hay una ventana iluminada en la segunda casa de la derecha. Apareas. Llamas al timbre.\n\nTarda en abrir un hombre de mediana edad, pelo revuelto, cara de quien acaba de ser sacado del sofá. Te mira con la expresión de quien no espera visitas a estas horas y no sabe si estar molesto o preocupado.\n\n— Perdone — dices. — He visto a un señor mayor en el arcén, antes de la curva. Quería asegurarme de que...\n\nEl hombre cambia de expresión. La mezcla de molestia y preocupación desaparece.\n\nLo que queda es algo más difícil de nombrar.\n\n— Entre — dice.",
       "choices": [
-        { "text": "Entrar", "next": "casa_vecino" }
+        { "text": "Entrar", "next": "casa_vecino_ampliada" }
       ]
     },
-    "casa_vecino": {
+    "casa_vecino_ampliada": {
       "title": "Lo Que Sabe El Vecino",
-      "text": "Es una cocina de pueblo, con azulejos blancos y una mesa de formica. El hombre te pone un vaso de agua sin preguntar, como si la situación lo requiriera.\n\n— El abuelo Aurelio — dice, sentándose. — Llevamos doce años con esta historia. Cada cierto tiempo alguien para en la curva o viene a preguntar.\n\n— ¿Quién era?\n\n— El abuelo de Marcos, un chico que vivió aquí de pequeño. Aurelio murió antes de que Marcos pudiera sacarle el carné. Marcos tuvo un accidente en esa curva siendo joven. Salió vivo de milagro.\n\nBebe un sorbo de su propio vaso.\n\n— Desde entonces, la gente dice que le ve. Siempre en la curva. Siempre avisando.\n\nTe mira.\n\n— ¿Usted paró?",
+      "text": "La cocina huele a café y a casa de pueblo. Azulejos blancos, mesa de formica, una televisión apagada en el rincón. El hombre te pone un vaso de agua en la mesa sin preguntar, como si este ritual ya lo hubiera hecho antes.\n\nSe sienta. Junta las manos encima de la mesa.\n\n— El abuelo Aurelio — dice. — ¿Pelo blanco? ¿Abrigo oscuro?\n\n— Sí.\n\n— Llevamos doce años con esto. Cada cierto tiempo alguien para en la curva o viene a llamar a esta puerta. — Te mira. — ¿Le vio de cerca?\n\n— Sí. Llegué a parar junto a él.\n\nAsiente despacio.\n\n— Aurelio Fernández. Murió en esa curva en 2012. Era el abuelo de Marcos, un chico que creció aquí. Marcos tuvo un accidente en esa misma curva dos años después. Salió vivo de casualidad. Desde entonces la gente dice que Aurelio sigue ahí. Siempre en el mismo sitio. Siempre avisando.\n\n— ¿Ha habido más accidentes?\n\nEl vecino coge el vaso de agua y lo deja en un sitio diferente. Un gesto de querer hacer algo con las manos.\n\n— Tres cruces en el arcén de enfrente. Tres. En doce años. Ninguno de los que pararon.",
       "choices": [
-        { "text": "Decirle que sí", "next": "vecino_si" },
-        { "text": "Decirle que no", "next": "vecino_no" }
+        { "text": "Preguntarle si es posible hablar con Marcos", "next": "vecino_marcos" },
+        { "text": "Darle las gracias y marcharte", "next": "final_vecino_regular" }
       ]
     },
-    "vecino_si": {
-      "title": "Los Que Paran",
+    "vecino_marcos": {
+      "title": "Marcos",
       "isEnding": true,
       "endingType": "good",
-      "text": "— Sí. Paré.\n\nEl vecino asiente despacio, como si eso respondiera a alguna pregunta que tenía desde hace tiempo.\n\n— Los que paran siempre llegan bien — dice. — Nunca ha habido un accidente con alguien que haya parado.\n\n— ¿Y los que no paran?\n\nHace una pausa.\n\n— Hay tres cruces en el arcén de enfrente de la curva. Tres. En doce años.\n\nNinguno de los dos dice nada durante un momento.\n\n— Llame a Marcos si quiere — dice el vecino, levantándose. — Vive en Zamora. Le va a alegrar saber que su abuelo sigue ahí.\n\nEsa noche, en el coche de vuelta, conduces con la radio apagada y las dos manos en el volante.\n\nY cuando pasas junto a cualquier curva señalizada, reduces un poco. No por miedo.\n\nSino por si alguien que no puede estar ahí está ahí de todos modos, intentando decirte algo.",
+      "text": "— ¿Puedo hablar con Marcos?\n\nEl vecino te mira un momento.\n\n— Vive en Zamora. — Se levanta, va a un cajón, saca un papel con un número de teléfono. Te lo da. — Se lo digo yo, que lo llamo a veces cuando pasa algo en la curva. Le va a alegrar saber que su abuelo sigue ahí.\n\nEsa noche, de vuelta en casa, marcas el número.\n\nMarcos contesta al segundo tono. Son las doce y media de la noche y contesta sin vacilar, como si esperara la llamada.\n\nLe cuentas lo que pasó. Él escucha en silencio durante todo el relato.\n\n— ¿Le dijo que tuviese cuidado con la curva? — pregunta.\n\n— Sí.\n\n— ¿Y la curva la sacó bien?\n\n— Sí.\n\nUna pausa. Y luego algo que no esperabas: Marcos se ríe. No de humor exactamente. De alivio.\n\n— Bien. — Y se le escucha sonreír. — Bien hecho, abuelo.\n\nHabláis durante una hora. Te cuenta que Aurelio era así en vida también: directo, sin adornos, siempre preocupado por que la gente condujera bien por esa curva. Que cuando él tuvo el accidente, siendo joven, lo primero que pensó al despertar en el hospital fue que su abuelo tenía razón.\n\nCuando cuelgas son casi las dos de la mañana.\n\nEsa noche duermes bien. Sin sueños. Con la sensación tranquila de haber cerrado algo que llevaba años abierto.\n\nCada vez que pasas por una curva peligrosa, reduces. No por miedo.\n\nPor si alguien que no debería estar ahí está ahí de todos modos, intentando decirte algo.",
       "choices": []
     },
-    "vecino_no": {
-      "title": "Los Que No Paran",
+    "final_vecino_regular": {
+      "title": "La Despedida",
       "isEnding": true,
       "endingType": "bad",
-      "text": "— No. Seguí.\n\nEl vecino deja el vaso sobre la mesa muy despacio.\n\n— ¿Y tomó la curva?\n\n— Sí, pero la saqué bien.\n\nAsiente. Pero algo en su cara ha cambiado.\n\n— Qué bien — dice. Aunque no suena como un alivio.\n\nSe levanta para acompañarte a la puerta.\n\n— Hay una cosa — dice cuando ya estás en el umbral. — Los que no paran y sacan la curva bien...\n\nSe detiene. Como si estuviera eligiendo las palabras.\n\n— Aurelio les sigue. No siempre. No a todos. Pero a veces.\n\nBajas los tres escalones del portal. El coche está aparcado en la calle.\n\nAntes de abrir la puerta del coche miras el asiento de atrás por el cristal.\n\nParece vacío.\n\nSolo parece.\n\nArrancar el coche te costará más de lo que debería.",
-      "choices": []
-    },
-    "seguir_sin_mirar": {
-      "title": "No Mirar Atrás",
-      "isEnding": true,
-      "endingType": "bad",
-      "text": "Decides no volver. Decides no pensar en ello.\n\nAcceleras. La carretera comarcal se convierte en una recta larga y vacía. Radio encendida, volumen alto, cualquier cosa que llene el coche de algo que no sea silencio.\n\nLlegas a casa. Aparcas. Subes.\n\nTodo normal.\n\nUna semana después empiezan los sueños. Siempre la misma carretera, siempre la misma noche. La figura en el arcén. La curva. Y tú pasando sin parar.\n\nPero en los sueños, cuando tomas la curva, el coche no responde. El volante gira en el vacío. Y la última imagen antes de despertar siempre es la misma:\n\nEl guardarraíl acercándose.\n\nTe despiertas cada vez antes del impacto.\n\nHasta la noche en que no te despiertas.\n\nHasta que la curva llega de verdad.",
-      "choices": []
-    },
-    "final_regular": {
-      "title": "El Olvido",
-      "isEnding": true,
-      "endingType": "bad",
-      "text": "Llegas a casa.\n\nDurante los primeros días lo cuentas. A algún amigo, a tu hermano Jorge, que se queda callado más tiempo del necesario antes de responder.\n\nCon el tiempo la historia se diluye. Se convierte en una anécdota, en algo que le pasó a un amigo tuyo en una carretera de noche.\n\nEn algo que le pasó a un amigo de un amigo.\n\nPasan los meses. Cambias de ruta, evitas la comarcal, encuentras excusas para no pasar por Villabuena del Puente.\n\nPero hay noches, cuando vuelves tarde a casa por cualquier carretera oscura y despejada, en que miras el arcén.\n\nPor si acaso.\n\nY hay una noche, meses después, en que ves a alguien. Una figura en el arcén, en una curva que no es la de Villabuena, en un pueblo que no conoces.\n\nY esta vez no reduces la velocidad.\n\nEsta vez ni siquiera te preguntas si deberías parar.\n\nEsta vez simplemente pasas.\n\nY cuando miras el retrovisor, la figura te está mirando.\n\nY asiente.",
+      "text": "— Gracias — dices. — Por contármelo.\n\nEl vecino te acompaña a la puerta.\n\n— La gente que para siempre llega bien — dice en el umbral. Como un dato. Como una estadística que lleva doce años recopilando.\n\nVuelves al coche. Al pasar junto al cementerio, la verja de hierro, los cipreses y en la primera fila de lápidas las flores blancas recientes. Miras hacia dentro.\n\nNada.\n\nArrancas y conduces hacia casa con la radio apagada y las manos en el volante.\n\nLo cuentas a Jorge al día siguiente. Jorge escucha en silencio y al final solo dice:\n\n— Bien hecho que paraste.\n\nCon el tiempo la historia se convierte en una anécdota. En algo que te pasó una noche en una carretera de Zamora. En algo que cuentas a veces, cuando la conversación va hacia esas cosas.\n\nPero hay algo que no cuentas. Algo que guardas.\n\nQue esa noche, al alejarte del pueblo por la comarcal, miraste el retrovisor una vez más.\n\nY en la oscuridad del arcén, junto a la curva, había una figura inmóvil que te seguía con los ojos mientras te alejabas.\n\nY levantaba la mano.\n\nNo para pararte.\n\nPara despedirse.",
       "choices": []
     }
   }
