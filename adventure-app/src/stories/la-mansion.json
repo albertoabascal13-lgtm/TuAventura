@@ -2,7 +2,7 @@
   "id": "la-mansion",
   "title": "La Mansión Olvidada",
   "description": "Una noche de tormenta te refugias en una mansión abandonada. Las puertas se cierran solas a tu espalda. Los pasillos respiran.",
-  "estimatedLength": "20–35 min",
+  "estimatedLength": "5–9 min",
   "startNode": "inicio",
   "nodes": {
     "inicio": {

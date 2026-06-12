@@ -2,7 +2,7 @@
   "id": "el-anciano",
   "title": "El Anciano de la Curva",
   "description": "Villabuena del Puente, noche cerrada. Alguien espera en el arcén, junto a la curva del cementerio. Llevas varios años sin pasar por este pueblo. Ojalá hubieras seguido así.",
-  "estimatedLength": "20–30 min",
+  "estimatedLength": "5–9 min",
   "startNode": "inicio",
   "nodes": {
     "inicio": {

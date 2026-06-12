@@ -2,7 +2,7 @@
   "id": "el-faro",
   "title": "El Faro de Aguasmuertass",
   "description": "El pueblo de Aguasmuertas lleva tres semanas sin señal del guardián del faro. Te envían a investigar. Los vecinos no te miran a los ojos. El mar huele diferente aquí.",
-  "estimatedLength": "25–40 min",
+  "estimatedLength": "6–10 min",
   "startNode": "inicio",
   "nodes": {
     "inicio": {
