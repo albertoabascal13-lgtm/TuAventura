@@ -1,0 +1,208 @@
+{
+  "id": "castrotorafe",
+  "title": "Zamora La Vieja (Castrotorafe)",
+  "description": "No pretendo que me creáis, pero quiero dejar constancia de lo sucedido. Es difícil escribir sobre ello, pero he de hacerlo.",
+  "estimatedLength": "20–35 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "Zamora La Vieja",
+      "text": "Era un día tan normal como cualquier otro, salvo con la excepción de que Jose y yo aprovecharíamos la mañana para visitar Castrotorafe.\n\nUn lugar levantado allá por el Siglo XI. Alfonso VII vio en su emplazamiento un punto estratégico vital y le concedió poder sobre varias localidades. Más adelante pasó a manos de la Orden de Caballería de Santiago, todo indica que en el año 1176.\n\nDos datos importan en esta historia: el lugar fue quedando progresivamente despoblado a causa de epidemias de peste, y en el Siglo XVII ya se encontraba totalmente vacío. El segundo dato: la ermita mantuvo su esplendor hasta que en el Siglo XIX las tropas de Napoleón decidieron llevarse todo cuanto pudieran de ella.\n\nPreparamos una mochila con lo indispensable: botellas de agua, barritas energéticas, linternas pequeñas, trípode para los teléfonos y una hoja de ruta.",
+      "choices": [
+        { "text": "Emprender el camino hacia Castrotorafe", "next": "llegada" }
+      ]
+    },
+    "llegada": {
+      "title": "El Camino",
+      "text": "Llegar hasta allí no fue complicado, a pesar de que para acceder a la vieja Zamora hay que desviarse de la carretera y girar hacia un camino que por suerte se encuentra señalizado.\n\nDejamos el coche en el margen derecho, por si alguien más quería visitar las ruinas de lo que antaño fue una ciudad fortificada con un puente que permitía la entrada de diversas mercancías, un puente que quedó sumergido en el embalse.\n\nComenzamos a caminar y subimos una pequeña cuesta. Es difícil en la actualidad hacerse una idea de cómo pudo haber sido esto hace diez siglos. Piedras por uno y otro lado, y una pared en pie. Eso que ahora es completamente vulgar había sido la vieja ermita alguna vez.\n\nNos asomamos al embalse de Ricobayo. Desde la lejanía pudimos contemplar la felicidad de la gente que iba allí a pasar el día. Eran ajenos a todo lo que estaba por llegar, a tan solo unos cientos de metros de allí.",
+      "choices": [
+        { "text": "Continuar hacia el castillo", "next": "castillo_dia" }
+      ]
+    },
+    "castillo_dia": {
+      "title": "El Castillo de Día",
+      "text": "El castillo se conserva relativamente bien. El tiempo le ha jugado una mala pasada, pero han conseguido poner freno de momento a su caída.\n\nA pesar de la valla de seguridad, un gran agujero invita a todo aquel que quiera verlo desde cerca. No nos lo pensamos dos veces.\n\nEntramos y recorrimos cada rincón visitable, siempre con cuidado. Una construcción con tantos siglos a sus espaldas puede jugar una mala pasada. Cada paso fue calculado.\n\nAl terminar el recorrido, Jose me miró con esa expresión que conozco bien.",
+      "choices": [
+        { "text": "Proponer volver por la noche", "next": "decision_noche" },
+        { "text": "Quedarse hasta que caiga la tarde sin marcharse", "next": "atardecer" }
+      ]
+    },
+    "atardecer": {
+      "title": "La Hora Dorada",
+      "text": "Decidimos no marcharnos. Nos sentamos sobre una piedra antigua y compartimos las barritas energéticas mientras el sol comenzaba a descender sobre el embalse de Ricobayo.\n\nLa luz del atardecer transformó las ruinas. Las piedras rojizas parecían arder. Las sombras se alargaron entre los muros y los huecos donde antes hubo ventanas se oscurecieron poco a poco, como ojos que se cerraran.\n\nCuando la oscuridad llegó de verdad, ya estábamos dentro.",
+      "choices": [
+        { "text": "Esperar a que llegue la noche dentro del recinto", "next": "noche_sin_preparacion" },
+        { "text": "Salir y volver al coche a prepararse antes de la oscuridad total", "next": "decision_noche" }
+      ]
+    },
+    "noche_sin_preparacion": {
+      "title": "Atrapados por la Noche",
+      "text": "Nos quedamos demasiado tiempo. Cuando quisimos reaccionar, la oscuridad ya era total y el camino de vuelta al coche se había convertido en una masa negra e informe.\n\nEncendimos las linternas.\n\nEl primer sonido llegó casi de inmediato: un aire frío que se levantó de la nada cuando hacía tan solo unos segundos todo estaba en calma. Las hojas comenzaron a mecerse. Los ruidos de la noche fueron apareciendo poco a poco.\n\nNos miramos. Habíamos entrado en Castrotorafe de noche sin quererlo.",
+      "choices": [
+        { "text": "Intentar salir cuanto antes", "next": "intento_huida_temprana" },
+        { "text": "Quedarse quietos y esperar a que los ojos se acostumbren", "next": "noche_castillo" }
+      ]
+    },
+    "intento_huida_temprana": {
+      "title": "El Camino Que Cambia",
+      "text": "Decidimos salir. El camino de bajada era sencillo de día, pero en la oscuridad las piedras del suelo parecían haberse reorganizado. Los mismos pasos que habíamos dado tantas veces durante el día no llevaban al mismo sitio.\n\nHabíamos dado tres pasos cuando lo escuchamos.\n\nVoces. Débiles, apenas audibles, pero voces al fin y al cabo. Procedían de atrás, del interior del castillo que acabábamos de dejar.\n\nNos detuvimos.",
+      "choices": [
+        { "text": "Ignorarlas y seguir hacia el coche", "next": "voces_siguiendo" },
+        { "text": "Girarse a mirar", "next": "noche_castillo" }
+      ]
+    },
+    "voces_siguiendo": {
+      "title": "Lo Que Sigue",
+      "text": "Seguimos caminando sin girarnos. Pero las voces nos siguieron.\n\nNo aumentaban de volumen. No disminuían tampoco. Mantenían exactamente la misma distancia detrás de nosotros, como si algo supiera exactamente a qué ritmo avanzábamos y se ajustara para no perderlo.\n\nLuego llegaron las pisadas. No una. Muchas. Pasos cortos, pasos largos, lentos, agonizantes, veloces. Y algo más: suspiros y lamentos a nuestra espalda, tan cerca que eran ensordecedores.\n\nSentíamos el aliento de aquello en el cuello.",
+      "choices": [
+        { "text": "Echar a correr", "next": "huida" },
+        { "text": "Detenerse y enfrentarse a ello", "next": "detenerse" }
+      ]
+    },
+    "decision_noche": {
+      "title": "La Decisión",
+      "text": "Decidimos que sería una buena idea volver por la noche.\n\nEstos lugares tan especiales engañan según la hora que vayas. De día puedes ver la historia escrita en las piedras, calcular cada paso, razonar. De noche, algo diferente habla.\n\nVolvimos al coche. Comimos algo, descansamos, y esperamos.\n\nLlegó la oscuridad. La luna llena iluminaba desde lo alto y las estrellas asomaban. Qué placer estar lejos de la civilización para contemplar algo así.\n\n— ¿Vamos? — dijo Jose.",
+      "choices": [
+        { "text": "Llevar las dos linternas encendidas", "next": "noche_dos_linternas" },
+        { "text": "Llevar solo una encendida para ahorrar batería", "next": "noche_una_linterna" }
+      ]
+    },
+    "noche_dos_linternas": {
+      "title": "Dos Luces en la Oscuridad",
+      "text": "Cuando entramos en el terreno de la antigua ciudad, notamos algo diferente de inmediato.\n\nSe levantó un aire frío cuando hacía tan solo unos segundos todo estaba en calma. Las hojas comenzaron a mecerse y los ruidos de la noche fueron apareciendo poco a poco.\n\nSeguimos caminando con las dos linternas encendidas, apuntando a cada rincón. Sentíamos que en cualquier momento un animal podría cruzarse ante nosotros, o quién sabe, quizás allí había otras personas visitando las ruinas.\n\nAumentamos la precaución. Nos comunicábamos prácticamente con susurros. Jose apuntaba hacia el frente y a la izquierda mientras yo lo hacía a la derecha, girándome también por si alguien nos seguía.\n\nParecía que mil ojos nos acechaban.",
+      "choices": [
+        { "text": "Continuar hacia el castillo", "next": "noche_castillo" },
+        { "text": "Proponerle a Jose que nos volvamos", "next": "duda_volver" }
+      ]
+    },
+    "noche_una_linterna": {
+      "title": "Una Sola Luz",
+      "text": "Cuando entramos en el terreno de la antigua ciudad, la luna llena ofrecía algo de claridad, pero las sombras entre las piedras eran densas y profundas.\n\nEl aire frío llegó sin aviso. Un momento de calma absoluta y al siguiente el viento movía las hojas con una urgencia que no correspondía a su intensidad.\n\nCon una sola linterna entre los dos, los ángulos ciegos se multiplicaban. Lo que Jose iluminaba, yo no lo veía. Lo que quedaba a mi derecha era pura oscuridad.\n\nParecía que algo aprovechaba exactamente eso. Que algo se movía justo donde la luz no llegaba.",
+      "choices": [
+        { "text": "Continuar hacia el castillo", "next": "noche_castillo" },
+        { "text": "Encender la segunda linterna", "next": "noche_dos_linternas" }
+      ]
+    },
+    "duda_volver": {
+      "title": "La Sugestión",
+      "text": "— Jose, ¿nos volvemos?\n\nMi hermano se detuvo. Alumbró el camino por el que habíamos venido, luego el que llevaba al castillo.\n\n— Es la sugestión — dijo. — Sabes que es la sugestión.\n\nTenía razón. O al menos, eso nos decíamos el uno al otro. En más de una ocasión estuvimos a punto de irnos, pero nos convencíamos con esa misma frase.\n\nY así, entre dudas, llegamos hasta el castillo.",
+      "choices": [
+        { "text": "Seguir adelante", "next": "noche_castillo" },
+        { "text": "Insistir en volver al coche", "next": "final_abandono" }
+      ]
+    },
+    "noche_castillo": {
+      "title": "Ante el Castillo",
+      "text": "Voces.\n\nSí, voces. Débiles, apenas audibles, pero voces al fin y al cabo. Procedían del interior del castillo. ¿Nos habrían adelantado durante el trayecto?\n\nEn el camino no había más coches aparcados y tampoco los habíamos visto durante nuestra travesía.\n\nAlgo se movió detrás de nosotros. Las pisadas fueron audibles. Un correteo, rápido. Su sonido se perdió entre la maleza.\n\nMiré a mi hermano y nos entendimos sin palabras. Era peor desandar lo andado que entrar por el agujero del vallado. En el peor de los casos serían un grupo de amigos haciendo botellón.",
+      "choices": [
+        { "text": "Entrar por el agujero del vallado", "next": "interior_castillo" },
+        { "text": "Llamar en voz alta para identificar a quien hay dentro", "next": "llamar_interior" }
+      ]
+    },
+    "llamar_interior": {
+      "title": "Nadie Responde",
+      "text": "— ¡Hola! — gritó Jose hacia el interior. — ¿Hay alguien ahí?\n\nEl eco de su voz rebotó en las piedras antiguas y se disolvió.\n\nSilencio.\n\nLuego las voces del interior continuaron exactamente igual que antes, como si nadie hubiera oído nada. O como si la pregunta no tuviera sentido para quien estaba allí.\n\nLas pisadas detrás de nosotros reanudaron su movimiento.",
+      "choices": [
+        { "text": "Entrar de todos modos", "next": "interior_castillo" }
+      ]
+    },
+    "interior_castillo": {
+      "title": "El Interior",
+      "text": "Dejamos una sola linterna encendida. La luna llena ofrecía algo de luz para no errar nuestros pasos.\n\nNos acercamos con sigilo y entramos en la edificación.\n\nAllí no había absolutamente nadie.\n\nPero se seguían escuchando voces. Aumentaban su intensidad como si estuviéramos llegando al epicentro. Eran tantas que era complicado distinguir alguna palabra. Se entremezclaban. Venían del frente, de atrás, de la derecha, de la izquierda.\n\nY nadie.\n\nOtra vez las pisadas. Ahora no eran de una sola persona que corretease. Eran muchas más. Pasos cortos, pasos largos, lentos, agonizantes, veloces, estresantes.",
+      "choices": [
+        { "text": "Intentar grabar con el teléfono", "next": "grabar" },
+        { "text": "Avanzar hacia el centro del castillo", "next": "epicentro" },
+        { "text": "Retroceder hacia la salida", "next": "retroceder" }
+      ]
+    },
+    "grabar": {
+      "title": "La Grabación",
+      "text": "Saqué el teléfono. La mano me temblaba lo suficiente para que la pantalla tardara en reconocer mi huella.\n\nPulsé grabar.\n\nLas voces continuaron. En la pantalla, la forma de onda del audio se disparaba hacia arriba registrando algo, pero con los auriculares puestos era imposible distinguir qué. Demasiadas capas.\n\nLuego algo cambió. Las pisadas cesaron de golpe.\n\nEl silencio fue peor.\n\nY en ese silencio, algo nos heló la sangre: suspiros y lamentos a nuestra espalda, tan cerca que eran ensordecedores. Sentíamos el aliento de aquello en el cuello.",
+      "choices": [
+        { "text": "Echar a correr", "next": "huida" },
+        { "text": "Quedarse quieto y no moverse", "next": "quedarse_quieto" }
+      ]
+    },
+    "retroceder": {
+      "title": "La Salida Que Ya No Está",
+      "text": "Empezamos a retroceder despacio, sin darles la espalda a las voces, como si eso pudiera servir de algo.\n\nLlegamos al agujero del vallado por donde habíamos entrado.\n\nO donde creíamos que habíamos entrado.\n\nLa pared estaba entera. Sin agujero. Solo piedra antigua y consistente, como llevaba siglos.\n\nNos miramos.\n\nDetrás de nosotros, las voces en castellano antiguo y en francés se aproximaban.",
+      "choices": [
+        { "text": "Buscar otra salida corriendo", "next": "huida" },
+        { "text": "Tocar la pared para comprobar que es real", "next": "pared" }
+      ]
+    },
+    "pared": {
+      "title": "La Piedra",
+      "text": "Apoyé las manos en la piedra.\n\nEstaba fría. Mucho más fría de lo que debería estar una piedra en esa noche. Y bajo las palmas sentí algo: una vibración muy leve, rítmica, como si dentro de la pared algo pulsara.\n\nRetrocedí.\n\nLos lamentos llegaron a nuestra espalda. Tan cerca. El aliento en el cuello.\n\nCerramos los ojos.",
+      "choices": [
+        { "text": "Abrir los ojos", "next": "final_coche" }
+      ]
+    },
+    "epicentro": {
+      "title": "El Centro",
+      "text": "Avanzamos hacia donde las voces parecían más densas.\n\nEl suelo bajo nuestros pies crujía de una forma diferente, como si lo que pisábamos no fuera solo tierra sino algo más compacto, más viejo, más lleno de historia enterrada.\n\nLas voces en este punto ya no eran un murmullo. Eran una marea. Castellano antiguo, palabras que no podíamos descifrar pero cuyo tono reconocíamos: urgencia, miedo, órdenes, súplicas.\n\nY entre todo eso, una voz más clara que las demás. Cercana. Muy cercana.\n\nEn francés.",
+      "choices": [
+        { "text": "Intentar entender qué dice la voz francesa", "next": "voz_francesa" },
+        { "text": "Darse la vuelta", "next": "lamentos" }
+      ]
+    },
+    "voz_francesa": {
+      "title": "El Soldado",
+      "text": "Me concentré en esa voz.\n\nNo entiendo francés. Nunca lo he estudiado. Pero en ese momento, en ese lugar, algo en las palabras era casi comprensible. No su significado literal, sino su intención. Su emoción.\n\nMiedo.\n\nEra un soldado con miedo. Alguien que estaba en un lugar que no le pertenecía y lo sabía. Las tropas de Napoleón habían vaciado la ermita en el Siglo XIX. Habían tomado todo lo que pudieron de ese lugar sagrado.\n\nQuizás ese lugar no lo había olvidado.\n\nLas pisadas reanudaron. Ahora eran muchas, muchas más que antes.",
+      "choices": [
+        { "text": "Echar a correr", "next": "huida" },
+        { "text": "Quedarse quieto", "next": "quedarse_quieto" }
+      ]
+    },
+    "quedarse_quieto": {
+      "title": "El Ojo del Huracán",
+      "text": "No me moví. Le puse una mano en el brazo a Jose para que tampoco lo hiciera.\n\nLas pisadas nos rodearon. Muchas. Incontables. Sentíamos el movimiento de algo en el aire cuando pasaban junto a nosotros, como si desplazaran algo.\n\nPero nada nos tocó.\n\nLos lamentos siguieron. Los suspiros. El aliento frío en el cuello.\n\nY durante un segundo, un segundo exacto, todo se detuvo.\n\nLuego cerramos los ojos sin haberlo decidido.",
+      "choices": [
+        { "text": "Abrir los ojos", "next": "final_coche" }
+      ]
+    },
+    "lamentos": {
+      "title": "Los Lamentos",
+      "text": "Algo nos heló la sangre.\n\nSuspiros y lamentos a nuestra espalda, tan cerca que eran ensordecedores. Incluso sentíamos cómo el aliento de aquello que estuviese ahí nos pegaba en el cuello.\n\nEchamos a correr.\n\nUna huida hacia adelante, sin saber hacia dónde. La linterna se cayó al suelo. Cada vez estábamos más cerca del final del castillo, de su última pared.\n\nNos detuvimos. Pensando cuál sería nuestro siguiente movimiento mientras que ahora sí, voces en castellano antiguo y en francés se cernían sobre nosotros.\n\nAquello era invisible. Pero estaba ahí.",
+      "choices": [
+        { "text": "Cerrar los ojos", "next": "final_coche" },
+        { "text": "Gritar para que paren", "next": "gritar" }
+      ]
+    },
+    "gritar": {
+      "title": "El Grito",
+      "text": "Grité.\n\nNo sé qué dije. No sé si dije algo con sentido. Fue un grito de todo lo acumulado en esa noche, un grito que rebotó en las piedras del Siglo XI y se expandió por encima del embalse de Ricobayo hasta perderse en la noche.\n\nSilencio absoluto.\n\nUn segundo. Dos. Tres.\n\nLuego las voces volvieron. Más cerca. Todas a la vez. Hablando directamente a nosotros.\n\nCerramos los ojos.",
+      "choices": [
+        { "text": "Abrir los ojos", "next": "final_coche" }
+      ]
+    },
+    "huida": {
+      "title": "La Huida",
+      "text": "Echamos a correr.\n\nUna huida hacia adelante, sin plan, sin dirección. La linterna se cayó al suelo y el sonido del plástico contra la piedra fue lo último claro que escuché antes de que todo se volviera movimiento puro.\n\nCada vez estábamos más cerca del final del castillo, de su última pared. Nos detuvimos contra ella, sin más espacio.\n\nVoces en castellano antiguo y en francés se cernían sobre nosotros desde todas partes.\n\nAquello era invisible. Pero estaba ahí, estaba muy cerca, y nosotros no teníamos ningún sitio más adonde ir.\n\nCerramos los ojos.",
+      "choices": [
+        { "text": "Abrir los ojos", "next": "final_coche" }
+      ]
+    },
+    "detenerse": {
+      "title": "Dar La Vuelta",
+      "text": "Me detuve. Me giré.\n\nLa linterna alumbró el camino por el que habíamos venido.\n\nNo había nada. Solo piedras, hierba seca, y la oscuridad entre medias.\n\nPero el sonido de las pisadas continuó. Y el aliento en el cuello no desapareció por haber mirado.\n\nHabía algo allí que no necesitaba ser visto para estar.\n\nLas voces en castellano antiguo y en francés se hicieron más claras, como si haber mirado fuera una señal de que estábamos listos para algo.\n\nCerramos los ojos sin haberlo decidido.",
+      "choices": [
+        { "text": "Abrir los ojos", "next": "final_coche" }
+      ]
+    },
+    "final_abandono": {
+      "title": "La Retirada",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "— Nos vamos — dije.\n\nJose no protestó. Creo que en el fondo lo agradecía.\n\nBajamos de vuelta al coche en silencio, escuchando cada ruido del camino, pero sin que nada nos siguiera. O sin que lo notáramos.\n\nEsa noche dormí mal. Soñé con piedras antiguas y voces en un idioma que no reconocía.\n\nA los pocos días, Jose me llamó.\n\n— ¿Volvemos?\n\nNunca llegamos a ir. Pero algo nos llama durante la noche. Una invitación que ninguno de los dos ha sabido rechazar del todo.\n\nQuizás volver sería encontrar respuestas. Quizás sería algo peor.\n\nPor ahora, Castrotorafe sigue ahí. Y nosotros seguimos aquí.\n\nY la distancia entre ambos se hace más corta cada noche.",
+      "choices": []
+    },
+    "final_coche": {
+      "title": "El Coche",
+      "isEnding": true,
+      "endingType": "secret",
+      "text": "Abrimos los ojos.\n\nEstábamos dentro del coche. Jose en el asiento del copiloto con la mochila sobre sus piernas y yo en el asiento del piloto.\n\nNos miramos.\n\nSin decir ni una sola palabra, emprendimos el camino de vuelta.\n\nA pesar de que han pasado unos meses, ha sido complicado escribir todo esto. Cuando llegamos a casa comprobamos que faltaba la linterna que se nos había caído y que la mochila había sido rasgada: un corte de arriba hasta abajo, profundo.\n\nPor más que hemos repasado en frío todo lo que vivimos aquella noche, nos ha sido imposible encontrar una explicación. Para nosotros fue algo real, por muy increíble que pueda parecer.\n\nNo encontramos sentido a lo ocurrido.\n\nLo hemos mantenido en secreto hasta ahora. No podemos seguir así porque nos come por dentro.\n\nSabemos que vamos a ser tomados por locos. Y que la única solución que aparece en el horizonte es volver a Zamora La Vieja.\n\nNos inquieta.\n\nPero algo nos llama durante la noche. Nos invita a volver.",
+      "choices": []
+    }
+  }
+}
