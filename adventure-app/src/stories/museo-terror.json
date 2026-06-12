@@ -1,0 +1,390 @@
+{
+  "id": "museo-terror",
+  "title": "El Museo del Cine de Terror",
+  "description": "Una visita tranquila a un museo dedicado a los monstruos clásicos del cine. Momias, vampiros, criaturas. Todo detrás de cristal. Todo perfectamente inofensivo. Hasta que cierran las puertas.",
+  "estimatedLength": "8–14 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "La Taquilla",
+      "text": "El Museo del Cine de Terror lleva abierto desde 1987. Según la placa junto a la entrada, alberga la colección más completa de Europa dedicada a los monstruos clásicos de Hollywood: réplicas, utilería original, vestuario, fotografías de rodaje y 'ambientaciones inmersivas' de las películas más icónicas.\n\nLa entrada está iluminada con un rojo tenue que convierte las sombras en algo más de lo que son. O eso quieres pensar.\n\nEl taquillero es un hombre de edad indefinida, con una chaqueta de terciopelo granate y el pelo planchado hacia atrás. Te mira por encima de unas gafas de media luna y sonríe con una boca en la que hay demasiados dientes.\n\n— Última entrada del día — dice, empujando la entrada hacia ti. — Tiene suerte. O no.\n\nRíe solo, como si fuera un chiste que solo él entiende del todo.\n\n— Las salas se visitan en el orden que prefiera. Pero le recomiendo — baja la voz — que no abra las puertas rojas. Las rojas no llevan a ningún sitio que quiera visitar.\n\nCoges la entrada. En el dorso, impreso en letra pequeña: *El museo no se responsabiliza de experiencias no catalogadas en el horario de visita.*",
+      "choices": [
+        { "text": "Preguntar qué significa 'experiencias no catalogadas'", "next": "preguntar_taquillero" },
+        { "text": "Entrar directamente al vestíbulo", "next": "vestibulo" }
+      ]
+    },
+    "preguntar_taquillero": {
+      "title": "La Advertencia",
+      "text": "El taquillero te mira un momento antes de responder, como si estuviera evaluando cuánto contarte.\n\n— El museo tiene horario oficial hasta las ocho — dice. — A las ocho y un minuto, lo que hay dentro ya no es exactamente nuestro.\n\n— ¿De quién es?\n\nSonríe. Esta vez la sonrisa dura demasiado.\n\n— De ellos. — Hace un gesto vago hacia el interior. — Llevan mucho tiempo siendo personajes de película. Eso cansa. Por las noches necesitan... estirarse un poco.\n\nMiras el reloj. Son las siete y cuarenta y dos.\n\n— ¿Tiene dieciocho minutos? — dice el taquillero. — Más que suficiente. Probablemente.\n\nEntra por el torniquete antes de que puedas hacer más preguntas.",
+      "choices": [
+        { "text": "Entrar al vestíbulo con dieciocho minutos por delante", "next": "vestibulo" }
+      ]
+    },
+    "vestibulo": {
+      "title": "El Vestíbulo",
+      "text": "El vestíbulo es una sala circular con el suelo de mármol negro y un techo de cristal por el que entra la última luz del atardecer. En el centro hay una fuente seca con una estatua: el Doctor Frankenstein con los brazos levantados hacia el cielo, en la postura del momento en que el rayo da vida a su criatura.\n\nAlrededor de la sala, seis pasillos se abren como los radios de una rueda, cada uno con un cartel iluminado:\n\n→ SALA DE LA MOMIA\n→ SALA DE FRANKENSTEIN\n→ SALA DE DRÁCULA\n→ SALA DEL HOMBRE LOBO\n→ SALA DE LA NOVIA DE FRANKENSTEIN\n→ SALA DE LA CRIATURA DE LA LAGUNA NEGRA\n\nY entre los pasillos de Drácula y el Hombre Lobo, casi oculta por un expositor de carteles de películas antiguas, hay una séptima abertura sin cartel. Solo oscuridad.\n\nMiras el reloj. Siete y cuarenta y cuatro.",
+      "choices": [
+        { "text": "Ir a la Sala de la Momia", "next": "sala_momia" },
+        { "text": "Ir a la Sala de Drácula", "next": "sala_dracula" },
+        { "text": "Ir a la Sala de Frankenstein", "next": "sala_frankenstein" },
+        { "text": "Investigar la abertura sin cartel", "next": "pasadizo_entrada" }
+      ]
+    },
+    "pasadizo_entrada": {
+      "title": "El Séptimo Pasillo",
+      "text": "El expositor de carteles está anclado al suelo pero gira si empujas con suficiente fuerza. Detrás hay un pasillo estrecho, sin iluminar, con las paredes de piedra sin revestir.\n\nNo es parte del museo decorado. Es parte del edificio real.\n\nEl pasillo termina en una escalera de caracol que baja. Desde abajo llega un olor a humedad y a algo que podría ser película en rollo quemada. Y también algo más: voces muy bajas, como de radio antigua, como de una película en blanco y negro sonando en algún lugar underground.\n\nAnota mentalmente la posición de este pasillo. Podría ser importante después.",
+      "choices": [
+        { "text": "Bajar por la escalera ahora", "next": "sala_proyeccion" },
+        { "text": "Volver al vestíbulo y explorar las salas primero", "next": "vestibulo" }
+      ]
+    },
+    "sala_momia": {
+      "title": "Sala I — La Momia",
+      "text": "La sala está ambientada como el interior de una tumba egipcia. Jeroglíficos pintados en las paredes, urnas canópicas en vitrinas, y en el centro, dentro de un sarcófago de cristal, la momia.\n\nLa réplica es extraordinaria: vendas de lino envejecido, la postura rígida de quien lleva siglos sin moverse, los ojos cerrados bajo capas de tela ennegrecida. Un cartel informa que está basada en el diseño de Boris Karloff para la película de 1932.\n\nLees el cartel. Lees la ficha técnica. Sacas el teléfono para hacer una foto.\n\nY cuando el flash ilumina la sala durante una fracción de segundo, ves algo que antes no estaba:\n\nLos ojos de la momia están abiertos.\n\nApuntan directamente hacia ti.",
+      "choices": [
+        { "text": "Acercarte al sarcófago a comprobarlo", "next": "momia_cerca" },
+        { "text": "Salir de la sala inmediatamente", "next": "vestibulo_momia" },
+        { "text": "Hacerle otra foto con el flash", "next": "flash_momia" }
+      ]
+    },
+    "flash_momia": {
+      "title": "Lo Que Muestra el Flash",
+      "text": "Haces otra foto.\n\nEn el segundo de luz, la momia ha girado la cabeza. Ya no mira al frente. Mira hacia la puerta. Hacia donde estás tú.\n\nEl teléfono vibra en tu mano. Una notificación. La miras sin querer:\n\n*Alerta de batería: 3%.*\n\nEl flash ya no funcionará.\n\nEn la sala, en la oscuridad que queda después del destello, escuchas un sonido que no debería existir en una réplica de museo: el crujido lento y orgánico de vendas secas moviéndose.",
+      "choices": [
+        { "text": "Salir corriendo", "next": "vestibulo_momia" },
+        { "text": "Quedarte quieto y no moverte", "next": "momia_cerca" }
+      ]
+    },
+    "momia_cerca": {
+      "title": "Los Vendajes",
+      "text": "Te acercas despacio.\n\nLos ojos de la momia son de un amarillo sucio, sin pupila, sin vida. Pero están abiertos y apuntan con una precisión que las réplicas no tienen.\n\nUna mano vendada aparece sobre el borde del sarcófago.\n\nDespacio. Sin urgencia. Con la paciencia de algo que ha esperado tres mil años y puede esperar tres segundos más.\n\nUn vendaje suelto roza el cristal con un sonido como papel de lija.\n\nEchas a correr.",
+      "choices": [
+        { "text": "Hacia el vestíbulo", "next": "vestibulo_momia" },
+        { "text": "Hacia el fondo de la sala donde hay una puerta roja", "next": "puerta_roja_momia" }
+      ]
+    },
+    "puerta_roja_momia": {
+      "title": "La Puerta Roja",
+      "text": "La puerta roja del fondo de la sala tiene el pomo frío como el hielo.\n\nGira.\n\nDetrás hay una pared de ladrillo. No un pasillo, no una escalera. Una pared lisa, sin fisuras, sin salida. El taquillero tenía razón.\n\nDetrás de ti, en la sala, el crujido de las vendas se hace más cercano.\n\nNo hay otro sitio adonde ir.",
+      "choices": [
+        { "text": "Girarte y enfrentarte a lo que viene", "next": "momia_encuentra" },
+        { "text": "Empujar la pared de ladrillo con todas tus fuerzas", "next": "pared_falsa" }
+      ]
+    },
+    "pared_falsa": {
+      "title": "El Truco",
+      "text": "Empujas.\n\nLa pared cede. No es ladrillo real sino una imitación de cartón piedra, un decorado del museo, y detrás hay un pasillo de servicio con tuberías y cableado eléctrico.\n\nCorres por él. Conecta con el vestíbulo por detrás de la fuente del Doctor Frankenstein.\n\nDetrás de ti, la momia llega al umbral del pasillo de servicio y se detiene. Como si no pudiera o no quisiera salir de su sala.\n\nPor ahora.",
+      "choices": [
+        { "text": "Continuar explorando el museo", "next": "vestibulo_post_momia" }
+      ]
+    },
+    "vestibulo_momia": {
+      "title": "De Vuelta al Centro",
+      "text": "Llegas al vestíbulo jadeando.\n\nTodo está igual: la fuente, la estatua del Doctor, los seis pasillos. Pero algo ha cambiado. En la sala de la Momia, detrás de ti, ya no se oye nada. Y eso es casi peor.\n\nMiras el reloj. Siete y cincuenta y uno.",
+      "choices": [
+        { "text": "Ir a la Sala de Frankenstein", "next": "sala_frankenstein" },
+        { "text": "Ir a la Sala de Drácula", "next": "sala_dracula" },
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" }
+      ]
+    },
+    "vestibulo_post_momia": {
+      "title": "El Vestíbulo Cambia",
+      "text": "Llegas al vestíbulo desde el pasillo de servicio.\n\nAlgo ha cambiado: la estatua del Doctor Frankenstein ya no tiene los brazos levantados. Los tiene extendidos hacia adelante, como si caminara. O como si te señalara.\n\nMiras el reloj. Siete y cincuenta y tres.",
+      "choices": [
+        { "text": "Ir a la Sala de Drácula", "next": "sala_dracula" },
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" },
+        { "text": "Buscar la salida principal", "next": "salida_bloqueada" }
+      ]
+    },
+    "sala_frankenstein": {
+      "title": "Sala II — Frankenstein",
+      "text": "La sala recrea el laboratorio del Doctor Frankenstein: generadores de Van de Graaff, cables en espiral, tubos de cristal con líquidos de colores, y en el centro, sobre una mesa de operaciones metálica inclinada, la criatura.\n\nEs enorme. Dos metros y algo. Frente cuadrada, tornillos en el cuello, la piel de ese verde grisáceo que Karloff hizo icónico. Las correas de cuero que la sujetan a la mesa parecen auténticas de tan desgastadas que están.\n\nHay una placa junto a la mesa: *'El monstruo de Frankenstein nunca tuvo nombre propio. Su creador lo llamó simplemente: la criatura.'*\n\nMientras lees, uno de los generadores de la sala zumba. Un sonido eléctrico, breve. Las luces parpadean.\n\nCuando vuelven a estabilizarse, una de las correas de la mesa cuelga suelta.\n\nSolo una. La de la muñeca derecha.",
+      "choices": [
+        { "text": "Acercarte a examinar la correa suelta", "next": "correa_suelta" },
+        { "text": "Moverte hacia la puerta sin perder de vista la mesa", "next": "vestibulo_frank" },
+        { "text": "Buscar el interruptor de los generadores para cortarles la corriente", "next": "interruptores" }
+      ]
+    },
+    "interruptores": {
+      "title": "El Panel Eléctrico",
+      "text": "Encuentras el panel en la pared del fondo: una caja metálica con una docena de palancas. Las etiquetas están en inglés, escritas a mano con letra de otra época.\n\n*MAIN POWER. LAB LIGHTS. GENERATORS. CREATURE TABLE.*\n\nApagando los generadores, cortas la corriente a la mesa.\n\nBajas la palanca de GENERATORS.\n\nEl zumbido cesa. Las luces de la sala bajan de intensidad. Y en la mesa, la criatura — si es que algo ha empezado a moverse — queda en oscuridad.\n\nTambién tú.",
+      "choices": [
+        { "text": "Volver a encender las luces y salir", "next": "vestibulo_frank" },
+        { "text": "Moverse en la oscuridad hacia la puerta", "next": "oscuridad_frank" }
+      ]
+    },
+    "oscuridad_frank": {
+      "title": "En la Oscuridad",
+      "text": "Das tres pasos hacia donde crees que está la puerta.\n\nAlgo respira en la sala. Un sonido lento, profundo, como de pulmones muy grandes aprendiendo a moverse de nuevo.\n\nUna mano te roza el hombro.\n\nNunca en tu vida has corrido tan rápido hacia un interruptor.",
+      "choices": [
+        { "text": "Encender las luces", "next": "luces_frank" }
+      ]
+    },
+    "luces_frank": {
+      "title": "Lo Que Ves",
+      "text": "Las luces vuelven.\n\nLa criatura está en la mesa. Las correas, ahora, están todas sueltas. Todas. Pero la criatura no se ha movido, o está en la misma posición, o es tan buena actriz como lo era Karloff.\n\nO está esperando a que te gires.\n\nNo te giras. Salís de espaldas por la puerta.",
+      "choices": [
+        { "text": "Volver al vestíbulo", "next": "vestibulo_post_momia" }
+      ]
+    },
+    "correa_suelta": {
+      "title": "La Muñeca",
+      "text": "Te acercas.\n\nLa correa ha sido cortada, no desabrochada. El cuero tiene los bordes limpios, como de algo muy afilado o de una tensión muy sostenida.\n\nMiras la mano de la criatura. Los dedos son largos, grises, con las uñas negras. Y uno de esos dedos — el índice — apunta hacia el techo.\n\nHace un segundo apuntaba hacia abajo. Lo sabes porque lo miraste al entrar.\n\nDas un paso atrás.\n\nEl dedo baja. Te señala a ti.",
+      "choices": [
+        { "text": "Correr hacia la puerta", "next": "vestibulo_frank" },
+        { "text": "Cortar la corriente al panel eléctrico", "next": "interruptores" }
+      ]
+    },
+    "vestibulo_frank": {
+      "title": "El Vestíbulo",
+      "text": "Llegas al vestíbulo. Siete y cincuenta y cinco.\n\nCinco minutos.",
+      "choices": [
+        { "text": "Ir a la Sala de Drácula", "next": "sala_dracula" },
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" },
+        { "text": "Buscar al taquillero", "next": "taquillero_segunda" }
+      ]
+    },
+    "sala_dracula": {
+      "title": "Sala III — Drácula",
+      "text": "La sala de Drácula está ambientada como el gran salón del castillo de Transilvania: candelabros de hierro, tapices de terciopelo rojo y negro, un trono de respaldo altísimo frente a una chimenea apagada, y en la pared del fondo, tres ataúdes de madera lacada negra, abiertos, con el interior de satén granate.\n\nHay espejos en todas las paredes.\n\nMuchos espejos.\n\nTe mueves por la sala y te ves reflejado en todos ellos: tus pasos, tu cara, tu respiración visible. Todo normal.\n\nLuego pasa algo que tarda unos segundos en registrarse.\n\nHay algo en la sala que no aparece en ningún espejo.\n\nEl trono. El trono frente a la chimenea no tiene reflejo.\n\nY en el trono hay alguien sentado.",
+      "choices": [
+        { "text": "Mirar directamente al trono", "next": "dracula_trono" },
+        { "text": "Mirar solo a través de los espejos sin girarte", "next": "dracula_espejo" },
+        { "text": "Salir de la sala sin mirar", "next": "vestibulo_dracula" }
+      ]
+    },
+    "dracula_espejo": {
+      "title": "El Reflejo Que No Existe",
+      "text": "Miras los espejos.\n\nEn todos te ves a ti, perfectamente reflejado. El trono vacío detrás de ti. La chimenea apagada. Los ataúdes.\n\nPero el espejo de la derecha, el más grande, muestra algo diferente: detrás de tu reflejo, donde debería haber un trono vacío, hay una figura de pie. Alta, con capa negra, que se acerca a tu espalda muy despacio.\n\nEn el espejo, la figura ya está a medio metro de ti.\n\nEn el espejo, ya levanta la mano.",
+      "choices": [
+        { "text": "Girarte de golpe", "next": "dracula_trono" },
+        { "text": "Moverte de lado sin girarte, hacia la puerta", "next": "vestibulo_dracula" }
+      ]
+    },
+    "dracula_trono": {
+      "title": "El Conde",
+      "text": "La figura en el trono tiene el aspecto exacto de Bela Lugosi en 1931: capa negra con forro blanco, frac inmaculado, el pelo engominado hacia atrás, y unos ojos que no deberían ser capaces de fijarse en nada porque son de cristal.\n\nPero están fijos en ti.\n\n— Buenas noches — dice. La voz suena como si viniera de dentro de las paredes, de todas partes a la vez. Con un acento que no es de ningún país del mundo real.\n\nNo dices nada.\n\n— Rara vez tenemos visitas a esta hora — continúa. — Los que se quedan después del cierre suelen... — hace una pausa — tener motivos.\n\nSe levanta del trono. Es más alto de lo que parecía sentado.\n\n— ¿Cuál es el tuyo?",
+      "choices": [
+        { "text": "Decir que buscas la salida", "next": "dracula_salida" },
+        { "text": "No responder y correr hacia la puerta", "next": "vestibulo_dracula" },
+        { "text": "Preguntar si puede ayudarte a escapar del museo", "next": "dracula_pacto" }
+      ]
+    },
+    "dracula_pacto": {
+      "title": "El Trato del Conde",
+      "text": "El Conde inclina levemente la cabeza. Como si la pregunta le sorprendiera o le divirtiera, no está claro cuál de las dos.\n\n— Ayuda — repite. — Interesante.\n\nRodea el trono despacio.\n\n— Podría indicarte el camino. Conozco este edificio mejor que nadie. Llevo aquí desde antes de que existiera el museo. — Una pausa. — Pero los tratos tienen precio.\n\n— ¿Qué precio?\n\n— Una noche. Solo una. En el ataúd del centro. Completamente voluntario, completamente reversible. Al amanecer, fuera.\n\nMiras el ataúd del centro. El satén granate. El interior perfectamente mullido.\n\nMiras el reloj. Siete y cincuenta y ocho.",
+      "choices": [
+        { "text": "Aceptar el trato", "next": "final_regular_dracula" },
+        { "text": "Rechazar y buscar otra salida", "next": "vestibulo_dracula" }
+      ]
+    },
+    "dracula_salida": {
+      "title": "La Información",
+      "text": "— La salida — repite el Conde. — Claro.\n\nSe acerca dos pasos. Huele a tierra húmeda y a algo floral que no reconoces.\n\n— La salida principal lleva cerrada desde las ocho menos cinco — dice. — Siempre pasa. Los visitantes confundidos no son novedad.\n\n— Entonces, ¿cómo salgo?\n\nUna sonrisa. Los colmillos son perfectamente blancos.\n\n— El pasillo que no tiene nombre — dice. — Detrás del expositor de carteles. Baja hasta la sala de proyección. Hay una salida de emergencia que da a la calle.\n\nTe quedas mirándolo.\n\n— ¿Por qué me lo dices?\n\n— Porque esta noche tengo compañía suficiente — dice, y hace un gesto hacia el resto del museo. — No necesito más.\n\nDa media vuelta hacia su trono.",
+      "choices": [
+        { "text": "Ir al pasillo sin nombre", "next": "pasadizo_entrada" },
+        { "text": "Desconfiar y seguir buscando por tu cuenta", "next": "vestibulo_dracula" }
+      ]
+    },
+    "vestibulo_dracula": {
+      "title": "El Vestíbulo",
+      "text": "Sales de la sala de Drácula.\n\nEl vestíbulo. Siete y cincuenta y ocho. Dos minutos.",
+      "choices": [
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" },
+        { "text": "Buscar al taquillero", "next": "taquillero_segunda" },
+        { "text": "Ir a la Sala del Hombre Lobo", "next": "sala_hombre_lobo" }
+      ]
+    },
+    "sala_hombre_lobo": {
+      "title": "Sala IV — El Hombre Lobo",
+      "text": "La sala recrea un bosque nocturno: árboles de atrezzo, niebla artificial a ras de suelo, una luna llena de cartón piedra retroiluminada en el techo. En el centro, sobre una roca, la figura del hombre lobo en plena transformación: mitad hombre, mitad bestia, con la boca abierta en un aullido silencioso.\n\nHay un cartel: *Lon Chaney Jr. tardaba cinco horas en maquillarse para cada escena de transformación. Veintiuna sesiones por película.*\n\nLa niebla artificial es densa. Llega hasta las rodillas.\n\nY mientras lees el cartel, la niebla se mueve de una manera que no corresponde a ninguna corriente de aire.\n\nComo si algo se desplazara por ella.",
+      "choices": [
+        { "text": "Quedarte quieto y observar la niebla", "next": "niebla_movimiento" },
+        { "text": "Mirar la figura del hombre lobo en la roca", "next": "figura_lobo" },
+        { "text": "Retroceder hacia la puerta", "next": "vestibulo_lobo" }
+      ]
+    },
+    "figura_lobo": {
+      "title": "La Roca Vacía",
+      "text": "La figura del hombre lobo ya no está en la roca.\n\nEsto lo procesas en tres tiempos: primero miras la roca, luego miras a los lados, luego miras hacia abajo.\n\nEn la niebla, a tu derecha, hay algo que no es niebla. Una silueta agachada. Grande. Con el pelo que sobresale por encima de la nube blanca.\n\nUn aullido rompe el silencio del museo. Corto, contenido, pero perfectamente real.\n\nLa niebla se agita.",
+      "choices": [
+        { "text": "Correr hacia la puerta", "next": "vestibulo_lobo" },
+        { "text": "Gritar para espantarlo", "next": "gritar_lobo" }
+      ]
+    },
+    "gritar_lobo": {
+      "title": "El Sonido",
+      "text": "Gritas.\n\nLa niebla se detiene. La silueta se congela.\n\nDurante dos segundos, el museo está completamente en silencio.\n\nLuego el hombre lobo aúlla de verdad. Un sonido que hace vibrar los árboles de atrezzo y rebota en las paredes de la sala con una potencia que no debería caber en un edificio.\n\nY carga.",
+      "choices": [
+        { "text": "Correr y no mirar atrás", "next": "huida_lobo" }
+      ]
+    },
+    "huida_lobo": {
+      "title": "Por el Pasillo",
+      "text": "Corres por el pasillo hacia el vestíbulo con el sonido de garras en el suelo detrás de ti.\n\nLlegas al vestíbulo y te metes detrás de la fuente del Doctor Frankenstein. El hombre lobo llega al umbral del pasillo y se detiene. Olisquea el aire. Mira hacia ti.\n\nLuego, despacio, vuelve a su sala. Como si el vestíbulo fuera territorio neutral.\n\nTe quedas detrás de la fuente durante veinte segundos antes de moverte.",
+      "choices": [
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" },
+        { "text": "Buscar al taquillero", "next": "taquillero_segunda" }
+      ]
+    },
+    "niebla_movimiento": {
+      "title": "Lo Que Hay en la Niebla",
+      "text": "Te quedas quieto.\n\nLa niebla se mueve en círculos a tu alrededor. Algo te rodea sin prisa, estudiándote.\n\nEntonces para.\n\nY en el silencio escuchas una respiración. Justo detrás de ti. Cálida en la nuca.",
+      "choices": [
+        { "text": "Girarte lentamente", "next": "figura_lobo" },
+        { "text": "Salir corriendo sin girarte", "next": "vestibulo_lobo" }
+      ]
+    },
+    "vestibulo_lobo": {
+      "title": "El Vestíbulo",
+      "text": "Llegas al vestíbulo.\n\nOcho menos uno. Un minuto.",
+      "choices": [
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" },
+        { "text": "Buscar al taquillero urgentemente", "next": "taquillero_segunda" },
+        { "text": "Ir a la Sala de la Novia de Frankenstein", "next": "sala_novia" }
+      ]
+    },
+    "sala_novia": {
+      "title": "Sala V — La Novia de Frankenstein",
+      "text": "La sala es blanca. Todo blanco: las paredes, el suelo, la iluminación. Un blanco clínico, de laboratorio, que contrasta con el resto del museo.\n\nEn el centro, sobre un pedestal, la Novia: el peinado icónico con las dos canas en las sienes, el vestido de vendas, los ojos que en la película de 1935 expresaban más que cualquier diálogo.\n\nHay una vitrina junto al pedestal con material de rodaje: la guía de maquillaje original de Elsa Lanchester, notas del director James Whale, y una fotografía en blanco y negro de la actriz antes del maquillaje, sonriendo.\n\nMiras la foto. Luego miras la figura en el pedestal.\n\nLa figura te devuelve la mirada.\n\nY emite un sonido.\n\nEl sonido que hace la Novia cuando ve a la criatura en la película. El siseo. Agudo, instintivo, de algo que rechaza lo que tiene delante.",
+      "choices": [
+        { "text": "No moverte y ver qué hace", "next": "novia_quieta" },
+        { "text": "Retroceder hacia la puerta despacio", "next": "vestibulo_lobo" }
+      ]
+    },
+    "novia_quieta": {
+      "title": "El Siseo",
+      "text": "Te quedas quieto.\n\nLa Novia te mira. El siseo continúa, intermitente, como el de un animal que advierte pero no ataca todavía.\n\nLuego, despacio, gira la cabeza en esa forma entrecortada que tenía en la película, como si el cuello no conociera del todo el movimiento. Mira hacia el pasillo que lleva de vuelta al vestíbulo. Luego te mira a ti.\n\nComo señalándote la salida.\n\nNo sabes si es una advertencia o una trampa. Pero es lo único que tienes.",
+      "choices": [
+        { "text": "Seguir la dirección que señala y ir al vestíbulo", "next": "vestibulo_lobo" },
+        { "text": "Ir en dirección contraria, al fondo de la sala", "next": "fondo_novia" }
+      ]
+    },
+    "fondo_novia": {
+      "title": "La Puerta Roja del Fondo",
+      "text": "Al fondo de la sala blanca hay una puerta roja.\n\nLa abres.\n\nDetrás hay exactamente lo mismo que detrás de todas las puertas rojas del museo: una pared. Esta de yeso blanco, tan blanco como la sala.\n\nPero en la pared, escritas con algo oscuro a la altura de los ojos, hay palabras:\n\n*EL PASILLO. DETRÁS DEL EXPOSITOR. ANTES DE LAS OCHO.*\n\nAlguien estuvo aquí antes que tú. Alguien que también intentó encontrar la salida.",
+      "choices": [
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_entrada" }
+      ]
+    },
+    "sala_laguna": {
+      "title": "Sala VI — La Criatura de la Laguna Negra",
+      "text": "La sala es la más grande del museo. El suelo central está hundido para albergar un estanque de agua verde oscura, iluminado desde abajo. En el fondo del estanque, perfectamente visible bajo el agua, yace la Criatura: escamas, branquias, las aletas en los brazos, los ojos cerrados.\n\nEl cartel explica que la Creature from the Black Lagoon de 1954 se rodó en parte bajo el agua real, y que el actor Ben Chapman necesitaba cuatro horas de maquillaje. La criatura acuática fue la primera en ser diseñada para moverse de forma natural en el agua.\n\nTe inclinas sobre el borde del estanque para ver mejor.\n\nEl agua está quieta.\n\nLuego no lo está.\n\nLos ojos de la criatura se abren. Amarillos, sin párpados, mirando directamente hacia arriba. Hacia ti.",
+      "choices": [
+        { "text": "Alejarte del borde del estanque", "next": "laguna_lejos" },
+        { "text": "Quedarte mirando qué hace", "next": "laguna_cerca" }
+      ]
+    },
+    "laguna_cerca": {
+      "title": "Desde el Fondo",
+      "text": "La criatura se mueve bajo el agua con una elegancia que no esperabas. Sube despacio, las aletas plegadas, el cuerpo ondeando con una gracia que la hace parecer casi hermosa hasta que la cara está a un metro de la superficie y ves los dientes.\n\nUna mano con membranas entre los dedos aparece sobre el borde del estanque.\n\nDos palmos de tu brazo.",
+      "choices": [
+        { "text": "Correr", "next": "vestibulo_laguna" }
+      ]
+    },
+    "laguna_lejos": {
+      "title": "El Agua Se Mueve",
+      "text": "Das tres pasos atrás.\n\nEl agua del estanque se agita. Algo se mueve en ella con velocidad. La criatura tarda cinco segundos en llegar a la superficie.\n\nAsoma la cabeza. Te mira.\n\nLuego mira hacia el techo. Hacia algún punto por encima de ti.\n\nSigues su mirada. En el techo, directamente encima de donde estabas inclinado sobre el estanque, hay un gancho de hierro. Un gancho del que cuelga una cadena que llega hasta el borde del estanque.\n\nNo quieres saber para qué sirve.",
+      "choices": [
+        { "text": "Salir de la sala", "next": "vestibulo_laguna" }
+      ]
+    },
+    "vestibulo_laguna": {
+      "title": "El Vestíbulo",
+      "text": "Llegas al vestíbulo.\n\nLas ocho. En punto.",
+      "choices": [
+        { "text": "Buscar al taquillero", "next": "taquillero_segunda" },
+        { "text": "Ir al pasillo sin cartel ahora mismo", "next": "pasadizo_entrada" }
+      ]
+    },
+    "taquillero_segunda": {
+      "title": "La Taquilla Vacía",
+      "text": "Llegas a la taquilla desde el vestíbulo.\n\nEl taburete detrás del cristal está vacío. La chaqueta de terciopelo granate cuelga del respaldo.\n\nLuego miras mejor.\n\nNo está vacía.\n\nEl taquillero está ahí. Pero ya no es el hombre de antes. Lo que hay sentado en el taburete es un esqueleto con la misma chaqueta de terciopelo, las mismas gafas de media luna, y la mandíbula abierta en lo que podría ser una sonrisa o simplemente la ausencia de músculos para cerrarla.\n\nEn el hueco de la ventanilla, empujado hacia ti, hay un papel doblado.",
+      "choices": [
+        { "text": "Coger el papel", "next": "papel_taquillero" },
+        { "text": "No tocar nada y buscar la salida solo", "next": "pasadizo_entrada" }
+      ]
+    },
+    "papel_taquillero": {
+      "title": "La Nota",
+      "text": "Desdoblas el papel.\n\nEstá escrito con la misma caligrafía del cartel de la entrada, ornada y antigua:\n\n*El pasillo detrás del expositor lleva a la sala de proyección. En la sala de proyección hay una puerta de emergencia. La puerta de emergencia da a la calle.\n\nPero la sala de proyección no está vacía esta noche. Nunca lo está.\n\nLo que hay dentro proyecta las películas. Y a veces, cuando la película termina y las luces se apagan, sale a ver si hay alguien en la sala.\n\nNo esperes a que termine la película.*\n\nDabas por hecho que el esqueleto no podía añadir nada más.\n\nTe equivocabas.",
+      "choices": [
+        { "text": "Ir al pasillo sin cartel", "next": "pasadizo_directo" }
+      ]
+    },
+    "pasadizo_directo": {
+      "title": "El Pasillo",
+      "text": "Empujas el expositor. Entras en el pasillo estrecho. Las paredes de piedra real, el suelo irregular, el olor a humedad y a película quemada.\n\nLas voces de la radio antigua llegan desde abajo, más claras ahora. Música de otro tiempo, violines de película en blanco y negro.\n\nBajas la escalera de caracol.",
+      "choices": [
+        { "text": "Bajar rápido y no mirar atrás", "next": "sala_proyeccion" }
+      ]
+    },
+    "sala_proyeccion": {
+      "title": "La Sala de Proyección",
+      "text": "La sala de proyección tiene veinte butacas de terciopelo rojo y una pantalla blanca al fondo. El proyector zumba en la cabina de cristal al final de la sala.\n\nEn la pantalla hay una película en marcha. En blanco y negro. Reconoces la escena: es el momento final de Frankenstein de 1931, el molino ardiendo, la multitud con antorchas.\n\nEn una de las butacas hay alguien sentado.\n\nNo es ninguna de las criaturas del museo. Es una figura encogida, pequeña, con ropa de otra época. Mirando la pantalla.\n\nY al fondo, a la derecha de la pantalla, hay una puerta verde con el letrero iluminado de SALIDA DE EMERGENCIA.\n\nPara llegar a ella tienes que pasar junto a la butaca.",
+      "choices": [
+        { "text": "Pasar lo más rápido posible junto a la butaca sin mirar a la figura", "next": "pasar_sin_mirar" },
+        { "text": "Mirar quién es antes de moverte", "next": "figura_butaca" },
+        { "text": "Rodear las butacas por el otro lado", "next": "rodear_butacas" }
+      ]
+    },
+    "figura_butaca": {
+      "title": "El Espectador",
+      "text": "Te acercas despacio.\n\nEs un hombre viejo. Muy viejo. Con un traje que podría ser de los años treinta o cuarenta. Mirando la pantalla con una atención absoluta, sin moverse, sin parpadear.\n\nNo es una criatura del museo. No tiene maquillaje, no tiene prótesis, no tiene el aspecto de un monstruo de película.\n\nParece simplemente un hombre que lleva mucho tiempo viendo la misma película.\n\nCuando estás a su altura, sin girarse, dice:\n\n— La película termina en cuatro minutos.\n\nNo añade nada más. Pero la nota del taquillero decía que cuando la película termina y las luces se apagan, sale a ver si hay alguien en la sala.\n\nCuatro minutos.",
+      "choices": [
+        { "text": "Correr hacia la salida de emergencia", "next": "final_bueno" },
+        { "text": "Preguntarle quién es", "next": "quien_es_figura" }
+      ]
+    },
+    "quien_es_figura": {
+      "title": "El Guardián",
+      "text": "— ¿Quién es usted?\n\nUna pausa.\n\n— El guardián — dice. — Llevo aquí desde antes que el museo. Desde antes que el edificio. Desde antes que las películas.\n\n— ¿Qué es usted exactamente?\n\n— Lo que queda cuando una historia se cuenta demasiadas veces en el mismo lugar. — Se gira levemente, sin mirarte del todo. — Tres minutos.\n\nLa película en la pantalla muestra el molino ardiendo. Frankenstein mirando desde arriba mientras todo arde.\n\n— ¿Por qué me lo dice?\n\n— Porque viniste cuando debías y porque preguntaste lo que debías. Y porque a veces — una pausa larguísima — me gusta que alguien salga.",
+      "choices": [
+        { "text": "Correr hacia la salida de emergencia", "next": "final_bueno" }
+      ]
+    },
+    "pasar_sin_mirar": {
+      "title": "Sin Mirar",
+      "text": "Caminas junto a la fila de butacas mirando al frente. La figura en la butaca no se mueve.\n\nLlegas a la puerta de emergencia. La empujas.\n\nAlarma. La alarma del museo suena durante exactamente tres segundos y luego se apaga, como si algo la hubiera cortado.\n\nDelante de ti: una callejuela. El aire de la noche. La ciudad.",
+      "choices": [
+        { "text": "Salir", "next": "final_bueno" }
+      ]
+    },
+    "rodear_butacas": {
+      "title": "El Otro Lado",
+      "text": "Rodeas las butacas por la izquierda, pegándote a la pared.\n\nA mitad del camino, la película en la pantalla se detiene.\n\nEl proyector sigue zumbando pero la imagen se congela en el frame del molino ardiendo.\n\nLas luces de la sala bajan.\n\nLa figura en la butaca se levanta.\n\nCorres.",
+      "choices": [
+        { "text": "Hacia la salida de emergencia", "next": "final_regular_carrera" },
+        { "text": "Hacia las escaleras de vuelta al museo", "next": "final_malo_museo" }
+      ]
+    },
+    "final_bueno": {
+      "title": "La Calle",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "Sales.\n\nLa callejuela conecta con una calle principal a veinte metros. Coches, farolas, gente que pasa. El mundo normal.\n\nTe detienes con la espalda apoyada en la pared del edificio y esperas a que el pulso baje de sus actuales ciento treinta pulsaciones.\n\nDetrás de ti, la puerta de emergencia se cierra sola.\n\nY en la fachada del museo, por primera vez, ves lo que hay grabado sobre la puerta principal: una fecha. 1923. Y debajo, en letras desgastadas por el tiempo: *Lo que entra en estas historias no sale nunca del todo.*\n\nA la mañana siguiente buscas el museo en internet para contarle a alguien lo que pasaste.\n\nNo hay resultados.\n\nNingún Museo del Cine de Terror en esa dirección. Ninguna reseña, ninguna foto, ninguna mención en ningún sitio.\n\nVuelves a la callejuela.\n\nEl edificio sigue ahí. Pero la puerta está sellada con tablones. Y según el letrero municipal pegado junto a la entrada, lleva cerrado por reformas desde 1987.\n\nDesde el año en que, según la placa, abrió.",
+      "choices": []
+    },
+    "final_regular_carrera": {
+      "title": "La Carrera",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Llegas a la puerta de emergencia un segundo antes de que la figura llegue a ti.\n\nLa empujas. Sales. La callejuela, la ciudad, la noche normal.\n\nEchas a correr y no paras durante tres manzanas.\n\nLlegas a casa. Te sientas en el sofá. Respiras.\n\nTodo bien.\n\nA las tres de la mañana te despiertas porque hay algo en tu habitación. En la oscuridad, en el rincón junto al armario, hay una silueta que respira.\n\nEnciendes la luz.\n\nNada.\n\nPero en el espejo del baño, cuando vas a lavarte la cara, ves algo en el reflejo que no está en la habitación real: un ataúd de satén granate, abierto, perfectamente mullido.\n\nCon tu nombre grabado en la tapa.\n\nAprendes a dormir con la luz encendida.\n\nTarda semanas. Luego meses. Nunca del todo.",
+      "choices": []
+    },
+    "final_regular_dracula": {
+      "title": "El Amanecer",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Te metes en el ataúd.\n\nEl satén es frío. La tapa se cierra sola, despacio, sin golpe.\n\nOscuridad total.\n\nDuermes. O algo parecido al sueño: imágenes de castillos, de niebla, de música de órgano que viene de ningún sitio.\n\nCuando la tapa se abre, la sala está llena de luz de día. El Conde ha desaparecido. Los tres ataúdes están cerrados.\n\nSales al vestíbulo. La puerta principal está abierta. Un empleado de limpieza te mira con sorpresa.\n\n— ¿Cómo ha entrado?\n\nNo tienes respuesta.\n\nSales a la calle. El sol de la mañana te da en la cara y durante un segundo, solo uno, duele más de lo que debería.\n\nEsa noche, al mirarte en el espejo del baño antes de acostarte, tardas un momento en encontrar tu reflejo.\n\nUn momento.",
+      "choices": []
+    },
+    "final_malo_museo": {
+      "title": "Las Ocho Pasadas",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Subes las escaleras de vuelta al museo.\n\nEl vestíbulo está diferente. Las luces han cambiado de color: un azul frío que convierte las sombras en algo físico. La fuente del Doctor Frankenstein funciona ahora, aunque nadie la ha encendido, y lo que cae desde el surtidor no tiene el color del agua.\n\nLos seis pasillos están iluminados. Y desde todos ellos llega movimiento.\n\nLa momia en el primer pasillo. La criatura en el segundo. El hombre lobo en el tercero, los ojos brillando en la oscuridad. Frankenstein en el cuarto, las correas arrastrándose por el suelo. La novia en el quinto, el siseo constante. Y algo que no reconoces en el sexto, algo que no estaba en ninguna sala que hayas visitado.\n\nTodos avanzan hacia el vestíbulo.\n\nHacia ti.\n\nA la mañana siguiente, cuando el museo abre, hay una nueva incorporación a la colección de la Sala I. Una figura humana con una expresión que los visitantes describirán como 'sorprendentemente realista'.\n\nEl taquillero sonríe cuando alguien pregunta cuándo llegó la nueva pieza.\n\n— Anoche — dice. — Como todas.",
+      "choices": []
+    }
+  }
+}
