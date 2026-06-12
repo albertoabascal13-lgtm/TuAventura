@@ -5,8 +5,9 @@ import styles from './HomeScreen.module.css'
 import laMansion from '../stories/la-mansion.json'
 import elFaro from '../stories/el-faro.json'
 import castrotorafe from '../stories/castrotorafe.json'
+import elAnciano from '../stories/el-anciano.json'
 
-const STORIES = [laMansion, elFaro, castrotorafe]
+const STORIES = [laMansion, elFaro, castrotorafe, elAnciano]
 
 export default function HomeScreen() {
   const navigate = useNavigate()

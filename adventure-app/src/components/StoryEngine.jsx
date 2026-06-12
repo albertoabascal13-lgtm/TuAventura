@@ -9,11 +9,13 @@ import styles from './StoryEngine.module.css'
 import laMansion from '../stories/la-mansion.json'
 import elFaro from '../stories/el-faro.json'
 import castrotorafe from '../stories/castrotorafe.json'
+import elAnciano from '../stories/el-anciano.json'
 
 const STORY_REGISTRY = {
   'la-mansion': laMansion,
   'el-faro': elFaro,
   'castrotorafe': castrotorafe,
+  'el-anciano': elAnciano,
 }
 
 function loadProgress(storyId) {
