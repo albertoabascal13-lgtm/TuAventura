@@ -1,0 +1,268 @@
+{
+  "id": "el-faro",
+  "title": "El Faro de Aguasmuerta",
+  "description": "El pueblo de Aguasmuerta lleva tres semanas sin señal del guardián del faro. Te envían a investigar. Los vecinos no te miran a los ojos. El mar huele diferente aquí.",
+  "estimatedLength": "25–40 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "Aguasmuerta",
+      "text": "El autobús te deja en la cuneta a las afueras del pueblo. El conductor no ha dicho una sola palabra en dos horas de viaje, y ahora te mira por el retrovisor mientras arranca de nuevo, acelerando como si huyera.\n\nAguasmuerta. Cuarenta y tres habitantes según el censo. Un pueblo de pescadores encajado entre acantilados negros y un mar de color extraño, entre gris y verde, que nunca parece quieto aunque no haya viento.\n\nLas casas son bajas, de piedra húmeda, con las ventanas casi siempre cerradas. Hay redes de pesca colgadas entre los balcones, pero llevan tanto tiempo allí que parecen telarañas. En la plaza hay una fuente seca con una estatua de piedra erosionada: un hombre señalando al mar. Le faltan los dedos.\n\nA lo lejos, en la punta del cabo, el faro. Apagado. Lleva apagado veintiún días.",
+      "choices": [
+        { "text": "Ir directamente al faro", "next": "camino_faro" },
+        { "text": "Preguntar en el bar del pueblo antes de ir", "next": "bar" },
+        { "text": "Buscar al alcalde o alguna autoridad local", "next": "alcalde" }
+      ]
+    },
+    "bar": {
+      "title": "El Bar de Concha",
+      "text": "El bar está abierto, aunque dentro no hay música. Tres hombres mayores con ropa de pescador están sentados en la barra, mirando sus vasos. Ninguno habla. Ninguno se mueve cuando entras.\n\nDetrás de la barra hay una mujer de unos sesenta años, cara curtida por el viento, pelo blanco recogido en un moño tenso. Te mira fijamente cuando te acercas. Sus ojos son de un gris casi blanco, como los de alguien con cataratas, aunque parece ver perfectamente.\n\n— ¿Qué quieres? — dice antes de que abras la boca.\n\nLe explicas que vienes a investigar lo del faro, lo del guardián desaparecido. Ella no cambia la expresión.\n\n— Ramos se fue — dice simplemente. — Se van todos.\n— ¿Adónde se van?\n\nUna pausa larga. Muy larga.\n\n— Al mar — dice, y se da la vuelta.\n\nUno de los pescadores, sin girarse, murmura algo que no entiendes. Suena como un nombre. O como una advertencia.",
+      "choices": [
+        { "text": "Insistir y preguntar qué quiso decir con 'se van todos'", "next": "bar_insistir" },
+        { "text": "Preguntarle al pescador qué ha murmurado", "next": "bar_pescador" },
+        { "text": "Dejar el bar y ir al faro", "next": "camino_faro" }
+      ]
+    },
+    "bar_insistir": {
+      "title": "Lo Que Se Lleva el Mar",
+      "text": "La mujer se detiene de espaldas. No se gira cuando habla.\n\n— Cada cierto tiempo alguien oye la llamada. El guardián anterior también la oyó. Y el anterior. Y el primero, hace ciento veinte años, que construyó el faro él solo en tres meses sin ayuda de nadie y luego se tiró desde la linterna la noche que lo encendió.\n\nSe gira lentamente.\n\n— Ramos llevaba seis meses aquí. Aguantó más que la mayoría. A veces por la noche le oíamos hablar desde el faro. Voces. Al principio pensamos que tenía radio. Luego nos dimos cuenta de que la voz que respondía no era humana.\n\nTe deja un vaso de algo oscuro en la barra sin que lo hayas pedido.\n\n— No duermas allí arriba. Si tienes que entrar, entra. Pero no duermas.\n\nEl líquido del vaso huele a sal y a algo más.",
+      "choices": [
+        { "text": "Beber el líquido", "next": "beber_vaso" },
+        { "text": "Ignorar el vaso y preguntar más sobre la 'llamada'", "next": "bar_llamada" },
+        { "text": "Marcharte al faro con esa información", "next": "camino_faro" }
+      ]
+    },
+    "beber_vaso": {
+      "title": "El Sabor del Mar",
+      "text": "Sabe a agua salada y a algo mineral, oscuro, como tierra mojada. Al principio no pasa nada.\n\nLuego, en el camino al faro, te das cuenta de que ves mejor en la oscuridad. Que el sonido del mar lo escuchas con una claridad extraña, como si contuviera palabras. Que algo en la dirección del faro te atrae suavemente, como una cuerda invisible atada al pecho.\n\nNo sabes si eso es bueno o malo.",
+      "choices": [
+        { "text": "Ir al faro", "next": "camino_faro_marcado" }
+      ]
+    },
+    "bar_llamada": {
+      "title": "Lo Que Viene del Fondo",
+      "text": "La mujer baja la voz.\n\n— Hace mucho tiempo, antes de que existiera este pueblo, había algo en el fondo del cabo. Algo que usaba la luz para atraer barcos. No para robarlos. Para alimentarse de los que llegaban.\n\nUno de los pescadores se levanta y sale sin decir nada. Los otros dos no se inmutan.\n\n— Cuando construyeron el faro, pensaron que una luz más grande, una luz de verdad, ahogaría a la otra. Y funcionó. Durante décadas funcionó. Pero la luz necesita un guardián. Y el guardián necesita no escuchar.\n\nSe toca una oreja con el dedo.\n\n— Ramos empezó a escuchar en la tercera semana. Lo vimos en sus ojos cuando bajaba al pueblo. Ya no era él del todo.\n\nSale de detrás de la barra y te planta en la mano un trozo de cera.\n\n— Si oyes algo que no debería estar ahí, tápate los oídos. No importa lo que te digan que no lo hagas.",
+      "choices": [
+        { "text": "Coger la cera y ir al faro", "next": "camino_faro_cera" },
+        { "text": "Rechazar la cera e ir al faro", "next": "camino_faro" }
+      ]
+    },
+    "alcalde": {
+      "title": "Casa Número Uno",
+      "text": "Te dicen que el alcalde vive en la casa más grande del pueblo, la que tiene la puerta azul. Llamas tres veces. Silencio. Llamas más fuerte.\n\nLa puerta se abre unos centímetros. Un hombre de mediana edad te mira por la rendija. Tiene la cara demacrada, los ojos rojos de no dormir, y lleva la misma ropa que lleva días.\n\n— Ya sé por qué viene — dice sin saludarte. — Ramos.\n— ¿Sabe dónde está?\n\nRíe. Es una risa extraña, sin humor.\n\n— En el faro. O lo que queda de él.\n— ¿Qué significa eso?\n\nAbre la puerta un poco más. Detrás de él ves la casa patas arriba: muebles empujados contra las paredes, ventanas tapadas con periódicos viejos, una línea de sal blanca en cada umbral.\n\n— Lleva tres semanas sin bajar. Le dejamos comida en el camino las primeras dos semanas. Dejó de recogerla. Ahora por las noches...\n\nSe detiene. Mira hacia el mar.\n\n— Por las noches enciende la linterna. Pero no apunta al mar. Apunta hacia el pueblo.",
+      "choices": [
+        { "text": "Preguntarle por qué ha tapado las ventanas", "next": "alcalde_ventanas" },
+        { "text": "Ir al faro inmediatamente", "next": "camino_faro" },
+        { "text": "Pedirle que te acompañe al faro", "next": "alcalde_acompañar" }
+      ]
+    },
+    "alcalde_ventanas": {
+      "title": "La Línea de Sal",
+      "text": "— La luz del faro — dice simplemente. — Cuando te ilumina, sueñas con el mar. Con bajar al mar. Con meterte hasta el fondo y no salir.\n\nTe muestra las palmas de las manos. Tiene marcas de uñas, como si hubiera tenido que aferrarse a algo con fuerza para no moverse.\n\n— Tres noches seguidas me levanté dormido y llegué hasta la orilla. La tercera noche el agua ya me llegaba a las rodillas cuando desperté.\n\nTe da un trozo de papel con algo escrito. Un nombre: DAMOS. Y debajo: no lo pronuncies en voz alta si ves que está escrito en alguna parte del faro.",
+      "choices": [
+        { "text": "Guardar el papel y subir al faro", "next": "camino_faro_nombre" },
+        { "text": "Preguntarle qué es Damos antes de ir", "next": "alcalde_damos" }
+      ]
+    },
+    "alcalde_damos": {
+      "title": "El Nombre del Fondo",
+      "text": "El alcalde cierra los ojos un momento antes de responder.\n\n— Los pescadores más viejos dicen que es el nombre de lo que vive bajo el cabo. No un animal. No un espíritu. Algo que existía aquí antes que nosotros y que aprendió a imitar lo que necesitamos para acercarnos.\n\n— ¿Qué necesitamos?\n\n— Luz — dice. — Y voces conocidas.\n\nTe mira fijamente.\n\n— Ramos tenía familia. Una hija pequeña. Por las noches, cuando bajaba al pueblo en las últimas semanas, decía que la oía llamarle desde la linterna. Que le pedía que se tirara al agua para que pudieran estar juntos.\n\nHace una pausa.\n\n— Su hija lleva cinco años muerta.",
+      "choices": [
+        { "text": "Ir al faro con toda esta información", "next": "camino_faro_nombre" }
+      ]
+    },
+    "alcalde_acompañar": {
+      "title": "Solo",
+      "text": "El alcalde niega con la cabeza lentamente, como si ya supiera que ibas a pedírselo.\n\n— No. No vuelvo allí.\n\nHay algo en su mirada que no es cobardía. Es algo peor: alguien que ya sabe lo que te va a pasar y ha aceptado que no puede impedirlo.\n\n— Pero le diré algo — añade justo antes de cerrar la puerta. — Si oye su nombre escrito en las paredes, no lo lea. Y si lo lee... no lo repita en voz alta.\n\nLa puerta se cierra. Escuchas el pestillo.",
+      "choices": [
+        { "text": "Ir al faro", "next": "camino_faro" }
+      ]
+    },
+    "camino_faro": {
+      "title": "El Cabo",
+      "text": "El camino al faro serpentea por el borde del acantilado durante casi dos kilómetros. A tu izquierda, el mar. De cerca el color es aún más extraño: no es verde ni gris sino algo intermedio que no tiene nombre exacto, como el color del agua estancada pero en movimiento.\n\nNo hay gaviotas. No hay sonido de olas, aunque las ves romper contra las rocas. Es como si el sonido estuviera amortiguado, o llegara con un segundo de retraso.\n\nEl faro es más alto de lo que parecía desde el pueblo. La torre es blanca con franjas negras, pero la pintura lleva años descascarándose y la piedra debajo es de un gris casi orgánico, como piel. En la base hay una caseta de piedra donde vivía el guardián.\n\nLa puerta de la caseta está abierta de par en par.\n\nDentro hay luz.",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" },
+        { "text": "Rodear el faro antes de entrar", "next": "exterior_faro" }
+      ]
+    },
+    "camino_faro_cera": {
+      "title": "El Cabo (Con Cera)",
+      "text": "El camino al faro es silencioso de una forma que no debería serlo. Las olas rompen pero no hacen ruido. El viento mueve la hierba seca pero no lo oyes.\n\nO sí lo oyes, pero hay algo más debajo. Como una frecuencia muy baja, casi inaudible, que notas más en el pecho que en los oídos. Una vibración lenta, rítmica. Como una respiración.\n\nAprietas la cera en el bolsillo.\n\nEl faro está ahí adelante. La puerta de la caseta, abierta. Dentro hay luz.",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" },
+        { "text": "Rodear el faro antes de entrar", "next": "exterior_faro" }
+      ]
+    },
+    "camino_faro_marcado": {
+      "title": "El Cabo (Marcado)",
+      "text": "El camino al faro es diferente para ti ahora. Ves detalles que no deberías ver desde esta distancia: marcas en las rocas de la base del faro, algo grabado que desde aquí parece escritura. El sonido del mar se ha vuelto casi musical, casi comprensible.\n\nCasi.\n\nLa cuerda invisible en tu pecho tira suavemente hacia adelante.\n\nTe preguntas si la mujer del bar te ha hecho un favor o lo contrario.",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" },
+        { "text": "Rodear el faro antes de entrar", "next": "exterior_faro" }
+      ]
+    },
+    "camino_faro_nombre": {
+      "title": "El Cabo (Con El Nombre)",
+      "text": "El camino es largo y el papel en tu bolsillo pesa más de lo que debería.\n\nA mitad del camino miras hacia el mar y ves algo en el agua. Una silueta. Demasiado grande para ser un pez, demasiado quieta para estar nadando. Solo está ahí, bajo la superficie, a unos cincuenta metros de la orilla.\n\nMirándote.\n\nAprietas el paso.",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" },
+        { "text": "Rodear el faro antes de entrar", "next": "exterior_faro" }
+      ]
+    },
+    "exterior_faro": {
+      "title": "La Base del Faro",
+      "text": "Rodeas la torre por fuera. La piedra de la base está grabada con marcas que al principio parecen erosión, pero de cerca son demasiado regulares. Forman espirales que convergen en un punto, en el lado norte de la torre que mira al mar abierto.\n\nEn el centro de la espiral hay letras. Una sola palabra grabada profundamente, como con algo muy afilado o con mucha fuerza: DAMOS.\n\nLas letras parecen más nuevas que el resto de las marcas. Recientes. Semanas, quizás.\n\nA tu lado, en el suelo, hay una linterna rota y lo que parece un cuaderno de bitácora empapado. Algunas páginas han sobrevivido.",
+      "choices": [
+        { "text": "Leer las páginas del cuaderno", "next": "cuaderno" },
+        { "text": "Tocar las letras grabadas en la piedra", "next": "tocar_nombre" },
+        { "text": "Entrar en la caseta sin leer el cuaderno", "next": "caseta" }
+      ]
+    },
+    "cuaderno": {
+      "title": "El Diario de Ramos",
+      "text": "Las páginas que sobreviven están escritas con una letra que va deteriorándose a medida que avanzan las fechas.\n\n*Día 3 — Todo bien. El pueblo es raro pero la gente es amable a su manera. El mar tiene un color peculiar. Pregunté a la señora del bar y se rio.\n\nDía 11 — No duermo bien. Sueños con el agua. Nada alarmante.\n\nDía 17 — La oí por primera vez anoche. La voz de Elena. Sé que es imposible. Elena murió. Pero era su voz exacta. Me llamaba desde abajo, desde las rocas. No bajé.\n\nDía 19 — Bajé hasta las rocas. No había nadie. Pero había marcas en la piedra que no estaban antes. Espirales. Y una palabra que no conozco.\n\nDía 21 — Ya sé el nombre. Ya sé cómo se pronuncia. Cuando lo digo en voz alta la voz de Elena se hace más clara. Dice que solo tengo que bajar al agua. Dice que no duele.\n\nDía —\n\nLa última página solo tiene una palabra, escrita veinte veces, cada vez más grande hasta llenar toda la hoja: DAMOS DAMOS DAMOS DAMOS DAMOS*",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" },
+        { "text": "Tocar las letras grabadas en la torre", "next": "tocar_nombre" }
+      ]
+    },
+    "tocar_nombre": {
+      "title": "El Contacto",
+      "text": "Tus dedos rozan las letras.\n\nNo pasa nada durante un segundo. Luego escuchas algo. No con los oídos. Con algo más adentro, como si la vibración viajara por los huesos de los dedos hasta el cráneo.\n\nUna voz. No reconoces a quién pertenece, pero algo en ella es familiar de una forma que no puedes explicar. Dice tu nombre. Lo dice con una calidez que hace que quieras seguir escuchando.\n\nRetiras la mano bruscamente.\n\nLa voz calla. Pero la sensación de que hay algo al otro lado de la piedra, respirando, permanece.",
+      "choices": [
+        { "text": "Entrar en la caseta", "next": "caseta" }
+      ]
+    },
+    "caseta": {
+      "title": "La Caseta del Guardián",
+      "text": "La caseta tiene una sola habitación: cama, mesa, cocina pequeña, y una puerta metálica que da a las escaleras de la torre. La luz viene de una lámpara de techo que parpadea ligeramente.\n\nEl lugar está en un estado extraño. No está destruido, pero sí reorganizado, como si alguien hubiera empujado todos los muebles hacia los lados para dejar el centro de la habitación libre. En el suelo del centro hay un círculo dibujado con sal o con algo parecido a la sal pero más amarillento. Dentro del círculo, nada. Solo el suelo limpio, frotado.\n\nEn la pared hay una foto clavada con un cuchillo: un hombre de unos cuarenta años con una niña en brazos. Los dos ríen. Debajo, escrito con rotulador rojo: *NO ESCUCHES.*\n\nLa puerta metálica de la torre está entornada. Desde el otro lado llega un sonido muy tenue. Rítmico. Como alguien subiendo escaleras, muy despacio.",
+      "choices": [
+        { "text": "Subir por las escaleras de la torre", "next": "escaleras_torre" },
+        { "text": "Examinar el círculo del suelo", "next": "circulo" },
+        { "text": "Llamar a Ramos desde aquí", "next": "llamar_ramos" }
+      ]
+    },
+    "circulo": {
+      "title": "El Círculo",
+      "text": "Te arrodillas junto al círculo. De cerca ves que no es sal: es un polvo mineral, casi cristalino, blanco con vetas grises. Y el círculo no es un círculo simple: hay marcas en el interior, dibujadas con algo que podría ser carbón, pequeñas espirales y líneas que convergen hacia el centro.\n\nEn el centro exacto hay una pequeña mancha oscura. Sangre, ya seca.\n\nReconstruyes lo que pasó: Ramos estaba aquí, dentro del círculo. Se protegía de algo. El círculo era su refugio mientras la cosa del faro hablaba. En algún momento salió del círculo. O fue sacado.\n\nHay algo más: en el borde interior del círculo, con letras muy pequeñas, hay una instrucción escrita por Ramos.\n\n*Si llegas aquí: entra al círculo antes de subir. Aguanta dentro hasta el amanecer. No importa lo que oigas.*",
+      "choices": [
+        { "text": "Entrar en el círculo y esperar al amanecer", "next": "esperar_amanecer" },
+        { "text": "Ignorar el círculo y subir la torre", "next": "escaleras_torre" }
+      ]
+    },
+    "llamar_ramos": {
+      "title": "Sin Respuesta",
+      "text": "— ¡Ramos! ¡Soy de la administración del puerto! ¡He venido a ayudarle!\n\nSilencio.\n\nLuego, desde arriba, un sonido. No una respuesta. Un golpe suave, rítmico. Como alguien dando con los nudillos en la pared. Una vez. Pausa. Una vez. Pausa.\n\nContinúa exactamente mientras sigues escuchando.\n\nLuego se detiene. Y en el silencio que queda escuchas algo que podría ser una voz, demasiado lejos para entender las palabras. Pero el tono es de súplica.",
+      "choices": [
+        { "text": "Subir corriendo", "next": "escaleras_torre" },
+        { "text": "Examinar el círculo del suelo antes de subir", "next": "circulo" }
+      ]
+    },
+    "esperar_amanecer": {
+      "title": "La Vigilia",
+      "text": "Entras en el círculo. El polvo cruje ligeramente bajo tus pies.\n\nPasan las horas. Algo pasa en la torre: sonidos, pasos, una voz que va cambiando de tono. Primero lejana y apenas audible. Luego más cercana. Luego, en algún momento de la madrugada, justo al otro lado de la puerta metálica, alguien dice tu nombre.\n\nEs una voz que reconoces. No debería estar aquí. Esa persona está lejos, está a salvo, está en otro lugar del mundo. Pero es su voz exacta, con sus inflexiones exactas, diciéndote que salgas, que hay alguien herido, que necesitan ayuda.\n\nNo te mueves.\n\nLa voz cambia. Se vuelve más urgente. Llora. Te pide. Te suplica.\n\nNo te mueves.\n\nA las 5:47 de la mañana, la voz se calla. A las 6:12, la primera luz del amanecer entra por la ventana de la caseta.\n\nCuando sale el sol, algo cambia en la torre. Los sonidos cesan. El aire se aligera. La puerta metálica se abre lentamente.",
+      "choices": [
+        { "text": "Subir ahora que ha amanecido", "next": "amanecer_torre" }
+      ]
+    },
+    "escaleras_torre": {
+      "title": "La Escalera de Caracol",
+      "text": "Las escaleras suben en espiral durante seis pisos. Las paredes de piedra están cubiertas de escritura. Al principio son anotaciones normales de guardián: fechas de revisión, registro de barcos avistados, lecturas meteorológicas.\n\nPero a partir de la mitad de la escalera cambia. La letra se hace más grande, más errática. Los registros se mezclan con fragmentos incoherentes: *no mires directamente, el ángulo importa, no es luz sino ausencia de oscuridad, lleva aquí antes que el agua, lleva aquí antes que la piedra.*\n\nEn el último tramo, justo antes de la puerta de la linterna, hay una sola frase escrita con algo rojo que esperas que sea pintura:\n\n*ÉL ESPERA QUE LO NOMBRES.*\n\nDetrás de la puerta hay luz. Una luz que no viene de ninguna fuente eléctrica: es azulada, pulsante, viva.",
+      "choices": [
+        { "text": "Abrir la puerta de la linterna", "next": "linterna" },
+        { "text": "Leer toda la escritura de las paredes antes de entrar", "next": "leer_paredes" }
+      ]
+    },
+    "leer_paredes": {
+      "title": "Los Registros de Ramos",
+      "text": "Lees todo lo que puedes descifrar. La historia se reconstruye: Ramos empezó oyendo la voz de su hija muerta en la semana dos. En la semana tres bajó por primera vez a las rocas. En algún momento entre la semana tres y la cuarta aprendió el nombre: DAMOS. Y escribió en las paredes lo que descubrió.\n\n*No es un monstruo. No entiende el miedo. Entiende el deseo. Se alimenta de lo que más quieres. Toma la forma de tu necesidad más profunda y te arrastra hacia el agua. No te mata. Te convierte.*\n\n*He encontrado algo. En el libro de registros del primer guardián, 1887. Hay una instrucción. Si lo nombras con el nombre verdadero, no el que te enseña él, el que tenía antes de aprender a imitar voces, puedes cerrarlo. Sellarlo. Pero tienes que estar en la linterna cuando lo hagas.*\n\n*El nombre verdadero no es Damos. Damos es el nombre que nos da. El nombre verdadero está grabado en la base de la linterna, en el metal, en el interior. Solo se ve cuando la luz está apagada.*\n\nDebajo, con letra temblorosa: *No pude hacerlo. Ya no puedo entrar sin escucharla. Si alguien lee esto: el nombre de su voz no es el nombre real.*",
+      "choices": [
+        { "text": "Entrar en la linterna", "next": "linterna" }
+      ]
+    },
+    "amanecer_torre": {
+      "title": "La Torre al Amanecer",
+      "text": "Las escaleras están en silencio ahora. La escritura en las paredes sigue ahí, pero en la luz del amanecer parece solo escritura: las palabras de un hombre que se fue perdiendo poco a poco.\n\nLa puerta de la linterna está abierta. La luz del amanecer entra por los paneles de cristal y llena todo el espacio de un naranja limpio y real.\n\nRamos está sentado en el suelo junto a la base de la linterna. Está vivo. Tiene los ojos abiertos y mira el mar. Cuando entras no se gira, pero habla.\n\n— ¿Esperaste?\n— Sí.\n— ¿Oíste la voz?\n— Sí.\n— ¿Cuánto aguantaste?\n\nLe dices que hasta el amanecer. Ramos cierra los ojos.\n\n— Yo no aguanté — dice. — Pero tú sí. Y eso es suficiente para que se vaya. Cuando alguien aguanta una noche entera, se va. Busca otro lugar.\n\nTe mira por fin.\n\n— Al menos durante un tiempo.",
+      "choices": [
+        { "text": "Ayudar a Ramos a bajar y abandonar el faro", "next": "final_supervivencia" }
+      ]
+    },
+    "linterna": {
+      "title": "La Cámara de la Luz",
+      "text": "La sala de la linterna es circular, de unos cuatro metros de diámetro, con cristales en todo el perímetro. La linterna central está apagada, pero hay una luz que no proviene de ella: una luminiscencia azulada y pulsante que parece emanar del suelo, de las paredes, del aire mismo.\n\nRamos está de pie mirando al mar por los cristales. No se gira cuando entras. Está en pie pero algo en su postura es raro, como si lo sostuviera algo más que sus propios músculos.\n\nEl suelo está cubierto de espirales dibujadas con el mismo polvo cristalino de la caseta, pero aquí son más complejas, más densas. Y en el centro de todo, en la base de metal de la linterna, hay letras grabadas que no eran visibles en las fotos del inventario. Solo visibles ahora, con esta luz extraña.\n\n— Sabía que vendrías — dice Ramos sin girarse. Pero la voz no es del todo la suya. Tiene un eco que no debería tener en un espacio tan pequeño. — He estado esperando que vinieras.",
+      "choices": [
+        { "text": "Hablarle a Ramos directamente e intentar traerle de vuelta", "next": "hablar_ramos" },
+        { "text": "Leer las letras de la base de la linterna mientras la luz las ilumina", "next": "nombre_verdadero" },
+        { "text": "Decir en voz alta el nombre 'Damos'", "next": "decir_damos" }
+      ]
+    },
+    "hablar_ramos": {
+      "title": "Lo Que Queda de Él",
+      "text": "— Ramos. Soy real. Estoy aquí. Necesito que me mires.\n\nUna pausa. La figura se gira muy lentamente. El rostro de Ramos es el de la foto de la caseta: el mismo hombre. Pero los ojos son distintos. No en el color. En la profundidad. Como mirar por una ventana y ver que no hay habitación detrás, solo oscuridad.\n\n— Ramos está escuchando — dice con esa voz con eco. — Ramos siempre escucha. Eso es lo que le gusta de él.\n\n— ¿Qué le hiciste?\n\n— Le di lo que quería. La voz de su hija. Ahora puede oírla siempre. ¿No es eso generoso?\n\nAlgo en los ojos de Ramos cambia una fracción. Un parpadeo de reconocimiento. Su mano derecha se mueve ligeramente, el índice apuntando hacia abajo, hacia la base de la linterna.\n\nQuiere que leas las letras.",
+      "choices": [
+        { "text": "Leer las letras de la base de la linterna", "next": "nombre_verdadero" },
+        { "text": "Seguir intentando llegar a Ramos", "next": "perder_ramos" }
+      ]
+    },
+    "perder_ramos": {
+      "title": "Demasiado Tarde",
+      "text": "Sigues hablando. Sigues intentando encontrar al hombre real dentro de esa figura. Y durante un momento crees que lo consigues: hay un instante en que los ojos de Ramos son completamente humanos, completamente presentes, completamente aterrorizados.\n\n— Corre — dice con su voz real. Solo esa palabra.\n\nLuego la luz azul pulsa con fuerza y ya no está. Lo que hay en su lugar ya no es Ramos ni siquiera a medias. Se gira hacia el mar. Da un paso hacia el cristal. Luego otro.\n\nNo puedes detenerlo.",
+      "choices": [
+        { "text": "Intentar frenarlo físicamente", "next": "final_malo_caida" },
+        { "text": "Saltar hacia la base de la linterna y leer las letras", "next": "nombre_verdadero" }
+      ]
+    },
+    "decir_damos": {
+      "title": "El Nombre Equivocado",
+      "text": "— Damos.\n\nLa luz azul explota en intensidad. La voz de Ramos —o lo que usa su voz— ríe. Un sonido que viene de todas partes a la vez.\n\n— Me llamas. Qué amable.\n\nLa sala se vuelve más fría. La luminiscencia se hace más densa, casi sólida. Y empiezas a oír algo: una voz. Tu voz favorita en el mundo. Diciéndote exactamente lo que quieres oír. Diciéndote que el mar está justo ahí, que todo irá bien, que solo tienes que bajar.",
+      "choices": [
+        { "text": "Resistir la voz y leer las letras de la base", "next": "nombre_verdadero" },
+        { "text": "Escuchar la voz", "next": "final_malo_mar" }
+      ]
+    },
+    "nombre_verdadero": {
+      "title": "El Nombre Antes del Nombre",
+      "text": "Te arrodillas junto a la base de la linterna. Las letras están grabadas en el metal, pequeñas pero claras, en un alfabeto que no reconoces pero que, extrañamente, puedes leer.\n\nNo es un nombre como los nombres humanos. Es más corto y más largo a la vez. Tiene sonidos que no existen en ningún idioma que conozcas. Pero lo lees. Y al leerlo, algo en tu mente lo *comprende.*\n\nEl ser lo nota. La voz de Ramos deja de hablar. La luz azul vacila.\n\n— No lo digas — dice, y ahora no hay eco. La voz es plana, urgente, casi asustada. — No lo digas y te doy lo que quieres. Cualquier cosa. La persona que perdiste. La voz que echas de menos.\n\nRamos, en algún lugar dentro de sí mismo, espera.\n\nEl nombre está en tu boca.",
+      "choices": [
+        { "text": "Pronunciar el nombre verdadero", "next": "final_secreto" },
+        { "text": "Dudar, escuchar la oferta", "next": "final_malo_oferta" }
+      ]
+    },
+    "final_secreto": {
+      "title": "El Cierre",
+      "isEnding": true,
+      "endingType": "secret",
+      "text": "Lo dices.\n\nEl sonido que sale de tu boca no se parece a ninguna palabra que hayas pronunciado antes. Raspa el aire. Vibra en el hueso del pecho. Y cuando el último sonido se apaga, la luz azul colapsa hacia adentro como agua por un desagüe, rápida, total, silenciosa.\n\nRamos cae al suelo. No al vacío, no al mar. Al suelo. De rodillas primero, luego apoyado en las manos, jadeando como alguien que acaba de salir de debajo del agua.\n\n— ¿Elena? — dice con voz rota. Luego, mirando sus propias manos: — No. No, ya sé.\n\nLe ayudas a levantarse. Las espirales del suelo se han borrado. La linterna sigue apagada, pero a través de los cristales el cielo empieza a aclararse por el este.\n\nBajáis juntos. En el camino de vuelta al pueblo, el mar tiene un color diferente: gris común, gris normal, el gris de siempre. El sonido de las olas vuelve a ser solo olas.\n\nRamos no habla hasta que veis las primeras casas.\n\n— ¿Leerás el nombre a nadie más? — pregunta.\n\nLe dices que no. Y lo dices en serio. Algunos nombres no deben existir fuera de los sitios donde están grabados.\n\nEn el pueblo, la señora del bar está en la puerta. Te ve venir con Ramos y asiente una sola vez, muy despacio, como si hubiera apostado por ti y hubieras ganado.\n\nNo vuelves a oír esa voz. Ninguna voz extraña. Pero a veces, en el duermevela, justo antes de dormirte, notas algo. Una vibración muy baja. Como si algo muy lejos pronunciara, muy despacio, tu nombre verdadero.",
+      "choices": []
+    },
+    "final_supervivencia": {
+      "title": "El Amanecer",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "Bajáis los dos juntos por el camino del cabo mientras el sol sube sobre el mar. Ramos camina despacio, apoyándose en la pared cuando el camino lo permite, pero camina.\n\nLe preguntas cómo se siente.\n\n— Vacío — dice. — Pero vacío como una habitación limpia. No como antes.\n\nEn el pueblo la señora del bar tiene café preparado, como si os esperara. Los pescadores os miran cuando entráis, y esta vez sus miradas son distintas. No incómodas. Algo más parecido al alivio.\n\nEl alcalde baja de su casa con la cara de alguien que ha dormido por primera vez en semanas. Abraza a Ramos sin decir nada.\n\nLlamas desde el puerto para informar de que el guardián está a salvo. Te preguntan sobre el faro, sobre la luz. Les dices que el equipo necesita revisión, que habrá que enviar a alguien.\n\nNo les dices lo que vive bajo el cabo. No les dices que sigue ahí, solo callado, solo esperando al próximo guardián que empiece a escuchar.\n\nMientras el autobús se aleja del pueblo, miras por la ventana trasera. El faro permanece apagado en el cabo. Desde esta distancia parece solo eso: un faro apagado.\n\nPero antes de perderlo de vista, durante un segundo, crees ver que la linterna parpadea.\n\nUna vez. Solo una.",
+      "choices": []
+    },
+    "final_malo_mar": {
+      "title": "La Llamada",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "La voz es perfecta. Es exactamente como la recuerdas. Dice tu nombre como solo esa persona sabe decirlo.\n\nBajas las escaleras sin recordar haberlas bajado. Cruzas la caseta sin recordar haberla cruzado. El camino del cabo pasa bajo tus pies y el mar se hace más grande, más presente, más real que todo lo demás.\n\nEl agua está fría. Pero la voz dice que no importa. Que al otro lado del frío está todo lo que querías.\n\nDas un paso más.\n\nEn el pueblo, la señora del bar mira hacia el cabo desde la ventana del bar. Asiente despacio. Luego va a la trastienda y saca un nuevo cuaderno de registros. Lo pone en el estante junto a los otros tres.\n\nMañana llegará alguien preguntando por ti.",
+      "choices": []
+    },
+    "final_malo_caida": {
+      "title": "Demasiado Tarde",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Llegas a él justo cuando su mano toca el cristal. Lo agarras del brazo. Por un momento hay resistencia, y en ese momento ves en sus ojos la última chispa de Ramos, real y aterrorizada y agradecida.\n\nLuego el cristal se rompe hacia fuera.\n\nCaéis los dos. Ramos al mar. Tú hacia atrás, contra el suelo de la linterna, con los brazos llenos de cortes del cristal.\n\nEl ser —ya sin cuerpo— no se ha ido. Está en el aire de la sala. Y la voz que empieza a hablar ahora usa el tono exacto de Ramos, la voz que tenía antes, la del hombre de la foto con su hija.\n\n— Quedas tú — dice. — Y tienes que quedarte en algún sitio mientras espero al siguiente.\n\nLa luz azul se hace más densa. Más fría.\n\nEres el nuevo guardián del faro de Aguasmuerta.\n\nEl faro nunca se apagará.",
+      "choices": []
+    },
+    "final_malo_oferta": {
+      "title": "El Trato",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Dudas.\n\nY en esa duda, en ese segundo de silencio, la voz empieza.\n\nNo es la voz de nadie que hayas perdido. Es algo mejor: es la voz exacta de alguien que todavía está vivo, alguien que quieres y que está bien, en algún lugar del mundo, sin saber que en este momento su voz está siendo usada para deshacerte.\n\nDice que está aquí. Que ha venido a buscarte. Que solo tienes que bajar.\n\nEl nombre verdadero sigue en tu boca, pero ya no lo recuerdas. Es como intentar recordar un sueño que se desvanece en cuanto lo buscas.\n\nLa luz azul te rodea. Es cálida. Es como estar dentro de un abrazo.\n\nEn el pueblo, la señora del bar mira hacia el cabo. No dice nada. Seca un vaso con el paño y lo pone en el estante.\n\nHay trabajo esperando para mañana.",
+      "choices": []
+    }
+  }
+}

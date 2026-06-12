@@ -1,0 +1,204 @@
+{
+  "id": "la-mansion",
+  "title": "La Mansión Olvidada",
+  "description": "Una noche de tormenta te refugias en una mansión abandonada. Las puertas se cierran solas a tu espalda. Los pasillos respiran.",
+  "estimatedLength": "20–35 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "La Tormenta",
+      "text": "El cielo se ha roto sobre el valle de Valmora. El camino de tierra se ha convertido en un río de barro, y el frío de octubre cala los huesos como agujas de hielo.\n\nAnte ti se alza la Mansión Aldecoa, abandonada desde hace cuarenta años según los lugareños. Nadie habla de ella sin bajar la voz. Nadie la menciona después del anochecer.\n\nUn relámpago desgarra el cielo y, por un instante, ves la fachada entera: ventanas como ojos vaciados, piedra ennegrecida por el tiempo, y la puerta principal entreabierta, como si la casa misma te invitara a entrar.\n\nDetrás de ti, el camino ha desaparecido bajo las aguas. No hay retorno.",
+      "choices": [
+        { "text": "Empujar la puerta principal y entrar", "next": "entrada_principal" },
+        { "text": "Rodear la mansión buscando otra entrada", "next": "jardin_lateral" }
+      ]
+    },
+    "entrada_principal": {
+      "title": "El Umbral",
+      "text": "La puerta cede con un gemido que parece demasiado humano para ser madera. El interior huele a tierra húmeda, a naftalina, y a algo más oscuro que no sabes nombrar.\n\nEl vestíbulo es enorme. Una escalera de mármol negro asciende hacia la oscuridad. En las paredes cuelgan retratos familiares, todos con los ojos arrancados. Todos mirándote de alguna manera.\n\nAl fondo a la izquierda hay una puerta entornada con luz anaranjada filtrándose por la rendija. A la derecha, un corredor conduce a lo que parece la cocina. Y arriba, en algún lugar del piso superior, escuchas algo.\n\nUn llanto de niño.",
+      "choices": [
+        { "text": "Seguir la luz de la izquierda", "next": "biblioteca" },
+        { "text": "Ir hacia la cocina", "next": "cocina" },
+        { "text": "Subir las escaleras hacia el llanto", "next": "escaleras" }
+      ]
+    },
+    "jardin_lateral": {
+      "title": "El Jardín de Piedra",
+      "text": "Rodeas la mansión por la derecha, hundiéndote hasta los tobillos en un barro negro que parece no querer soltarte. El jardín trasero es un cementerio de estatuas rotas: ángeles sin cabeza, vírgenes con las manos extendidas hacia el cielo vacío, un niño de mármol con la boca abierta en un grito eterno.\n\nEntre las estatuas encuentras una puerta de servicio con la cerradura oxidada. Con un golpe seco salta el mecanismo y la puerta se abre hacia adentro.\n\nEl interior huele a tierra húmeda y a algo podrido. Estás en la bodega.",
+      "choices": [
+        { "text": "Explorar la bodega", "next": "bodega" },
+        { "text": "Buscar las escaleras hacia la planta principal", "next": "entrada_principal" }
+      ]
+    },
+    "biblioteca": {
+      "title": "La Biblioteca Roja",
+      "text": "La biblioteca ocupa toda la pared oeste. Miles de libros encuadernados en piel oscura, muchos con títulos que no reconoces, en idiomas que no existen. La luz viene de una chimenea encendida, aunque nadie la ha alimentado en décadas.\n\nSobre el escritorio central hay un diario abierto. La última entrada, fechada el 14 de octubre de 1983, dice:\n\n*'Catalina ha vuelto. La vi en el espejo del corredor norte. No parpadea. Le pregunté qué quería y ella señaló hacia abajo. Siempre hacia abajo. Mañana cavaré en el sótano. Que Dios me ayude. Que Dios nos ayude a todos.'*\n\nLa siguiente página está arrancada. Las páginas que siguen están en blanco, excepto la última, donde alguien escribió una sola palabra con lo que parece ser sangre seca:\n\n*SUBE*",
+      "choices": [
+        { "text": "Subir al piso de arriba siguiendo la advertencia", "next": "escaleras" },
+        { "text": "Ignorar la advertencia y bajar al sótano", "next": "sotano_entrada" },
+        { "text": "Examinar los libros en busca de información", "next": "libros_prohibidos" }
+      ]
+    },
+    "cocina": {
+      "title": "La Cocina Fría",
+      "text": "La cocina conserva los restos de la última cena servida en esta casa. Los platos siguen en la mesa, con restos de comida petrificada cubierta de moho negro. Las sillas están caídas, como si todos hubieran salido corriendo al mismo tiempo.\n\nEn el fregadero hay algo que en otra época fue un ramo de flores. Ahora son tallos secos y pétalos que se deshacen al tocarse. Junto a ellos, una nota escrita a mano:\n\n*'Para quien encuentre esto: No abras la puerta del sótano. No importa lo que escuches. NO la abras.'*\n\nBajo la mesa hay una llave de latón con una etiqueta atada: 'Sala de música'.\n\nEn el techo, sobre la alacena, hay una trampilla.",
+      "choices": [
+        { "text": "Tomar la llave y buscar la sala de música", "next": "sala_musica" },
+        { "text": "Abrir la trampilla del techo", "next": "desvan" },
+        { "text": "Ignorar la advertencia y bajar al sótano", "next": "sotano_entrada" }
+      ]
+    },
+    "escaleras": {
+      "title": "El Corredor Superior",
+      "text": "Los peldaños de mármol no crujen. Es el único sonido que esperabas y su ausencia te pone la piel de gallina.\n\nEl corredor del piso superior está flanqueado por puertas cerradas. Al final, una de ellas tiene luz por debajo. El llanto venía de ahí, pero ahora ha parado. Ahora hay silencio, y el silencio es peor.\n\nAl pasar frente al gran espejo ovalado del corredor te detienes. Tu reflejo tarda medio segundo en detenerse también. Y entonces ves, detrás de tu reflejo, a una niña de cabellos negros mirándote desde el fondo del espejo. Cuando te giras, no hay nadie.\n\nCuando vuelves a mirar el espejo, la niña está más cerca.",
+      "choices": [
+        { "text": "Romper el espejo", "next": "espejo_roto" },
+        { "text": "Hablarle a la niña del espejo", "next": "catalina" },
+        { "text": "Ignorar el espejo y entrar en la habitación iluminada", "next": "habitacion_nina" }
+      ]
+    },
+    "bodega": {
+      "title": "La Bodega",
+      "text": "Botellas de vino cubierto de polvo. Barriles podridos. Y en la pared del fondo, tallado en la piedra, un símbolo que no reconoces pero que hace que tu estómago se contraiga: un círculo con cuatro líneas que se curvan hacia adentro, como garras cerrándose.\n\nBajo el símbolo hay una puerta de hierro, pequeña, apenas suficiente para pasar agachado. Está sellada con una cadena nueva. Brillante. Reciente.\n\nAlguien ha estado aquí recientemente. Y ha sellado lo que sea que hay detrás.",
+      "choices": [
+        { "text": "Forzar la cadena y abrir la puerta de hierro", "next": "camara_sellada" },
+        { "text": "Subir a la planta principal", "next": "entrada_principal" }
+      ]
+    },
+    "libros_prohibidos": {
+      "title": "Los Libros de Aldecoa",
+      "text": "Los libros están organizados por fecha. Los más antiguos, del siglo XVII, hablan de un pacto que hizo el primer Aldecoa con algo que vivía bajo el valle. A cambio de prosperidad, cada generación debía ofrecer la primera hija al cumplir los siete años.\n\nLos libros del siglo XX son cada vez más desesperados. El último Aldecoa —Rafael, según el nombre en la portada— escribió que Catalina, su hija, murió antes de que pudiera completar el ritual. Que la entidad bajo la tierra estaba furiosa. Que había empezado a aparecer en los espejos.\n\n'No toma a los muertos', escribió Rafael. 'Solo a los vivos. Solo a quien la mira a los ojos.'\n\nY en la última página, con trazo tembloroso: 'Está detrás de ti ahora mismo.'",
+      "choices": [
+        { "text": "Girarte lentamente", "next": "catalina_cerca" },
+        { "text": "Correr sin mirar hacia atrás", "next": "huida_biblioteca" }
+      ]
+    },
+    "catalina_cerca": {
+      "title": "Cara a Cara",
+      "text": "Te giras.\n\nNo hay nadie.\n\nPero el fuego de la chimenea se ha apagado de golpe, y en la oscuridad, a un metro de tu cara, dos ojos brillan con una luz que no proviene de ninguna fuente visible. Son los ojos de una niña. Los labios se mueven, pero no sale sonido.\n\nEstás leyendo sus labios. Dice: 'ayúdame'.\n\nSe lo dice a ti. O se lo dice a algo que está justo detrás de ti.",
+      "choices": [
+        { "text": "Preguntarle qué necesitas hacer para ayudarla", "next": "catalina" },
+        { "text": "Salir corriendo hacia el sótano", "next": "sotano_entrada" }
+      ]
+    },
+    "huida_biblioteca": {
+      "title": "La Carrera",
+      "text": "Corres sin mirar atrás. Cruzas el vestíbulo. Subes las escaleras de dos en dos.\n\nDetrás de ti escuchas pasos. Demasiado rápidos. Demasiado ligeros para ser humanos.\n\nLlegas al corredor superior jadeando. La puerta del fondo tiene luz por debajo. La abres de golpe y entras.",
+      "choices": [
+        { "text": "Continuar", "next": "habitacion_nina" }
+      ]
+    },
+    "sala_musica": {
+      "title": "La Sala de Música",
+      "text": "La llave encaja perfectamente. La sala de música conserva un piano de cola cubierto de una sábana blanca que ha amarilleado con los años. En las paredes hay partituras enmarcadas, todas de una compositora llamada Catalina Aldecoa, 1976.\n\nCuando entras, el piano empieza a tocar solo. Una melodía infantil, simple y lenta, que reconoces vagamente como una nana.\n\nSobre el piano, bajo la sábana, encuentras una caja de madera con el mismo símbolo que viste en la bodega. Dentro hay tres objetos: una fotografía de una niña, un mechón de cabello negro atado con un lazo rojo, y una llave de hierro con la etiqueta 'cámara'.",
+      "choices": [
+        { "text": "Tomar la llave de hierro y bajar al sótano", "next": "sotano_entrada" },
+        { "text": "Examinar la fotografía detenidamente", "next": "fotografia" }
+      ]
+    },
+    "fotografia": {
+      "title": "La Fotografía",
+      "text": "La fotografía muestra a una niña de unos siete años, con el cabello negro recogido y un vestido blanco de domingo. Sonríe a la cámara. Detrás de ella se ve el jardín de la mansión, con las estatuas aún intactas.\n\nDas la vuelta a la fotografía. Hay una inscripción a lápiz: 'Catalina, 14 de octubre de 1983. El último día.'\n\nHoy es 14 de octubre.\n\nEl piano deja de tocar. En el silencio que sigue escuchas, muy claramente, pasos de niño en el corredor de arriba.\n\nY tu propio nombre, susurrado desde ningún lado.",
+      "choices": [
+        { "text": "Subir al corredor superior", "next": "escaleras" },
+        { "text": "Bajar al sótano con la llave de hierro", "next": "sotano_entrada" }
+      ]
+    },
+    "espejo_roto": {
+      "title": "Siete Años de Maldición",
+      "text": "Agarras el candelabro más cercano y lo lanzas contra el espejo. El cristal estalla con un sonido que no es de vidrio, sino de algo vivo que grita.\n\nEn el suelo, entre los fragmentos, los ojos de la niña siguen mirándote desde cada pedazo. Y en todos los trozos, en todos a la vez, su boca se mueve diciendo la misma cosa.\n\nDe pronto el frío es insoportable. El hielo trepa por tus pies, por tus piernas, por tu columna. No puedes moverte. No puedes gritar.\n\nCuando los lugareños encuentren la mansión semanas después, habrá una figura de hielo en el corredor superior, con la boca abierta y los ojos llenos de terror.",
+      "isEnding": true,
+      "endingType": "malo",
+      "endingTitle": "Final Malo: Congelado en el Umbral"
+    },
+    "catalina": {
+      "title": "La Niña del Espejo",
+      "text": "Te acercas al espejo y hablas en voz baja:\n\n— Catalina. Sé quién eres. Sé lo que te hicieron.\n\nLa niña en el espejo parpadea por primera vez. Sus labios se mueven y esta vez hay sonido, tenue como el viento entre los árboles:\n\n— Está *debajo*. Lleva cuarenta años esperando. Si no lo detienes esta noche, cuando salga el sol, empezará a caminar.\n\n— ¿Cómo lo detengo?\n\nLa niña extiende una mano desde dentro del espejo. En su palma hay algo que no ves bien. Te indica que entres en la habitación del fondo.\n\n— Hay algo que necesitas saber primero. Entra.",
+      "choices": [
+        { "text": "Entrar en la habitación iluminada", "next": "habitacion_nina" }
+      ]
+    },
+    "habitacion_nina": {
+      "title": "La Habitación de Catalina",
+      "text": "La habitación es la de una niña de los años 80: pósters de colores, una cama pequeña con dosel, juguetes polvorientos. Todo perfectamente conservado, como si el tiempo se hubiera negado a pasar aquí.\n\nSobre la mesita de noche hay un libro de dibujos. Lo abres y cada página muestra la misma escena: un pozo en el centro de una habitación subterránea, y algo dentro del pozo que tiene demasiados dientes y demasiados ojos.\n\nEn la última página, dibujado con crayón rojo, el mismo símbolo del sótano. Y debajo, con letra de niña:\n\n'Para sellarlo necesitas: la sangre del último Aldecoa, el mechón, y las palabras que están en el libro negro de papá. Corre. Ya está despierto.'\n\nEl suelo tiembla bajo tus pies.",
+      "choices": [
+        { "text": "Bajar al sótano ahora mismo", "next": "sotano_entrada" },
+        { "text": "Buscar primero el libro negro en la biblioteca", "next": "libro_negro" }
+      ]
+    },
+    "libro_negro": {
+      "title": "El Libro del Pacto",
+      "text": "Bajas a la biblioteca. En la chimenea, que ha vuelto a encenderse sola, el fuego es ahora negro. Arde en negro y da frío en lugar de calor.\n\nEncuentras el libro negro detrás de una baldosa suelta bajo el escritorio. Está encuadernado en algo que prefieres no identificar. Las páginas son gruesas y amarillas. Las palabras parecen moverse cuando las lees.\n\nEncuentras la página marcada con una cinta roja. Las palabras del ritual son doce, en latín corrupto. Las memorizas. O intentas memorizarlas, porque cada vez que las lees, parecen ser ligeramente diferentes.\n\nEl suelo vuelve a temblar. Una grieta recorre la pared de la biblioteca de arriba abajo. Desde abajo sube un olor a tierra y a algo muy antiguo, muy hambriento.",
+      "choices": [
+        { "text": "Ir al sótano", "next": "sotano_entrada" }
+      ]
+    },
+    "sotano_entrada": {
+      "title": "Las Escaleras al Abismo",
+      "text": "Las escaleras del sótano descienden más de lo que deberían. La mansión tiene, como mucho, una planta bajo tierra. Pero llevas bajando escalones durante lo que parecen minutos, y la oscuridad de abajo no termina de llegar.\n\nCuando por fin tocas el fondo, la escena que encuentras es imposible.\n\nEstás en una caverna natural del tamaño de una catedral. En el centro hay un pozo de piedra negra, exactamente como en los dibujos de Catalina. Alrededor del pozo, cuarenta años de ofrendas: flores secas, fotografías, muñecas, huesos de animales... y ropa de niña.\n\nDesde el fondo del pozo sube un sonido que vibra en tus dientes y en tus ojos. Y dos manos enormes, con demasiados dedos, empiezan a asomarse por el borde.",
+      "choices": [
+        { "text": "Pronunciar las palabras del ritual (requiere el libro negro)", "next": "ritual_sellado" },
+        { "text": "Quemar el mechón de Catalina dentro del círculo (requiere el mechón)", "next": "final_secreto_prep" },
+        { "text": "Intentar tapar el pozo con las ofrendas", "next": "tapar_pozo" },
+        { "text": "Huir hacia las escaleras", "next": "final_huida" }
+      ]
+    },
+    "camara_sellada": {
+      "title": "Lo que Sellaron",
+      "text": "Al otro lado de la puerta de hierro hay un pasillo de piedra iluminado por una única bombilla que oscila. Al fondo, una escalera baja hacia la caverna.\n\nLlegas al pozo antes de que nadie te haya advertido. Antes de entender qué es. Y cuando las manos emergen del pozo, no tienes palabras para sellarlo, no tienes el mechón, no tienes nada.\n\nSolo el tiempo suficiente para ver lo que trepa desde las profundidades y para entender por qué el primer Aldecoa lo selló, por qué todos los que vinieron después mantuvieron el pacto.\n\nAlgunas cosas no deben ser vistas. No porque destruyan el cuerpo, sino porque destruyen la mente para siempre.",
+      "isEnding": true,
+      "endingType": "malo",
+      "endingTitle": "Final Malo: Visto por la Bestia"
+    },
+    "desvan": {
+      "title": "El Desván",
+      "text": "La trampilla conduce a un desván sofocante, lleno de maletas polvorientas y muebles amontonados. Pero en el centro, bajo una claraboya por la que la lluvia se cuela, hay una mesa con cartas sin enviar.\n\nSon cartas de Rafael Aldecoa a su hija Catalina, escritas después de su muerte. En ellas describe la entidad bajo el suelo, cómo sellarla, cómo liberarla. Y cómo *destruirla*.\n\n'Solo puede ser destruida si se rompe el pacto original', escribe Rafael. 'El pacto se rompe si un Aldecoa muere voluntariamente dentro del círculo. Yo soy el último. He esperado cuarenta años a tener el valor.'*\n\nHay una posdata añadida con letra diferente, más pequeña: 'O si alguien que no es de la familia encuentra el mechón de cabello de Catalina y lo quema dentro del círculo pronunciando su nombre. Sala de música. Caja de madera.'",
+      "choices": [
+        { "text": "Ir a la sala de música a buscar el mechón", "next": "sala_musica" },
+        { "text": "Bajar directamente al sótano", "next": "sotano_entrada" }
+      ]
+    },
+    "ritual_sellado": {
+      "title": "El Ritual",
+      "text": "Las manos del pozo son ya dos brazos, y los brazos sostienen una cabeza que no debería poder existir. Demasiados ángulos. Demasiados ojos.\n\nTe plantas frente al pozo. Abres el libro negro. Las palabras están ahí, y esta vez no se mueven. Como si supieran que ha llegado el momento.\n\nEmpiezas a leer.\n\nLa criatura te mira. Todos sus ojos te miran al mismo tiempo. Y de algún modo, en ese momento, entiendes que puede leer tus pensamientos, que sabe lo que estás haciendo, que llevas aquí menos de dos horas y ya estás intentando sellarla.\n\nSe detiene.\n\nSigues leyendo.\n\nCuando pronuncias la última palabra, el pozo colapsa sobre sí mismo con un sonido que no es una explosión sino su contrario: un vacío absoluto que succiona el sonido, la luz y el miedo durante una fracción de segundo.\n\nLuego, silencio.\n\nLa caverna sigue ahí. El pozo ya no.",
+      "choices": [
+        { "text": "Subir a la superficie", "next": "final_bueno" }
+      ]
+    },
+    "tapar_pozo": {
+      "title": "Inútil",
+      "text": "Empiezas a arrojar todo lo que encuentras al pozo: ofrendas, piedras, tierra. Las manos que emergen lo apartan todo sin esfuerzo.\n\nSe ríe. No con sonido, sino con un movimiento de su boca que reconoces como risa aunque no lo sea. Y entonces algo te agarra del tobillo.",
+      "isEnding": true,
+      "endingType": "malo",
+      "endingTitle": "Final Malo: Arrastrado al Pozo"
+    },
+    "final_huida": {
+      "title": "Demasiado Tarde",
+      "text": "Subes las escaleras en pánico. Cruzas la cocina. Cruzas el vestíbulo. La puerta principal está abierta, la tormenta ha amainado, el camino ya es transitable.\n\nCorres durante kilómetros sin mirar atrás. Cuando llegas al pueblo y llamas a la puerta de la primera casa, el hombre que abre te mira con los ojos muy abiertos.\n\n— Viene de la mansión —dice.\n\n— Sí —dices—. Hay que... hay que hacer algo.\n\nEl hombre te deja entrar. Te da una manta. Y mientras le cuentas lo que viste, te das cuenta de que él no está mirándote a ti. Está mirando algo que hay detrás de ti.\n\nY escuchas, muy cerca, un sonido de demasiados dientes.",
+      "isEnding": true,
+      "endingType": "malo",
+      "endingTitle": "Final Malo: Lo que Siguió a Casa"
+    },
+    "final_bueno": {
+      "title": "El Amanecer de Valmora",
+      "text": "Cuando subes del sótano, la mansión Aldecoa ha cambiado.\n\nLas ventanas ya no parecen ojos muertos. Los retratos del vestíbulo, los de los ojos arrancados, ahora miran al frente con expresiones serenas. En lo alto de la escalera, por un instante, ves la silueta de una niña con un vestido blanco. Te mira. Sonríe. Y se desvanece como niebla al sol.\n\nSales por la puerta principal al amanecer. La tormenta ha pasado. El valle de Valmora está cubierto de niebla baja, rosada por la primera luz, silencioso y quieto como la palma de una mano abierta.\n\nDetrás de ti, escuchas la puerta de la mansión cerrarse suavemente. Esta vez para siempre.\n\nNo lo sabes todavía, pero los lugareños dirán que la noche en que la niña Aldecoa fue liberada, todas las vacas dieron leche dulce y los perros durmieron sin pesadillas.",
+      "isEnding": true,
+      "endingType": "bueno",
+      "endingTitle": "Final Bueno: La Niña Liberada"
+    },
+    "final_secreto_prep": {
+      "title": "El Nombre Verdadero",
+      "text": "Llevas el mechón de Catalina al sótano. La criatura ya está medio fuera del pozo, y a su luz impossible ves el círculo de piedra grabado en el suelo alrededor del borde.\n\nTe metes en el círculo. La criatura ruge, o hace algo que no es un rugido pero que te sacude los huesos igual. Sus brazos se extienden hacia ti, pero no pueden cruzar el borde del círculo.\n\nEnciendes el mechón.\n\nDices el nombre.\n\n— Catalina.\n\nEl fuego no es naranja. Es blanco. Blanco como la leche, blanco como los huesos, blanco como la primera nieve del año. Y en ese fuego blanco ves durante un segundo la cara completa de la entidad bajo el pozo, su nombre verdadero escrito en su propia piel en un idioma anterior al lenguaje.\n\nY lo lees. Y lo entiendes. Y nunca podrás olvidarlo.",
+      "choices": [
+        { "text": "Pronunciar el nombre verdadero de la entidad", "next": "final_secreto" }
+      ]
+    },
+    "final_secreto": {
+      "title": "Lo que Hay Debajo de Todo",
+      "text": "El nombre verdadero sale de tu boca en un susurro y llena la caverna entera.\n\nNo es una explosión. No hay luz cegadora ni temblor de tierra. Es más silencioso que eso. Es más profundo.\n\nLa entidad cae de vuelta al pozo lentamente, como si gravitara hacia abajo, como si hubiera estado esperando que alguien la nombrara correctamente para poder descansar.\n\nEl pozo se cierra.\n\nCatalina aparece a tu lado, sólida por primera vez, con una presencia real y una temperatura real. Te toma de la mano. Sus dedos son fríos pero no de muerte, sino del frío limpio del otoño.\n\n— Llevaba cuarenta años esperando a alguien que supiera leer —dice.\n\nOs quedáis juntos en la caverna hasta que sale el sol. Cuando subís, la mansión ha desaparecido. En su lugar hay solo piedras antiguas cubiertas de musgo, como si llevaran siglos en ruinas.\n\nEn el bolsillo encuentras algo que no ponías antes: un mechón de cabello negro atado con un lazo rojo.\n\nY sabes, sin que nadie te lo diga, que el nombre verdadero de la entidad también es tu nombre ahora. Que lo llevarás contigo. Que serás el guardián de lo que hay debajo del valle de Valmora.\n\nPara siempre.",
+      "isEnding": true,
+      "endingType": "secreto",
+      "endingTitle": "Final Secreto: El Nuevo Guardián"
+    }
+  }
+}
