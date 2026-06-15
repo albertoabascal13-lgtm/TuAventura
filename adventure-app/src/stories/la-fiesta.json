@@ -1,0 +1,329 @@
+{
+  "id": "la-fiesta",
+  "title": "La Fiesta del Cuarto B",
+  "description": "Cuatro plantas, una fiesta, y algo que lleva años viviendo en el desván. Cuando el primero aparece muerto, el miedo tiene cara. Cuando aparece el segundo, tiene uñas.",
+  "estimatedLength": "12–18 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "El Cuarto B",
+      "text": "El edificio está en el barrio de Lavapiés, cuarto piso sin ascensor. Marta lo llama *el piso de las noches largas* porque sus fiestas nunca terminan antes de las cuatro.\n\nEsta noche habéis venido seis: tú, Rafa, Silvia, Lucía, Tomás y Andrés, que llegó tarde y con cara de haber visto algo en las escaleras que no quería nombrar.\n\nEl piso es grande para ser Madrid: salón con ventanal a la calle, cocina abierta, estudio al fondo, un pasillo con tres puertas y, al final del pasillo, una escotilla en el techo que da al desván del edificio.\n\nMarta lleva en este piso tres años. La escotilla, dice, siempre ha estado ahí. Nunca la ha abierto. *El casero me dijo que no había nada ahí arriba.* Sonrió cuando lo dijo, como si le pareciera gracioso.\n\nSon las once de la noche. La música suena. Rafa ya va por su quinta cerveza.\n\nY en algún punto sobre vuestras cabezas, algo se mueve.",
+      "choices": [
+        { "text": "Preguntar a Andrés qué vio en las escaleras", "next": "andres_escaleras" },
+        { "text": "Ignorarlo e integrarte en la fiesta", "next": "fiesta_ambiente" }
+      ]
+    },
+    "andres_escaleras": {
+      "title": "Lo de las Escaleras",
+      "text": "Andrés está de pie junto a la ventana, con la copa sin tocar. Cuando te acercas levanta los ojos con la expresión de alguien al que han pillado pensando en algo que preferiría no pensar.\n\n— ¿Qué viste en las escaleras?\n\nDuda.\n\n— Una marca en la pared. En el segundo piso, junto a la puerta del rellano. Como... arañazos. Muchos. A la altura del techo. — Hace una pausa. — Pero muy juntos, muy regulares. No como los que hace un animal. Como los que haría algo que tuviera dedos.\n\nTe mira.\n\n— Seguramente son viejos. De antes de que Marta se mudara.\n\nNo suena convencido.\n\nDetrás de vosotros, en el techo del pasillo, la escotilla del desván cruje.",
+      "choices": [
+        { "text": "Ir a mirar la escotilla", "next": "escotilla_primer_vistazo" },
+        { "text": "Dejar el tema y unirte a la fiesta", "next": "fiesta_ambiente" }
+      ]
+    },
+    "escotilla_primer_vistazo": {
+      "title": "La Escotilla",
+      "text": "La escotilla es un cuadrado de madera pintado de blanco, encajado en el techo del pasillo. Tiene un aro de metal para tirar de ella. El aro está frío.\n\nNo hay huellas recientes en el polvo del marco. La escotilla no se ha abierto desde hace tiempo.\n\nPero el crujido vuelve. Desde arriba. Algo que se desplaza, lento, como si no tuviera prisa.\n\nLucia aparece en el pasillo con dos copas.\n\n— ¿Estás mirando la escotilla? — dice. — Marta dice que da al desván del edificio. Todo el edificio comparte el mismo desván, es muy antiguo.\n\nPausa.\n\n— Yo creo que no vive nadie ahí arriba. — Mira el techo. — Aunque a veces, en casa de mi abuela, el gato se subía al tejado y sonaba igual.",
+      "choices": [
+        { "text": "Intentar abrir la escotilla ahora", "next": "escotilla_abre_pronto" },
+        { "text": "Dejarlo y volver a la fiesta", "next": "fiesta_ambiente" }
+      ]
+    },
+    "escotilla_abre_pronto": {
+      "title": "Sin Respuesta",
+      "text": "Saltas para alcanzar el aro.\n\nEl aro cede un milímetro y luego para. Algo la sujeta desde dentro. No una cerradura: peso. Como si algo estuviera sentado sobre la escotilla.\n\nLa sueltas.\n\nDesde arriba, en el exacto momento en que sueltas el aro, algo golpea la madera tres veces. Rítmico. Deliberado.\n\nVuelves al salón sin decir nada. Lucía te sigue con las copas y tampoco dice nada.",
+      "choices": [
+        { "text": "Continuar en la fiesta", "next": "fiesta_ambiente" }
+      ]
+    },
+    "fiesta_ambiente": {
+      "title": "Las Once y Media",
+      "text": "La fiesta tiene esa textura de las buenas: conversaciones que se solapan, alguien que cambia la música, Rafa explicando algo con los brazos que nadie entiende del todo pero que hace reír.\n\nMarta está contenta. Tomás, su novio, menos: tiene el gesto de quien lleva dos horas queriendo irse pero no puede decirlo.\n\nSilvia habla contigo sobre el edificio. Dice que hay algo en el olor de las escaleras, ese olor a encerrado y a piedra húmeda, que le recuerda a los sótanos de la facultad. *Como si parte del edificio llevara mucho tiempo sin respirar.*\n\nLuego se oye el primer ruido.\n\nNo es el crujido de antes. Es un golpe. Fuerte, seco, en la pared del fondo del salón. La pared que no da a la calle sino al interior del edificio.\n\nTodos se callan un segundo. Luego Rafa dice que es el vecino y pone la música más alta.\n\nY los golpes continúan. En la pared. Regulares. Como si alguien contara.",
+      "choices": [
+        { "text": "Pedirle a Marta que baje la música e investigar", "next": "investigar_golpes" },
+        { "text": "Hacer caso a Rafa y seguir con la fiesta", "next": "rafa_bano" }
+      ]
+    },
+    "investigar_golpes": {
+      "title": "Dentro de la Pared",
+      "text": "Marta baja la música. Los golpes continúan: tres, pausa, tres, pausa. Como una señal o como algo que simplemente no sabe parar.\n\nTomás pone la oreja en la pared. Su cara cambia.\n\n— Hay algo al otro lado. No es el edificio. Algo... se mueve.\n\nLucía saca el teléfono y busca el año de construcción del bloque. 1932. Los muros son de piedra. No hay instalaciones dentro de ellos: las cañerías están vistas en los cuartos de baño, los cables van por fuera.\n\nDentro de esa pared no hay nada que pueda moverse.\n\nY sin embargo.\n\nLos golpes cambian de ritmo: más rápido ahora, más cerca, como si se desplazaran hacia el techo.",
+      "choices": [
+        { "text": "Mirar el techo", "next": "rafa_bano" },
+        { "text": "Salir al rellano a comprobar la pared por fuera", "next": "rellano_pared" }
+      ]
+    },
+    "rellano_pared": {
+      "title": "El Rellano",
+      "text": "Abres la puerta del piso al rellano.\n\nLa escalera está en silencio. La bombilla del cuarto piso parpadea como lleva probablemente años haciéndolo. En la pared del rellano, a la altura del techo, ves lo que Andrés describió: arañazos. Muchos, apretados, como los haría algo con dedos muy juntos y uñas muy largas. Bajan desde el techo hasta aproximadamente la altura de un hombre muy alto.\n\nY no son viejos.\n\nAlgunos están recientes: la pintura astillada aún tiene el polvo blanco en el borde, sin asentar.\n\nVuelves dentro. Cierras con llave.",
+      "choices": [
+        { "text": "Contar lo que viste al grupo", "next": "grupo_alerta" },
+        { "text": "Guardártelo por ahora y esperar", "next": "rafa_bano" }
+      ]
+    },
+    "grupo_alerta": {
+      "title": "El Grupo",
+      "text": "Les cuentas lo de los arañazos.\n\nRafa dice que son de mudanzas, de cuando subieron muebles. Tomás le pregunta por qué están a tres metros de altura. Rafa no responde.\n\nSilvia coge el teléfono para llamar a la policía. Sin señal. Prueba el WiFi: sin conexión. El router de Marta tiene todas las luces apagadas.\n\n— Habrá caído internet — dice Marta.\n\n— O algo lo ha cortado — dice Andrés. Es la primera vez que habla en un buen rato y todos se vuelven hacia él.\n\n— ¿Qué sabes tú? — pregunta Silvia.\n\nAndrés mira el techo.",
+      "choices": [
+        { "text": "Presionar a Andrés para que explique", "next": "andres_sabe_algo" },
+        { "text": "Ir a buscar a Rafa, que ha ido al baño y tarda", "next": "rafa_bano" }
+      ]
+    },
+    "andres_sabe_algo": {
+      "title": "Andrés Habla",
+      "text": "— Hace años — empieza Andrés —, en este edificio, desapareció una familia. Los Villanueva. Segundo piso, hace como treinta años. No los encontraron. — Hace una pausa. — Encontraron la puerta abierta y las sillas tiradas. Y en el techo del piso, marcas. Como si algo muy pesado hubiera estado encima durante mucho tiempo.\n\nSilencio.\n\n— ¿Y cómo sabes tú esto? — dice Tomás.\n\n— Porque soy del barrio. Crecí a dos calles. Mis padres siempre decían que este edificio...\n\nRafa aparece en el umbral del salón.\n\nO mejor dicho: el cuerpo de Rafa aparece en el umbral del salón.\n\nCae de rodillas primero. Luego hacia adelante. La cara golpea la tarima y queda de lado, mirando hacia ninguna parte, con los ojos muy abiertos y las marcas en el cuello: cuatro líneas profundas, paralelas, como las haría algo con cuatro dedos y uñas muy largas.\n\nNo ha gritado. No habéis oído nada.",
+      "choices": [
+        { "text": "Ir al cuerpo de Rafa", "next": "rafa_muerto" }
+      ]
+    },
+    "rafa_bano": {
+      "title": "Rafa Tarda Demasiado",
+      "text": "Rafa lleva quince minutos en el baño.\n\nNadie lo ha dicho en voz alta pero todos lo habéis contado. Quince minutos con la música, con las risas, con los golpes en la pared que han parado hace rato, y Rafa sin aparecer.\n\nMarta llama a la puerta.\n\nNada.\n\nVuelve a llamar, más fuerte.\n\nNada.\n\nTomás intenta el pomo. La puerta no está cerrada con llave. Se abre.\n\nRafa está en el suelo del baño, boca arriba, con los ojos muy abiertos mirando el techo. Las marcas en su cuello: cuatro líneas profundas y paralelas, como garras, de izquierda a derecha. La ventana del baño, que da al patio interior, está entreabierta. El cristal tiene, por fuera, arañazos frescos.",
+      "choices": [
+        { "text": "Ir al cuerpo de Rafa", "next": "rafa_muerto" }
+      ]
+    },
+    "rafa_muerto": {
+      "title": "El Primero",
+      "text": "Rafa está muerto.\n\nNo hay manera de que no lo esté: no respira, no pulsa, su cara tiene la expresión exacta de alguien que vio algo que no encajaba en ninguna categoría de lo que conocía y se quedó ahí para siempre.\n\nMarta empieza a gritar. Tomás la sujeta. Silvia, que estudió medicina dos años antes de dejarlo, se arrodilla junto al cuerpo con una calma que le costará cara luego.\n\n— Las marcas son de presión. Algo lo agarró del cuello por detrás. Con la mano derecha, si es que tenía mano. — Se levanta. — Los dedos son demasiado largos. No son humanos.\n\nEl teléfono. Sin señal. La puerta del piso: cerrada pero no con llave. Andrés la prueba. La puerta abre. Pero cuando asoma la cabeza al rellano y ve algo abajo —en las escaleras— la cierra de inmediato y pasa el cerrojo.\n\n— No podemos salir — dice. Su voz es plana, de alguien que acaba de confirmar lo que ya sabía.",
+      "choices": [
+        { "text": "Preguntarle qué vio en las escaleras", "next": "cosa_escaleras_vista" },
+        { "text": "Registrar el piso buscando otra salida", "next": "buscar_salida" }
+      ]
+    },
+    "cosa_escaleras_vista": {
+      "title": "En las Escaleras",
+      "text": "— Hay algo en el tercer piso — dice Andrés. — Debajo de la puerta del rellano. En el espacio entre la puerta y el suelo.\n\nNadie habla.\n\n— Dedos — dice. — Los vi un segundo. Unos dedos muy largos, que salían por debajo de la puerta. Moviéndose. Muy despacio.\n\nEl silencio que sigue es de los que ocupan más espacio que el ruido.\n\nLuego, desde abajo, desde la calle o desde la fachada o desde un lugar que no debería ser posible alcanzar, viene el sonido:\n\nUnas uñas contra el cristal del ventanal del salón.\n\nUno. Dos. Tres. Cuatro. Cada uña separada de la siguiente por un segundo exacto.",
+      "choices": [
+        { "text": "Ir al ventanal del salón", "next": "unas_cristal" },
+        { "text": "Alejarte del ventanal y buscar información", "next": "buscar_pistas" }
+      ]
+    },
+    "unas_cristal": {
+      "title": "El Ventanal",
+      "text": "Estáis en el cuarto piso.\n\nLo que sea que está al otro lado del cristal no está de pie en el suelo. No hay andamio, no hay escalera, no hay nada en la fachada que pueda sostener un cuerpo.\n\nLas uñas pasan de nuevo. Despacio. Como si lo que las mueve disfrutara de la espera, o no entendiera la prisa.\n\nSilvia se acerca al cristal. La luz de la calle desde fuera la ilumina a ella y deja lo otro en sombra. Pero por un segundo, solo un segundo, cuando las uñas pasan por tercera vez, veis la mano que las tiene.\n\nDedos demasiado largos. Cuatro articulaciones donde debería haber tres. Las uñas oscuras, curvas, con algo acumulado debajo que no es tierra.\n\nY detrás de la mano, en la oscuridad de la fachada, algo que podría ser una cara. Muy larga. Muy quieta. Mirando hacia dentro.",
+      "choices": [
+        { "text": "Apartar la vista y alejarte", "next": "alejarse_cristal" },
+        { "text": "Encender la luz del salón para verlo mejor", "next": "luz_ventanal" }
+      ]
+    },
+    "luz_ventanal": {
+      "title": "La Cara",
+      "text": "Enciendes la luz del salón.\n\nPor un momento lo ves completo.\n\nUna cara demasiado larga para ser humana, como si alguien hubiera estirado una cara normal hacia abajo hasta que las proporciones dejaron de tener sentido. Los ojos son grandes, completamente negros, sin iris, sin blanco, como dos botones de ópalo húmedo que absorben la luz en lugar de reflejarla. La boca es pequeña y está cerrada. Los dedos, los cuatro dedos que ha tenido en el cristal, se separan del vidrio despacio, como si la luz le molestara.\n\nSe aleja hacia arriba.\n\nHacia el tejado.\n\nHacia el desván.",
+      "choices": [
+        { "text": "Contarle al grupo lo que has visto", "next": "alejarse_cristal" }
+      ]
+    },
+    "alejarse_cristal": {
+      "title": "Lo Que Es",
+      "text": "Os alejáis del ventanal. Marta echa las cortinas con manos que no controla del todo.\n\nAndrés está en el centro del salón. Cuando terminas de describir lo que viste —o lo que habéis visto todos, porque Lucía también estaba mirando— asiente, como si encajara con algo que ya sabía.\n\n— Hay una historia en el barrio — dice —. Antes de que desapareciera la familia Villanueva, los vecinos decían que oían algo en el desván de noche. Algo que se movía. Que a veces bajaba.\n\n— ¿Bajaba cómo? — dice Tomás.\n\n— Por dentro de las paredes. — Una pausa. — Los edificios viejos tienen huecos entre los muros. Huecos que van de abajo arriba, de los cimientos al desván. Si algo fuera lo bastante delgado...\n\nMira la pared del salón. La pared desde la que venían los golpes.",
+      "choices": [
+        { "text": "Buscar información sobre lo que podría ser", "next": "buscar_pistas" },
+        { "text": "Ir al estudio, alejarte del salón", "next": "silvia_estudio" }
+      ]
+    },
+    "buscar_pistas": {
+      "title": "Lo Que Hay en la Estantería",
+      "text": "Marta tiene libros. Muchos libros, en estanterías que cubren la pared del salón. Lucía los recorre con el dedo buscando algo útil cuando encuentra, entre dos novelas, un recorte de periódico plastificado.\n\n*El Mundo, 14 de octubre de 1993.*\n\n*Desaparece una familia en el número 17 de la calle Embajadores. Los vecinos del edificio declaran haber escuchado ruidos procedentes del desván en los días previos.*\n\nY debajo, una segunda noticia, más pequeña, del mismo periódico pero tres semanas antes:\n\n*El vecino del cuarto piso, Sebastián Arnal, 71 años, asegura haber visto «una figura muy alta y muy delgada» en el rellano. Arnal fue entrevistado en el hospital donde ingresó por un ataque de ansiedad severo. Los médicos desaconsejan hacer pública su declaración.*\n\nAlgo muy alto y muy delgado. En el rellano. Hace treinta años.",
+      "choices": [
+        { "text": "Buscar más pistas en el piso", "next": "pista_luz" },
+        { "text": "Ir a ver dónde está Silvia, que lleva un rato sin aparecer", "next": "silvia_estudio" }
+      ]
+    },
+    "pista_luz": {
+      "title": "Los Apuntes de Marta",
+      "text": "Marta tiene, en el cajón de la mesita del salón, una libreta de notas que usa para apuntar cosas del piso. Número del fontanero, fecha de revisión del gas.\n\nY en la última página, con su letra pequeña y cursiva, una nota que parece de hace varios meses:\n\n*Preguntado al casero por los ruidos del desván. Dice que hay ratas. Dice que no entre. Dice que «hay que mantener encendida la luz del rellano siempre, es muy importante». Muy raro que insistiera en lo de la luz. Como si la oscuridad fuera el problema.*\n\nLa luz del rellano. La luz que parpadea. La que lleváis toda la noche viendo titilar por la mirilla.\n\nLucía levanta los ojos de la libreta.\n\n— Los ojos — dice. — ¿Viste sus ojos? ¿Cómo reaccionaron cuando encendiste la luz del salón?\n\nLo recuerdas: se alejó. Rápido. Hacia arriba, hacia la oscuridad del tejado.",
+      "choices": [
+        { "text": "Hablar con Andrés sobre esto", "next": "andres_teoria" },
+        { "text": "Buscar a Silvia y Tomás", "next": "silvia_estudio" }
+      ]
+    },
+    "andres_teoria": {
+      "title": "La Teoría",
+      "text": "— Los ojos grandes y completamente negros — dices. — No tienen pupila. No tienen iris. Son como... espejos opacos.\n\nAndrés asiente despacio.\n\n— Los animales que viven en total oscuridad desarrollan ojos así. Para absorber cualquier mínima cantidad de luz disponible. — Una pausa. — Pero si de repente los expones a una luz intensa...\n\n— Los ciegan — termina Lucía.\n\n— O al menos los incapacitan. Se alejan de la luz. El casero lo sabía: por eso la luz del rellano siempre encendida. Por eso...\n\nUn grito desde el fondo del pasillo interrumpe la frase.\n\nDesde el estudio.",
+      "choices": [
+        { "text": "Correr al estudio", "next": "silvia_muerta" }
+      ]
+    },
+    "silvia_estudio": {
+      "title": "El Estudio",
+      "text": "El estudio de Marta es pequeño: una mesa de trabajo, un armario, y la silla de fotografía con el ring light que Marta usa para sus fotos. La ventana da al patio interior.\n\nSilvia está de pie frente a la ventana. Inmóvil.\n\nLa ventana tiene el cristal cerrado pero en el cristal, desde fuera, hay marcas. Profundas, recientes, cuatro líneas paralelas que recorren el vidrio de arriba abajo. El cristal no se ha roto pero se ha combado hacia dentro, como si algo hubiera empujado con mucha fuerza desde el exterior.\n\nSilvia no se mueve.\n\nDices su nombre.\n\nSilvia cae hacia atrás. La recoges a tiempo o casi. Cuando la tumbas en el suelo del estudio y ves su cara, entiendes por qué no se movía.\n\nLas marcas en su cuello son idénticas a las de Rafa.",
+      "choices": [
+        { "text": "Gritar para avisar al grupo", "next": "segundo_cadaver_grupo" }
+      ]
+    },
+    "silvia_muerta": {
+      "title": "La Segunda",
+      "text": "Silvia está en el suelo del estudio.\n\nLas marcas en su cuello son las mismas que en Rafa: cuatro líneas paralelas, de derecha a izquierda, la presión justa para que no haya posibilidad. La ventana del estudio, la que da al patio interior, tiene el cristal combado hacia dentro y cuatro surcos profundos en el vidrio.\n\nLo que sea que hizo esto estaba en el patio. Cuatro pisos de altura, paredes lisas, sin escalera posible.\n\nA no ser que no necesite escalera.",
+      "choices": [
+        { "text": "Reunir al grupo en el salón", "next": "segundo_cadaver_grupo" }
+      ]
+    },
+    "segundo_cadaver_grupo": {
+      "title": "Quedan Cuatro",
+      "text": "Marta. Tomás. Andrés. Tú.\n\nLucía estaba con vosotros en el salón cuando murió Silvia. Os confirma mutuamente la coartada con una frase que nadie pensaba que tendría que decir en una fiesta: *Yo estaba contigo, ninguno de los dos ha salido del salón.*\n\nCuatro personas vivas en un piso de cuarto piso con dos muertos y algo afuera que no necesita escalera.\n\n— La escotilla — dice Tomás de repente. — ¿Está cerrada todavía?\n\nOs volvéis todos hacia el pasillo al mismo tiempo.\n\nDesde el pasillo, desde donde estáis, veis el final del corredor.\n\nLa escotilla está abierta.\n\nEl aro de metal cuelga hacia abajo, balanceándose suavemente, como si alguien acabara de tirar de él desde arriba.",
+      "choices": [
+        { "text": "Ir a cerrar la escotilla", "next": "escotilla_abierta" },
+        { "text": "No acercarse y pensar en cómo usar la luz", "next": "plan_luz" }
+      ]
+    },
+    "escotilla_abierta": {
+      "title": "El Pasillo",
+      "text": "Avanzáis por el pasillo. Cuatro personas muy juntas, la luz encendida.\n\nLa escotilla abierta deja ver el interior del desván: oscuridad completa. El hueco es cuadrado, de unos sesenta centímetros de lado. Dentro no se ve nada.\n\nTomás estira el brazo para tirar del aro y cerrarla.\n\nDentro del desván algo se mueve.\n\nNo un ruido: una presión en el aire. Como cuando una presencia grande cambia de posición en un espacio cerrado y el aire tiene que reorganizarse.\n\n— No la cierres — susurras.\n\nPero Tomás ya ha tirado.\n\nLa escotilla no se cierra.\n\nAlgo la sujeta desde dentro.",
+      "choices": [
+        { "text": "Alejaros del pasillo corriendo", "next": "huida_pasillo" },
+        { "text": "Usar el móvil como linterna y mirar dentro", "next": "mirar_desvan" }
+      ]
+    },
+    "mirar_desvan": {
+      "title": "El Interior del Desván",
+      "text": "Enciendes la linterna del teléfono y la apuntas hacia el hueco.\n\nEl desván es un espacio bajo, con las vigas del tejado a medio metro del suelo de madera. Hay cajas viejas, una silla rota, una maleta con las correas podridas.\n\nY en el fondo, en el extremo más alejado del hueco de luz que consigues proyectar, hay una forma.\n\nEstá acurrucada bajo las vigas con una postura que ningún cuerpo humano debería poder adoptar: las rodillas más altas que la cabeza, la espalda doblada en un ángulo obtuso, los brazos pegados a los costados. Como si llevara ahí encogida mucho tiempo y hubiera aprendido a caber en ese espacio.\n\nCuando la luz le llega, la cara gira hacia ti.\n\nLa cara larga, larga, con los ojos negros y grandes que parpadean —una, dos, tres veces— intentando adaptarse a la luz que no pueden tolerar.\n\nLuego la escotilla se cierra de golpe desde dentro.",
+      "choices": [
+        { "text": "Salir corriendo del pasillo", "next": "huida_pasillo" }
+      ]
+    },
+    "huida_pasillo": {
+      "title": "De Vuelta al Salón",
+      "text": "Salís del pasillo al salón. Marta cierra la puerta del salón.\n\nHay una puerta de salón. Lo habíais olvidado porque nadie la usa nunca, porque es una puerta interior de un piso de ciudad que existe pero está siempre abierta. Marta la cierra y busca la llave. La encuentra. Cierra con llave.\n\nRespiras.\n\nLuego recuerdas que Tomás no ha salido del pasillo contigo.",
+      "choices": [
+        { "text": "Abrir la puerta y volver al pasillo", "next": "tomas_pasillo" },
+        { "text": "Llamar a Tomás desde el otro lado de la puerta", "next": "tomas_grito" }
+      ]
+    },
+    "tomas_grito": {
+      "title": "Sin Respuesta",
+      "text": "Llamas a Tomás.\n\nNada. Marta te aparta la mano del pomo y llama ella. Más fuerte. Con la voz rota en un tono que no es gritar porque gritar requiere aire y a Marta se le está acabando el aire.\n\nNada.\n\nLuego, desde el otro lado de la puerta, un sonido.\n\nNo Tomás. No pasos. Un arrastre lento, como si algo muy pesado fuera tirado por el pasillo hacia el fondo, hacia el pie de la escotilla.\n\nLuego un golpe seco. Una puerta que se cierra.\n\nLuego silencio.",
+      "choices": [
+        { "text": "Abrir la puerta", "next": "tomas_muerto" },
+        { "text": "No abrir la puerta y ponerse a trabajar en un plan", "next": "plan_luz" }
+      ]
+    },
+    "tomas_pasillo": {
+      "title": "El Pasillo Solo",
+      "text": "Abres la puerta del salón.\n\nEl pasillo está vacío.\n\nTomás no está. La escotilla del desván, al fondo, está cerrada. Cerrada y quieta.\n\nEn el suelo del pasillo, entre la puerta del salón y el pie de la escotilla, hay marcas. Las huellas de algo que se arrastrara en dirección al desván. Y a mitad del trayecto, tiradas en el suelo, las gafas de Tomás con uno de los cristales roto.",
+      "choices": [
+        { "text": "Volver al salón y cerrar con llave", "next": "tomas_muerto" }
+      ]
+    },
+    "tomas_muerto": {
+      "title": "El Tercero",
+      "text": "Tomás ha muerto.\n\nNo lo sabéis con certeza todavía pero los tres que quedáis —Marta, Andrés, tú— actuáis como si lo supierais. Marta llora sin sonido, con la cara enterrada en las manos. Andrés está de pie mirando la puerta del salón con una expresión que ya no es miedo porque el miedo ha dado paso a algo más frío y más manejable.\n\n— Necesitamos luz — dice. — Mucha luz, concentrada. Lo que vi en el cristal cuando encendiste la luz del salón fue que se alejó. Antes de que el casero desapareciera hace diez años, la bombilla del rellano era de quinientos vatios. Cada vez que alguien la cambiaba por una normal, aparecía algo raro en el edificio y el casero la volvía a poner de quinientos.\n\nMira el ring light de Marta en el estudio. El foco de fotografía de led que ella usa para las fotos del móvil.\n\n— ¿Cuántos vatios tiene eso?\n\n— Equivalente a doscientos — dice Marta sin levantar la cara.",
+      "choices": [
+        { "text": "Diseñar un plan con la luz", "next": "plan_luz" },
+        { "text": "Intentar salir ahora por la escalera con la luz del móvil", "next": "huida_escalera_sola" }
+      ]
+    },
+    "plan_luz": {
+      "title": "El Plan",
+      "text": "Tenéis:\n\nEl ring light de Marta, equivalente a doscientos vatios led, con batería para dos horas. La linterna de los tres teléfonos, que juntas suman bastante si se concentran. Las luces del techo del piso, que son normales pero lo cubren todo.\n\nEl plan de Andrés: subir al pasillo con todo encendido, abrir la escotilla, obligarlo a salir hacia la luz y dirigirlo hacia la ventana del salón. El ventanal. Abrirlo. Forzar a la cosa hacia afuera.\n\n— ¿Y si no sale? — dice Marta.\n\n— Vamos a por todas las luces del piso. Las llevamos al pasillo. Doscientos vatios del ring light más las luces del techo más los tres móviles — dice Andrés. — No puede aguantar eso.\n\n— Podrías ir tú solo al desván y ver si funciona antes — dices.\n\nAndrés te mira.\n\n— O podemos ir todos juntos — dice.",
+      "choices": [
+        { "text": "Ejecutar el plan juntos, todos al pasillo", "next": "plan_ejecucion" },
+        { "text": "Ir tú solo al desván a comprobar si la luz funciona", "next": "solo_desvan" },
+        { "text": "Escapar por la escalera de incendios mientras Andrés distrae a la cosa", "next": "escalera_incendios" }
+      ]
+    },
+    "solo_desvan": {
+      "title": "Solo",
+      "text": "Dices que vas tú. El ring light es tuyo, los demás esperan en el salón con las luces encendidas.\n\nEl pasillo a solas tiene otra textura: los mismos cinco metros pero más largos, más estrechos. La escotilla al fondo, cerrada.\n\nEnciendes el ring light al máximo. Doscientos vatios de luz blanca llenan el pasillo y dejan el techo perfectamente iluminado.\n\nTiras del aro de la escotilla.\n\nEsta vez se abre.\n\nEn el interior del desván, en la oscuridad sobre tu cabeza, escuchas la respiración.\n\nNo sabías que respiraba. Ahora lo sabes. Lenta, muy lenta, con una pausa entre el in y el out que es demasiado larga para ser cómoda. Como alguien que no recuerda exactamente cuánto tiempo hay que dejar entre las dos partes.\n\nDiriges el ring light hacia el interior.",
+      "choices": [
+        { "text": "Mantener la luz y esperar a que salga", "next": "final_malo_solo" },
+        { "text": "Cerrar la escotilla y volver al plan conjunto", "next": "plan_ejecucion" }
+      ]
+    },
+    "final_malo_solo": {
+      "title": "La Oscuridad Gana",
+      "isEnding": true,
+      "endingType": "malo",
+      "text": "Aguantas la luz.\n\nDurante treinta segundos nada ocurre. La respiración continúa ahí arriba, lenta y regular, y la luz llena el desván hasta donde alcanza. El ring light es potente.\n\nLuego la batería empieza a fallar.\n\nNo del todo: parpadea. Dos segundos de luz, medio segundo de oscuridad. Dos segundos de luz, un segundo de oscuridad.\n\nEn uno de esos segundos de oscuridad, algo cae desde el desván.\n\nNo como cae una persona: como se despliega algo que estaba doblado en cuatro partes y se estira hacia abajo hasta que los dedos tocan el suelo del pasillo con suavidad, casi con delicadeza.\n\nEl ring light vuelve a encenderse.\n\nLo tienes a dos metros.\n\nVes la cara completa: la longitud absurda, los ojos grandes y negros entreabiertos bajo la luz, la boca pequeña y cerrada que no hace ningún gesto. Las uñas en las puntas de esos dedos interminables, oscuras y curvas, que ya no están en el suelo.\n\nEstán en tu hombro.\n\nEn el salón, Marta y Andrés escuchan el ring light caer al suelo del pasillo.\n\nLuego silencio.\n\nLuego el sonido de la escotilla cerrándose desde dentro.",
+      "choices": []
+    },
+    "escalera_incendios": {
+      "title": "La Escalera de Incendios",
+      "text": "Hay una escalera de incendios. La ventana del dormitorio de Marta da a ella: una estructura de hierro en la fachada lateral que baja hasta el callejón.\n\nSi conseguís llegar al dormitorio sin cruzar el pasillo... pero el dormitorio está al fondo del pasillo. Junto a la escotilla.\n\nA no ser que vayáis todos juntos con toda la luz posible.\n\nO a no ser que uno distraiga y el resto escape.\n\nMarta te mira. Ha entendido el cálculo que estás haciendo.",
+      "choices": [
+        { "text": "Proponer que Andrés distraiga y vosotras dos escapáis", "next": "andres_distraccion" },
+        { "text": "Ir todos juntos con toda la luz", "next": "plan_ejecucion" }
+      ]
+    },
+    "andres_distraccion": {
+      "title": "El Sacrificio",
+      "text": "Andrés escucha el plan.\n\n— Alguien tiene que quedarse con el ring light y mantener la escotilla iluminada mientras los otros van al dormitorio y bajan por la escalera de incendios.\n\nSilencio.\n\n— Yo me quedo — dice Andrés.\n\nNo lo dice como un héroe. Lo dice como alguien que ha llegado a una conclusión lógica y la está aceptando.\n\n— Soy yo quien sabía lo del edificio y no dije nada antes. — Mira el ring light. — Además, si la luz aguanta, quizás puedo aguantar yo también.\n\nMarta intenta decir algo. Andrés la para.\n\n— Id. El dormitorio está al fondo a la izquierda. La ventana de la escalera de incendios no tiene pestillo, Marta lo sabe. Id ahora.",
+      "choices": [
+        { "text": "Ir al dormitorio", "next": "final_regular_escape" },
+        { "text": "Negarte a dejar a Andrés solo", "next": "plan_ejecucion" }
+      ]
+    },
+    "final_regular_escape": {
+      "title": "La Escalera de Hierro",
+      "isEnding": true,
+      "endingType": "regular",
+      "text": "Cruzáis el pasillo rápido, con los móviles apuntando al techo, sin mirar la escotilla.\n\nDetrás vosotros, Andrés sostiene el ring light apuntado hacia arriba. No miráis atrás. Solo escucháis, mientras corréis, el sonido de la batería del ring light zumbando al máximo.\n\nEl dormitorio. La ventana. Marta la abre sin pestillo, como prometió.\n\nBajáis por la escalera de hierro, cuatro pisos, el metal frío y oxidado bajo las manos. El callejón está vacío. La calle, al otro lado del callejón, tiene farolas. Personas. Coches.\n\nNo miráis hacia arriba.\n\nDesde dentro del edificio, desde algún punto entre el cuarto piso y el tejado, llega un sonido.\n\nEl ring light acaba de apagarse.\n\nCorréis.\n\nAndrés no aparece esa noche. Ni al día siguiente. La policía entra al piso a las tres de la madrugada y encuentra dos cadáveres —Rafa y Silvia— y ningún rastro de Tomás ni de Andrés. El ring light está en el suelo del pasillo, apagado, sin batería.\n\nLa escotilla del desván está abierta.\n\nEl desván, dicen los agentes, está vacío.\n\nMarta y tú lo sabéis. No está vacío. Solo está quieto.\n\nHasta la próxima vez.",
+      "choices": []
+    },
+    "plan_ejecucion": {
+      "title": "Todos Juntos",
+      "text": "El plan: Marta lleva el ring light. Andrés lleva dos lámparas de mesa desenchufadas que conectará al alargador del pasillo. Tú y Lucía lleváis los teléfonos con la linterna al máximo.\n\nEl pasillo a plena luz es diferente. Los rincones se borran. La escotilla al fondo es solo una trampilla de madera.\n\nAndrés conecta las lámparas. El pasillo se inunda de luz. Cuatrocientos vatios entre todo.\n\nMarta apunta el ring light hacia arriba y tiras del aro de la escotilla.\n\nLa escotilla se abre.\n\nEl interior del desván queda iluminado completamente.\n\nY lo véis todo.\n\nEste al que llevan años llamando está en el fondo del desván, encogido bajo las vigas, con los ojos negros completamente cerrados y las manos tapándose la cara. Los dedos largos cubren esa cara larga con una postura que sería patética si no fueran los mismos dedos que mataron a tres personas esta noche.\n\nNo se mueve. La luz lo paraliza.",
+      "choices": [
+        { "text": "Mantener la luz y buscar la manera de forzarlo a salir", "next": "forzar_salida" },
+        { "text": "Aprovechar que está paralizado para bajar por la escalera de incendios", "next": "huida_paralizado" }
+      ]
+    },
+    "forzar_salida": {
+      "title": "La Expulsión",
+      "text": "No podéis entrar en el desván. El hueco es demasiado pequeño y lo que hay ahí arriba es demasiado impredecible.\n\nPero podéis hacer que salga.\n\nEl ring light apunta al fondo del desván. Las lámparas iluminan los laterales. Empezáis a mover el foco: de los laterales al centro, concentrando la luz, achicando los espacios en sombra. La cosa en el desván se mueve, torpemente, alejándose de la luz hacia el único punto donde hay menos: la escotilla.\n\nHacia vosotros.\n\n— No os mováis — dice Andrés. — Que salga. La luz está aquí abajo también.\n\nCuando cae por el hueco de la escotilla, cae de forma extraña: primero los dedos, luego los brazos, luego ese cuerpo demasiado largo que se despliega en el pasillo como papel que se desdobla.\n\nEs más alto de lo que parecía. Se llena el pasillo de pared a pared.\n\nLos ojos aún cerrados. La cara hacia abajo. Las manos hacia los lados, rozando las paredes.",
+      "choices": [
+        { "text": "Dirigirlo hacia el ventanal del salón con los focos", "next": "final_bueno_expulsion" },
+        { "text": "Salir corriendo", "next": "final_malo_panico" }
+      ]
+    },
+    "huida_paralizado": {
+      "title": "La Oportunidad",
+      "text": "Con la escotilla abierta y la cosa paralizada arriba, tenéis quizás dos minutos.\n\nCorréis al dormitorio. La ventana, la escalera de incendios.\n\nBajáis los cuatro, Marta, Andrés, Lucía, tú, uno detrás de otro, cuatro pisos de hierro frío.\n\nCuando el último pie toca el suelo del callejón, desde arriba —desde el tejado, desde el desván abierto— llega el sonido de algo que vuelve a moverse.\n\nCorréis.",
+      "choices": [
+        { "text": "Llegar a la calle", "next": "final_regular_todos" }
+      ]
+    },
+    "final_regular_todos": {
+      "title": "La Calle",
+      "isEnding": true,
+      "endingType": "regular",
+      "text": "La calle tiene luz y personas y el ruido de una ciudad que no sabe lo que acaba de ocurrir en el cuarto B del número diecisiete.\n\nLos cuatro os quedáis en la acera, sin hablar. Marta mira hacia arriba, hacia las ventanas del piso. Las luces del interior siguen encendidas.\n\nLlamáis a la policía. La policía llega. Sube al piso y encuentra dos cadáveres.\n\nTomás ha desaparecido.\n\nLos agentes suben al desván. Vacío. Solo madera vieja, cajas, una silla rota. Ningún rastro de lo que visteis. Ninguna marca que no pudiera tener una explicación razonable.\n\nEl forense dice que las marcas en el cuello de Rafa y Silvia podrían ser de un instrumento cortante.\n\nNadie sube la teoría de los dedos.\n\nEl caso queda abierto seis meses. Luego se archiva.\n\nVosotros lo sabéis. Los cuatro. Y cada uno, de formas distintas y en momentos distintos, llega a la misma conclusión:\n\nLo dejasteis ahí.\n\nTodavía está ahí.\n\nEl piso lleva cuatro meses vacío. Marta no volvió a buscarlo. El casero ha puesto un anuncio de alquiler que nadie ha respondido.\n\nEn el anuncio, en las fotos, se ve el pasillo.\n\nLa escotilla está abierta.",
+      "choices": []
+    },
+    "final_malo_panico": {
+      "title": "El Error",
+      "isEnding": true,
+      "endingType": "malo",
+      "text": "Corréis.\n\nEl problema de correr hacia el salón es que el salón solo tiene el ventanal a la calle y no tenéis manera de abrirlo desde dentro con suficiente rapidez para que alguien salte cuatro pisos.\n\nEl problema de correr hacia el dormitorio es que el dormitorio está al otro lado del pasillo, al otro lado de la cosa, que ya está de pie en el corredor con los ojos todavía cerrados y los brazos extendidos rozando las paredes de lado a lado.\n\nEl problema de quedarse en el salón es que la puerta del salón no aguanta.\n\nEsta es la última idea que tienes tiempo de completar antes de que la puerta del salón ceda.",
+      "choices": []
+    },
+    "huida_escalera_sola": {
+      "title": "Sola en el Pasillo",
+      "text": "Sales del salón sin el ring light. El teléfono como única luz.\n\nEl pasillo está vacío. La escotilla, al fondo, cerrada.\n\nEl dormitorio de Marta está a la izquierda, antes de la escotilla. La ventana de la escalera de incendios. Si consigues llegar sin que la escotilla se abra.\n\nAvanzas. Cinco metros. Tres. La escotilla cada vez más cerca.\n\nDos metros de la puerta del dormitorio.\n\nLa escotilla empieza a abrirse.",
+      "choices": [
+        { "text": "Correr al dormitorio sin mirar la escotilla", "next": "escape_sola_suerte" },
+        { "text": "Volver corriendo al salón", "next": "plan_luz" }
+      ]
+    },
+    "escape_sola_suerte": {
+      "title": "El Último Metro",
+      "text": "Corres.\n\nEscuchas la escotilla abrirse completamente detrás de ti. Escuchas la respiración. Escuchas el sonido de los dedos tocando el suelo del pasillo, los cuatro por cada mano, ocho en total, con esas uñas que han dejado marcas en la piedra y en el cristal y en el cuello de tres personas.\n\nLa puerta del dormitorio. La abres. Dentro. La cierras.\n\nLa ventana. El pestillo. El callejón cuatro pisos abajo.\n\nLa escalera de incendios. Hierro frío.",
+      "choices": [
+        { "text": "Bajar", "next": "final_malo_sola" }
+      ]
+    },
+    "final_malo_sola": {
+      "title": "Sin el Grupo",
+      "isEnding": true,
+      "endingType": "malo",
+      "text": "Bajas.\n\nLlegas al callejón. La calle. Las farolas.\n\nDesde arriba, desde la ventana del dormitorio que dejaste abierta, asoma algo.\n\nLa cara larga en el hueco de la ventana, los ojos negros mirando hacia abajo, los dedos en el marco de la ventana.\n\nLlamas a la policía. Gritas las direcciones mientras caminas sin parar, sin parar nunca, sin mirar atrás en ningún momento.\n\nLa policía llega al piso veinte minutos después.\n\nEncuentran a Marta, a Andrés y a Lucía.\n\nNo como los encontraron a Rafa y a Silvia. Peor.\n\nSe quedaron en el salón esperando que volvieras con un plan. Esperaron mucho tiempo.\n\nEl inspector al cargo te llama dos días después para tomarte declaración.\n\nLe cuentas todo.\n\nLe cuentas la cara, los ojos, los dedos. Le cuentas que está ahí arriba, en el desván, que lleva décadas ahí, que el casero lo sabía y no dijo nada.\n\nEl inspector escucha. Toma notas.\n\nLuego te pregunta si has dormido bien estos días.\n\nDices que no.\n\nDice que es normal. Que has pasado por un trauma muy fuerte. Que lo de los dedos y la cara probablemente sea un mecanismo de defensa del cerebro para dar forma a algo que no tiene forma explicable.\n\nCuelgas.\n\nEsa noche, en tu piso, en el cuarto de baño, hay marcas en el exterior del cristal de la ventana.\n\nNuevas. De esta noche.",
+      "choices": []
+    },
+    "final_bueno_expulsion": {
+      "title": "La Ventana",
+      "isEnding": true,
+      "endingType": "bueno",
+      "text": "Lo dirigís.\n\nEl ring light por delante. Las lámparas a los lados. Los tres teléfonos formando una muralla de luz que avanza hacia el salón y empuja a la cosa con ella.\n\nAnda hacia atrás con movimientos extraños, asimétricos, como algo que no ha tenido que retroceder en mucho tiempo y no recuerda bien cómo se hace. Los ojos siguen cerrados. La boca sigue cerrada. No hace ningún sonido.\n\nEl salón. El ventanal.\n\nMarta lo abre de par en par. El aire de la noche entra.\n\nSe detiene a dos metros del ventanal. Los dedos tocan el suelo. La cara larga, hacia abajo.\n\nLuego algo ocurre que ninguno de vosotros esperaba: la levanta.\n\nOs mira.\n\nLos ojos completamente negros, muy abiertos, llenos de la luz que los quema. No hay expresión en esa cara que pueda leerse como humana. Pero hay algo.\n\nAlgo que podría ser reconocimiento.\n\nO podría ser despedida.\n\nLuego da un paso atrás. Otro. El tercero lo lleva al borde del alféizar. Y cae hacia atrás sin girar, sin apartar los ojos de vosotros, hasta que la oscuridad de la calle a las cuatro de la madrugada se lo traga.\n\nNo oís el impacto.\n\nBajáis cuatro pisos temblando. El callejón está vacío. No hay nada en el suelo.\n\nMira hacia arriba, al cuarto piso. El ventanal abierto. El interior del piso iluminado.\n\nLa escotilla del desván, desde aquí, es invisible. Pero sabes que está cerrada. Lo notas de la misma manera en que notas cuándo una habitación lleva tiempo vacía.\n\nSin nadie dentro.\n\nLlamáis a la policía. Contáis lo que podéis contar: una fiesta, alguien que entró, tres muertos. Lo demás no tiene traducción a ningún parte oficial que vaya a ser creído.\n\nMarta no vuelve al piso. El casero lo alquila seis meses después a una pareja joven que lo reforma y tira el techo del pasillo.\n\nDonde estaba la escotilla, ahora hay una lámpara de trescientos vatios empotrada en el techo.\n\nNadie se la explicó a los nuevos inquilinos. No hizo falta.\n\nAlgunas cosas se defienden solas.",
+      "choices": []
+    }
+  }
+}
