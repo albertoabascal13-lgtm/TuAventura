@@ -1,21 +1,27 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './EndScreen.module.css'
 
+// Normalise English → Spanish so old and new JSONs work the same
+const TYPE_ALIASES = { good: 'bueno', bad: 'malo', regular: 'regular' }
+
 const ENDING_ICONS = {
   bueno: '✦',
   malo: '✗',
+  regular: '◈',
   secreto: '⬡',
 }
 
 const ENDING_LABELS = {
-  bueno: 'Final Verdadero',
-  malo: 'Final Oscuro',
+  bueno: 'Final Bueno',
+  malo: 'Final Malo',
+  regular: 'Final Regular',
   secreto: 'Final Secreto',
 }
 
 export default function EndScreen({ node, storyId, onRestart, history }) {
   const navigate = useNavigate()
-  const endingType = node.endingType || 'malo'
+  const raw = node.endingType || 'malo'
+  const endingType = TYPE_ALIASES[raw] ?? raw
   const icon = ENDING_ICONS[endingType] || '◆'
   const label = ENDING_LABELS[endingType] || 'Final'
 

@@ -19,6 +19,12 @@
     var(--bg-primary);
 }
 
+.container.regular {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(120, 120, 140, 0.1) 0%, transparent 60%),
+    var(--bg-primary);
+}
+
 .container.secreto {
   background:
     radial-gradient(ellipse at 50% 50%, rgba(75, 0, 130, 0.12) 0%, transparent 60%),
@@ -51,6 +57,12 @@
   text-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
 }
 
+.regular .icon {
+  color: var(--text-muted);
+  text-shadow: none;
+  animation: none;
+}
+
 .secreto .icon {
   color: #8a2be2;
   text-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
@@ -76,6 +88,12 @@
   color: var(--accent-crimson);
   border: 1px solid var(--accent-red);
   background: rgba(139, 0, 0, 0.1);
+}
+
+.regular .badge {
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  background: rgba(120, 120, 140, 0.06);
 }
 
 .secreto .badge {
