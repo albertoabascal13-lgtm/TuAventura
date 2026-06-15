@@ -1,6 +1,6 @@
 {
   "id": "el-faro",
-  "title": "El Faro de Aguasmuertass",
+  "title": "El Faro de Aguasmuertas",
   "description": "El pueblo de Aguasmuertas lleva tres semanas sin señal del guardián del faro. Te envían a investigar. Los vecinos no te miran a los ojos. El mar huele diferente aquí.",
   "estimatedLength": "6–10 min",
   "startNode": "inicio",
@@ -9,9 +9,39 @@
       "title": "Aguasmuertas",
       "text": "El autobús te deja en la cuneta a las afueras del pueblo. El conductor no ha dicho una sola palabra en dos horas de viaje, y ahora te mira por el retrovisor mientras arranca de nuevo, acelerando como si huyera.\n\nAguasmuertas. Cuarenta y tres habitantes según el censo. Un pueblo de pescadores encajado entre acantilados negros y un mar de color extraño, entre gris y verde, que nunca parece quieto aunque no haya viento.\n\nLas casas son bajas, de piedra húmeda, con las ventanas casi siempre cerradas. Hay redes de pesca colgadas entre los balcones, pero llevan tanto tiempo allí que parecen telarañas. En la plaza hay una fuente seca con una estatua de piedra erosionada: un hombre señalando al mar. Le faltan los dedos.\n\nA lo lejos, en la punta del cabo, el faro. Apagado. Lleva apagado veintiún días.",
       "choices": [
-        { "text": "Ir directamente al faro", "next": "camino_faro" },
-        { "text": "Preguntar en el bar del pueblo antes de ir", "next": "bar" },
-        { "text": "Buscar al alcalde o alguna autoridad local", "next": "alcalde" }
+        { "text": "Examinar la estatua de la plaza", "next": "estatua" },
+        { "text": "Bajar al muelle", "next": "muelle" },
+        { "text": "Preguntar en el bar del pueblo", "next": "bar" },
+        { "text": "Buscar al alcalde", "next": "alcalde" },
+        { "text": "Ir directamente al faro", "next": "camino_faro" }
+      ]
+    },
+    "estatua": {
+      "title": "El Hombre de Piedra",
+      "text": "De cerca la estatua es más inquietante que desde lejos.\n\nEs un hombre con ropa del siglo XIX, la mano derecha extendida señalando al mar. La piedra está muy erosionada pero la placa de la base todavía se puede leer: *Pedro Valdés, Guardián del Faro, 1887–1888. El que encendió la luz y pagó el precio.*\n\nLos dedos que faltan — los cuatro de la mano derecha — no están rotos. El muñón de piedra es perfectamente liso, como si nunca hubiera habido dedos allí, o como si alguien los hubiera pulido durante décadas.\n\nEn la base, bajo la placa, hay doce símbolos grabados que parecen notación astronómica o algo más antiguo.\n\nUna mujer de edad indefinida que cruza la plaza se detiene a tu lado sin que la hayas llamado. No te mira a ti. Mira la estatua.\n\n— El primer guardián construyó el faro con sus propias manos. En tres meses, solo, sin ayuda del pueblo. — Una pausa. — La noche que encendió la luz subió a la linterna y esperó. Toda la noche. Cuando bajó al amanecer le faltaban los dedos.\n\n— ¿Qué le pasó?\n\n— Negoció. Dio cuatro dedos a cambio de un trato: que la cosa del cabo nunca pudiera tomar la forma de alguien que el guardián todavía tuviera vivo. Solo puede imitar a los muertos. Solo puede usar la voz de los que ya no están.\n\nSe persigna sin gesticulación, como quien lleva haciéndolo toda la vida.\n\n— Claro que Ramos tiene una hija muerta. — Se aleja sin añadir nada más.\n\nTe quedas mirando la mano sin dedos. El brazo señala al mar. Siempre al mar.",
+      "choices": [
+        { "text": "Ir al bar antes de subir al faro", "next": "bar" },
+        { "text": "Buscar al alcalde", "next": "alcalde" },
+        { "text": "Bajar al muelle", "next": "muelle" },
+        { "text": "Ir al faro", "next": "camino_faro" }
+      ]
+    },
+    "muelle": {
+      "title": "El Muelle Vacío",
+      "text": "Las barcas están amarradas y quietas. Las redes cuelgan entre los postes de madera como telas de araña enormes, y el olor a sal y a pescado viejo lo impregna todo.\n\nAl final del muelle hay un hombre muy viejo sentado en una silla baja, remendando una red con movimientos lentos y absolutamente mecánicos. No levanta los ojos cuando te acercas.\n\n— Sé por qué ha venido — dice. Voz de grava mojada. — Ramos. El noveno.\n\n— ¿El noveno qué?\n\nSin dejar de remendar empieza a recitar nombres: *Valdés. Herrero. Fuentes. Blas. Cano. Reina. Mirón. Peñas. Ramos.* Nueve nombres, como una oración que repite desde hace décadas.\n\n— Nueve guardianes desde 1887. — Pausa. — Solo uno bajó como había subido. Mirón. 1943. Bajó al amanecer caminando despacio, las manos en los bolsillos, y le dijo a la madre de Concha, que entonces tendría quince años: *Cuando te ofrezca lo que más quieres, es cuando más cerca estás de ganar. No es generosidad. Es la trampa. Y también es el momento.*\n\nEl hombre deja de remendar un segundo.\n\n— Mirón selló algo esa noche. No lo destruyó, pero lo redujo. Veinte años sin problemas.\n\nVuelve a la red.\n\n— ¿Cómo lo selló? — preguntas.\n\n— No lo dijo. Nunca lo dijo. Pero había algo en sus ojos cuando hablaba de la linterna. Como alguien que ha visto el nombre de su propio miedo escrito en algún sitio y ha decidido leerlo en voz alta de todas formas.\n\nNo añade nada más. La red se mueve entre sus dedos. El mar, detrás de él, sigue siendo de ese color sin nombre.",
+      "choices": [
+        { "text": "Ir al bar antes de subir", "next": "bar" },
+        { "text": "Buscar al alcalde", "next": "alcalde" },
+        { "text": "Ir directamente al faro", "next": "camino_faro" }
+      ]
+    },
+    "bar_pescador": {
+      "title": "La Voz del Fondo",
+      "text": "Te acercas al pescador que ha murmurado. Está en el extremo de la barra, el vaso entre las dos manos, mirando el mostrador de madera oscura. No se gira.\n\n— Era un nombre — dice, con una voz que suena a gravilla bajo el agua. — Lo que murmuré.\n\nEsperas.\n\n— Los viejos la llaman la Llama Hueca. Antes del faro, antes del pueblo, usaba las rocas del cabo. Hay un mineral en esa piedra que brilla con la luna, un azul muy suave. Los barcos lo confundían con un puerto. — Hace una pausa larga. — Cuando pusieron el faro pensaron que una luz más grande taparía a la luz pequeña. Y así fue. Un tiempo.\n\n— ¿Qué cambió?\n\n— Nada cambió. El problema siempre fue el mismo: la luz necesita a alguien que la encienda. Y la Llama Hueca lleva aquí antes que el cabo, antes que las rocas. Aprende. Siempre aprende. — Gira levemente la cabeza, sin llegar a mirarte. — El primer guardián que no bajó al mar dejó algo escrito. En la base de la linterna, por dentro del metal. Nunca subí tan arriba. Nunca quise.\n\nSe lleva el vaso a los labios.\n\n— El nombre que conoce el pueblo no es el suyo. Es el que ella aprendió de los marineros para que la llamaran. Nada con nombre propio tiene tanto poder como le damos nosotros al nombrarlo.\n\nAhí termina. No añade nada más aunque esperes.\n\nConcha, detrás de la barra, te mira. Asiente ligeramente hacia el pescador, como diciéndote: *ya has oído lo que podía decirte.*",
+      "choices": [
+        { "text": "Hablar con Concha sobre la llamada y lo que hay en el faro", "next": "bar_llamada" },
+        { "text": "Preguntarle a Concha qué significa 'se van todos'", "next": "bar_insistir" },
+        { "text": "Ir al faro con lo que sabes", "next": "camino_faro" }
       ]
     },
     "bar": {
@@ -19,7 +49,7 @@
       "text": "El bar está abierto, aunque dentro no hay música. Tres hombres mayores con ropa de pescador están sentados en la barra, mirando sus vasos. Ninguno habla. Ninguno se mueve cuando entras.\n\nDetrás de la barra hay una mujer de unos sesenta años, cara curtida por el viento, pelo blanco recogido en un moño tenso. Te mira fijamente cuando te acercas. Sus ojos son de un gris casi blanco, como los de alguien con cataratas, aunque parece ver perfectamente.\n\n— ¿Qué quieres? — dice antes de que abras la boca.\n\nLe explicas que vienes a investigar lo del faro, lo del guardián desaparecido. Ella no cambia la expresión.\n\n— Ramos se fue — dice simplemente. — Se van todos.\n— ¿Adónde se van?\n\nUna pausa larga. Muy larga.\n\n— Al mar — dice, y se da la vuelta.\n\nUno de los pescadores, sin girarse, murmura algo que no entiendes. Suena como un nombre. O como una advertencia.",
       "choices": [
         { "text": "Insistir y preguntar qué quiso decir con 'se van todos'", "next": "bar_insistir" },
-        { "text": "Preguntarle al pescador qué ha murmurado", "next": "bar_pescador" },
+        { "text": "Acercarte al pescador que ha murmurado", "next": "bar_pescador" },
         { "text": "Dejar el bar y ir al faro", "next": "camino_faro" }
       ]
     },
@@ -60,6 +90,7 @@
       "title": "La Línea de Sal",
       "text": "— La luz del faro — dice simplemente. — Cuando te ilumina, sueñas con el mar. Con bajar al mar. Con meterte hasta el fondo y no salir.\n\nTe muestra las palmas de las manos. Tiene marcas de uñas, como si hubiera tenido que aferrarse a algo con fuerza para no moverse.\n\n— Tres noches seguidas me levanté dormido y llegué hasta la orilla. La tercera noche el agua ya me llegaba a las rodillas cuando desperté.\n\nTe da un trozo de papel con algo escrito. Un nombre: DAMOS. Y debajo: no lo pronuncies en voz alta si ves que está escrito en alguna parte del faro.",
       "choices": [
+        { "text": "Guardar el papel e ir al bar a buscar más información", "next": "bar" },
         { "text": "Guardar el papel y subir al faro", "next": "camino_faro_nombre" },
         { "text": "Preguntarle qué es Damos antes de ir", "next": "alcalde_damos" }
       ]
@@ -68,6 +99,7 @@
       "title": "El Nombre del Fondo",
       "text": "El alcalde cierra los ojos un momento antes de responder.\n\n— Los pescadores más viejos dicen que es el nombre de lo que vive bajo el cabo. No un animal. No un espíritu. Algo que existía aquí antes que nosotros y que aprendió a imitar lo que necesitamos para acercarnos.\n\n— ¿Qué necesitamos?\n\n— Luz — dice. — Y voces conocidas.\n\nTe mira fijamente.\n\n— Ramos tenía familia. Una hija pequeña. Por las noches, cuando bajaba al pueblo en las últimas semanas, decía que la oía llamarle desde la linterna. Que le pedía que se tirara al agua para que pudieran estar juntos.\n\nHace una pausa.\n\n— Su hija lleva cinco años muerta.",
       "choices": [
+        { "text": "Ir al bar a preguntar por la cera protectora", "next": "bar" },
         { "text": "Ir al faro con toda esta información", "next": "camino_faro_nombre" }
       ]
     },
@@ -232,7 +264,7 @@
     "final_secreto": {
       "title": "El Cierre",
       "isEnding": true,
-      "endingType": "secret",
+      "endingType": "secreto",
       "text": "Lo dices.\n\nEl sonido que sale de tu boca no se parece a ninguna palabra que hayas pronunciado antes. Raspa el aire. Vibra en el hueso del pecho. Y cuando el último sonido se apaga, la luz azul colapsa hacia adentro como agua por un desagüe, rápida, total, silenciosa.\n\nRamos cae al suelo. No al vacío, no al mar. Al suelo. De rodillas primero, luego apoyado en las manos, jadeando como alguien que acaba de salir de debajo del agua.\n\n— ¿Elena? — dice con voz rota. Luego, mirando sus propias manos: — No. No, ya sé.\n\nLe ayudas a levantarse. Las espirales del suelo se han borrado. La linterna sigue apagada, pero a través de los cristales el cielo empieza a aclararse por el este.\n\nBajáis juntos. En el camino de vuelta al pueblo, el mar tiene un color diferente: gris común, gris normal, el gris de siempre. El sonido de las olas vuelve a ser solo olas.\n\nRamos no habla hasta que veis las primeras casas.\n\n— ¿Leerás el nombre a nadie más? — pregunta.\n\nLe dices que no. Y lo dices en serio. Algunos nombres no deben existir fuera de los sitios donde están grabados.\n\nEn el pueblo, la señora del bar está en la puerta. Te ve venir con Ramos y asiente una sola vez, muy despacio, como si hubiera apostado por ti y hubieras ganado.\n\nNo vuelves a oír esa voz. Ninguna voz extraña. Pero a veces, en el duermevela, justo antes de dormirte, notas algo. Una vibración muy baja. Como si algo muy lejos pronunciara, muy despacio, tu nombre verdadero.",
       "choices": []
     },
