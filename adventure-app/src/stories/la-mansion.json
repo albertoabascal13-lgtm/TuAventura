@@ -92,7 +92,7 @@
       "title": "La Sala de Música",
       "text": "La llave encaja perfectamente. La sala de música conserva un piano de cola cubierto de una sábana blanca que ha amarilleado con los años. En las paredes hay partituras enmarcadas, todas de una compositora llamada Catalina Aldecoa, 1976.\n\nCuando entras, el piano empieza a tocar solo. Una melodía infantil, simple y lenta, que reconoces vagamente como una nana.\n\nSobre el piano, bajo la sábana, encuentras una caja de madera con el mismo símbolo que viste en la bodega. Dentro hay tres objetos: una fotografía de una niña, un mechón de cabello negro atado con un lazo rojo, y una llave de hierro con la etiqueta 'cámara'.",
       "choices": [
-        { "text": "Tomar la llave de hierro y bajar al sótano", "next": "sotano_entrada" },
+        { "text": "Tomar la llave de hierro y bajar al sótano", "next": "sotano_con_mechon" },
         { "text": "Examinar la fotografía detenidamente", "next": "fotografia" }
       ]
     },
@@ -101,7 +101,7 @@
       "text": "La fotografía muestra a una niña de unos siete años, con el cabello negro recogido y un vestido blanco de domingo. Sonríe a la cámara. Detrás de ella se ve el jardín de la mansión, con las estatuas aún intactas.\n\nDas la vuelta a la fotografía. Hay una inscripción a lápiz: 'Catalina, 14 de octubre de 1983. El último día.'\n\nHoy es 14 de octubre.\n\nEl piano deja de tocar. En el silencio que sigue escuchas, muy claramente, pasos de niño en el corredor de arriba.\n\nY tu propio nombre, susurrado desde ningún lado.",
       "choices": [
         { "text": "Subir al corredor superior", "next": "escaleras" },
-        { "text": "Bajar al sótano con la llave de hierro", "next": "sotano_entrada" }
+        { "text": "Bajar al sótano con la llave de hierro", "next": "sotano_con_mechon" }
       ]
     },
     "espejo_roto": {
@@ -130,15 +130,31 @@
       "title": "El Libro del Pacto",
       "text": "Bajas a la biblioteca. En la chimenea, que ha vuelto a encenderse sola, el fuego es ahora negro. Arde en negro y da frío en lugar de calor.\n\nEncuentras el libro negro detrás de una baldosa suelta bajo el escritorio. Está encuadernado en algo que prefieres no identificar. Las páginas son gruesas y amarillas. Las palabras parecen moverse cuando las lees.\n\nEncuentras la página marcada con una cinta roja. Las palabras del ritual son doce, en latín corrupto. Las memorizas. O intentas memorizarlas, porque cada vez que las lees, parecen ser ligeramente diferentes.\n\nEl suelo vuelve a temblar. Una grieta recorre la pared de la biblioteca de arriba abajo. Desde abajo sube un olor a tierra y a algo muy antiguo, muy hambriento.",
       "choices": [
-        { "text": "Ir al sótano", "next": "sotano_entrada" }
+        { "text": "Ir al sótano", "next": "sotano_con_libro" }
       ]
     },
     "sotano_entrada": {
       "title": "Las Escaleras al Abismo",
-      "text": "Las escaleras del sótano descienden más de lo que deberían. La mansión tiene, como mucho, una planta bajo tierra. Pero llevas bajando escalones durante lo que parecen minutos, y la oscuridad de abajo no termina de llegar.\n\nCuando por fin tocas el fondo, la escena que encuentras es imposible.\n\nEstás en una caverna natural del tamaño de una catedral. En el centro hay un pozo de piedra negra, exactamente como en los dibujos de Catalina. Alrededor del pozo, cuarenta años de ofrendas: flores secas, fotografías, muñecas, huesos de animales... y ropa de niña.\n\nDesde el fondo del pozo sube un sonido que vibra en tus dientes y en tus ojos. Y dos manos enormes, con demasiados dedos, empiezan a asomarse por el borde.",
+      "text": "Las escaleras del sótano descienden más de lo que deberían. La mansión tiene, como mucho, una planta bajo tierra. Pero llevas bajando escalones durante lo que parecen minutos, y la oscuridad de abajo no termina de llegar.\n\nCuando por fin tocas el fondo, la escena que encuentras es imposible.\n\nEstás en una caverna natural del tamaño de una catedral. En el centro hay un pozo de piedra negra, exactamente como en los dibujos de Catalina. Alrededor del pozo, cuarenta años de ofrendas: flores secas, fotografías, muñecas, huesos de animales... y ropa de niña.\n\nDesde el fondo del pozo sube un sonido que vibra en tus dientes y en tus ojos. Y dos manos enormes, con demasiados dedos, empiezan a asomarse por el borde.\n\nMiras alrededor desesperadamente. No has cogido nada que pueda servirte. Viniste sin el libro negro, sin el mechón. Solo tienes tus manos y el poco tiempo que te queda antes de que eso salga del pozo.",
       "choices": [
-        { "text": "Pronunciar las palabras del ritual (requiere el libro negro)", "next": "ritual_sellado" },
-        { "text": "Quemar el mechón de Catalina dentro del círculo (requiere el mechón)", "next": "final_secreto_prep" },
+        { "text": "Intentar tapar el pozo con las ofrendas", "next": "tapar_pozo" },
+        { "text": "Huir hacia las escaleras", "next": "final_huida" }
+      ]
+    },
+    "sotano_con_mechon": {
+      "title": "Las Escaleras al Abismo",
+      "text": "Las escaleras del sótano descienden más de lo que deberían. La mansión tiene, como mucho, una planta bajo tierra. Pero llevas bajando escalones durante lo que parecen minutos, y la oscuridad de abajo no termina de llegar.\n\nCuando por fin tocas el fondo, la escena que encuentras es imposible.\n\nEstás en una caverna natural del tamaño de una catedral. En el centro hay un pozo de piedra negra, exactamente como en los dibujos de Catalina. Alrededor del pozo, cuarenta años de ofrendas: flores secas, fotografías, muñecas, huesos de animales... y ropa de niña.\n\nDesde el fondo del pozo sube un sonido que vibra en tus dientes y en tus ojos. Y dos manos enormes, con demasiados dedos, empiezan a asomarse por el borde.\n\nMetes la mano en el bolsillo y notas el mechón de cabello negro de Catalina, todavía atado con el lazo rojo. Lo aprietas. Es lo único que tienes.",
+      "choices": [
+        { "text": "Quemar el mechón de Catalina dentro del círculo de piedra", "next": "final_secreto_prep" },
+        { "text": "Intentar tapar el pozo con las ofrendas", "next": "tapar_pozo" },
+        { "text": "Huir hacia las escaleras", "next": "final_huida" }
+      ]
+    },
+    "sotano_con_libro": {
+      "title": "Las Escaleras al Abismo",
+      "text": "Las escaleras del sótano descienden más de lo que deberían. La mansión tiene, como mucho, una planta bajo tierra. Pero llevas bajando escalones durante lo que parecen minutos, y la oscuridad de abajo no termina de llegar.\n\nCuando por fin tocas el fondo, la escena que encuentras es imposible.\n\nEstás en una caverna natural del tamaño de una catedral. En el centro hay un pozo de piedra negra, exactamente como en los dibujos de Catalina. Alrededor del pozo, cuarenta años de ofrendas: flores secas, fotografías, muñecas, huesos de animales... y ropa de niña.\n\nDesde el fondo del pozo sube un sonido que vibra en tus dientes y en tus ojos. Y dos manos enormes, con demasiados dedos, empiezan a asomarse por el borde.\n\nSujetas el libro negro con fuerza. Las doce palabras del ritual están grabadas en tu memoria. Llevas esto contigo. Úsalo.",
+      "choices": [
+        { "text": "Pronunciar las palabras del ritual", "next": "ritual_sellado" },
         { "text": "Intentar tapar el pozo con las ofrendas", "next": "tapar_pozo" },
         { "text": "Huir hacia las escaleras", "next": "final_huida" }
       ]
