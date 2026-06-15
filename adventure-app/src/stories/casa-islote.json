@@ -1,0 +1,410 @@
+{
+  "id": "casa-islote",
+  "title": "La Marea",
+  "description": "Una casa de piedra en mitad del mar, un muerto reciente y una mujer de negro en la puerta. El inventario debería llevar un día. Luego sube la marea.",
+  "estimatedLength": "12–18 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "El Encargo",
+      "text": "La carta del abogado Mengual era escueta: trasladarse a la Casa del Islote, en la costa de Luanco, para realizar el inventario de los bienes de don Ernesto Valverde, fallecido tres semanas antes. La familia —unos sobrinos en Valencia que no conocían bien al difunto— necesitaba saber qué había en esa casa antes de decidir qué hacer con ella.\n\nSolo condición: acudir un martes. Rosario, el ama de llaves que llevaba cuarenta años en la casa, estaría esperando.\n\nEl martes amaneció cubierto. Menguante de luna, según el almanaque del teléfono. Aviso de temporal para la tarde.\n\nLlegas a la costa a las dos del mediodía. El mar está gris y agitado. La Casa del Islote se ve desde la orilla: tres plantas de piedra gris sobre un islote rocoso conectado a tierra firme por un puente estrecho de hormigón de unos ciento veinte metros. La marea está baja ahora. El puente está seco.\n\nPero hay nubes de tormenta apilándose en el horizonte.",
+      "choices": [
+        { "text": "Cruzar el puente ahora", "next": "cruzar_puente" },
+        { "text": "Quedarte en la orilla un momento a observar", "next": "observar_orilla" }
+      ]
+    },
+    "observar_orilla": {
+      "title": "Desde la Orilla",
+      "text": "Te quedas junto al coche. El viento ya mueve el pelo.\n\nLa casa desde aquí parece mayor de lo que parecía en las fotos que te envió Mengual. La piedra es de color gris oscuro, casi negra cuando la moja la espuma. Las ventanas son estrechas. Hay una veleta en el tejado con forma de pez.\n\nEn el tercer piso, una de las ventanas está iluminada. Una luz tenue, amarilla, como de vela.\n\nLuego no está.\n\nMiras de nuevo. La ventana está oscura. Igual que todas las demás.\n\nTu teléfono vibra. Es Mengual, el abogado.",
+      "choices": [
+        { "text": "Contestar a Mengual", "next": "llamada_mengual" },
+        { "text": "Ignorar la llamada y cruzar el puente", "next": "cruzar_puente" }
+      ]
+    },
+    "llamada_mengual": {
+      "title": "El Abogado",
+      "text": "— ¿Ya ha llegado? — La voz de Mengual tiene la prisa de alguien que hace tres cosas a la vez. — Rosario le está esperando. Es una mujer seria, lleva muchos años en esa casa. Trátela con respeto.\n\n— ¿Sabe cómo murió don Ernesto?\n\nUna pausa muy breve.\n\n— Causa natural. Lo certificó el médico de Luanco. Era un hombre mayor, vivía solo.\n\n— ¿Murió en la casa?\n\n— En su estudio, sí. — Otra pausa. — Mire, el inventario es lo que importa ahora. Los sobrinos quieren vender. Usted haga su trabajo.\n\nCuelga antes de que puedas preguntar nada más.\n\nEn el tercer piso de la casa, la ventana vuelve a estar iluminada. Esta vez estás seguro de que no tenías los ojos puestos en ella. Y cuando miras, ya se está apagando.",
+      "choices": [
+        { "text": "Cruzar el puente", "next": "cruzar_puente" }
+      ]
+    },
+    "cruzar_puente": {
+      "title": "El Puente",
+      "text": "El puente tiene lo justo para que pase un coche. No hay barandilla a los lados, solo un bordillo de diez centímetros. A ambos lados, el mar.\n\nConduce despacio. El agua debajo está inquieta, espumosa. En algún punto del tramo central, sin razón clara, el cuentakilómetros se pone a parpadear y la radio —que tenías apagada— emite un segundo de estática antes de callar.\n\nA mitad del puente, miras hacia la derecha.\n\nEn el agua, a unos veinte metros, hay algo. Una forma oscura en la superficie. Demasiado grande para ser basura. Demasiado quieta para ser una ola.\n\nCuando llegas al otro lado y miras de nuevo, ya no está.\n\nAparcas frente a la casa. El aire aquí huele a sal y a algo más antiguo, mineral, como piedra que lleva mucho tiempo mojada.\n\nLa puerta principal se abre antes de que toques el timbre.",
+      "choices": [
+        { "text": "Entrar", "next": "rosario_puerta" }
+      ]
+    },
+    "rosario_puerta": {
+      "title": "Rosario",
+      "text": "La mujer que te recibe tiene setenta y muchos años. Vestido negro hasta los tobillos, el pelo blanco recogido hacia atrás con una austeridad que no admite matices. Los ojos son de un gris muy claro, casi traslúcidos, y te miran con la atención específica de quien lleva mucho tiempo evaluando personas.\n\n— Usted es el tasador — dice. No como pregunta.\n\n— Sí. Me envía el señor Mengual.\n\n— Lo sé. — Se aparta para dejarle pasar. — Soy Rosario. Llevo en esta casa desde antes de que usted naciera. — Una pausa. — Probablemente.\n\nEl interior huele a sal, a cera de velas y a libros viejos. El suelo es de piedra. Las paredes tienen cuadros de tema marino: barcos, mapas, tormentas pintadas con una precisión casi obsesiva.\n\n— ¿Cuándo murió don Ernesto exactamente? — preguntas mientras entras.\n\nRosario cierra la puerta detrás de ti.\n\n— El dieciséis — dice. — Por la noche. — Y no añade nada más.",
+      "choices": [
+        { "text": "Preguntar cómo murió", "next": "preguntar_muerte" },
+        { "text": "Pedirle que te muestre la casa", "next": "tour_inicio" },
+        { "text": "Ir directamente al trabajo", "next": "trabajo_directo" }
+      ]
+    },
+    "preguntar_muerte": {
+      "title": "La Causa",
+      "text": "— ¿Sabe cómo murió?\n\nRosario se queda un momento quieta. Luego dice:\n\n— El señor encontró la paz que llevaba años buscando.\n\n— Eso no es una causa de muerte.\n\nTe mira sin cambiar la expresión.\n\n— El médico dijo que fue el corazón. El señor tenía setenta y ocho años y dormía poco desde hacía tiempo. Las noches aquí en temporales son... exigentes.\n\n— ¿Estaba usted presente?\n\n— Dormía. — Una pausa muy corta. — Lo encontré por la mañana, en el estudio. La ventana estaba abierta. — Vuelve a guardar silencio. — El temporal había pasado.\n\nHay algo en ese detalle —la ventana abierta— que queda flotando en el aire sin que ninguno de los dos lo recoja.",
+      "choices": [
+        { "text": "Pedirle que te muestre la casa", "next": "tour_inicio" },
+        { "text": "Preguntar por la ventana abierta", "next": "ventana_detalle" }
+      ]
+    },
+    "ventana_detalle": {
+      "title": "La Ventana Abierta",
+      "text": "— ¿Por qué tenía la ventana abierta si había temporal?\n\nRosario te mira durante un segundo más de lo normal.\n\n— El señor llevaba años haciéndolo. Decía que necesitaba oír el mar para dormir. — Una pausa. — En los últimos tiempos la dejaba abierta toda la noche, incluso cuando llovía.\n\n— ¿Desde cuándo?\n\n— Desde hace unos diez años.\n\nDiez años. Lo guardas. Luego preguntas si te puede enseñar la casa.",
+      "choices": [
+        { "text": "Pedirle que te enseñe la casa", "next": "tour_inicio" }
+      ]
+    },
+    "trabajo_directo": {
+      "title": "Al Grano",
+      "text": "— Si no le importa, me gustaría empezar directamente. Tengo el formulario de inventario y...\n\n— La casa tiene tres plantas — dice Rosario, como si no te hubiera escuchado. — Se la enseño. Es más fácil si sabe cómo está distribuida antes de empezar.\n\nNo es una sugerencia.\n\nEs la forma en que alguien que lleva cuarenta años siendo la autoridad real de un espacio te comunica cómo van a ser las cosas.",
+      "choices": [
+        { "text": "Aceptar el tour", "next": "tour_inicio" }
+      ]
+    },
+    "tour_inicio": {
+      "title": "La Planta Baja",
+      "text": "La planta baja: cocina grande con una chimenea que también funciona como horno, despensa, cuarto de herramientas. Rosario nombra los objetos sin apenas mirarlos, como alguien que ha inventariado mentalmente esta casa miles de veces.\n\nLuego el salón.\n\nEl salón ocupa casi toda la planta principal. Es grande, de techo alto, con vigas de madera oscurecida. Y está lleno.\n\nModelos de barcos en vitrinas. Compases, sextantes, cartas náuticas enmarcadas. Pinturas del mar en cada estado posible: calmo, tormentoso, oscuro, blanco de espuma. Una escafandra antigua de cobre en un rincón. Una colección de faros en miniatura sobre una repisa. Y libros, muchos libros, en estanterías que cubren las paredes hasta el techo.\n\nEn una vitrina central, sobre un cojín de terciopelo azul, hay una brújula de barco. En la base del cojín, grabado en el metal: CARLOTA.",
+      "choices": [
+        { "text": "Preguntar por la brújula y ese nombre", "next": "carlota_brujula" },
+        { "text": "Dejar el nombre para después y seguir el tour", "next": "tour_segunda_planta" }
+      ]
+    },
+    "carlota_brujula": {
+      "title": "El Nombre",
+      "text": "— ¿Quién es Carlota?\n\nRosario lleva un segundo sin responder más de lo que debería.\n\n— Era el ama de llaves antes que yo — dice finalmente. — El señor tuvo siempre amas de llaves. La casa lo requiere.\n\n— ¿Dónde está ahora?\n\nRosario cruza las manos frente a ella. El gesto de alguien que elige las palabras con cuidado.\n\n— Carlota murió. Hace quince años. Cruzaba el puente durante un temporal y se cayó al agua. La encontraron a la mañana siguiente en las rocas del islote.\n\nUna pausa.\n\n— El señor guardó su brújula. Era de su familia, de marineros.\n\nNo añade si el señor fue responsable de que Carlota cruzara el puente esa noche. Tú no preguntas. Todavía.",
+      "choices": [
+        { "text": "Seguir el tour", "next": "tour_segunda_planta" }
+      ]
+    },
+    "tour_segunda_planta": {
+      "title": "La Segunda Planta",
+      "text": "Segunda planta: dos dormitorios de huéspedes con muebles de época, un baño, y al fondo del pasillo una puerta cerrada.\n\n— ¿Qué hay ahí? — preguntas.\n\n— Un trastero. La llave se perdió hace años.\n\nPero mientras lo dice, tus ojos están en la rendija bajo la puerta.\n\nHay luz al otro lado. Una luz tenue, cálida, que oscila.\n\nComo velas.\n\n— ¿Seguimos? — dice Rosario, ya en las escaleras.\n\nLa puerta no hace ningún ruido. Pero hay algo en esa luz, en lo que se mueve detrás de ella, que hace que no quieras darle la espalda.",
+      "choices": [
+        { "text": "Preguntar a Rosario por la luz bajo la puerta", "next": "luz_puerta_pregunta" },
+        { "text": "Seguir el tour y volver después", "next": "tour_tercer_piso" }
+      ]
+    },
+    "luz_puerta_pregunta": {
+      "title": "La Luz",
+      "text": "— Hay luz debajo de esa puerta.\n\nRosario baja la vista hacia la rendija. Silencio.\n\n— Las viejas casas de piedra tienen filtraciones de luz en los muros. La fachada sur tiene grietas. — Te mira. — Llevan ahí desde que llegué.\n\nEs posible. Es la explicación más razonable.\n\nPero la luz bajo la puerta no es blanca como la luz del día. Es amarilla y cálida y se mueve de derecha a izquierda con la cadencia lenta de algo que arde.",
+      "choices": [
+        { "text": "Intentar abrir la puerta", "next": "puerta_cerrada_intento" },
+        { "text": "Continuar el tour", "next": "tour_tercer_piso" }
+      ]
+    },
+    "puerta_cerrada_intento": {
+      "title": "Cerrada",
+      "text": "Pones la mano en el pomo.\n\nFrío. Mucho más frío que el resto de la madera. Como si al otro lado no hubiera calefacción desde hace meses, o desde hace años.\n\nGiras. Cerrada.\n\nBajas la vista a la rendija de nuevo. La luz ha desaparecido. La rendija está completamente oscura ahora, como si hubieran apagado algo justo cuando te acercaste.\n\nRosario te observa desde el inicio del pasillo con la misma expresión de siempre: sin sorpresa, sin miedo, con algo que podría ser vigilancia o podría ser paciencia.",
+      "choices": [
+        { "text": "Continuar el tour", "next": "tour_tercer_piso" }
+      ]
+    },
+    "tour_tercer_piso": {
+      "title": "El Estudio",
+      "text": "El tercer piso es una sola habitación grande: el estudio de don Ernesto.\n\nEstanterías de suelo a techo. Una mesa de trabajo enorme cubierta de papeles, cartas náuticas, libros abiertos. Una silla de madera oscura con los brazos desgastados en los apoyabrazos, donde las manos apretaron durante décadas.\n\nY una ventana. Grande, mirando al norte, directa al mar.\n\nEstá cerrada ahora. Pero tiene el marco hinchado, como si hubiera estado abierta durante mucho tiempo.\n\nEn la mesa, entre los papeles, hay un diario de tapas negras. Abierto.\n\nRosario no te dice que no lo leas. Pero tampoco te lo ofrece.\n\n— Aquí murió — dices.\n\n— Aquí vivía — dice Rosario.",
+      "choices": [
+        { "text": "Leer el diario", "next": "diario_ernesto" },
+        { "text": "Ir a la ventana y mirar al mar", "next": "ventana_norte" },
+        { "text": "Bajar a empezar el inventario", "next": "tormenta_aviso" }
+      ]
+    },
+    "ventana_norte": {
+      "title": "El Mar desde Arriba",
+      "text": "Desde el tercer piso, el puente se ve completo. Los ciento veinte metros de hormigón gris sobre el agua gris.\n\nY el mar está peor que cuando llegaste. Las olas rompen ya contra los lados del puente. El agua sube.\n\n— La marea — dices.\n\n— Sube rápido con temporal — dice Rosario desde la puerta del estudio. — Normalmente hay tres horas de margen desde que se empieza a cubrir el puente hasta que no se puede cruzar. Hoy, con este viento...\n\nMira el cielo por la ventana.\n\n— Menos.",
+      "choices": [
+        { "text": "Intentar cruzar el puente ahora", "next": "cruzar_bajo_tormenta" },
+        { "text": "Quedarte y empezar el trabajo", "next": "aceptar_noche" }
+      ]
+    },
+    "diario_ernesto": {
+      "title": "El Diario",
+      "text": "Las últimas páginas están escritas con una letra que se fue encogiendo con los años, como si el espacio ocupara cada vez menos.\n\nLa última entrada es del dieciséis. La noche que murió.\n\n*Esta noche hay temporal. El viento viene del norte, como siempre que ella aparece. Llevo diez años oyéndola llamar desde el agua. Al principio creí que era el viento. Luego entendí que era su voz, que el mar la conserva intacta. Esta noche voy a dejar la ventana abierta y voy a responderle. Ya es suficiente tiempo esperando.*\n\nLas palabras se terminan ahí. En mitad de la página. La pluma todavía está en el tintero, sin tapa.\n\nTe quedas mirando el texto durante un tiempo que no sabrías medir.\n\nLuego miras la ventana cerrada.\n\nEl marco hinchado.\n\nEl mar ahí fuera.",
+      "choices": [
+        { "text": "Preguntarle a Rosario qué significa esto", "next": "rosario_diario" },
+        { "text": "Guardarlo en tu bolsa de trabajo", "next": "tormenta_aviso" },
+        { "text": "Mirar por la ventana", "next": "ventana_norte" }
+      ]
+    },
+    "rosario_diario": {
+      "title": "Lo Que Sabe Rosario",
+      "text": "Rosario lee el párrafo que le señalas. O finge leerlo: sus ojos no se mueven por las líneas como los de alguien que lee por primera vez.\n\n— ¿Quién era ella? ¿Quién llamaba desde el agua?\n\nRosario cierra el diario con cuidado y lo deja exactamente donde estaba.\n\n— Carlota — dice.\n\n— Carlota murió hace quince años.\n\n— Sí.\n\n— ¿Y dice que la oía llamar?\n\nRosario te mira.\n\n— El señor la oía desde la primera noche de temporal después de que ella muriera. — Una pausa. — Yo también la oí, una vez. Hace mucho. Decidí no volver a escuchar.\n\nFuera, el viento hace sonar algo metálico en el tejado. La veleta, probablemente.",
+      "choices": [
+        { "text": "Ir a ver el puente", "next": "ventana_norte" },
+        { "text": "Pedirle que te cuente más sobre Carlota", "next": "carlota_completo" }
+      ]
+    },
+    "carlota_completo": {
+      "title": "Carlota Entera",
+      "text": "Rosario se sienta en la silla del escritorio, en la silla de don Ernesto, con la naturalidad de quien lo ha hecho miles de veces.\n\n— Carlota llegó a esta casa veinte años antes que yo. Cuando yo llegué ella llevaba aquí ya muchos años. Era diferente a todas las amas de llaves que había tenido el señor antes.\n\n— ¿En qué sentido?\n\n— En que se quedó. Las otras duraban dos o tres inviernos y pedían el traslado. El aislamiento, el temporal, la casa. Carlota se quedó durante décadas. — Una pausa. — Y el señor se acostumbró a ella. Demasiado, quizás.\n\n— ¿Qué pasó?\n\n— Que lo que empieza por costumbre a veces termina por necesidad. Y lo que termina por necesidad, cuando se rompe, rompe todo.\n\n— ¿Fue él quien la echó?\n\nRosario mira la ventana.\n\n— Hubo una discusión. Esa noche Carlota cruzó el puente en el temporal. Nadie la retuvo.\n\nY tú escuchas lo que no dice: nadie salió a buscarla.",
+      "choices": [
+        { "text": "Bajar a ver el puente", "next": "tormenta_aviso" }
+      ]
+    },
+    "tormenta_aviso": {
+      "title": "El Puente se Cubre",
+      "text": "Cuando llegas al salón y miras por la ventana frontal, el puente ya no existe.\n\nEl agua lo cubre. No toda la superficie, todavía: se pueden ver los bordillos, el asfalto aparece y desaparece entre las olas. Pero nadie podría cruzar ese puente ahora con un coche. Y a pie sería una temeridad.\n\nRosario aparece en el umbral del salón.\n\n— Quedan unas dos horas de luz — dice. — Le preparo la habitación de huéspedes. La del norte.\n\nHay una normalidad en su voz que no encaja con la situación. Como si esto ocurriera con frecuencia. Como si lo hubiera previsto.\n\n— ¿Suele pasar esto?\n\n— Cada invierno, al menos dos o tres veces. — Se vuelve hacia la cocina. — Esta casa lleva siglos aguantando temporales.\n\nSe marcha hacia la cocina. Tú te quedas mirando el puente cubierto de agua.\n\nLas olas rompen sobre él.\n\nY en el agua, entre los salpicones blancos, ves una forma oscura que se mueve en paralelo al puente, por el lateral, bajo la superficie.",
+      "choices": [
+        { "text": "Intentar cruzar el puente antes de que sea imposible", "next": "cruzar_bajo_tormenta" },
+        { "text": "Quedarte y aceptar que pasas la noche", "next": "aceptar_noche" }
+      ]
+    },
+    "cruzar_bajo_tormenta": {
+      "title": "La Decisión del Puente",
+      "text": "Sales de la casa. El viento te golpea de frente, salado y frío, y tienes que inclinar el cuerpo para avanzar.\n\nLlegas al inicio del puente. El agua cubre el asfalto con unos diez centímetros. Oscura, fría, movida por la corriente. Los bordillos apenas se distinguen.\n\nUn paso. El agua empapa el zapato al instante. Otro paso. La corriente lateral es más fuerte de lo que esperabas.\n\nA los cinco metros, una ola rompe contra el lateral del puente y el agua llega a la rodilla. Pierdes el equilibrio un segundo.\n\nY entonces ves la forma.\n\nEstá en el agua, a tres metros del borde del puente, mirando hacia arriba. No es una ola. No es basura flotante. Tiene cabello, largo y oscuro, pegado a una cara que mira hacia ti con los ojos completamente abiertos.\n\nDas un paso atrás.\n\nOtro.\n\nTropiezas con el bordillo y caes de lado.",
+      "choices": [
+        { "text": "Caer al agua", "next": "final_malo_puente" },
+        { "text": "Agarrarte al bordillo y volver atrás", "next": "volver_casa_mojado" }
+      ]
+    },
+    "final_malo_puente": {
+      "title": "La Corriente",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "El agua está muy fría.\n\nLa corriente es mucho más fuerte de lo que parecía desde arriba. El temporal la empuja en diagonal, alejándote del puente, alejándote de todo.\n\nGritas. El viento devuelve el sonido al interior de tu garganta.\n\nEn el agua, a menos de un metro, la cara con el pelo oscuro te mira. Sus ojos no tienen la urgencia de alguien que se ahoga. Tienen la calma de alguien que lleva mucho tiempo esperando compañía.\n\nFue Mengual quien llamó a los servicios de emergencias al día siguiente, cuando no respondiste sus mensajes. El helicóptero sobrevoló el islote a las diez de la mañana.\n\nRosario estaba en la puerta principal, con el mismo vestido negro, con las manos cruzadas.\n\nDijo que el tasador había intentado cruzar el puente durante el temporal. Que ella se lo había desaconsejado.\n\nNo encontraron el cuerpo en los tres días siguientes. Luego cambiaron el tiempo y las corrientes cambiaron también.\n\nLo encontraron en las rocas del islote, en el mismo punto exacto donde encontraron a Carlota quince años antes.",
+      "choices": []
+    },
+    "volver_casa_mojado": {
+      "title": "De Vuelta",
+      "text": "Te aferras al bordillo, consigues incorporarte. El agua te llega a la cintura en ese punto. Avanzas los cinco metros de vuelta hacia tierra con los pies pegados al asfalto, sin dejar de palpar el bordillo con las manos.\n\nCuando pones el pie en la orilla del islote, caes de rodillas.\n\nRosario está en la puerta de la casa, mirándote.\n\n— Entre — dice. — Tengo ropa del señor que puede servirle.\n\nNo dice que te lo avisó. Pero no hace falta.",
+      "choices": [
+        { "text": "Entrar y aceptar la noche", "next": "aceptar_noche" }
+      ]
+    },
+    "aceptar_noche": {
+      "title": "La Noche Aquí",
+      "text": "Rosario te pone en la habitación de huéspedes del segundo piso. Sábanas frías, una lámpara de aceite porque la luz eléctrica de la casa falla con el temporal, y una ventana que da al mar.\n\nLe dices que prefieres trabajar mientras haya luz.\n\nEmpieza el inventario de la planta baja. Modelo de bergantín, siglo XIX. Compás náutico de latón. Escafandra completa, fabricante desconocido.\n\nA las cinco de la tarde, mientras catalogas un barómetro de barco, el barómetro hace algo.\n\nLa aguja, que estaba quieta, gira sola hacia la zona marcada en rojo. Baja presión extrema. Tormenta.\n\nMiras por la ventana. La tormenta ya está ahí fuera. El barómetro no hace falta.\n\nPero la aguja no volvió a la posición anterior. Sigue girando, muy despacio, más allá de la escala roja. Como si estuviera midiendo algo que ese instrumento no fue diseñado para medir.\n\nRosario llama a cenar.",
+      "choices": [
+        { "text": "Ir a cenar", "next": "cena" }
+      ]
+    },
+    "cena": {
+      "title": "La Cena",
+      "text": "Caldo de pescado y pan de pueblo. Rosario no se sienta. Permanece de pie junto a la chimenea, de espaldas en parte, como si te diera privacidad o como si vigilara otra cosa.\n\n— ¿No cena? — preguntas.\n\n— Ya he cenado.\n\nComes en silencio. Por la ventana del comedor, que da al oeste, el mar está negro. Y en el negro hay algo: una luz. Pequeña, blanca, que oscila.\n\n— Hay una luz en el agua.\n\nRosario se vuelve.\n\nMira la luz durante exactamente tres segundos.\n\nLuego va a la ventana y cierra las contraventanas de madera con un golpe seco y definitivo.\n\n— Barcos de pesca — dice. — A veces se acercan demasiado con el temporal.\n\nEl cierre de las contraventanas fue demasiado rápido para ser despreocupado.",
+      "choices": [
+        { "text": "Preguntarle sobre la luz", "next": "luz_agua_pregunta" },
+        { "text": "Terminar de cenar y subir al estudio", "next": "noche_estudio" },
+        { "text": "Ir a explorar la habitación cerrada del segundo piso", "next": "habitacion_noche" }
+      ]
+    },
+    "luz_agua_pregunta": {
+      "title": "La Luz del Mar",
+      "text": "— No eran barcos de pesca. Estaban demasiado cerca del islote.\n\nRosario te mira desde el centro del comedor.\n\n— En los temporales fuertes, el mar trae cosas. Y a veces las cosas que trae... parecen lo que no son. Es la luz, la forma en que rompen las olas.\n\n— ¿Carlota aparece en el agua?\n\nLa pregunta sale antes de que la hayas terminado de formular en tu cabeza.\n\nRosario no cambia la expresión. Pero sus manos, que estaban sueltas a los lados, se juntan frente a ella.\n\n— El señor creía que sí — dice. — Con los años, yo... — Se detiene. — Hay cosas que es mejor no confirmar. Si las confirmas, las conviertes en reales.\n\n— ¿Y si ya son reales?\n\nSilencio largo.\n\n— Entonces ya no hay nada que hacer — dice —. Solo esperar a que amanezca.",
+      "choices": [
+        { "text": "Subir al estudio de don Ernesto", "next": "noche_estudio" },
+        { "text": "Explorar la habitación cerrada", "next": "habitacion_noche" }
+      ]
+    },
+    "noche_estudio": {
+      "title": "El Estudio de Noche",
+      "text": "El estudio a esta hora es diferente.\n\nLa lámpara de aceite proyecta sombras que se mueven. Los lomos de los libros forman líneas que se interrumpen. La silla de don Ernesto, en el centro, parece que alguien acaba de levantarse de ella.\n\nSi no has leído el diario, está abierto sobre la mesa donde lo dejó Rosario. Si ya lo has leído, está cerrado.\n\nVas a la ventana del norte. El mar está allí abajo, negro y agitado. Y en el agua, entre las olas, hay algo inmóvil.\n\nUna figura.\n\nDe pie en el agua. O sobre el agua. El cuerpo a medias sumergido, el pelo oscuro pegado a los hombros. Mirando hacia arriba.\n\nMirando hacia esta ventana.\n\nNo es una ola. No es espuma. No se mueve con las corrientes.\n\nSe mueve solo cuando tú te mueves: cuando te acercas un paso al cristal, la figura inclina la cabeza.",
+      "choices": [
+        { "text": "Abrir la ventana", "next": "abrir_ventana" },
+        { "text": "Alejarte de la ventana y salir del estudio", "next": "pasillo_noche" },
+        { "text": "Llamar a Rosario", "next": "rosario_ventana" }
+      ]
+    },
+    "abrir_ventana": {
+      "title": "La Voz",
+      "text": "Abres el pestillo.\n\nEl viento entra con violencia y apaga la lámpara de aceite. La habitación queda a oscuras, solo la luz gris del temporal.\n\nY desde abajo, desde el agua, escuchas algo.\n\nNo es un grito. No es el viento. Es una voz que usa el viento como canal, que viene en ráfagas, fragmentada:\n\n*...la brújula... es mía... devuélvela...*\n\nLuego el viento cambia de dirección y la voz desaparece.\n\nTus manos están heladas. La temperatura en el estudio ha bajado de golpe, como si hubiera entrado algo además del viento.\n\nAlgo está en el estudio contigo ahora.\n\nNo lo puedes ver. Pero lo puedes sentir como se siente una presencia en la oscuridad: no por lo que hay, sino por la forma específica en que el aire cambia cuando algo ocupa el espacio.",
+      "choices": [
+        { "text": "Cerrar la ventana rápido y salir del estudio", "next": "pasillo_noche" },
+        { "text": "Quedarte y responder a la voz", "next": "responder_voz" }
+      ]
+    },
+    "responder_voz": {
+      "title": "La Respuesta",
+      "text": "— ¿Carlota?\n\nEl frío aumenta.\n\nEn el cristal de la ventana —que sigues teniendo abierta— aparece una escritura. Algo la traza desde fuera, en el vaho que se condensa en el vidrio:\n\n*LLÉVALA*\n\nDos segundos. Luego el viento borra las letras.\n\nLa presencia en el estudio ya no está. O está tan quieta que no la percibes.\n\nBajas al salón. La brújula con el nombre CARLOTA está en su vitrina, exactamente donde estaba. El cojín de terciopelo azul. El nombre grabado en el metal.",
+      "choices": [
+        { "text": "Coger la brújula", "next": "coger_brujula" },
+        { "text": "Dejarla y ir a buscar a Rosario", "next": "rosario_ventana" }
+      ]
+    },
+    "rosario_ventana": {
+      "title": "Rosario lo Sabe",
+      "text": "Encuentras a Rosario en la cocina, sentada junto a la chimenea con las manos en el regazo y los ojos abiertos. No dormida. Solo quieta, como alguien que espera algo que sabe que va a ocurrir.\n\n— Hay algo en el agua — dices. — Una figura. Y en el estudio escuché una voz.\n\nRosario te mira.\n\n— ¿Qué decía?\n\n— Que devolviera la brújula. Que era suya.\n\nAsiente muy despacio. Como si esto confirma algo.\n\n— ¿Cuántos años lleva esto pasando? — preguntas.\n\n— Quince — dice. — Desde la primera noche de temporal después de que muriera Carlota.\n\n— ¿Y don Ernesto nunca...\n\n— El señor no quería devolver la brújula. — Una pausa muy larga. — Porque devolverla habría sido admitir que ella no iba a volver. Que se había ido.\n\nEn el salón, al otro lado de la pared, la vitrina de la brújula tintinea suavemente.",
+      "choices": [
+        { "text": "Ir a coger la brújula", "next": "coger_brujula" },
+        { "text": "Preguntarle a Rosario qué cree que hay que hacer", "next": "rosario_consejo" }
+      ]
+    },
+    "rosario_consejo": {
+      "title": "El Consejo",
+      "text": "— ¿Usted qué cree que hay que hacer?\n\nRosario guarda silencio un momento.\n\n— Yo creo que hay cosas que se rompen y que no tienen arreglo — dice. — Carlota murió en esa agua. El señor dejó que cruzara el puente sabiendo lo que había. Vivió cuarenta años con eso. — Una pausa. — Quizás devolverle la brújula no sea suficiente. Quizás no haya suficiente.\n\n— ¿Y si no hacemos nada?\n\nRosario te mira.\n\n— El señor no hizo nada durante cuarenta años. — Señala la ventana del comedor, las contraventanas cerradas. — Y al final abrió la ventana.\n\nEntiendes lo que quiere decir. Don Ernesto no murió de causas naturales. Murió de cansancio. De cuarenta años oyendo algo que no podía responder.",
+      "choices": [
+        { "text": "Ir a coger la brújula", "next": "coger_brujula" },
+        { "text": "Explorar primero la habitación cerrada", "next": "habitacion_noche" }
+      ]
+    },
+    "habitacion_noche": {
+      "title": "La Habitación Cerrada",
+      "text": "El pasillo del segundo piso a esta hora, con la lámpara de aceite, es un corredor de sombras que se alargan y encogen con cada movimiento.\n\nLa puerta del trastero sigue cerrada. Pero la luz bajo la rendija ha vuelto. Más intensa ahora. Definitivamente cálida, definitivamente velas.\n\nPones la oreja en la madera.\n\nAl principio, nada. Solo el viento fuera y el crujido de la casa. Luego, muy suave, un sonido. Como si alguien estuviera pasando páginas. Despacio. Pacientemente.\n\nEmpujas la puerta. Sigue cerrada con llave.\n\nPero el pomo, esta vez, no está frío.\n\nEstá caliente.",
+      "choices": [
+        { "text": "Buscar la llave en algún otro lugar de la casa", "next": "buscar_llave" },
+        { "text": "Forzar la puerta", "next": "forzar_puerta" }
+      ]
+    },
+    "buscar_llave": {
+      "title": "La Llave",
+      "text": "Recuerdas el cuarto de herramientas de la planta baja. Hay un tablero con ganchos en la pared, muchos sin nombre.\n\nVas. Cuentas doce llaves de diferentes tamaños. La tercera desde la izquierda del segundo gancho es pequeña, de bronce oscurecido, diferente a todas las demás.\n\nVuelves al segundo piso.\n\nLa llave entra en la cerradura.\n\nGira.",
+      "choices": [
+        { "text": "Abrir la puerta", "next": "dentro_habitacion" }
+      ]
+    },
+    "forzar_puerta": {
+      "title": "La Fuerza",
+      "text": "Te apoya en el marco y empujas con el hombro tres veces.\n\nA la tercera, la cerradura cede.\n\nLa puerta se abre.",
+      "choices": [
+        { "text": "Entrar", "next": "dentro_habitacion" }
+      ]
+    },
+    "dentro_habitacion": {
+      "title": "La Habitación de Carlota",
+      "text": "No es un trastero.\n\nEra la habitación de alguien. Una cama estrecha bien hecha, una mesita de noche con un libro de tapas oscuras, un armario de madera, y un tocador con espejo ovalado.\n\nEn el tocador hay un peine de concha. Un frasco de perfume vacío. Y una fotografía enmarcada: una mujer de pelo oscuro, cuarenta y pocos años, sentada en lo que parece ser el salón de abajo. Sonriendo.\n\nCarlota.\n\nLas velas que veías bajo la puerta están en el alféizar de la ventana. Tres velas blancas encendidas. Llevan encendidas tiempo suficiente para que haya cera derramada y endurecida en el alféizar.\n\nAlguien las encendió. Y alguien las sigue encendiendo.\n\nEn el espejo del tocador, ves algo. No a ti, no exactamente. Ves el reflejo del cuarto, igual que debería ser. Y en la cama, en el reflejo, hay una figura tumbada con los ojos cerrados.\n\nCuando te giras a mirar la cama, está vacía.",
+      "choices": [
+        { "text": "Coger la fotografía de Carlota", "next": "foto_carlota" },
+        { "text": "Buscar a Rosario y contarle lo que has visto", "next": "rosario_habitacion" }
+      ]
+    },
+    "foto_carlota": {
+      "title": "El Reconocimiento",
+      "text": "Coges la fotografía.\n\nLa luz de las velas ilumina la cara de Carlota desde abajo, y por un momento la imagen parece moverse. Solo el parpadeo de las llamas.\n\nPero entonces escuchas el sonido en el pasillo. Un paso. Luego otro. Lentos, deliberados, que se detienen justo al otro lado de la puerta abierta.\n\nTe giras.\n\nEl pasillo está vacío.\n\nPero el aire en el umbral es diez grados más frío que el resto de la habitación, y la llama de la vela más cercana a la puerta se dobla hacia dentro, como inclinada hacia algo invisible que pasa.",
+      "choices": [
+        { "text": "Salir al pasillo", "next": "pasillo_noche" },
+        { "text": "Quedarte en la habitación hasta que amanezca", "next": "madrugada_habitacion" }
+      ]
+    },
+    "rosario_habitacion": {
+      "title": "Las Velas",
+      "text": "Encuentras a Rosario en el pasillo, como si ya supiera a dónde ibas.\n\n— Las velas — dices.\n\nRosario mira al interior de la habitación.\n\n— Las enciendo yo — dice. — Desde que murió el señor.\n\n— ¿Por qué?\n\n— Porque alguien tiene que hacerlo. — Una pausa. — El señor llevaba quince años sin entrar en esta habitación. Pero yo la limpiaba. La mantenía como estaba el día que Carlota se fue.\n\n— ¿Por qué?\n\nRosario te mira.\n\n— Porque a veces cuando paso por delante siento que ella está dentro. Y me pareció que lo menos que podía hacer era que la habitación no oliera a cerrado.",
+      "choices": [
+        { "text": "Pedirle a Rosario que te ayude a entender qué quiere Carlota", "next": "rosario_carlota_solucion" },
+        { "text": "Ir a coger la brújula del salón", "next": "coger_brujula" }
+      ]
+    },
+    "rosario_carlota_solucion": {
+      "title": "Lo Que Falta",
+      "text": "— ¿Cree que hay algo que Carlota quiere? ¿Algo que necesita para...\n\n— ¿Para irse? — Rosario termina la frase con una naturalidad que sorprende. — He tenido quince años para pensarlo.\n\nTe mira.\n\n— La brújula era de su abuelo. Marinero. Para ella no era un objeto más, era lo único que tenía de él. El señor se la pidió prestada una vez y nunca se la devolvió. Y luego ella murió.\n\n— ¿Y si se la devolvemos?\n\n— ¿A quién se la devolvemos? — dice Rosario, con algo que en otra persona sería amargura. — ¿Al mar?\n\nSe queda callada un momento.\n\n— Quizás sí — dice. — Al mar.",
+      "choices": [
+        { "text": "Ir a coger la brújula", "next": "coger_brujula" }
+      ]
+    },
+    "coger_brujula": {
+      "title": "La Brújula",
+      "text": "La vitrina se abre sin llave. El interior huele a tiempo.\n\nCoges la brújula. Es más pesada de lo que esperabas. El latón está oscurecido pero el mecanismo interior funciona: la aguja gira despacio y se asienta apuntando al norte.\n\nPero norte aquí, en esta casa, es el mar.\n\nEn cuanto la coges, algo cambia en la casa.\n\nLos sonidos del temporal parecen retroceder un poco. O quizás es solo que tu atención se concentra en el objeto que tienes en la mano y el resto del mundo se hace más pequeño.\n\nSubes al tercer piso. Al estudio. A la ventana del norte.",
+      "choices": [
+        { "text": "Abrir la ventana y dejar la brújula en el alféizar", "next": "final_bueno_brujula" },
+        { "text": "Esperar a que amanezca y llevarla al borde del agua", "next": "amanecer_brujula" }
+      ]
+    },
+    "final_bueno_brujula": {
+      "title": "Devuelta",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "Abres la ventana del estudio.\n\nEl viento entra, la lámpara se apaga, y la habitación queda a oscuras excepto por la luz gris del temporal. Pones la brújula en el alféizar exterior, con el nombre CARLOTA hacia el mar.\n\nY esperas.\n\nDurante varios minutos no ocurre nada. Solo el viento, la lluvia, el sonido del mar abajo.\n\nLuego el barómetro del salón, tres pisos abajo, suena. Un golpe suave. Y luego silencio.\n\nEl viento cambia de dirección. No de golpe: gradualmente, como si algo enorme y lento se hubiera decidido a girar.\n\nCuando miras abajo, el agua está vacía. Sin formas, sin figuras, sin luz.\n\nLa brújula en el alféizar empieza a moverse. La aguja gira despacio, abandonando el norte, dando una vuelta completa y luego quedándose quieta apuntando al oeste, a la costa, a tierra.\n\nA la mañana siguiente, con el sol, el puente aparece de nuevo entre la marea que baja. La brújula ya no está en el alféizar. No está en ningún sitio de la casa.\n\nRosario te prepara café y te da la mano al despedirte. Un apretón breve, firme.\n\n— La primera vez en quince años que el temporal pasa sin que haya nadie en el agua — dice.\n\nCruza el puente en el coche, con el inventario incompleto y una historia que Mengual no va a entender.\n\nPero que Rosario sí entiende. Y eso, decides, es lo que importa.",
+      "choices": []
+    },
+    "amanecer_brujula": {
+      "title": "Al Amanecer",
+      "text": "Pasas la noche sentado en el estudio con la brújula en la mano.\n\nLos sonidos de la casa van y vienen: pasos en el pasillo que no son los tuyos, la vitrina del salón que tintinea, algo que golpea suavemente en la ventana del norte aunque estás en el tercer piso y no hay nada que pueda llegar ahí.\n\nHacia las cuatro de la mañana todo para.\n\nEl silencio es distinto al silencio del temporal. Es el silencio de algo que espera.\n\nRosario aparece en la puerta del estudio a las seis. La luz empieza a cambiar en el horizonte.\n\n— La marea va a bajar pronto — dice. — Si quiere hacer eso, tiene que ser ahora.",
+      "choices": [
+        { "text": "Bajar al borde del agua con la brújula", "next": "final_bueno_agua" }
+      ]
+    },
+    "final_bueno_agua": {
+      "title": "El Borde",
+      "isEnding": true,
+      "endingType": "good",
+      "text": "El puente empieza a aparecer bajo la marea menguante: primero los bordillos, luego el asfalto en el centro, centímetro a centímetro.\n\nEstás en el borde del islote, donde la piedra termina y empieza el mar. Rosario está tres metros detrás de ti, de pie, con las manos cruzadas.\n\nEl agua a tus pies es oscura y quieta entre olas. El temporal ha amainado. El cielo empieza a aclarar por el este, un gris que se convierte en naranja muy despacio.\n\nDejas la brújula en el agua.\n\nNo la tiras. La pones, con cuidado, en la superficie del mar, como si fueras a lanzar un barco de papel.\n\nFlota un segundo. La aguja gira una vez completa.\n\nLuego se hunde despacio, iluminada desde abajo por la luz del amanecer que empieza a entrar en el agua, hasta que desaparece en el verde oscuro.\n\nNada ocurre de manera dramática. Nada aparece en el agua. Nada habla.\n\nPero Rosario, detrás de ti, emite un sonido muy suave. No un llanto. Algo entre el alivio y la rendición.\n\n— Ya está — dice.\n\nCruzas el puente cuando el asfalto ya está seco. El inventario está incompleto. La causa de muerte de don Ernesto sigue siendo oficial y razonablemente mentira.\n\nPero hay cosas que no necesitan documento para ser verdad.",
+      "choices": []
+    },
+    "pasillo_noche": {
+      "title": "El Pasillo",
+      "text": "El pasillo del segundo piso de noche es un lugar diferente al pasillo de día.\n\nLas puertas son las mismas. La alfombra roja desgastada es la misma. Pero hay algo en la proporción de las sombras, en la forma en que la lámpara de aceite alarga tu sombra y la dobla en el techo, que hace que el pasillo parezca más largo de lo que es.\n\nCaminando hacia las escaleras, pasas frente al espejo del fondo del pasillo.\n\nTe ves. Normal. Tú, la lámpara, el pasillo detrás de ti.\n\nLuego algo más.\n\nEn el fondo del espejo, al final de la perspectiva del pasillo reflejado, hay una figura. Una mujer con el pelo oscuro y mojado, ropa que se pega al cuerpo. Mirando hacia ti desde el fondo del reflejo.\n\nMiras atrás, al pasillo real.\n\nVacío.\n\nCuando vuelves la vista al espejo, la figura ya está más cerca. No se movió mientras la mirabas. Se movió en el segundo que miraste hacia otro lado.",
+      "choices": [
+        { "text": "Alejarte rápido del espejo hacia las escaleras", "next": "madrugada_salon" },
+        { "text": "Quedarte mirando el espejo", "next": "espejo_quedarse" }
+      ]
+    },
+    "espejo_quedarse": {
+      "title": "El Fondo del Espejo",
+      "text": "Te quedas.\n\nLa figura en el espejo se detiene cuando tú te detienes. Inmóvil ahora, a mitad del pasillo reflejado.\n\nLa cara es la de la fotografía que viste en la habitación. Carlota, sin duda. Pero el pelo pegado al cuello, la ropa oscura y pesada de agua, los ojos muy abiertos.\n\nTe mira durante un tiempo que no sabes contar.\n\nLuego hace un gesto muy suave con la mano: señala hacia abajo. Hacia la planta baja. Hacia el salón donde está la brújula.\n\nNo con urgencia. Con la paciencia de alguien que lleva mucho tiempo esperando y sabe que puede esperar un poco más.",
+      "choices": [
+        { "text": "Ir al salón a coger la brújula", "next": "coger_brujula" },
+        { "text": "Bajar a buscar a Rosario", "next": "madrugada_salon" }
+      ]
+    },
+    "madrugada_habitacion": {
+      "title": "La Madrugada",
+      "text": "Decides quedarte en la habitación de Carlota hasta que amanezca.\n\nTe sientas en la cama. Las velas arden. El temporal sigue fuera pero aquí dentro el aire es sorprendentemente tranquilo, casi cálido.\n\nA las tres de la madrugada escuchas los golpes.\n\nEn la ventana.\n\nEstás en el segundo piso. Nada podría llegar a esta ventana desde fuera.\n\nLos golpes son lentos y regulares. Tres golpes. Pausa. Tres golpes.\n\nLuego para.\n\nLuego el pomo de la puerta, la puerta que dejaste abierta, empieza a girar sola. Muy despacio. Como alguien que está al otro lado y no sabe con certeza si entrar.",
+      "choices": [
+        { "text": "Decir 'pasa' en voz alta", "next": "final_malo_habitacion" },
+        { "text": "Levantarte y ir a la puerta tú", "next": "puerta_habitacion_abrir" }
+      ]
+    },
+    "puerta_habitacion_abrir": {
+      "title": "La Puerta",
+      "text": "Te levantas. Tres pasos hasta la puerta. La agarras y la abres del todo.\n\nEl pasillo está vacío.\n\nPero el frío que entra desde el pasillo borra el calor de la habitación en segundos.\n\nY en el suelo del pasillo, en la alfombra roja, hay marcas de humedad. La forma de dos pies descalzos que llegan desde las escaleras y se detienen justo frente a la puerta de la habitación de Carlota.\n\nLas marcas están mojadas. Agua de mar.",
+      "choices": [
+        { "text": "Seguir las marcas hasta las escaleras", "next": "madrugada_salon" },
+        { "text": "Volver a meterte en la habitación y cerrar la puerta", "next": "esperar_amanecer" }
+      ]
+    },
+    "esperar_amanecer": {
+      "title": "Esperar",
+      "text": "Cierras la puerta. No hay llave por dentro.\n\nTe sientas en el suelo con la espalda apoyada en la puerta. Las velas arden.\n\nNo duermes. Pero tampoco pasa nada más.\n\nHacia las seis de la mañana, la luz cambia bajo la puerta. No la luz de las velas sino la gris y fría del amanecer que se filtra desde algún lugar del pasillo.\n\nEl temporal ha amainado.\n\nSales. El pasillo está seco. Las marcas de humedad han desaparecido.\n\nBajas al salón.",
+      "choices": [
+        { "text": "Ir al salón", "next": "amanecer_salon" }
+      ]
+    },
+    "madrugada_salon": {
+      "title": "Las Tres de la Mañana",
+      "text": "El salón de noche está lleno de sombras que los objetos proyectan en todas las direcciones: el casco de la escafandra hace una sombra enorme en la pared sur, el velero en miniatura duplica su mástil en el techo.\n\nRosario está sentada en el único sillón, con los ojos abiertos, frente a la chimenea donde ya no hay fuego.\n\n— ¿No duerme? — preguntas.\n\n— Nunca duermo bien cuando hay temporal. — Te mira. — ¿Usted sí?\n\n— No.\n\nHay un silencio entre los dos que no es incómodo. Es el silencio de dos personas que están esperando lo mismo sin habérselo dicho.\n\nLuego los golpes empiezan.\n\nEn la pared exterior. En el lado del mar. Cuatro golpes lentos, como si alguien llamara desde fuera. Desde el agua.\n\nRosario no se mueve. Cierra los ojos.",
+      "choices": [
+        { "text": "Ir a la ventana a mirar", "next": "ventana_madrugada" },
+        { "text": "Quedarte con Rosario hasta que amanezca", "next": "esperar_con_rosario" }
+      ]
+    },
+    "ventana_madrugada": {
+      "title": "La Ventana",
+      "text": "Abres las contraventanas.\n\nEl mar está negro. Las olas rompen contra el islote con fuerza pero sin el caos del temporal más fuerte. Está amainando.\n\nY en el agua, directamente frente a la ventana, está Carlota.\n\nNo como la viste antes, a distancia. Ahora está a diez metros. Lo suficiente para verle la cara, los ojos, el color exacto de la ropa que lleva.\n\nTe mira.\n\nNo dice nada. No hace señas. Solo mira con la expresión que tiene alguien que lleva quince años esperando que le devuelvan algo que era suyo.",
+      "choices": [
+        { "text": "Ir a coger la brújula y traerla", "next": "coger_brujula" },
+        { "text": "Gritar su nombre desde la ventana", "next": "final_malo_habitacion" }
+      ]
+    },
+    "final_malo_habitacion": {
+      "title": "Lo Que Entra",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "Dices su nombre. O abres la boca para decirlo.\n\nEl viento entra de golpe y apaga todas las velas del salón.\n\nOscuridad total durante un segundo.\n\nCuando tus ojos se adaptan a la luz mínima del temporal que entra por la ventana abierta, la sala está como estaba. Los objetos, las vitrinas, la escafandra en el rincón.\n\nMenos la vitrina de la brújula.\n\nLa vitrina está abierta y vacía.\n\nY hay agua en el suelo. Un rastro desde la ventana hasta la puerta del salón. Huellas descalzas de agua de mar.\n\nRosario sigue en su sillón. Pero tiene los ojos cerrados ahora y no responde cuando la llamas.\n\nA la mañana siguiente te encuentra la policía —avisada por Mengual— sentado en la entrada de la casa, con el inventario completo sobre el regazo. Todas las páginas rellenadas con una letra que no reconoces como tuya.\n\nEl inventario incluye la brújula de Carlota. Catalogada en el ítem 47, junto a una nota al margen:\n\n*Devuelta a su propietaria.*\n\nRosario no estaba en la casa cuando llegó la policía.\n\nNunca encontraron rastro de que hubiera estado allí.",
+      "choices": []
+    },
+    "esperar_con_rosario": {
+      "title": "Las Dos",
+      "text": "Te sientas en el sofá frente a Rosario. Los dos mirando la chimenea apagada.\n\nLos golpes en la pared externa continúan durante un rato. Cuatro golpes. Pausa. Cuatro golpes. Luego se espacian. Luego para.\n\nHacia las cinco de la mañana, Rosario habla sin abrir los ojos:\n\n— Cuando yo llegué a esta casa, hace cuarenta años, el señor me dijo que la única regla era no hablar de Carlota. — Una pausa. — Llevo cuarenta años sin hablarla con nadie que no fuera usted esta noche.\n\n— ¿Por qué me lo ha contado a mí?\n\nAbre los ojos.\n\n— Porque usted es el tasador — dice. — La persona a quien le corresponde saber qué hay en esta casa y qué valor tiene.\n\n— ¿Y qué hay?\n\nRosario se levanta.\n\n— Una deuda — dice. — Y yo ya soy demasiado vieja para seguir pagando los intereses de otro.",
+      "choices": [
+        { "text": "Ir a coger la brújula", "next": "coger_brujula" },
+        { "text": "Esperar al amanecer sin hacer nada", "next": "amanecer_salon" }
+      ]
+    },
+    "amanecer_salon": {
+      "title": "El Amanecer",
+      "text": "El primer gris del amanecer llega por las ventanas del este. Luego el naranja.\n\nEl temporal ha pasado. El mar está agitado todavía pero ya no tiene la violencia de la noche.\n\nEl puente aparece: primero los bordes, luego el centro, centímetro a centímetro bajo la marea menguante.\n\nCruzan el puente a las ocho de la mañana. El coche. La cámara. El formulario de inventario incompleto.\n\nRosario se queda en la puerta mirando cómo te vas.\n\nNo te ha dicho que vuelvas. No te ha dicho que no vuelvas.",
+      "choices": [
+        { "text": "Continuar", "next": "final_regular_marcha" }
+      ]
+    },
+    "final_regular_marcha": {
+      "title": "El Informe",
+      "isEnding": true,
+      "endingType": "bad",
+      "text": "El informe que le presentas a Mengual dos días después es profesional, completo en lo posible, y absolutamente convencional.\n\nInventario parcial de la Casa del Islote, Luanco. Estimación de valor. Observaciones: acceso condicionado por las mareas, posibles problemas de humedad en la segunda planta. Recomendación: tasación completa cuando las condiciones meteorológicas lo permitan.\n\nNo menciones la brújula de Carlota. No el diario. No la ventana.\n\nMengual está satisfecho.\n\nLos sobrinos ponen la casa a la venta seis semanas después. No se vende. El primer comprador visita la casa y retira la oferta sin explicación. El segundo también.\n\nRosario sigue viviendo ahí, según Mengual, aunque ya nadie le paga el sueldo. Ha pedido quedarse mientras la casa esté en venta. Los sobrinos han aceptado porque les resulta conveniente tener a alguien dentro.\n\nBuscan otro tasador para el inventario completo. Tres tasadores dicen que no antes de que acaben la visita.\n\nHace seis meses te llamó uno de ellos, que encontró tu nombre en los expedientes de Mengual.\n\n— ¿Pasó algo en esa casa? — te preguntó.\n\nTardaste en responder.\n\n— La brújula — dijiste al final. — Hay una brújula en el salón que no debería estar ahí. Devuélvela al mar antes de que anochezca.\n\nEl tasador colgó sin responder.\n\nNunca supiste si lo hizo.",
+      "choices": []
+    }
+  }
+}
