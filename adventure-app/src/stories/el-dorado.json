@@ -1,0 +1,281 @@
+{
+  "id": "el-dorado",
+  "title": "El Dorado Park",
+  "description": "Inaugurado en 1968. Cerrado en 1985. Reabierto en 2019. Nadie que haya preguntado por qué estuvo cerrado tanto tiempo ha recibido una respuesta satisfactoria.",
+  "estimatedLength": "14–20 min",
+  "startNode": "inicio",
+  "nodes": {
+    "inicio": {
+      "title": "La Entrada",
+      "text": "El cartel lleva semanas en la autovía. Letras doradas sobre fondo negro, una ilustración de un carrusel iluminado, la promesa de «La magia de otra época».\n\nElena lo vio primero. Te dijo que quería ir. Llevas dos años con ella y sabes que cuando pone esa expresión — la de niña que descubre algo — no tiene sentido resistirse.\n\nEl aparcamiento está lleno para ser un martes. Familias, parejas, algún grupo de amigos. El parque se ve desde la carretera: torres de atracciones, una rueda de feria que gira despacio contra el cielo de primera hora de la tarde, y en el centro, visible por encima de todo, el techo ornamental del Gran Carrusel.\n\nAl comprar las entradas, la chica de taquilla tiene una sonrisa que no llega a los ojos. Probablemente lleva doce horas aquí. Probablemente sonríe así desde las nueve de la mañana.\n\nO quizás es otra cosa.\n\nElena coge tu mano cuando entráis y la entrada huele a palomitas y a algo más antiguo, algo que recuerda a aceite de maquinaria y a madera vieja barnizada muchas veces.\n\n— Es precioso — dice Elena.",
+      "choices": [
+        { "text": "Entrar al parque", "next": "llegada" }
+      ]
+    },
+    "llegada": {
+      "title": "El Dorado",
+      "text": "El parque es, hay que reconocerlo, precioso.\n\nNo de la manera aséptica de los grandes parques modernos. Es precioso de otra forma: hay algo en la escala, en los materiales, en la proporción de las cosas que pertenece a una época en que esto se construía para durar. Las barandillas son de hierro forjado. Los suelos de adoquín. Las fachadas de las atracciones tienen detalles pintados a mano que ningún ordenador habría diseñado igual.\n\nElena saca el teléfono cada treinta metros.\n\nVisitáis la montaña rusa, los autos de choque, una casa de los espejos donde os perdéis durante diez minutos y salís riendo. Un trabajador con uniforme azul marino os ofrece algodón de azúcar. Tiene el pelo hacia atrás con brillantina, como alguien de otra época. Su nombre en la plaquita dice: MANUEL.\n\nOs sonríe.\n\nLa sonrisa dura exactamente lo que dura vuestra atención sobre él. Cuando os giráis, la expresión se apaga como una luz.",
+      "choices": [
+        { "text": "Continuar explorando el parque", "next": "dia_dorado" }
+      ]
+    },
+    "dia_dorado": {
+      "title": "La Tarde Feliz",
+      "text": "La tarde pasa bien. Muy bien, en realidad. Esas tardes que te sorprenden por lo sencillas que son: buena compañía, luz bonita, la pequeña euforia de las atracciones.\n\nElena gana un oso de peluche en el tiro al blanco. Comes un perrito caliente que sabe exactamente como deben saber. Hay un espectáculo de magia en una carpa lateral donde un mago hace desaparecer un reloj de pulsera y una niña del público llora porque pensaba que era de verdad.\n\nA las seis de la tarde, con la luz cambiando de tono, es cuando empiezas a notar cosas.\n\nPrimero: una zona al fondo del parque, separada por una valla de madera pintada de verde, con un cartel que dice RENOVACIÓN EN CURSO. Las tablas de la valla están grises de sol y lluvia. No es la pátina de una valla puesta este verano. Es la pátina de años.\n\nSegundo: el Gran Carrusel, que lleva toda la tarde girando, tiene caballos. Algunos son obviamente recientes, lacados, con crines de nailon. Pero hay tres o cuatro, los más interiores, que son de madera auténtica. Madera tan vieja que la pintura original asoma por debajo de las capas nuevas como una herida.\n\nTercero: un niño de unos ocho años, solo, te mira desde junto a una papelera. Cuando le devuelves la mirada, dice:\n\n— ¿Os quedáis al espectáculo de noche?",
+      "choices": [
+        { "text": "Preguntar al niño qué espectáculo", "next": "nino_espectaculo" },
+        { "text": "Ignorarlo y seguir con Elena", "next": "atardecer" }
+      ]
+    },
+    "nino_espectaculo": {
+      "title": "El Niño",
+      "text": "— ¿Qué espectáculo?\n\nEl niño no sonríe. La mayoría de los niños de ocho años en un parque de atracciones sonreirían.\n\n— El de noche — dice. — Cuando cierran las puertas.\n\n— ¿Y qué pasa cuando cierran las puertas?\n\nUna pausa que dura demasiado para un niño de ocho años.\n\n— Los del día se van — dice. — Y vienen los de noche.\n\nElena te toca el brazo.\n\n— ¿Estás aquí con tus padres? — le pregunta al niño.\n\nEl niño mira a Elena. Luego os mira a los dos juntos. Luego se da la vuelta y camina hacia la zona de renovación, hacia la valla de madera gris, y cuando llega a ella simplemente... no está. No giró. No se escondió detrás de nada. Estaba y luego no estaba.\n\n— Qué raro — dice Elena.\n\nSon las seis y veinte. El sol está bajando.",
+      "choices": [
+        { "text": "Proponer a Elena que os vayáis ya", "next": "decision_irse" },
+        { "text": "Quedarse, ha sido solo un niño raro", "next": "atardecer" }
+      ]
+    },
+    "atardecer": {
+      "title": "La Hora Dorada",
+      "text": "El sol baja despacio y el parque cambia de luz. Las torres se vuelven siluetas, las bombillas de colores de las atracciones empiezan a importar más que la luz del día, y hay un momento, exactamente uno, en que todo es perfecto: las farolas antiguas del parque se encienden a la vez y el adoquín refleja algo dorado y cálido.\n\nElena te agarra del brazo.\n\n— Me quiero quedar a ver cómo queda de noche — dice. — Veinte minutos más.\n\nEl parque cierra a las diez. Son las siete y cuarto. Hay mucha tarde por delante.\n\nEn la zona de acceso al Gran Carrusel, un trabajador está cambiando el cartel del turno. El que se va lleva el uniforme azul que has visto todo el día. El que llega lleva algo diferente: el mismo uniforme, sí, pero en un tono que no termina de ser el mismo. Más oscuro. Y el corte es ligeramente diferente. Como si fuera de otra época.",
+      "choices": [
+        { "text": "Proponer iros antes de que sea de noche del todo", "next": "decision_irse" },
+        { "text": "Quedarse a ver el parque iluminado", "next": "primeras_luces" }
+      ]
+    },
+    "decision_irse": {
+      "title": "La Propuesta",
+      "text": "— Creo que deberíamos irnos.\n\nElena te mira. Busca en tu cara algo concreto.\n\n— ¿Estás bien?\n\n— Sí. Solo... estoy cansado. Y el camino de vuelta es largo.\n\nElena mira el parque una vez más. El carrusel, las luces que empiezan a importar más que el cielo, la gente que sigue pasándolo bien con una normalidad aplastante.\n\n— Vale — dice.\n\nLo dice sin drama. Sin decepción real. Como si también ella llevara un rato esperando que alguien tomara esa decisión.",
+      "choices": [
+        { "text": "Salir del parque", "next": "salida_temprana" }
+      ]
+    },
+    "salida_temprana": {
+      "title": "El Aparcamiento",
+      "text": "Cruzáis la salida principal a las siete y media.\n\nEl aparcamiento tiene esa luz fría de las últimas horas de la tarde, ese momento en que la luz del día ya no sirve pero las farolas aún no son suficientes. Los coches siguen ahí. Familias cargando carritos, grupos de adolescentes que salen con la misma energía con que entraron.\n\nTodo normal.\n\nMetéis el oso de peluche en el maletero. Elena se sienta en el asiento del copiloto y suspira de esa manera que no es insatisfacción sino agotamiento feliz.\n\n— Ha sido bonito — dice.\n\n— Sí.\n\nArrancas. Al salir del aparcamiento, en el retrovisor, ves el perfil del Gran Carrusel contra el cielo. Gira. Lento, constante, indiferente a todo.\n\nHay algo en esa indiferencia que no te gusta.\n\nEsa noche, en casa, buscas el nombre del parque en internet. Tardas veinte minutos en encontrar lo que no aparece en la web oficial ni en las reseñas de Google.\n\nLo encuentras en el archivo digital de un periódico regional. Una noticia de junio de 1972.\n\nCatorce muertos.\n\nUn incendio durante el turno de noche.\n\nEl parque estuvo abierto hasta el día siguiente.",
+      "choices": [
+        { "text": "Leer el artículo", "next": "final_bueno_1" }
+      ]
+    },
+    "final_bueno_1": {
+      "title": "El Archivo",
+      "isEnding": true,
+      "endingType": "bueno",
+      "text": "El artículo tiene fotos.\n\nCatorce trabajadores. El incendio se inició en la sala de maquinaria del Gran Carrusel. El mecanismo siguió funcionando durante veintitrés minutos después de que se dispararan las alarmas. Los que estaban dentro no pudieron salir.\n\nEl parque reabrió en 1974 sin cambiar de nombre. Cerró definitivamente en 1985 sin que ningún comunicado oficial explicara el motivo.\n\nReeabrió en 2019. La página web habla de «recuperar la magia de una época dorada». No menciona 1972 en ningún apartado.\n\nLees los nombres de los catorce. Entre los fotos de grupo del personal de 1972, encuentras uno que te detiene: un trabajador con el pelo hacia atrás con brillantina. En la plaquita del uniforme, el nombre: MANUEL.\n\nEl mismo nombre que el del trabajador que os ofreció algodón de azúcar esta tarde.\n\nLlamas a Elena. Le envías el artículo sin decir nada.\n\nTarda siete minutos en responderte.\n\n*¿Cuándo cerramos la noche?*\n\n*A las siete y media.*\n\n*Bien hecho.*\n\nNo volvéis. Ponéis una reseña en Google que Google elimina en cuarenta y ocho horas. Llamáis al ayuntamiento y os pasan de un departamento a otro hasta que nadie coge el teléfono.\n\nEl Dorado Park sigue abierto. En su web, esta semana, anuncian una «Noche de Magia» el próximo sábado.\n\nLas entradas se agotan en dos horas.",
+      "choices": []
+    },
+    "primeras_luces": {
+      "title": "El Parque de Noche",
+      "text": "Las luces se encienden todas a la vez, como si alguien hubiera dado un interruptor general, y el parque se transforma.\n\nEs bonito. Más de lo que esperabas. Las guirnaldas de bombillas amarillas sobre los caminos, los focos de colores en las fachadas, el Gran Carrusel iluminado desde dentro con una luz cálida que hace que los caballos proyecten sombras largas sobre la pared circular.\n\nElena saca el teléfono.\n\n— El carrusel de noche debe quedar perfecto — dice. — Voy a acercarme a fotografiarlo. Enseguida vuelvo.\n\nSe dirige hacia la plataforma del Gran Carrusel.\n\nTe quedas donde estás.\n\nA tu lado, un trabajador pasa empujando un carrito de limpieza. El uniforme que lleva es ligeramente diferente al de esta tarde: el mismo diseño, pero el tejido tiene algo. Una textura más pesada. Un color que bajo las luces del parque parece el correcto pero que en otro contexto no lo sería.\n\nY la cara.\n\nLa cara no tiene nada malo. Pero la expresión sí. Los músculos están todos en su sitio pero algo en la coordinación entre ellos es ligeramente, perturbadoramente incorrecto. Como si la cara fuera un mapa del que alguien ha seguido las instrucciones sin entender para qué sirve cada elemento.\n\nEl trabajador te mira al pasar.\n\nSonríe.",
+      "choices": [
+        { "text": "Ir detrás de Elena de inmediato", "next": "buscar_enseguida" },
+        { "text": "Esperar donde estás", "next": "espera_raul" }
+      ]
+    },
+    "buscar_enseguida": {
+      "title": "El Carrusel Sin Elena",
+      "text": "Vas hacia el Gran Carrusel.\n\nLa plataforma de subida está a veinte metros. El carrusel gira a la velocidad que ha girado toda la tarde: lento, pausado, con esa cadencia de cosa muy pesada bien equilibrada. La música es la misma —un vals mecánico— pero sin el ruido de fondo del parque lleno de gente, suena diferente. Más clara. Más cerca de algo que reconoces como antiguo.\n\nNo hay rastro de Elena.\n\nPreguntas a la chica que cobra en la entrada del carrusel. Tiene el mismo uniforme modificado. Te escucha con la cabeza ladeada, como si el idioma que hablas fuera uno que conoce pero no domina del todo.\n\n— No he visto a nadie así — dice.\n\nSu plaquita dice CARMEN. La miras. Ella sigue mirándote.\n\n— Disfrute del parque — dice, cuando el silencio se ha extendido demasiado.\n\nSabes el teléfono de Elena de memoria. Marcas. Cuatro tonos. Buzón de voz.\n\nEl parque es grande. Pero no tanto.",
+      "choices": [
+        { "text": "Buscar a Elena por el parque solo", "next": "busqueda_solo" },
+        { "text": "Pedir ayuda a seguridad", "next": "seguridad_parque" }
+      ]
+    },
+    "seguridad_parque": {
+      "title": "El Puesto de Seguridad",
+      "text": "El puesto de seguridad está junto a la entrada principal. Un guardia con uniforme diferente al de los demás trabajadores —oscuro, sin plaquita de nombre— escucha tu descripción de Elena con los brazos cruzados sobre el pecho.\n\n— ¿Cuánto tiempo lleva sin aparecer?\n\n— Quince minutos. Fue a fotografiar el carrusel.\n\n— Los visitantes a veces pierden la noción del tiempo.\n\n— Son quince minutos.\n\nEl guardia anota algo en un cuaderno. Letras pequeñas, apretadas. Cuando lo cierra, ves que la tapa del cuaderno tiene un logotipo: el mismo que hay en la entrada del parque, pero diferente. Las letras dicen EL DORADO y debajo, en pequeño, algo que no llegas a leer porque cierra el cuaderno antes.\n\n— La buscaremos — dice. — Quédese en la zona central.\n\nNo le da la sensación de que vaya a buscar a nadie.\n\nCuando te giras para volver a la zona central, ves a un hombre de unos cuarenta años que te está mirando desde un banco. Ha estado mirando toda la conversación. Te hace un gesto casi imperceptible con la cabeza: ven.",
+      "choices": [
+        { "text": "Acercarte al hombre del banco", "next": "raul_banco" },
+        { "text": "Ignorarlo y buscar a Elena solo", "next": "busqueda_solo" }
+      ]
+    },
+    "espera_raul": {
+      "title": "El Hombre Del Banco",
+      "text": "Pasan cinco minutos. Luego diez.\n\nElena no vuelve.\n\nSaques el teléfono. Cuatro tonos. Buzón de voz.\n\nEs entonces cuando el hombre se sienta a tu lado en el banco.\n\nCuarenta años, más o menos. Ropa corriente. Una cara con el tipo de cansancio que no viene de una noche sino de tiempo. Te mira de frente.\n\n— ¿Ha venido con alguien? — pregunta.\n\n— Con mi pareja. Fue a fotografiar el carrusel y no ha vuelto.\n\nCierra los ojos un momento. No de alivio. De lo contrario.\n\n— ¿Cuánto tiempo lleva sin aparecer?\n\n— Doce minutos.\n\n— Siéntese — dice, aunque ya estás sentado. — Tengo que contarle algo y no tenemos mucho tiempo.",
+      "choices": [
+        { "text": "Escucharle", "next": "raul_banco" }
+      ]
+    },
+    "raul_banco": {
+      "title": "Raúl",
+      "text": "Se llama Raúl. Lo dice al principio, como si el nombre fuera lo más importante que puede ofrecerte.\n\n— Vine aquí hace tres años. Con mi novia, Marta. Era la primera temporada del parque reabierto. Había un evento de noche, como el de esta semana. Marta quiso fotografiar el carrusel.\n\nUna pausa.\n\n— Nunca salió del parque.\n\nTe mira para ver cómo procesas eso.\n\n— Llamé a la policía. Buscaron. No encontraron nada. Dijeron que quizás se había ido sola, que a veces pasa. — Su voz es plana, sin inflexión. La voz de alguien que ha contado esto muchas veces y ha dejado de esperar que le crean. — Desde entonces vuelvo cada año. Al evento de noche. Intento entender qué pasó.\n\n— ¿Y?\n\n— Hay una zona clausurada al fondo. Dicen que es por obras. Lleva clausurada desde que el parque reabrió. — Pausa. — Los trabajadores de noche no son los mismos que los de día. No lo parecen. Tienen los mismos uniformes pero algo en ellos está... mal. Y el carrusel — mira hacia donde el Gran Carrusel gira sin parar —, el carrusel nunca se detiene.\n\nEl parque anuncia el cierre en una hora y media. En algún lugar del recinto, Elena no contesta al teléfono.",
+      "choices": [
+        { "text": "Ir con Raúl a buscar a Elena", "next": "con_raul" },
+        { "text": "Ir solo — no puedes fiarte de un desconocido", "next": "busqueda_solo" }
+      ]
+    },
+    "con_raul": {
+      "title": "Juntos",
+      "text": "— De acuerdo — dices. — Pero vamos ahora.\n\nRaúl asiente. Se levanta con la rapidez de alguien que lleva tres años esperando este momento.\n\n— La zona clausurada primero — dice. — Si los han llevado a algún sitio, es ahí.\n\nCamináis por el parque. Los visitantes que quedan son menos ahora: el ambiente de última hora, los que apuran hasta el cierre. Los trabajadores nocturnos se mueven entre ellos con esa sonrisa que no llega a los ojos y ese leve desfase en los gestos que te resulta cada vez más difícil ignorar.\n\nUno de ellos — una mujer con la plaquita ROSA — os mira cuando pasáis. Os sigue con los ojos. No se mueve del sitio pero los ojos giran en los cuencas con una precisión que no parece natural.\n\n— No les miréis — dice Raúl en voz baja. — No directamente.\n\nLa valla de madera verde gris está al fondo, pasada la última atracción. El cartel de RENOVACIÓN EN CURSO tiene la letra desvaída de algo que lleva aquí mucho tiempo.\n\nLa puerta de la valla está abierta.",
+      "choices": [
+        { "text": "Entrar", "next": "zona_clausurada" }
+      ]
+    },
+    "busqueda_solo": {
+      "title": "Sin Ayuda",
+      "text": "Recorres el parque dos veces en diagonal.\n\nLa zona de atracciones, los baños, la carpa del mago —vacía a estas horas—, la zona de restauración. Llamas a Elena cada cinco minutos. Cada vez salta el buzón de voz.\n\nLos trabajadores nocturnos te observan. No de manera obvia. Pero cada vez que levantas la vista hay uno cerca, con esa expresión de estar haciendo su trabajo y solo su trabajo y nada más, y sin embargo los ojos apuntan en tu dirección.\n\nA las ocho y cuarto, agotadas las opciones obvias, te encuentras delante de la valla de madera verde gris al fondo del parque. El cartel de RENOVACIÓN EN CURSO. La puerta de la valla.\n\nAbierta.\n\nDetrás de la valla, la oscuridad es diferente a la del resto del parque. El Dorado tiene luces por todas partes; esta zona no. O tiene luces, pero de otro tipo: una luz amarilla muy pálida que sale de edificios que no puedes ver bien desde aquí.\n\nElena está en algún sitio. Y el parque cierra en menos de dos horas.",
+      "choices": [
+        { "text": "Entrar en la zona clausurada", "next": "zona_clausurada" }
+      ]
+    },
+    "zona_clausurada": {
+      "title": "La Otra Parte",
+      "text": "Al otro lado de la valla, el parque es diferente.\n\nNo es que esté sin terminar o en obras. Es que está terminado y lleva así mucho tiempo. Las fachadas de las atracciones tienen la misma estética que el resto del parque, pero la pintura no es una imitación de lo antiguo: es antigüedad real. Los colores que alguna vez fueron primarios son ahora pastel desteñido. La madera de las estructuras tiene grietas longitudinales. Los cables metálicos de algunas atracciones tienen óxido en los puntos de tensión.\n\nHay atracciones aquí que no figuran en el mapa del parque. Un tren fantasma con la fachada pintada de negro, decorada con calaveras de una estética que dejó de estar de moda en los años setenta. Una atracción de caída libre con una silla de plástico naranja que tiene el cinturón de seguridad roto visible desde fuera. Un puesto de tiro al blanco con los muñecos tan decolorados que los rasgos de sus caras apenas se distinguen.\n\nY luces. Hay luces encendidas en todo esto. Como si estuviera en funcionamiento.\n\nComo si estuviera esperando.",
+      "choices": [
+        { "text": "Seguir hacia el interior", "next": "galeria_1972" }
+      ]
+    },
+    "galeria_1972": {
+      "title": "La Galería",
+      "text": "En el pasillo central de la zona clausurada hay una galería de fotos enmarcadas.\n\nSon fotos de grupo del personal. Filas de trabajadores con uniformes. En la primera foto, en la esquina inferior derecha, un año: 1968. La inauguración.\n\nSiguientes fotos: 1969, 1970, 1971.\n\nLuego la de 1972.\n\nEs diferente. En las anteriores, los trabajadores miran a la cámara con la expresión genérica de las fotos de grupo. En la de 1972, algunos miran a la cámara y otros no. Algunos tienen la boca abierta. Alguno mira hacia un lado, fuera del encuadre.\n\nDebajo de la foto de 1972, alguien ha pegado una hoja plastificada. El texto está mecanografiado.\n\n*En memoria de los trabajadores fallecidos durante el incendio del 14 de junio de 1972: Manuel R., Carmen S., Rosa M., Gregorio P., Antonio V., Luisa F., Pedro G., Dolores H., Julio N., Francisca A., Tomás O., Concepción B., Rafael M., Alfredo J.*\n\nCatorce nombres.\n\nLos lees dos veces.\n\nLuego los recuerdas.\n\nManuel, el del algodón de azúcar. Carmen, la de la taquilla del carrusel. Rosa, la que os siguió con los ojos al pasar. Los nombres de las plaquitas que llevan toda la noche viendo.",
+      "choices": [
+        { "text": "Seguir adelante", "next": "carrusel_nocturno" }
+      ]
+    },
+    "carrusel_nocturno": {
+      "title": "El Gran Carrusel De Noche",
+      "text": "El Gran Carrusel en la zona clausurada no es el mismo que en la zona principal del parque.\n\nO sí lo es.\n\nEs la misma estructura, los mismos metros de diámetro, la misma música de vals mecánico. Pero aquí no hay bombillas de colores nuevas ni pintura reciente ni caballos lacados. Aquí hay lo que había debajo: la madera original de 1968, los espejos interiores con la plata comida por los bordes, los caballos con las crines de crin natural oscurecida por décadas de manos.\n\nY gira.\n\nGira con la velocidad de siempre, lento y constante, y en los caballos hay personas.\n\nNo muchas. Cinco, seis. Están sentadas con la postura correcta, las manos en las riendas, mirando al frente. La cadencia del carrusel las mueve hacia adelante y hacia atrás con cada vuelta, ese balanceo que los caballos de carrusel hacen cuando el mecanismo es bueno.\n\nNo hablan. No miran a los lados. Sus expresiones son las mismas que las de los trabajadores nocturnos: en su sitio, coordinadas, sin terminar de estar del todo.",
+      "choices": [
+        { "text": "Acercarse a mirar quiénes son", "next": "riders_congelados" }
+      ]
+    },
+    "riders_congelados": {
+      "title": "Los Jinetes",
+      "text": "Te acercas a la plataforma del carrusel.\n\nEl carrusel no tiene valla aquí, no hay taquilla, no hay trabajador controlando el acceso. La plataforma está al nivel del suelo y los caballos pasan a menos de un metro de donde estás.\n\nReconoces a dos de los jinetes.\n\nUno es un hombre de unos sesenta años que viste esta tarde en la cola de la montaña rusa. Llevaba una gorra de los Yankees. La gorra sigue en su cabeza. Los ojos abiertos, mirando al frente, el cuerpo moviéndose con el caballo.\n\nEl otro es una chica de unos veinticinco años, pelo oscuro, la chaqueta vaquera que notaste porque tenía bordados en las mangas. Pasa ante ti sin mirarte.\n\nY en el siguiente caballo, cuando el carrusel completa la vuelta y lo trae hacia tu posición, está Elena.\n\nElena con la cámara del teléfono todavía en la mano. Elena mirando al frente con esa expresión que no es la suya. Elena pasando ante ti a la velocidad exacta del carrusel, accesible y al mismo tiempo completamente inalcanzable.",
+      "choices": [
+        { "text": "Llamarla en voz alta", "next": "llamar_elena_carrusel" },
+        { "text": "Subir al carrusel para llegar hasta ella", "next": "subir_carrusel_solo" }
+      ]
+    },
+    "llamar_elena_carrusel": {
+      "title": "Su Nombre",
+      "text": "— ¡Elena!\n\nEl carrusel gira. La música sigue. Nadie de los que van montados reacciona.\n\nElena pasa. Y vuelve a pasar. Y vuelve a pasar.\n\nEn la cuarta vuelta, algo cambia. Los dedos de Elena se mueven en la empuñadura del teléfono. Solo eso. Una contracción pequeña, inconsciente, como cuando alguien que duerme profundo escucha su nombre y algo en el cuerpo registra el sonido sin que la consciencia llegue a despertarse.\n\n— Elena. Elena, mírame.\n\nEn la quinta vuelta, los ojos de Elena se mueven.\n\nNo del todo. No hasta ti. Pero se mueven: de la dirección fija en que han estado mirando, unos milímetros hacia el lado. Hacia el sonido.\n\nHay algo ahí. Hay alguien ahí dentro todavía.",
+      "choices": [
+        { "text": "Buscar la forma de parar el carrusel", "next": "buscar_mecanismo" },
+        { "text": "Intentar subir al carrusel en marcha para sacarla", "next": "subir_carrusel_solo" }
+      ]
+    },
+    "buscar_mecanismo": {
+      "title": "La Sala De Máquinas",
+      "text": "Das la vuelta a la estructura.\n\nEl interior del carrusel, la parte que los visitantes no ven, es una sala circular de maquinaria. El eje central, los engranajes, los cables de tracción. Todo de hierro y acero de otra época, bien conservado o quizás simplemente indetenible.\n\nHay una palanca. Grande, de hierro, en la pared. Arriba: una flecha verde pintada. Abajo: una flecha roja. La palanca está en la posición superior.\n\nJunto a la palanca hay una placa metálica atornillada. El texto está en relieve, difícil de leer en la luz tenue:\n\n*PARADA DE EMERGENCIA — USO EXCLUSIVO PERSONAL AUTORIZADO — EL DORADO PARK 1968*\n\nUna mano se apoya en tu hombro.\n\nTe giras.\n\nRaúl está detrás de ti. Tiene la cara de alguien que ha encontrado lo que llevaba tres años buscando y no está seguro de si es bueno o malo.\n\n— La vi — dice. — A Marta. En el carrusel. — Su voz no tiembla pero debería. — Está ahí. Lleva tres años ahí.",
+      "choices": [
+        { "text": "Bajar la palanca ahora", "next": "carrusel_parado" },
+        { "text": "Esperar — podría ser una trampa", "next": "dudar_palanca" }
+      ]
+    },
+    "dudar_palanca": {
+      "title": "La Duda",
+      "text": "— Espera — dices. — No sabemos qué pasa si lo paramos.\n\n— Pasa que se para — dice Raúl.\n\n— O pasa otra cosa.\n\nUn silencio.\n\nLuego los escucháis. Pasos. No de una persona. Varios. El sonido que hacen los uniformes de los trabajadores nocturnos, esa tela pesada moviéndose, acercándose desde la galería de fotos.\n\n— Ya saben que estamos aquí — dice Raúl.\n\nLos pasos se acercan.\n\n— ¿Bajamos la palanca? — pregunta Raúl.\n\nY en la plataforma exterior del carrusel, visible a través de la rendija entre la maquinaria y la pared, Elena pasa. Y en su cara, esta vez, hay algo: los ojos buscando, los labios moviéndose sin sonido.\n\nBuscándote.",
+      "choices": [
+        { "text": "Bajar la palanca", "next": "carrusel_parado" }
+      ]
+    },
+    "carrusel_parado": {
+      "title": "El Silencio",
+      "text": "Bajas la palanca.\n\nEl mecanismo protesta: un sonido metálico, profundo, la queja de algo que lleva décadas sin detenerse. Los engranajes desaceleran. Los cables vibran. La música del vals pierde el tempo, se distorsiona, se convierte en algo que no es vals ni silencio sino el espacio entre los dos.\n\nY el carrusel se detiene.\n\nEl silencio que sigue es absoluto.\n\nLuego, desde la plataforma, un sonido. Varios sonidos superpuestos: alguien tosiendo, alguien aspirando aire bruscamente, alguien que dice algo en voz muy baja. El sonido de personas que vuelven a ser personas.\n\n— Raúl — dices.\n\n— Ve — dice él. Su voz suena diferente. — Ve a buscarla. Yo me quedo aquí.\n\nLos pasos de los trabajadores nocturnos siguen acercándose.",
+      "choices": [
+        { "text": "Ir a la plataforma a buscar a Elena", "next": "plataforma_parada" }
+      ]
+    },
+    "plataforma_parada": {
+      "title": "La Plataforma",
+      "text": "Elena está sentada en el caballo con los ojos cerrados.\n\nCuando la tocas en el hombro, abre los ojos.\n\nTe mira. Tarda un segundo en que la mirada enfoque, en que la expresión se reorganice en algo que reconoces como suyo.\n\n— ¿Qué...? — dice. Su voz suena ronca, como si llevara horas sin usarla. — ¿Dónde estoy?\n\n— En el carrusel. Tenemos que irnos.\n\nLa ayudas a bajar del caballo. Sus piernas ceden un momento; la sostienes. Los otros jinetes del carrusel están en distintos estados: la mujer de la chaqueta vaquera está de rodillas en la plataforma con las manos en la cara, el hombre de la gorra de los Yankees mira a su alrededor con la expresión de alguien que no entiende cómo llegó aquí.\n\nDesde la sala de maquinaria, un golpe. Luego el sonido de la palanca moviéndose.\n\nEl carrusel empieza a girar de nuevo.",
+      "choices": [
+        { "text": "Correr con Elena hacia la salida", "next": "huida_zona_clausurada" }
+      ]
+    },
+    "huida_zona_clausurada": {
+      "title": "La Carrera",
+      "text": "Corréis.\n\nElena corre contigo sin preguntar nada, con el instinto de alguien que no sabe exactamente qué huye pero sabe que tiene que correr. El parque clausurado pasa a los lados: el tren fantasma, el puesto de tiro, las atracciones sin nombre con las luces encendidas para nadie.\n\nDetrás de vosotros, el Gran Carrusel retoma su cadencia. La música del vals vuelve, distorsionada al principio, luego perfecta.\n\nLos trabajadores nocturnos aparecen en los laterales del pasillo. No corren. Caminan. Pero su velocidad de caminata es constante y no parece disminuir con la distancia.\n\nLlegáis a la valla de madera gris. La puerta sigue abierta.",
+      "choices": [
+        { "text": "Cruzar la valla y seguir hacia la salida del parque", "next": "zona_principal_noche" }
+      ]
+    },
+    "zona_principal_noche": {
+      "title": "El Parque Principal",
+      "text": "Al otro lado de la valla, el parque principal. Las luces de colores, los adoquines, las guirnaldas. Dos familias que todavía están paseando. Un par de adolescentes en los autos de choque.\n\nTodo ridículamente normal.\n\nElena se detiene. Se dobla sobre sí misma apoyando las manos en las rodillas, respirando.\n\n— ¿Qué ha pasado? — dice entre respiraciones. — Fui a hacer una foto y luego... no recuerdo. Me desperté en un caballo.\n\n— Luego te cuento. Ahora tenemos que llegar a la salida.\n\nMiráis atrás. La puerta de la valla gris sigue abierta pero no hay nadie en el umbral.\n\n— ¿Raúl? — dices en voz baja.\n\nNada.\n\nEl camino a la salida del parque está a doscientos metros.",
+      "choices": [
+        { "text": "Ir directamente a la salida sin mirar atrás", "next": "final_bueno_2" },
+        { "text": "Volver a buscar a Raúl", "next": "buscar_raul_final" }
+      ]
+    },
+    "buscar_raul_final": {
+      "title": "Raúl",
+      "text": "— Espera — le dices a Elena. — Hay alguien más ahí dentro.\n\n— No. — Elena te coge del brazo. — No vuelvas.\n\nNo escuchas.\n\nCruzas la valla de nuevo. La galería de fotos, el pasillo con las atracciones clausuradas, la sala de maquinaria del carrusel.\n\nLa palanca está en la posición de arriba. El carrusel gira.\n\nRaúl no está en la sala de maquinaria.\n\nMiras a través de la rendija hacia la plataforma.\n\nEl carrusel gira. En los caballos hay jinetes. Algunos son los que estaban antes, que no consiguieron salir a tiempo. Y en uno de ellos, con las manos en las riendas y los ojos al frente, está Raúl.\n\nYa no parece el hombre del banco. Parece alguien que lleva mucho tiempo montando.\n\nA su lado, en el caballo siguiente, una mujer que podría tener veinticinco años o podría no tener edad. La chaqueta de jean de Marta. O lo que queda de ella.\n\nRaúl encontró lo que buscaba.",
+      "choices": [
+        { "text": "Salir", "next": "final_bueno_2" }
+      ]
+    },
+    "subir_carrusel_solo": {
+      "title": "Subir",
+      "text": "Subes a la plataforma en marcha.\n\nEs posible. El carrusel va despacio y la plataforma está al nivel del suelo. Puedes caminar sobre ella mientras los caballos pasan.\n\nElena está a dos caballos de distancia. La alcanzas. La tocas en el hombro.\n\nNada.\n\nLa sacudes suavemente. Nada. Sus ojos siguen al frente, su cuerpo sigue el ritmo del caballo, sus dedos siguen aferrados a las riendas.\n\nIntentas tirar de ella. La mano que tiene en las riendas no cede. No es que se resista: es que la empuñadura parece parte de la mano ya, como si llevara tiempo así.\n\nBuscas el punto de sujeción del cinturón. Lo encuentras. Lo desabrochas.\n\nY el carrusel comienza a acelerar.\n\nNo mucho. Unos pocos kilómetros por hora más. Pero suficiente para que mantener el equilibrio en la plataforma en movimiento sea más difícil. Suficiente para que saltar ya no sea tan sencillo como subir.",
+      "choices": [
+        { "text": "Intentar sacar a Elena y saltar juntos", "next": "salto_con_elena" },
+        { "text": "Saltar tú solo antes de que sea imposible", "next": "saltar_solo" }
+      ]
+    },
+    "salto_con_elena": {
+      "title": "El Salto",
+      "text": "Rodeas a Elena con un brazo y tiras.\n\nSe suelta del caballo. Sus piernas no responden bien, cuelgan, el peso es todo tuyo. El carrusel va más rápido ahora. El borde de la plataforma está a un metro.\n\nSaltas.\n\nEl impacto en el suelo es duro. Elena cae encima de ti. El aire sale de tus pulmones de golpe.\n\nEstáis en el suelo, fuera del carrusel, que sigue girando a vuestra espalda cada vez más rápido.\n\nElena abre los ojos.\n\nTe mira. Su expresión es la de alguien que emerge de algo muy profundo: lenta, confundida, pero presente.\n\n— ¿Qué...?\n\n— Luego. Corre.",
+      "choices": [
+        { "text": "Correr hacia la salida del parque", "next": "huida_sin_raul" }
+      ]
+    },
+    "saltar_solo": {
+      "title": "La Decisión",
+      "text": "No puedes sostenerla.\n\nEso es lo que te dices mientras saltas. Que no puedes sostenerla. Que el carrusel va demasiado rápido. Que si te quedas ahí no vas a poder saltar tú tampoco.\n\nAterrizas fuera. Te golpeas la rodilla contra el suelo y el dolor es limpio y real y completamente presente.\n\nTe giras.\n\nEl carrusel gira. Elena pasa. En el cuarto giro, sus ojos te encuentran.\n\nSon los ojos de Elena. Los suyos. Mirándote desde el caballo.\n\nEl carrusel sigue acelerando.",
+      "choices": [
+        { "text": "Buscar la manera de pararlo", "next": "buscar_mecanismo_solo" },
+        { "text": "Correr a buscar ayuda fuera", "next": "huida_sin_elena" }
+      ]
+    },
+    "buscar_mecanismo_solo": {
+      "title": "Solo Con La Palanca",
+      "text": "Das la vuelta a la estructura corriendo.\n\nLa sala de maquinaria. La palanca. La bajas.\n\nEl mecanismo protesta igual que protestó la primera vez pero algo es diferente: el carrusel no desacelera. La palanca cede, llega a la posición inferior, y el carrusel sigue girando exactamente igual.\n\nLa empujas de nuevo hacia arriba. La bajas. Nada.\n\nLa palanca de emergencia para el carrusel que lleva más de cincuenta años sin detenerse no funciona cuando la acciona alguien solo.\n\nO no funciona para ti.\n\nO simplemente ya es demasiado tarde.",
+      "choices": [
+        { "text": "Salir del parque a buscar ayuda", "next": "huida_sin_elena" }
+      ]
+    },
+    "huida_sin_raul": {
+      "title": "Los Dos",
+      "text": "Cruzáis la valla. El parque principal. Los últimos visitantes. La salida a doscientos metros.\n\nNadie os persigue. Los trabajadores nocturnos que veis al pasar os miran pero no se mueven. Como si el interés que tenían en vosotros hubiera disminuido al salir de su zona. O como si la cuenta de esta noche ya estuviera cubierta con los que se quedaron en el carrusel.\n\nCruzáis la salida principal. El aparcamiento. El coche.\n\nElena no dice nada hasta que lleváis diez minutos de carretera. Luego:\n\n— El carrusel no paraba.\n\n— No.\n\n— Y había más gente montada.\n\n— Sí.\n\nSilencio.\n\n— ¿Salieron?\n\nNo contestas.\n\nElena mira por la ventanilla. Las luces de la carretera pasan.",
+      "choices": [
+        { "text": "Ver cómo termina la noche", "next": "final_bueno_2" }
+      ]
+    },
+    "huida_sin_elena": {
+      "title": "Sin Ella",
+      "text": "Corres.\n\nSin mirar atrás. Sin parar. La zona clausurada, la valla, el parque principal, los últimos visitantes que te miran al pasar a toda velocidad, la salida, el aparcamiento.\n\nLlegas al coche. Las manos no encuentran las llaves. Las encuentras. Arrancas.\n\nAl salir del aparcamiento, en el retrovisor, el perfil del Gran Carrusel iluminado contra el cielo. Girando. Siempre girando.\n\nLlamas al 112 desde el coche. Explicas lo que puedes explicar. Una persona desaparecida en el parque. El Dorado Park. Dentro.\n\nLa policía llega en veinte minutos. El parque, que ya ha cerrado sus puertas al público, niega que haya nadie dentro. Abren por protocolo. Rastrean el recinto. Encuentran la zona clausurada: inspeccionan la galería, la sala de maquinaria, el carrusel.\n\nEl carrusel está parado. No hay nadie en él.\n\nNo hay rastro de Elena.",
+      "choices": [
+        { "text": "Ver lo que pasó después", "next": "final_malo_1" }
+      ]
+    },
+    "final_bueno_2": {
+      "title": "La Noche Fuera",
+      "isEnding": true,
+      "endingType": "bueno",
+      "text": "Llegáis a casa pasada la medianoche.\n\nElena se ducha durante media hora. Cuando sale, se sienta en el sofá con el pelo mojado y no dice nada durante un rato largo. Tú tampoco.\n\nLuego:\n\n— No recuerdo nada desde que entré al carrusel. — Pausa. — ¿Cuánto tiempo estuve ahí?\n\n— Hora y media, más o menos.\n\nAsiente. Procesa.\n\n— Había más gente.\n\n— Sí.\n\n— ¿Salieron todos?\n\nPiensas en Raúl. En la figura que viste en el carrusel después de volver a buscarlo.\n\n— No todos.\n\nA la mañana siguiente presentáis una denuncia formal. Adjuntáis la noticia de 1972, los nombres de los trabajadores nocturnos, las fotos que Elena hizo durante el día antes de que le quitaran el teléfono. La policía abre una investigación.\n\nEl Dorado Park cierra «por mantenimiento» dos días después. El cierre se prolonga. Un mes. Luego dos.\n\nNo vuelve a abrir.\n\nElena tiene pesadillas durante semanas. Siempre el mismo sueño: un caballo que se mueve bajo ella, la música del vals, y la certeza absoluta de que alguien la está llamando desde muy lejos y no puede girar la cabeza para mirar.\n\nCon el tiempo, las pesadillas disminuyen.\n\nCuando pasan por la autovía, en el punto donde estaba el cartel dorado, hay ahora un panel en blanco.",
+      "choices": []
+    },
+    "final_malo_1": {
+      "title": "El Informe",
+      "isEnding": true,
+      "endingType": "malo",
+      "text": "El caso de Elena se archiva a los seis meses.\n\nDesaparición voluntaria, concluye el informe. Sin evidencias de delito. La investigación al parque no encuentra irregularidades: el recinto está limpio, la zona clausurada tiene los permisos de obras en regla, los trabajadores nocturnos no constan como tales en ningún registro de personal porque el parque no tiene trabajadores de noche.\n\nEl Dorado reabre tres semanas después de la denuncia.\n\nVas una vez más. Solo. Durante el día, porque no tienes ninguna intención de quedarte a ver las luces.\n\nRecorres los caminos de adoquín buscando algo que no sabes definir. Quizás una explicación. Quizás la certeza de que estás loco y todo lo que viste fue el pánico distorsionando la realidad de maneras que tienen nombre en los manuales de psicología.\n\nPasas por delante del Gran Carrusel.\n\nGira.\n\nY en uno de los caballos interiores, los de madera original, hay una mujer con el pelo oscuro y una chaqueta vaquera con bordados en las mangas.\n\nPasa ante ti a la velocidad exacta del carrusel.\n\nNo te mira.\n\nPero la mano que tiene en las riendas, al pasar, se abre un momento. Como alguien que saluda. O como alguien que lleva mucho tiempo queriendo soltar algo y no puede.\n\nVuelves al coche.\n\nNunca encuentras la manera de contarlo.",
+      "choices": []
+    },
+    "final_malo_2": {
+      "title": "El Vals",
+      "isEnding": true,
+      "endingType": "malo",
+      "text": "El carrusel no para.\n\nLo intentas todo: bajar la palanca no funciona, gritar no funciona, y en algún punto entre el tercer y el cuarto intento de saltar te das cuenta de que el borde de la plataforma está más lejos de lo que estaba antes. No porque el carrusel haya cambiado de tamaño. Porque tú te has alejado del borde.\n\nTe has alejado del borde y no recuerdas haberlo hecho.\n\nElena pasa. Y vuelve a pasar. En su cara hay algo que antes no había: reconocimiento. Te mira cuando pasas. Abre la boca.\n\nNo sale ningún sonido.\n\nLa música del vals sigue. El carrusel gira. El parque allá fuera, al otro lado de la valla de madera gris, sigue funcionando. La gente sigue pasándolo bien.\n\nEl tiempo dentro del carrusel no funciona igual que fuera.\n\nEsto lo entiendes después. Mucho después, cuando ya has perdido la noción de cuántas vueltas has dado, cuando la expresión de tu cara ha adquirido la coordinación ligeramente incorrecta que notaste en los trabajadores de noche, cuando alguien nuevo se acerca a la plataforma y te mira desde fuera con una expresión de horror que reconoces porque fue la tuya.\n\nEl carrusel gira.\n\nSiempre ha girado.\n\nSiempre girará.",
+      "choices": []
+    },
+    "final_regular": {
+      "title": "Elena",
+      "isEnding": true,
+      "endingType": "regular",
+      "text": "Salís del parque juntos.\n\nElena camina. Habla. Responde cuando le preguntas cómo está. Todo correcto. Pero hay algo en el tiempo de respuesta, una décima de segundo de más entre la pregunta y la contestación, que no estaba antes.\n\nEn el coche, cuando arrancas, te dice:\n\n— El carrusel era bonito.\n\nNo lo dice como alguien que acaba de vivir algo horrible. Lo dice como alguien que lo recuerda de manera agradable. Como un buen rato.\n\n— Elena, no estabas bien ahí.\n\n— Estaba bien — dice. Y mira por la ventanilla. — Estaba muy bien.\n\nEsa noche, en casa, duerme de un tirón. Sin movimiento. Sin hablar entre sueños. La respiración completamente regular.\n\nA la mañana siguiente está perfectamente. O algo que desde fuera es indistinguible de perfectamente.\n\nPasan las semanas. Elena es Elena: trabaja, ríe, os queréis, tenéis planes. Todo igual.\n\nExcepto que a veces, cuando hayáis quedado para cenar en casa de alguien y os despedís tarde y el coche cruza algún tipo de parque o recinto con luces de feria a lo lejos, Elena gira la cabeza hacia la ventanilla y su expresión cambia durante un segundo.\n\nUna décima de segundo de más.\n\nY luego vuelve.\n\nY no dice nada.\n\nY tú tampoco.",
+      "choices": []
+    }
+  }
+}

@@ -14,6 +14,7 @@ import happyville from '../stories/happyville.json'
 import museoTerror from '../stories/museo-terror.json'
 import casaIslote from '../stories/casa-islote.json'
 import laFiesta from '../stories/la-fiesta.json'
+import elDorado from '../stories/el-dorado.json'
 
 const STORY_REGISTRY = {
   'la-mansion': laMansion,
@@ -24,6 +25,7 @@ const STORY_REGISTRY = {
   'museo-terror': museoTerror,
   'casa-islote': casaIslote,
   'la-fiesta': laFiesta,
+  'el-dorado': elDorado,
 }
 
 function loadProgress(storyId) {

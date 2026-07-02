@@ -10,8 +10,9 @@ import happyville from '../stories/happyville.json'
 import museoTerror from '../stories/museo-terror.json'
 import casaIslote from '../stories/casa-islote.json'
 import laFiesta from '../stories/la-fiesta.json'
+import elDorado from '../stories/el-dorado.json'
 
-const STORIES = [laMansion, elFaro, castrotorafe, elAnciano, happyville, museoTerror, casaIslote, laFiesta]
+const STORIES = [laMansion, elFaro, castrotorafe, elAnciano, happyville, museoTerror, casaIslote, laFiesta, elDorado]
 
 export default function HomeScreen() {
   const navigate = useNavigate()

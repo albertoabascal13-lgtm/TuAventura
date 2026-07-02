@@ -22,7 +22,7 @@
     },
     "calle_principal": {
       "title": "Main Street",
-      "text": "La calle principal de HappyVille podría ser el set de una película de los años cincuenta: una farmacia con el rótulo en neón apagado de día, una heladería con mesas en la acera, una peluquería, una ferretería, y el Marta's Diner con un letrero de neón rojo que anuncia *OPEN* aunque sean las once de la mañana de un martes.\n\nCada persona con la que cruzáis la mirada sonríe. No la sonrisa rápida y educada de quien saluda a un desconocido. Una sonrisa larga, cálida, de alguien que lleva mucho tiempo esperando verte.\n\nEl Coleman's Inn está al final de la calle: una casa victoriana blanca de tres plantas con una veranda corrida y maceteros con geranios rojos. En el porche, una mujer de unos sesenta años os espera con los brazos abiertos antes de que hayáis llegado al buzón.\n\n— ¡Aquí están! — exclama. — ¡Los esperábamos!\n\nBelén me aprieta el brazo con entusiasmo. A mí algo en la frase *los esperábamos* me resulta extraña. La reserva la hice hace tres semanas. Es normal que nos esperaran.\n\n¿No?",
+      "text": "La calle principal de HappyVille podría ser el set de una película de los años cincuenta: una farmacia con el rótulo en neón apagado de día, una heladería con mesas en la acera, una peluquería, una ferretería, y el Marta's Diner con un letrero de neón rojo que anuncia *OPEN* aunque sean las once de la mañana de un martes.\n\nCada persona con la que cruzáis la mirada sonríe. No la sonrisa rápida y educada de quien saluda a un desconocido. Una sonrisa larga, cálida, de alguien que lleva mucho tiempo esperando verte.\n\nEl Coleman's Inn está al final de la calle: una casa victoriana blanca de tres plantas con una veranda corrida y maceteros con geranios rojos. En el porche, una mujer de unos sesenta años os espera con los brazos abiertos antes de que hayáis llegado al buzón.\n\n— ¡Aquí están! — exclama. — ¡Los esperábamos!\n\nBelén me aprieta el brazo con entusiasmo. A ti algo en la frase *los esperábamos* te resulta extraña. La reserva la hice hace tres semanas. Es normal que nos esperaran.\n\n¿No?",
       "choices": [
         { "text": "Entrar al inn y subir a la habitación", "next": "habitacion" },
         { "text": "Explorar Main Street antes de hacer el check-in", "next": "main_street_explorar" }
@@ -90,7 +90,7 @@
       "title": "Belén Lo Ve",
       "text": "— Mira esto.\n\nBelén se acerca a la foto. La estudia un momento.\n\n— Una mano — dice.\n\n— O una sombra.\n\n— Es una mano.\n\nOs miráis.\n\n— Welcome Day — lee Belén en voz alta. — ¿Qué es el Welcome Day?\n\nNo lo sabes. Pero el nombre te suena a algo que debería ser inocente y no lo es.\n\n— Pregunto en recepción — dice Belén, ya moviéndose hacia la puerta.\n\n— Espera. No preguntes directamente por la foto. Pregunta por la historia del pueblo. A ver qué cuentan.",
       "choices": [
-        { "text": "Bajar los dos juntos a investigar", "next": "explorar_inn" },
+        { "text": "Bajar los dos juntos a buscar el sótano", "next": "sotano_buscar" },
         { "text": "Que Belén distraiga a Betty mientras tú buscas el sótano", "next": "sotano_buscar" }
       ]
     },
@@ -98,9 +98,9 @@
       "title": "El Pasillo",
       "text": "El inn tiene dos plantas y un pasillo largo en la planta baja. Las puertas de las otras habitaciones están cerradas. No se oye nada detrás de ellas, aunque según Betty hay otros huéspedes.\n\nAl fondo del pasillo hay una puerta diferente: más antigua, de madera oscura, sin número. Es la que Betty mencionó: 'si necesitan algo por la noche, llamad a esa puerta'.\n\nA la derecha de esa puerta, semioculta por un paragüero victoriano, hay otra puerta. Más pequeña. Con una argolla de hierro en lugar de pomo.\n\nY del otro lado de esa puerta, muy levemente, llega un olor. Tierra húmeda. Herrumbre. Algo orgánico que no quieres identificar.",
       "choices": [
-        { "text": "Abrir la puerta pequeña", "next": "sotano_entrada" },
+        { "text": "Abrir la puerta pequeña", "next": "sotano" },
         { "text": "Llamar a la puerta oscura del fondo", "next": "puerta_fondo" },
-        { "text": "Volver a la habitación a buscar a Belén antes de continuar", "next": "contarle_sara" }
+        { "text": "Subir a la habitación antes de continuar", "next": "habitacion" }
       ]
     },
     "puerta_fondo": {
@@ -132,6 +132,13 @@
       "choices": [
         { "text": "Ir al Marta's Diner a buscarla", "next": "diner_urgente" },
         { "text": "Coger las llaves del coche y buscarla por el pueblo", "next": "buscar_coche" }
+      ]
+    },
+    "buscar_coche": {
+      "title": "El Coche Vacío",
+      "text": "Coges las llaves y sales del inn.\n\nEl coche está donde lo dejasteis. Vacío. Das una vuelta por Main Street despacio, mirando por las ventanillas. Nadie que se parezca a Belén. Ves a los mismos vecinos de siempre con las mismas sonrisas de siempre.\n\nLa mujer de la floristería te saluda desde el porche.\n\n— ¿Busca a su chica? — pregunta, como si lo supiera.\n\nNo le preguntas cómo sabe que buscas a alguien.\n\n— La vi entrar al Marta's Diner hace un rato — dice. — Con Linda.\n\nLinda. Otro nombre nuevo.",
+      "choices": [
+        { "text": "Ir al Marta's Diner", "next": "diner_urgente" }
       ]
     },
     "diner": {
@@ -262,7 +269,8 @@
       "text": "Te sientas. Pides un café. Le haces un gesto discreto a Belén con los ojos: sigue normal.\n\nElla capta el mensaje mejor de lo que esperabas. Continúa la conversación con Linda como si nada.\n\nMientras Linda y Belén hablan, tú miras el diner con otros ojos. La puerta trasera. Las ventanas. El camión aparcado fuera. Hay dos hombres apoyados en él que no están haciendo nada específico. Solo están.\n\nLinda es encantadora. Pregunta por vuestra relación, por de dónde sois, por cuánto tiempo os quedáis. Hace preguntas perfectas, las preguntas que haría cualquier persona amable.\n\nPero nunca os pregunta adónde vais a ir después. Como si el después no existiera.",
       "choices": [
         { "text": "Susurrarle a Belén que hay que irse cuando Linda se levante un momento", "next": "decirle_sara_ahora" },
-        { "text": "Pedirle a Linda que os enseñe el pueblo mientras buscas una ruta de escape", "next": "final_trampa" }
+        { "text": "Pedirle a Linda que os enseñe el pueblo mientras buscas una ruta de escape", "next": "final_trampa" },
+        { "text": "Seguir aparentando normalidad y esperar una oportunidad durante la noche", "next": "aparentar_normalidad_final" }
       ]
     },
     "final_trampa": {
