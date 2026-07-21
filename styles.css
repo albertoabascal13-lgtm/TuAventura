@@ -979,6 +979,64 @@ input, textarea { font: inherit; color: inherit; }
 }
 .relato-ninos { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--border); }
 
+/* ─── ESCRITOS — índice ─── */
+.escritos-index-header { margin-bottom: 2.5rem; }
+.escritos-index-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--text);
+  margin: 0.4rem 0 0.6rem;
+}
+.escritos-index-desc { font-size: 1rem; color: var(--text-muted); max-width: 54ch; }
+
+.escritos-list { list-style: none; }
+.escritos-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), padding 0.18s var(--ease);
+  border-radius: 4px;
+}
+.escritos-item:first-child { border-top: 1px solid var(--border); }
+.escritos-item:hover { background: var(--bg-hover); padding-left: 1.2rem; }
+.escritos-item-info { display: flex; flex-direction: column; gap: 0.3rem; }
+.escritos-item-eyebrow {
+  font-family: var(--serif);
+  font-size: 0.7rem;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.escritos-item-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-family: var(--serif);
+  color: var(--accent);
+}
+.escritos-item-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.escritos-item-author { font-size: 0.82rem; color: var(--text-muted); font-style: italic; }
+.escritos-item-arrow {
+  font-size: 1.1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.18s var(--ease);
+}
+.escritos-item:hover .escritos-item-arrow { transform: translateX(5px); }
+
 /* ─── FOLKLORE Y LEYENDAS ─── */
 .folklore-intro { margin-bottom: 2rem; }
 .folklore-title {
@@ -1165,6 +1223,255 @@ input, textarea { font: inherit; color: inherit; }
   .nav-toggle { display: flex; }
   .nav-brand { font-size: 0.68rem; letter-spacing: 0.12em; }
 
+  /* ── JUEGO ── */
+  .juego-layout { flex-direction: column; }
+  .juego-map-box { width: 100%; }
+  .juego-panel { width: 100%; min-height: 220px; }
+  .juego-head { flex-direction: column; gap: 1rem; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════
+   EL GRAN EXPLORADOR — JUEGO
+══════════════════════════════════════ */
+.juego-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.juego-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.juego-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin: 0.25rem 0 0;
+}
+
+.juego-score-wrap {
+  text-align: right;
+  min-width: 160px;
+}
+
+.juego-score-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.juego-score-num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.juego-prog {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.juego-prog-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+/* ── layout ── */
+.juego-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.juego-map-box {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+
+#juego-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── map shapes ── */
+.jc-shape {
+  fill: var(--card-bg);
+  stroke: var(--border);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill 0.25s, stroke 0.25s;
+}
+
+.jc-shape:hover {
+  fill: var(--bg-hover, rgba(180,130,50,0.15));
+  stroke: var(--accent);
+}
+
+.jc-shape.jc-discovered {
+  fill: rgba(180,130,50,0.28);
+  stroke: var(--accent);
+  stroke-width: 2;
+  cursor: default;
+}
+
+.jc-shape[data-id="carballeda"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.jc-label {
+  font-size: 9px;
+  font-family: var(--font-sans, sans-serif);
+  letter-spacing: 0.08em;
+  fill: var(--text-muted);
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+.jc-num {
+  font-size: 7px;
+  font-family: var(--font-sans, sans-serif);
+  fill: var(--border);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── panel ── */
+.juego-panel {
+  flex: 0 0 320px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.8rem 1.6rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.juego-hidden { display: none !important; }
+
+.juego-idle-text {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.juego-idle-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.juego-comarca-name {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.juego-question {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.juego-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.juego-option {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+  font-family: inherit;
+}
+
+.juego-option:hover {
+  background: var(--card-hover, rgba(180,130,50,0.1));
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── result ── */
+.juego-result-icon {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.juego-correct { color: #5cb85c; }
+.juego-wrong   { color: #d9534f; }
+
+.juego-result-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+
+.juego-lore {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+.juego-btn-full {
+  width: 100%;
+  margin-top: auto;
+}
+
+.juego-win-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.juego-win-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+/* responsive already added inside @media block above */
   /* ── MAPA SVG: etiquetas más grandes para que se lean al escalar ── */
   .c-label { font-size: 16px; }
   .c-num   { font-size: 11px; }
