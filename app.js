@@ -1150,16 +1150,16 @@ const JUEGO_DATA = {
     nombre: 'TIERRA DEL VINO',
     questions: [
       {
-        question: '¿Cuántos días duró el incendio que devastó Guarrate?',
-        options: ['Ocho días', 'Tres días', 'Dos semanas', 'Un día entero'],
+        question: '¿Qué rey nació en el entorno de Peleas de Arriba según la tradición histórica?',
+        options: ['Fernando III el Santo', 'Alfonso X el Sabio', 'Alfonso IX de León', 'Sancho IV el Bravo'],
         correct: 0,
-        lore: 'El incendio de Guarrate en 1932 fue una tragedia que marcó a generaciones. Durante 8 días las llamas consumieron el pueblo mientras los vecinos luchaban por salvar lo que podían.'
+        lore: 'En 1201, Berenguela de Castilla dio a luz a Fernando III el Santo mientras acampaba en el monte camino de Zamora, cerca de Peleas de Arriba. Fernando fue clave en la Reconquista y en la unificación de León y Castilla.'
       },
       {
-        question: '¿En qué año tuvo lugar el devastador incendio que destruyó el pueblo de Guarrate?',
-        options: ['1932', '1898', '1808', '1936'],
+        question: '¿Qué monasterio cisterciense mandó construir Fernando III junto a Peleas de Arriba en 1232?',
+        options: ['El monasterio de Nuestra Señora de Valparaíso', 'El monasterio de Santa María de Moreruela', 'El monasterio de San Martín de Castañeda', 'El monasterio de Montamarta'],
         correct: 0,
-        lore: 'El incendio de Guarrate de 1932 es uno de los desastres más recordados de Tierra del Vino. El fuego arrasó el pueblo durante 8 días dejando a muchas familias sin hogar y sin medios de vida.'
+        lore: 'Fernando III ordenó ampliar un albergue de peregrinos fundado por el zamorano Martín Cid hasta convertirlo en el monasterio de Nuestra Señora de Valparaíso, uno de los grandes centros cistercienses de España. Las desamortizaciones del siglo XIX lo dejaron en ruinas.'
       },
       {
         question: '¿Cómo se llama la Virgen más venerada de Tierra del Vino, cuya ermita es lugar de romería?',
