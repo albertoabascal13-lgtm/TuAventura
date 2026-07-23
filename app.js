@@ -941,80 +941,256 @@ function renderStory() {
 const JUEGO_DATA = {
   sanabria: {
     nombre: 'SANABRIA',
-    question: '¿Cómo se llama la criatura mitad hombre mitad lobo de la tradición sanabresa?',
-    options: ['El Lobishome', 'El Hombre del Bosque', 'El Gasgón', 'El Ánima Perdida'],
-    correct: 0,
-    lore: 'El Lobishome es la versión zamorana del hombre lobo. Según la leyenda, el séptimo hijo varón consecutivo estaba condenado a transformarse cada viernes.'
+    questions: [
+      {
+        question: '¿Cómo se llama la criatura mitad hombre mitad lobo de la tradición sanabresa?',
+        options: ['El Lobishome', 'El Hombre del Bosque', 'El Gasgón', 'El Ánima Perdida'],
+        correct: 0,
+        lore: 'El Lobishome es la versión zamorana del hombre lobo. Según la leyenda, el séptimo hijo varón consecutivo estaba condenado a transformarse cada viernes.'
+      },
+      {
+        question: '¿Qué condición condenaba a un hombre a convertirse en Lobishome según la tradición de Sanabria?',
+        options: ['Ser el séptimo hijo varón consecutivo', 'Haber matado a un lobo en luna llena', 'Pactar con el diablo en una encrucijada', 'Nacer en noche de San Juan'],
+        correct: 0,
+        lore: 'El séptimo hijo varón de una familia era el predestinado. La única forma de romper la maldición era que alguien derramara su sangre la noche de la transformación.'
+      },
+      {
+        question: '¿Qué lago de Sanabria esconde, según la leyenda, una ciudad sumergida bajo sus aguas?',
+        options: ['El lago de Sanabria', 'El lago de Carucedo', 'El lago de la Baña', 'El lago Negro'],
+        correct: 0,
+        lore: 'El lago de Sanabria, el mayor lago glaciar de la península ibérica, oculta según la leyenda la villa de Valverde, castigada con la inundación por la avaricia de sus habitantes.'
+      }
+    ]
   },
   benavente: {
     nombre: 'BENAVENTE Y LOS VALLES',
-    question: '¿Qué le ataban al toro en la tradición del Toro Enmaromado de Benavente?',
-    options: ['Una soga a los cuernos', 'Un lazo al cuello', 'Cintas de colores', 'Una campana al cuello'],
-    correct: 0,
-    lore: 'El Toro Enmaromado es una de las fiestas más antiguas de Benavente. La soga permite a los vecinos guiar al toro por las calles en un rito que mezcla valentía y tradición.'
+    questions: [
+      {
+        question: '¿Qué le ataban al toro en la tradición del Toro Enmaromado de Benavente?',
+        options: ['Una soga a los cuernos', 'Un lazo al cuello', 'Cintas de colores', 'Una campana al cuello'],
+        correct: 0,
+        lore: 'El Toro Enmaromado es una de las fiestas más antiguas de Benavente. La soga permite a los vecinos guiar al toro por las calles en un rito que mezcla valentía y tradición.'
+      },
+      {
+        question: '¿Qué esconde, según la leyenda de Benavente, la Cueva de los Moros?',
+        options: ['Un tesoro oculto por los moros', 'Los restos de un rey visigodo', 'Un paso secreto hasta el río', 'Las armas de una orden militar'],
+        correct: 0,
+        lore: 'La Cueva de los Moros es uno de los enclaves legendarios de Benavente. Según la tradición, los moros escondieron allí sus riquezas antes de abandonar la ciudad.'
+      },
+      {
+        question: '¿Cómo se llama el ser que, según la leyenda de Benavente, sustituye a un bebé por una criatura del otro mundo?',
+        options: ['El Malgrad o Cambio', 'El Trocado', 'El Cambiante', 'La Sustitución'],
+        correct: 0,
+        lore: 'El Malgrad o Cambio es la criatura que los seres del más allá dejan en lugar de un niño raptado. La tradición de los valles de Benavente conserva rituales para detectarlo y protegerse.'
+      }
+    ]
   },
   'tierra-campos': {
     nombre: 'TIERRA DE CAMPOS',
-    question: '¿A cuántos vecinos colgaron los franceses de un árbol en San Martín de Valderaduey?',
-    options: ['Catorce', 'Siete', 'Veinte', 'Doce'],
-    correct: 0,
-    lore: 'Los 14 de San Martín son los mártires de la Guerra de la Independencia. Su historia es uno de los episodios más dolorosos y menos conocidos de la resistencia zamorana.'
+    questions: [
+      {
+        question: '¿A cuántos vecinos colgaron los franceses de un árbol en San Martín de Valderaduey?',
+        options: ['Catorce', 'Siete', 'Veinte', 'Doce'],
+        correct: 0,
+        lore: 'Los 14 de San Martín son los mártires de la Guerra de la Independencia. Su historia es uno de los episodios más dolorosos y menos conocidos de la resistencia zamorana.'
+      },
+      {
+        question: '¿En qué guerra murieron los 14 vecinos de San Martín de Valderaduey?',
+        options: ['La Guerra de la Independencia', 'La Guerra Civil española', 'La Guerra de Sucesión', 'La Reconquista'],
+        correct: 0,
+        lore: 'Durante la ocupación napoleónica, los franceses ejecutaron a 14 vecinos de San Martín de Valderaduey colgándolos de un árbol como escarmiento a la resistencia popular.'
+      },
+      {
+        question: '¿En qué pueblo de Tierra de Campos ocurrió la tragedia de los 14 mártires de la Guerra de la Independencia?',
+        options: ['San Martín de Valderaduey', 'Villalobos', 'Bretó de la Ribera', 'Castroverde de Campos'],
+        correct: 0,
+        lore: 'San Martín de Valderaduey es un pequeño pueblo de Tierra de Campos que guardó durante generaciones el recuerdo de sus 14 mártires, ejecutados por resistir a las tropas napoleónicas.'
+      }
+    ]
   },
   aliste: {
     nombre: 'ALISTE',
-    question: '¿Qué dejaban las familias de Aliste sobre la mesa en la Noche de Ánimas?',
-    options: ['Alimentos para los difuntos', 'Una vela encendida', 'Ropa del fallecido', 'Una foto del muerto'],
-    correct: 0,
-    lore: 'En Pobladura de Aliste la Noche de Ánimas era sagrada: la mesa quedaba puesta con comida para los muertos que volvían a visitar el hogar familiar.'
+    questions: [
+      {
+        question: '¿Qué dejaban las familias de Aliste sobre la mesa en la Noche de Ánimas?',
+        options: ['Alimentos para los difuntos', 'Una vela encendida', 'Ropa del fallecido', 'Una foto del muerto'],
+        correct: 0,
+        lore: 'En Pobladura de Aliste la Noche de Ánimas era sagrada: la mesa quedaba puesta con comida para los muertos que volvían a visitar el hogar familiar.'
+      },
+      {
+        question: '¿En qué pueblo de Aliste se documentó el ritual de dejar la mesa puesta para los difuntos?',
+        options: ['Pobladura de Aliste', 'Alcañices', 'Rabanales', 'Mahíde'],
+        correct: 0,
+        lore: 'Pobladura de Aliste conservó durante siglos la tradición de preparar una cena completa para los muertos la noche de Todos los Santos, dejando la puerta entornada para que pudieran entrar.'
+      },
+      {
+        question: '¿En qué noche del año regresaban los difuntos a los hogares según la tradición de Aliste?',
+        options: ['La noche de Todos los Santos', 'La noche de San Juan', 'La noche de Reyes', 'La noche de Navidad'],
+        correct: 0,
+        lore: 'La noche del 1 de noviembre, Noche de Ánimas o de Todos los Santos, era el momento en que el velo entre el mundo de los vivos y el de los muertos se volvía más fino en la tradición de Aliste.'
+      }
+    ]
   },
   tabara: {
     nombre: 'TIERRA DE TÁBARA',
-    question: '¿A quiénes espantaba la cabeza parlante de Tábara según la leyenda?',
-    options: ['A los judíos que entraban en la villa', 'A los peregrinos forasteros', 'A los soldados musulmanes', 'A los ladrones nocturnos'],
-    correct: 0,
-    lore: 'La Cabeza Parlante de Tábara es uno de los misterios medievales de Zamora. Se dice que la cabeza gritaba al detectar la presencia de quienes no debían entrar.'
+    questions: [
+      {
+        question: '¿A quiénes espantaba la cabeza parlante de Tábara según la leyenda?',
+        options: ['A los judíos que entraban en la villa', 'A los peregrinos forasteros', 'A los soldados musulmanes', 'A los ladrones nocturnos'],
+        correct: 0,
+        lore: 'La Cabeza Parlante de Tábara es uno de los misterios medievales de Zamora. Se dice que la cabeza gritaba al detectar la presencia de quienes no debían entrar.'
+      },
+      {
+        question: '¿Cuántos años tardó el alquimista en fabricar la Cabeza Parlante de Tábara?',
+        options: ['Treinta años', 'Diez años', 'Cien años', 'Siete años'],
+        correct: 0,
+        lore: 'Según la leyenda, un alquimista anónimo dedicó treinta años de su vida a construir este ingenio de bronce capaz de vigilar y hablar. Una hazaña que sus contemporáneos calificaron de magia natural.'
+      },
+      {
+        question: '¿Qué erudito del siglo XV dio por cierta la existencia de la Cabeza Parlante en su obra Supernúmeros?',
+        options: ['Gil Tostado', 'Fray Rodrigo de Yepes', 'El Padre Feijoo', 'Alfonso de Palencia'],
+        correct: 0,
+        lore: 'Gil Tostado, obispo de Ávila y el erudito más prolífico del siglo XV, recogió en su obra la existencia de la Cabeza Parlante de Tábara como un hecho verificado, dándole así una inusitada credibilidad histórica.'
+      }
+    ]
   },
   alba: {
     nombre: 'TIERRA DE ALBA',
-    question: '¿Qué imagen sobrevivió al incendio de la ermita en Perilla de Castro?',
-    options: ['La Virgen de Roaces', 'La Virgen del Viso', 'La Virgen de la Vega', 'La Virgen del Canto'],
-    correct: 0,
-    lore: 'La Virgen de Roaces sobrevivió intacta al fuego que destruyó su ermita en Perilla de Castro. Los vecinos lo interpretaron como un milagro y reforzaron su devoción.'
+    questions: [
+      {
+        question: '¿Qué imagen sobrevivió al incendio de la ermita en Perilla de Castro?',
+        options: ['La Virgen de Roaces', 'La Virgen del Viso', 'La Virgen de la Vega', 'La Virgen del Canto'],
+        correct: 0,
+        lore: 'La Virgen de Roaces sobrevivió intacta al fuego que destruyó su ermita en Perilla de Castro. Los vecinos lo interpretaron como un milagro y reforzaron su devoción.'
+      },
+      {
+        question: '¿En qué pueblo de Tierra de Alba ocurrió el milagro de la imagen que sobrevivió al fuego?',
+        options: ['Perilla de Castro', 'Bóveda de Toro', 'Fuentesaúco', 'Cañizal'],
+        correct: 0,
+        lore: 'Perilla de Castro es un pequeño pueblo de Tierra de Alba que guarda la memoria del incendio que destruyó su ermita pero respetó milagrosamente la imagen de la Virgen de Roaces.'
+      },
+      {
+        question: '¿Qué nombre recibe la Virgen cuya imagen sobrevivió al incendio de su ermita en Tierra de Alba?',
+        options: ['La Virgen de Roaces', 'La Virgen del Espino', 'La Virgen de la Vega', 'La Virgen de las Nieves'],
+        correct: 0,
+        lore: 'La Virgen de Roaces toma su nombre del paraje donde se encontraba su ermita. Tras el incendio, la imagen intacta fue interpretada como señal divina y su culto se intensificó entre los vecinos de la comarca.'
+      }
+    ]
   },
   'tierra-pan': {
     nombre: 'TIERRA DEL PAN',
-    question: '¿Qué les ocurrió a los hermanos al cerrar los ojos en el castillo de Castrotorafe?',
-    options: ['Aparecieron dentro de su coche', 'Desaparecieron durante horas', 'Vieron visiones del pasado', 'Escucharon voces medievales'],
-    correct: 0,
-    lore: 'Castrotorafe es uno de los castillos más misteriosos de Zamora. Sus ruinas junto al río Esla acumulan siglos de historias sobre apariciones y saltos en el tiempo.'
+    questions: [
+      {
+        question: '¿Qué les ocurrió a los hermanos al cerrar los ojos en el castillo de Castrotorafe?',
+        options: ['Aparecieron dentro de su coche', 'Desaparecieron durante horas', 'Vieron visiones del pasado', 'Escucharon voces medievales'],
+        correct: 0,
+        lore: 'Castrotorafe es uno de los castillos más misteriosos de Zamora. Sus ruinas junto al río Esla acumulan siglos de historias sobre apariciones y saltos en el tiempo.'
+      },
+      {
+        question: '¿Junto a qué río se encuentran las ruinas del castillo medieval de Castrotorafe?',
+        options: ['El río Esla', 'El río Duero', 'El río Tera', 'El río Órbigo'],
+        correct: 0,
+        lore: 'Castrotorafe se alza sobre el río Esla, en cuyas orillas fue un importante enclave militar de la Orden de Santiago durante la Edad Media. Hoy sus ruinas son uno de los lugares más inquietantes de Zamora.'
+      },
+      {
+        question: '¿Qué fenómeno sobrenatural fue documentado históricamente en varios pueblos de la provincia de Zamora?',
+        options: ['Vampirismo', 'Licantropía colectiva', 'Apariciones de la Virgen', 'Posesiones demoníacas'],
+        correct: 0,
+        lore: 'Zamora es la provincia española con más casos documentados de vampirismo histórico. Los archivos eclesiásticos y civiles recogen denuncias y exhumaciones relacionadas con este fenómeno entre los siglos XVII y XIX.'
+      }
+    ]
   },
   toro: {
     nombre: 'ALFOZ DE TORO',
-    question: '¿Qué le impidió a Don Pedro cruzar para unirse a la Batalla de Toro en 1476?',
-    options: ['El río Duero crecido', 'Un ejército enemigo', 'Una tormenta de nieve', 'La traición de sus aliados'],
-    correct: 0,
-    lore: 'La Batalla de Toro de 1476 fue decisiva para la historia de España. El Cristo de las Batallas, según la leyenda, intervino milagrosamente en su desenlace.'
+    questions: [
+      {
+        question: '¿Qué le impidió a Don Pedro cruzar para unirse a la Batalla de Toro en 1476?',
+        options: ['El río Duero crecido', 'Un ejército enemigo', 'Una tormenta de nieve', 'La traición de sus aliados'],
+        correct: 0,
+        lore: 'La Batalla de Toro de 1476 fue decisiva para la historia de España. El Cristo de las Batallas, según la leyenda, intervino milagrosamente en su desenlace.'
+      },
+      {
+        question: '¿En qué año tuvo lugar la Batalla de Toro, decisiva para la unificación de España?',
+        options: ['1476', '1492', '1385', '1212'],
+        correct: 0,
+        lore: 'La Batalla de Toro de 1476 enfrentó a los Reyes Católicos contra Alfonso V de Portugal. La victoria de Isabel y Fernando consolidó su reino y cambió el rumbo de la historia de España.'
+      },
+      {
+        question: '¿Qué imagen religiosa intervino milagrosamente, según la leyenda, en la Batalla de Toro?',
+        options: ['El Cristo de las Batallas', 'La Virgen del Viso', 'La Virgen de la Concha', 'El Santo Sudario'],
+        correct: 0,
+        lore: 'El Cristo de las Batallas de Toro es una de las imágenes más veneradas de Zamora. La tradición le atribuye haber favorecido la victoria de los Reyes Católicos con su presencia sobrenatural en el campo de batalla.'
+      }
+    ]
   },
   sayago: {
     nombre: 'SAYAGO',
-    question: '¿De qué se acusaba a la serpiente mamadora en la leyenda de Sayago?',
-    options: ['De mamar de las vacas y mujeres dormidas', 'De envenenar los pozos', 'De robar niños en la noche', 'De destruir los cultivos'],
-    correct: 0,
-    lore: 'La serpiente mamadora es una criatura del folclore rural zamorano. Se decía que se introducía en los establos y casas para alimentarse de la leche de animales y personas.'
+    questions: [
+      {
+        question: '¿De qué se acusaba a la serpiente mamadora en la leyenda de Sayago?',
+        options: ['De mamar de las vacas y mujeres dormidas', 'De envenenar los pozos', 'De robar niños en la noche', 'De destruir los cultivos'],
+        correct: 0,
+        lore: 'La serpiente mamadora es una criatura del folclore rural zamorano. Se decía que se introducía en los establos y casas para alimentarse de la leche de animales y personas.'
+      },
+      {
+        question: '¿Quién talló, según la leyenda de Sayago, la imagen del Cristo del Pino?',
+        options: ['El diablo', 'Un ángel', 'Un monje misterioso', 'Un escultor árabe'],
+        correct: 0,
+        lore: 'Según la leyenda, el diablo talló el Cristo del Pino de Sayago durante una noche. La historia nació del asombro de los vecinos ante la perfección de la talla, imposible para mano humana conocida.'
+      },
+      {
+        question: '¿Dónde fue encontrada, según la leyenda, la misteriosa talla del Cristo del Pino en Sayago?',
+        options: ['En un pino en la sierra', 'En el fondo del río Duero', 'Bajo tierra en un campo', 'En una cueva oculta'],
+        correct: 0,
+        lore: 'La talla del Cristo del Pino apareció, según cuenta la leyenda, en un pino de la sierra sayaguesa. Su hallazgo fue interpretado como una señal sobrenatural y el lugar se convirtió en centro de devoción popular.'
+      }
+    ]
   },
   'tierra-vino': {
     nombre: 'TIERRA DEL VINO',
-    question: '¿Cuántos días duró el incendio que devastó Guarrate?',
-    options: ['Ocho días', 'Tres días', 'Dos semanas', 'Un día entero'],
-    correct: 0,
-    lore: 'El incendio de Guarrate en 1932 fue una tragedia que marcó a generaciones. Durante 8 días las llamas consumieron el pueblo mientras los vecinos luchaban por salvar lo que podían.'
+    questions: [
+      {
+        question: '¿Cuántos días duró el incendio que devastó Guarrate?',
+        options: ['Ocho días', 'Tres días', 'Dos semanas', 'Un día entero'],
+        correct: 0,
+        lore: 'El incendio de Guarrate en 1932 fue una tragedia que marcó a generaciones. Durante 8 días las llamas consumieron el pueblo mientras los vecinos luchaban por salvar lo que podían.'
+      },
+      {
+        question: '¿En qué año tuvo lugar el devastador incendio que destruyó el pueblo de Guarrate?',
+        options: ['1932', '1898', '1808', '1936'],
+        correct: 0,
+        lore: 'El incendio de Guarrate de 1932 es uno de los desastres más recordados de Tierra del Vino. El fuego arrasó el pueblo durante 8 días dejando a muchas familias sin hogar y sin medios de vida.'
+      },
+      {
+        question: '¿Cómo se llama la Virgen más venerada de Tierra del Vino, cuya ermita es lugar de romería?',
+        options: ['La Virgen del Viso', 'La Virgen de la Guía', 'La Virgen del Canto', 'La Virgen de Roaces'],
+        correct: 0,
+        lore: 'La Virgen del Viso es la patrona espiritual de Tierra del Vino. Su ermita, en un cerro con vistas a la comarca, es destino de romerías que mezclan devoción religiosa y tradición popular.'
+      }
+    ]
   },
   guarena: {
     nombre: 'LA GUAREÑA',
-    question: '¿Qué le arrebató la urraca a la imagen de la Virgen en Argujillo?',
-    options: ['El anillo', 'La corona', 'El manto', 'El cetro'],
-    correct: 0,
-    lore: 'La Pega de Argujillo es una de las leyendas más singulares de La Guareña. Una urraca robó el anillo de la Virgen, y la imagen señaló al pájaro ladrón ante los atónitos vecinos.'
+    questions: [
+      {
+        question: '¿Qué le arrebató la urraca a la imagen de la Virgen en Argujillo?',
+        options: ['El anillo', 'La corona', 'El manto', 'El cetro'],
+        correct: 0,
+        lore: 'La Pega de Argujillo es una de las leyendas más singulares de La Guareña. Una urraca robó el anillo de la Virgen, y la imagen señaló al pájaro ladrón ante los atónitos vecinos.'
+      },
+      {
+        question: '¿En qué pueblo de La Guareña robó la urraca el anillo de la imagen de la Virgen?',
+        options: ['Argujillo', 'Fuentesaúco', 'Guarrate', 'Villabuena del Puente'],
+        correct: 0,
+        lore: 'Argujillo es el pueblo de La Guareña donde nació la leyenda de La Pega. El nombre del pájaro protagonista — pega, la palabra zamorana para urraca — le dio nombre a toda la leyenda.'
+      },
+      {
+        question: '¿Cómo se llama en el dialecto zamorano al pájaro que robó el anillo de la Virgen en Argujillo?',
+        options: ['Pega', 'Cuervo', 'Corneja', 'Picaza'],
+        correct: 0,
+        lore: 'Pega es la palabra del dialecto leonés-zamorano para designar a la urraca. Es el nombre que le da título a la leyenda de Argujillo y refleja cómo el folclore popular se ancla en el habla local.'
+      }
+    ]
   }
 };
 
@@ -1065,11 +1241,13 @@ const JUEGO_DATA = {
     if (!data) return;
     activeComarca = id;
 
+    const q = data.questions[Math.floor(Math.random() * data.questions.length)];
+
     jcName.textContent     = data.nombre;
-    jcQuestion.textContent = data.question;
+    jcQuestion.textContent = q.question;
     jcOptions.innerHTML    = '';
 
-    const shuffled = data.options
+    const shuffled = q.options
       .map((opt, i) => ({ opt, i }))
       .sort(() => Math.random() - 0.5);
 
@@ -1077,7 +1255,7 @@ const JUEGO_DATA = {
       const btn = document.createElement('button');
       btn.className   = 'juego-option';
       btn.textContent = opt;
-      btn.addEventListener('click', () => onAnswer(i === data.correct, data));
+      btn.addEventListener('click', () => onAnswer(i === q.correct, q));
       jcOptions.appendChild(btn);
     });
 
