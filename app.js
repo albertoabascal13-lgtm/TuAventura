@@ -471,6 +471,19 @@ const FOLKLORE = [
       'Y por si eso fuera poco, por el pueblo pasa la Vía de la Plata, una ruta histórica del Camino de Santiago. Todavía hoy se pueden ver peregrinos cruzando el núcleo urbano igual que lo hicieron hace siglos. De hecho, en la entrada y salida del pueblo aparecen antiguos miliarios, esas piedras que marcaban la ruta como si el pasado siguiera señalando el camino. Y en el centro de todo está la iglesia de Nuestra Señora de la Asunción, con raíces del siglo quince o XVI, portada original y piezas históricas en su interior, que recuerdan que este pueblo siempre tuvo algo más que nombre.',
       'Tuvo peso, paso e historia. Así que la próxima vez que escuches Roales del Pan, no pienses solo en pan, piensa en frontera medieval, en repoblación, en peregrinos y en un pueblo que lleva siglos vigilando el camino. Porque Roales del Pan se entiende mirando la historia.'
     ]
+  },
+  {
+    id: 'la-reina-cautiva',
+    eyebrow: 'GUIÓN · LA GUAREÑA',
+    badge: null,
+    title: 'La Reina Cautiva',
+    author: 'Por Alberto Hernández',
+    paragraphs: [
+      '¿Y si te dijera que en un pueblo de Zamora hay una tumba de hace más de tres mil años? Que apareció por accidente. Un hombre cavaba en la ladera como cualquier otro día, hasta que golpeó algo duro. No era una piedra, era una tumba prehistórica, intacta. Dentro, huesos, pero no de cualquiera. Vasos campaniformes decorados, un puñal de cobre, el brazal de un arquero y hasta una lámina de oro. Los arqueólogos lo tienen claro: aquí enterraron a alguien importante, un jefe, un guerrero, alguien que dominaba estas tierras mucho antes que nosotros.',
+      'Pero eso no es lo único que esconde este lugar, porque en Villabuena del Puente hay algo más y es algo que no aparece en los libros de historia. Una figura femenina que dicen aparece entre las rocas. La llaman la Mora Encantada. Solo aparece durante el amanecer de junio, siempre en el mismo lugar, siempre desapareciendo. Y luego está la otra historia, quizás más inquietante, la de la reina cautiva, encerrada en el Teso de Valdespino, condenada, esperando.',
+      'Solo puede salir una vez al año. Es durante San Juan. Algunos dicen que lleva un peine de plata. Otros, que su belleza no es de este mundo. Pero todos coinciden en algo: si la ves, ya no vas a volver a mirar ese lugar de la misma manera, porque aquí todo encaja demasiado bien. Una tumba antigua, un paisaje lleno de cuevas y una mujer que aparece solo en un momento exacto.',
+      'Así que la próxima vez que pienses y que pises Villabuena del Puente, no quiero que pienses en un pueblo tranquilo. Piensa en lo que hay bajo tierra y en lo que quizá sigue esperando salir una vez al año. Ahora dime, si supieras que esta mujer aparece solo una vez, ¿irías a buscarla? ¿Irías a su encuentro? ¿Irías en busca de lo desconocido?'
+    ]
   }
 ];
 
