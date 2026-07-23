@@ -496,6 +496,19 @@ const FOLKLORE = [
       'Solo puede salir una vez al año. Es durante San Juan. Algunos dicen que lleva un peine de plata. Otros, que su belleza no es de este mundo. Pero todos coinciden en algo: si la ves, ya no vas a volver a mirar ese lugar de la misma manera, porque aquí todo encaja demasiado bien. Una tumba antigua, un paisaje lleno de cuevas y una mujer que aparece solo en un momento exacto.',
       'Así que la próxima vez que pienses y que pises Villabuena del Puente, no quiero que pienses en un pueblo tranquilo. Piensa en lo que hay bajo tierra y en lo que quizá sigue esperando salir una vez al año. Ahora dime, si supieras que esta mujer aparece solo una vez, ¿irías a buscarla? ¿Irías a su encuentro? ¿Irías en busca de lo desconocido?'
     ]
+  },
+  {
+    id: 'la-cabeza-parlante',
+    eyebrow: 'GUIÓN · TIERRA DE TÁBARA',
+    badge: null,
+    title: 'La Cabeza Parlante',
+    author: 'Por Alberto Hernández',
+    paragraphs: [
+      '¿Imaginas una inteligencia artificial en pleno siglo XV? En la villa de Tábara, en Zamora, existió un dispositivo que hoy nos parece ciencia ficción: la cabeza parlante. Un autómata de metal capaz de vigilar a todo un pueblo desde lo alto de una torre. La leyenda cuenta que un alquimista anónimo tardó treinta años en fabricar este ingenio de bronce. Eh, no era un adorno. Su función era clara y perturbadora: la vigilancia étnico-religiosa. Se dice que la cabeza tenía un sistema de reconocimiento que detectaba si un judío cruzaba las murallas.',
+      'En ese momento, el autómata rompía el silencio gritando: ¡Judío en Tábara! Y no se callaba hasta que la persona abandonaba la jurisdicción, sentenciando con un último: Judío fuera de Tábara. Para nosotros eso suena a sensores de proximidad, a algoritmos biométricos, pero en la Edad Media lo llamaban magia natural. Incluso expertos de la época, como Fray Rodrigo de Yepes, aseguraban que la cabeza no solo gritaba, sino que podía responder a preguntas directas.',
+      'Era una de esas famosas brazen heads o cabezas respondonas de la tradición europea. Hay varias de ellas o varios ejemplos. ¿Es solo un cuento de viejas? No. Grandes intelectuales lo documentaron. Gil Tostado, el erudito más prolífico del siglo XV, dio por cierta su existencia en su obra Supernúmeros. Fray Rodrigo de Yepes, en 1583, confirmó su ubicación exacta en la torre.',
+      'Y el padre Feijoo, ya en la Ilustración, analizó el fenómeno para intentar separar la ciencia de la superstición. Pero el miedo fue más fuerte que la fascinación. Em, el pueblo, la gente, hartos del ruido constante y temiendo que fuera obra del mismísimo diablo, terminó destruyendo la cabeza a pedradas. Un final violento para una tecnología que desafiaba completamente a su época. ¿Y tú crees que era un mecanismo complejo de ingeniería perdida o simplemente una leyenda que alimenta ese control social?'
+    ]
   }
 ];
 
