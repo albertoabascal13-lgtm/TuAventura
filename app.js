@@ -509,6 +509,20 @@ const FOLKLORE = [
       'Era una de esas famosas brazen heads o cabezas respondonas de la tradición europea. Hay varias de ellas o varios ejemplos. ¿Es solo un cuento de viejas? No. Grandes intelectuales lo documentaron. Gil Tostado, el erudito más prolífico del siglo XV, dio por cierta su existencia en su obra Supernúmeros. Fray Rodrigo de Yepes, en 1583, confirmó su ubicación exacta en la torre.',
       'Y el padre Feijoo, ya en la Ilustración, analizó el fenómeno para intentar separar la ciencia de la superstición. Pero el miedo fue más fuerte que la fascinación. Em, el pueblo, la gente, hartos del ruido constante y temiendo que fuera obra del mismísimo diablo, terminó destruyendo la cabeza a pedradas. Un final violento para una tecnología que desafiaba completamente a su época. ¿Y tú crees que era un mecanismo complejo de ingeniería perdida o simplemente una leyenda que alimenta ese control social?'
     ]
+  },
+  {
+    id: 'la-virgen-de-la-guia',
+    eyebrow: 'GUIÓN · TIERRA DEL PAN',
+    badge: null,
+    title: 'La Virgen de la Guía',
+    author: 'Por Alberto Hernández',
+    paragraphs: [
+      '¿Sabías que existe una virgen que se negaba a abandonar su puente? No es solo una imagen religiosa, es la historia de una guardiana que, según la leyenda, detuvo ejércitos enteros sin mover ni un solo dedo. Hablamos de la Virgen de la Guía. Para muchos es una advocación antigua, pero para Zamora es algo mucho más que eso. No es una entidad abstracta, es una madre de carne y hueso que guía a quienes transitan por la vida. Por eso cala tan hondo en los barrios de la periferia y en los viajeros, porque ella sabe lo que es estar en el camino.',
+      'Su hogar durante siglos fue el Puente de Piedra, un hito de la Vía de la Plata que mide casi doscientos cincuenta metros de longitud. Aquí, junto a la desaparecida Torre de la Goberna, la virgen tenía su pequeño oratorio. Y aquí nace el misterio. Se dice que en el siglo XIII una presencia invisible surgía de la niebla para vigilar el acceso a la ciudad. Cuentan que un ejército enemigo intentó cruzar, en secreto, el puente, pero el terror ante esa fuerza inexplicable los hizo huir.',
+      'Para los vecinos de la margen izquierda no había ningún tipo de duda. Era ella, la Virgen de la Guía, protegiendo la entrada a Zamora. Y hay algo fascinante, que es, eh, su terquedad, porque en el año 1851 la llevaron a la iglesia del Santo Sepulcro. Pero la tradición dice que antes de eso, cada vez que intentaban ponerla a salvo de las riadas del Duero, llevándola a, al centro, a iglesias intramuros, la imagen aparecía de nuevo en su humilde capilla sobre el río a la mañana siguiente. Ella quería estar con su gente entre el barro y el tránsito.',
+      'Por eso hoy, aunque viva en la parroquia, cada año vuelve al Puente de Piedra para su ritual de reverencia. Porque un guía, una guía, nunca abandona a los que están en el camino. ¿Conocías esa leyenda del ejército que huyó ante la niebla? Cuéntamelo en los comentarios. Por cierto, hay muchas Vírgenes de la Guía en, en España, pero la de Zamora es especial y hace muy poquito ha sido su romería y ha sido ese momento en el que acude al Puente de Piedra a hacer la reverencia.',
+      'Tuve la suerte de poder verla, eh, la vi desde lejos, pero el año que viene voy a intentar estar presente en ese camino que hace la Virgen de la Guía, una virgen muy especial que es la guardiana del Puente de Piedra. Comparte este vídeo si te gusta.'
+    ]
   }
 ];
 
