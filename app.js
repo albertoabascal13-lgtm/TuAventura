@@ -473,6 +473,18 @@ const FOLKLORE = [
     ]
   },
   {
+    id: 'castillo-hollywood',
+    eyebrow: 'GUIÓN · ALFOZ DE TORO',
+    badge: null,
+    title: 'Un Castillo de Hollywood',
+    author: 'Por Alberto Hernández',
+    paragraphs: [
+      '¿Sabías que en Zamora hay un castillo que conquistó a Hollywood? A solo once kilómetros de Toro se alza el castillo de Villalonso, una fortaleza del siglo XV que parece sacado de una película. Y de hecho lo está. Pero antes de su imponente silueta actual, aquí ya hubo un castillo en el siglo XIII vigilando la frontera en tiempos de la Reconquista, bajo órdenes militares como Alcántara o Calatrava, según las fuentes que se consulten. Todo cambió cuando Juan de Ulloa tomó el control en el siglo XV. Él y su esposa María de Sarmiento levantaron el castillo que vemos hoy, dejando claro su poder con el escudo que se puede ver en, en la puerta principal.',
+      'Su estructura, prácticamente intacta, lo convierte en uno de los castillos mejor conservados de Zamora. Torre del Homenaje, planta cuadrada, murallas… Todo sigue en pie, como hace quinientos años. Y entonces llegó el cine. En 1975, este castillo enamoró a Hollywood y se convirtió en escenario de la peli Robin y Marian, una versión mucho más oscura y realista del mito de Robin Hood. Aquí se rodaron escenas clave del asedio inicial. Un Robin Hood envejecido, un mundo cambiado y una historia sobre el paso del tiempo.',
+      'Desde entonces, Villalonso no es solo historia, es también leyenda del cine. Y ahora te pregunto a ti directamente: ¿habías oído hablar de este castillo o acabas de descubrir uno de los secretos mejor guardados de Zamora?'
+    ]
+  },
+  {
     id: 'la-reina-cautiva',
     eyebrow: 'GUIÓN · LA GUAREÑA',
     badge: null,
